@@ -86,41 +86,31 @@ const featuredTrips = [
 
 <Layout title="Destinations" description="Explore our curated adventure destinations - from California Redwoods to international overlanding expeditions. Find your next adventure with Wyld Wandering.">
   <!-- Hero Section -->
-  <section class="relative min-h-[90vh] flex items-center bg-cream-100 dark:bg-forest-950 overflow-hidden">
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 lg:px-8">
+  <section class="relative min-h-[70vh] flex items-center bg-charcoal-900">
+    <div class="absolute inset-0 bg-gradient-to-br from-charcoal-900 via-forest-900 to-charcoal-800"></div>
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 py-32 lg:px-8">
       <div class="max-w-4xl">
-        <span class="inline-block font-sans text-sm font-medium tracking-widest uppercase text-terracotta-500 dark:text-amber-400 mb-8">
+        <span class="inline-block font-sans text-sm font-medium tracking-widest uppercase text-terracotta-400 mb-8">
           Where Will You Wander?
         </span>
-        <h1 class="mb-8">
-          <span class="block font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-none tracking-tight text-charcoal-900 dark:text-cream-50">
-            Curated
-          </span>
-          <span class="block font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-none tracking-tight text-terracotta-500 dark:text-amber-400 italic">
-            Destinations
-          </span>
-          <span class="block font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-none tracking-tight text-charcoal-900 dark:text-cream-50">
-            for the
-          </span>
-          <span class="block font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-none tracking-tight text-charcoal-900 dark:text-cream-50">
-            Adventurous Soul
-          </span>
+        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-cream-50 leading-[0.95] mb-8">
+          Curated<br/>
+          <span class="italic text-terracotta-400">Destinations</span><br/>
+          for the Adventurous Soul
         </h1>
-        <p class="font-sans text-xl leading-relaxed text-charcoal-600 dark:text-cream-200 max-w-2xl mb-12">
+        <p class="font-sans text-xl leading-relaxed text-cream-200 max-w-2xl mb-12">
           From Northern California's towering Redwoods to international overlanding expeditions, every journey is crafted with care and expertise.
         </p>
         <div class="flex flex-wrap gap-6 items-center">
-          <a href={`${baseUrl}contact`} class="inline-flex items-center px-8 py-4 font-sans font-semibold text-sm tracking-wide uppercase bg-terracotta-500 text-white hover:bg-terracotta-600 dark:bg-amber-400 dark:text-charcoal-900 dark:hover:bg-amber-500 transition-colors duration-300">
+          <a href="/contact" class="inline-flex items-center px-8 py-4 bg-terracotta-500 text-white font-medium text-sm uppercase tracking-wide hover:bg-terracotta-600 transition-colors">
             Plan Your Adventure
           </a>
-          <a href="#destinations" class="inline-flex items-center px-8 py-4 font-sans font-semibold text-sm tracking-wide uppercase border-2 border-charcoal-900 text-charcoal-900 hover:bg-charcoal-900 hover:text-cream-50 dark:border-cream-50 dark:text-cream-50 dark:hover:bg-cream-50 dark:hover:text-charcoal-900 transition-colors duration-300">
+          <a href="#destinations" class="inline-flex items-center px-8 py-4 border-2 border-cream-200 text-cream-200 font-medium text-sm uppercase tracking-wide hover:bg-cream-200 hover:text-charcoal-900 transition-colors">
             Explore Destinations
           </a>
         </div>
       </div>
     </div>
-    <!-- Decorative gradient -->
-    <div class="absolute top-0 right-0 bottom-0 w-2/5 bg-gradient-to-bl from-terracotta-500/10 to-transparent dark:from-amber-400/10 dark:to-transparent z-0"></div>
   </section>
 
   <!-- Destination Categories Grid -->
