@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <!-- Clean W with refined proportions -->
+  <path d="M32 72 
+           L66 145 
+           L100 80 
+           L134 145 
+           L168 72" 
+        fill="none" 
+        stroke="#1a1a1a" 
+        stroke-width="7" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- Destination dot - slightly larger, balanced -->
+  <circle cx="100" cy="52" r="7" fill="#1a1a1a"/>
+</svg>

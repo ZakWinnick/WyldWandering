@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Simplified for small display -->
+  <path d="M12 26 
+           L24 50 
+           L32 30 
+           L40 50 
+           L52 26" 
+        fill="none" 
+        stroke="#1a1a1a" 
+        stroke-width="4" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- Dot -->
+  <circle cx="32" cy="18" r="4" fill="#1a1a1a"/>
+</svg>
