@@ -6,30 +6,30 @@
 
 @layer base {
   :root {
-    --bg-primary: theme('colors.cream.100');
-    --bg-secondary: theme('colors.cream.200');
-    --bg-tertiary: theme('colors.cream.300');
-    --text-primary: theme('colors.charcoal.900');
-    --text-secondary: theme('colors.charcoal.600');
-    --text-muted: theme('colors.charcoal.400');
-    --accent: theme('colors.terracotta.500');
-    --accent-hover: theme('colors.terracotta.600');
-    --accent-muted: theme('colors.forest.400');
-    --border: theme('colors.charcoal.200');
+    --bg-primary: #FFFBF5;
+    --bg-secondary: #FFF7ED;
+    --bg-tertiary: #FFF0DE;
+    --text-primary: #1A1A1A;
+    --text-secondary: #5d5d5d;
+    --text-muted: #888888;
+    --accent: #C45D3A;
+    --accent-hover: #b84d2d;
+    --accent-muted: #8B9D83;
+    --border: #d1d1d1;
     --grain-opacity: 0.03;
   }
 
   .dark {
-    --bg-primary: theme('colors.forest.900');
-    --bg-secondary: theme('colors.forest.950');
-    --bg-tertiary: theme('colors.forest.800');
-    --text-primary: theme('colors.cream.100');
-    --text-secondary: theme('colors.cream.300');
-    --text-muted: theme('colors.forest.300');
-    --accent: theme('colors.amber.400');
-    --accent-hover: theme('colors.amber.300');
-    --accent-muted: theme('colors.forest.400');
-    --border: theme('colors.forest.700');
+    --bg-primary: #0F1A14;
+    --bg-secondary: #0a100c;
+    --bg-tertiary: #31412e;
+    --text-primary: #FFFBF5;
+    --text-secondary: #FFF0DE;
+    --text-muted: #a3b899;
+    --accent: #D4A857;
+    --accent-hover: #ebd69c;
+    --accent-muted: #8B9D83;
+    --border: #3a4e35;
     --grain-opacity: 0.05;
   }
 
