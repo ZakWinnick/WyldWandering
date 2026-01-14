@@ -1,0 +1,242 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+
+// Get all posts for related posts
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const relatedPosts = allPosts
+  .filter((p) => p.slug !== post.slug)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 2);
+
+// Helper function to format dates
+function formatDate(date: Date): string {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+// Calculate reading time
+function getReadingTime(content: string): string {
+  const words = content.split(/\s+/).length;
+  const minutes = Math.ceil(words / 200);
+  return `${minutes} min read`;
+}
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.excerpt}
+>
+  <article>
+    <!-- Article Header -->
+    <header class="relative min-h-[50vh] flex items-end bg-charcoal-900">
+      <div class="absolute inset-0 bg-gradient-to-br from-charcoal-900 via-forest-900 to-charcoal-800"></div>
+      {post.data.image && (
+        <img
+          src={post.data.image}
+          alt={post.data.title}
+          class="absolute inset-0 w-full h-full object-cover opacity-30"
+          loading="eager"
+        />
+      )}
+      <div class="absolute inset-0 bg-gradient-to-t from-charcoal-900 via-charcoal-900/50 to-transparent"></div>
+      <div class="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- Back Link -->
+        <a href="/blog" class="inline-flex items-center font-sans text-sm font-medium text-terracotta-400 mb-8 transition-colors duration-300 hover:text-cream-50 group">
+          <svg class="w-5 h-5 mr-2 transition-transform duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+          </svg>
+          Back to Journal
+        </a>
+
+        <!-- Category -->
+        <span class="inline-block font-sans text-xs font-semibold uppercase tracking-widest text-terracotta-400">
+          {post.data.category}
+        </span>
+
+        <!-- Title -->
+        <h1 class="font-display text-3xl md:text-4xl lg:text-5xl text-cream-50 leading-tight mt-4 max-w-3xl">
+          {post.data.title}
+        </h1>
+
+        <!-- Meta -->
+        <div class="flex flex-wrap items-center gap-3 mt-6 font-sans text-sm text-cream-200">
+          <div class="flex items-center gap-2.5">
+            <div class="w-10 h-10 rounded-full bg-terracotta-500 text-white flex items-center justify-center font-semibold text-sm">
+              ZW
+            </div>
+            <span class="font-medium text-cream-50">Zak Winnick</span>
+          </div>
+          <span class="w-1 h-1 bg-cream-400 rounded-full"></span>
+          <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+        </div>
+      </div>
+    </header>
+
+    <!-- Article Content -->
+    <div class="bg-cream-50 dark:bg-forest-950 py-12 lg:py-16">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose-content">
+          <Content />
+        </div>
+      </div>
+    </div>
+
+    <!-- Author Box -->
+    <aside class="bg-cream-100 dark:bg-forest-900 py-12">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+          <div class="w-20 h-20 rounded-full bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-950 flex items-center justify-center font-sans font-semibold text-2xl flex-shrink-0">
+            ZW
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif text-2xl font-semibold text-charcoal-900 dark:text-cream-50">
+              About Zak Winnick
+            </h3>
+            <p class="font-sans text-base text-charcoal-600 dark:text-cream-200 leading-relaxed mt-2">
+              Travel advisor based in Northern California, specializing in adventure travel with comfort.
+              Helping wanderers explore the world without roughing it too much.
+            </p>
+            <a href="/about" class="inline-flex items-center font-sans text-sm font-medium text-terracotta-500 dark:text-amber-400 mt-4 transition-colors duration-300 hover:text-charcoal-900 dark:hover:text-cream-50 group">
+              Learn More
+              <svg class="w-4 h-4 ml-1.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </article>
+
+  <!-- Related Posts -->
+  {relatedPosts.length > 0 && (
+    <section class="bg-cream-50 dark:bg-forest-950 border-t border-charcoal-200 dark:border-forest-800 py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="font-serif text-3xl font-semibold text-charcoal-900 dark:text-cream-50 mb-8">
+          Continue Reading
+        </h2>
+        <div class="grid gap-8 md:grid-cols-2">
+          {relatedPosts.map((relatedPost) => (
+            <a href={`/blog/${relatedPost.slug}`} class="group block bg-cream-100 dark:bg-forest-900 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div class="relative aspect-video overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-terracotta-500 to-cream-200 dark:from-amber-400 dark:to-forest-800"></div>
+                {relatedPost.data.image && (
+                  <img
+                    src={relatedPost.data.image}
+                    alt={relatedPost.data.title}
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                )}
+              </div>
+              <div class="p-6">
+                <span class="inline-block font-sans text-xs font-semibold uppercase tracking-widest text-terracotta-500 dark:text-amber-400">
+                  {relatedPost.data.category}
+                </span>
+                <h3 class="font-serif text-xl font-semibold text-charcoal-900 dark:text-cream-50 leading-snug mt-2 transition-colors duration-300 group-hover:text-terracotta-500 dark:group-hover:text-amber-400">
+                  {relatedPost.data.title}
+                </h3>
+                <p class="font-sans text-sm text-charcoal-600 dark:text-cream-200 leading-relaxed mt-3 line-clamp-2">
+                  {relatedPost.data.excerpt}
+                </p>
+                <div class="flex items-center gap-2.5 mt-4 font-sans text-xs text-charcoal-600 dark:text-cream-200">
+                  <time datetime={relatedPost.data.date.toISOString()}>{formatDate(relatedPost.data.date)}</time>
+                </div>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA Section -->
+  <section class="bg-cream-100 dark:bg-forest-900 py-16 lg:py-24 px-4 sm:px-6 lg:px-8 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-serif text-2xl md:text-3xl font-semibold text-charcoal-900 dark:text-cream-50">
+        Ready to Plan Your Adventure?
+      </h2>
+      <p class="font-sans text-lg text-charcoal-600 dark:text-cream-200 leading-relaxed mt-4 max-w-lg mx-auto">
+        Let's create a journey that matches your sense of adventure with the comfort you deserve.
+      </p>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 mt-8 bg-transparent border-2 border-terracotta-500 dark:border-amber-400 text-terracotta-500 dark:text-amber-400 font-sans font-medium rounded-lg transition-all duration-300 hover:bg-terracotta-500 dark:hover:bg-amber-400 hover:text-white dark:hover:text-forest-950">
+        Start Planning
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Prose Content Styling */
+  .prose-content {
+    @apply font-sans text-lg leading-relaxed text-charcoal-900 dark:text-cream-50;
+  }
+
+  .prose-content :global(p) {
+    @apply mb-6;
+  }
+
+  .prose-content :global(h2) {
+    @apply font-serif text-3xl md:text-4xl font-semibold text-charcoal-900 dark:text-cream-50 mt-12 mb-5 leading-tight;
+  }
+
+  .prose-content :global(h3) {
+    @apply font-serif text-2xl md:text-[1.75rem] font-semibold text-charcoal-900 dark:text-cream-50 mt-10 mb-4 leading-snug;
+  }
+
+  .prose-content :global(ul),
+  .prose-content :global(ol) {
+    @apply mb-6 pl-6;
+  }
+
+  .prose-content :global(ul) {
+    @apply list-disc;
+  }
+
+  .prose-content :global(ol) {
+    @apply list-decimal;
+  }
+
+  .prose-content :global(li) {
+    @apply mb-2 pl-2;
+  }
+
+  .prose-content :global(li::marker) {
+    @apply text-terracotta-500 dark:text-amber-400;
+  }
+
+  .prose-content :global(blockquote) {
+    @apply relative my-10 py-6 pl-8 border-l-[3px] border-terracotta-500 dark:border-amber-400;
+  }
+
+  .prose-content :global(blockquote p) {
+    @apply font-serif text-2xl md:text-[1.75rem] italic font-medium leading-snug text-charcoal-600 dark:text-cream-200 mb-0;
+  }
+
+  .prose-content :global(a) {
+    @apply text-terracotta-500 dark:text-amber-400 underline underline-offset-2 transition-colors duration-300 hover:text-charcoal-900 dark:hover:text-cream-50;
+  }
+
+  .prose-content :global(strong) {
+    @apply font-semibold text-charcoal-900 dark:text-cream-50;
+  }
+
+  .prose-content :global(em) {
+    @apply italic;
+  }
+</style>

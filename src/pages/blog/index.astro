@@ -1,56 +1,25 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
-const baseUrl = import.meta.env.BASE_URL;
-
-// Blog posts data - in production, this would come from content collections
-const blogPosts = [
-  {
-    slug: 'sample-post',
-    title: 'The Art of Adventure Travel Without Roughing It',
-    excerpt: 'Discover how to experience authentic adventures while maintaining the comfort and quality you deserve. From boutique lodges to curated experiences.',
-    date: '2025-01-10',
-    readingTime: '5 min read',
-    image: 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=800&q=80',
-    category: 'Travel Philosophy',
-  },
-  {
-    slug: 'patagonia-guide',
-    title: 'A Complete Guide to Patagonia: Timing, Trails, and Tips',
-    excerpt: 'Everything you need to know about planning your Patagonia adventure. When to go, what to pack, and the experiences you cannot miss.',
-    date: '2024-12-15',
-    readingTime: '8 min read',
-    image: 'https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=800&q=80',
-    category: 'Destination Guide',
-  },
-  {
-    slug: 'sustainable-travel-tips',
-    title: '10 Ways to Travel More Sustainably in 2025',
-    excerpt: 'Practical tips for reducing your environmental footprint while still having incredible travel experiences. Small changes, big impact.',
-    date: '2024-11-28',
-    readingTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80',
-    category: 'Travel Tips',
-  },
-  {
-    slug: 'northern-california-hidden-gems',
-    title: 'Hidden Gems of Northern California: Local Favorites',
-    excerpt: 'As a Northern California native, I share my favorite lesser-known spots for adventure seekers looking to explore closer to home.',
-    date: '2024-11-10',
-    readingTime: '7 min read',
-    image: 'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&w=800&q=80',
-    category: 'Local Insights',
-  },
-];
+// Get all blog posts, sorted by date (newest first)
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+const blogPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
 // Helper function to format dates
-function formatDate(dateString: string): string {
-  const date = new Date(dateString);
+function formatDate(date: Date): string {
   return date.toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
   });
+}
+
+// Calculate reading time (rough estimate: 200 words per minute)
+function getReadingTime(content: string): string {
+  const words = content.split(/\s+/).length;
+  const minutes = Math.ceil(words / 200);
+  return `${minutes} min read`;
 }
 ---
 
@@ -79,86 +48,92 @@ function formatDate(dateString: string): string {
   <!-- Blog Grid -->
   <section class="bg-cream-50 dark:bg-forest-950 py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
     <div class="max-w-7xl mx-auto">
-      <!-- Featured Post -->
-      <div class="mb-16">
-        <a href={`${baseUrl}blog/${blogPosts[0].slug}`} class="group grid gap-8 lg:grid-cols-2 lg:items-center">
-          <div class="relative aspect-[4/3] rounded-2xl overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-terracotta-500 to-cream-200 dark:from-amber-400 dark:to-forest-800"></div>
-            <img
-              src={blogPosts[0].image}
-              alt={blogPosts[0].title}
-              class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-              loading="lazy"
-            />
-            <div class="absolute top-4 left-4 bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-950 px-4 py-1.5 rounded-full font-sans text-xs font-semibold uppercase tracking-wide">
-              Featured
-            </div>
-          </div>
-          <div class="lg:pl-8">
-            <span class="inline-block text-terracotta-500 dark:text-amber-400 font-sans text-xs font-semibold uppercase tracking-widest">
-              {blogPosts[0].category}
-            </span>
-            <h2 class="font-serif text-3xl md:text-4xl font-semibold text-charcoal-900 dark:text-cream-50 leading-tight mt-3 transition-colors duration-300 group-hover:text-terracotta-500 dark:group-hover:text-amber-400">
-              {blogPosts[0].title}
-            </h2>
-            <p class="font-sans text-lg text-charcoal-600 dark:text-cream-200 leading-relaxed mt-4">
-              {blogPosts[0].excerpt}
-            </p>
-            <div class="flex items-center gap-3 mt-6 font-sans text-sm text-charcoal-600 dark:text-cream-200">
-              <time datetime={blogPosts[0].date}>{formatDate(blogPosts[0].date)}</time>
-              <span class="w-1 h-1 bg-charcoal-300 dark:bg-cream-600 rounded-full"></span>
-              <span>{blogPosts[0].readingTime}</span>
-            </div>
-            <span class="inline-flex items-center mt-6 font-sans font-medium text-terracotta-500 dark:text-amber-400 transition-colors duration-300 group-hover:text-charcoal-900 dark:group-hover:text-cream-50">
-              Read Article
-              <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </span>
-          </div>
-        </a>
-      </div>
-
-      <!-- Divider -->
-      <div class="h-px bg-charcoal-200 dark:bg-forest-800 mb-12"></div>
-
-      <!-- Recent Posts Grid -->
-      <div>
-        <h3 class="font-serif text-2xl font-semibold text-charcoal-900 dark:text-cream-50 mb-8">
-          Recent Posts
-        </h3>
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {blogPosts.slice(1).map((post) => (
-            <a href={`${baseUrl}blog/${post.slug}`} class="group block bg-cream-100 dark:bg-forest-900 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-              <div class="relative aspect-[16/10] overflow-hidden">
+      {blogPosts.length > 0 && (
+        <>
+          <!-- Featured Post -->
+          <div class="mb-16">
+            <a href={`/blog/${blogPosts[0].slug}`} class="group grid gap-8 lg:grid-cols-2 lg:items-center">
+              <div class="relative aspect-[4/3] rounded-2xl overflow-hidden">
                 <div class="absolute inset-0 bg-gradient-to-br from-terracotta-500 to-cream-200 dark:from-amber-400 dark:to-forest-800"></div>
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <div class="p-6">
-                <span class="inline-block text-terracotta-500 dark:text-amber-400 font-sans text-xs font-semibold uppercase tracking-widest">
-                  {post.category}
-                </span>
-                <h4 class="font-serif text-xl font-semibold text-charcoal-900 dark:text-cream-50 leading-snug mt-2 transition-colors duration-300 group-hover:text-terracotta-500 dark:group-hover:text-amber-400 line-clamp-2">
-                  {post.title}
-                </h4>
-                <p class="font-sans text-sm text-charcoal-600 dark:text-cream-200 leading-relaxed mt-3 line-clamp-3">
-                  {post.excerpt}
-                </p>
-                <div class="flex items-center gap-3 mt-4 font-sans text-xs text-charcoal-600 dark:text-cream-200">
-                  <time datetime={post.date}>{formatDate(post.date)}</time>
-                  <span class="w-1 h-1 bg-charcoal-300 dark:bg-cream-600 rounded-full"></span>
-                  <span>{post.readingTime}</span>
+                {blogPosts[0].data.image && (
+                  <img
+                    src={blogPosts[0].data.image}
+                    alt={blogPosts[0].data.title}
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                )}
+                <div class="absolute top-4 left-4 bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-950 px-4 py-1.5 rounded-full font-sans text-xs font-semibold uppercase tracking-wide">
+                  Featured
                 </div>
               </div>
+              <div class="lg:pl-8">
+                <span class="inline-block text-terracotta-500 dark:text-amber-400 font-sans text-xs font-semibold uppercase tracking-widest">
+                  {blogPosts[0].data.category}
+                </span>
+                <h2 class="font-serif text-3xl md:text-4xl font-semibold text-charcoal-900 dark:text-cream-50 leading-tight mt-3 transition-colors duration-300 group-hover:text-terracotta-500 dark:group-hover:text-amber-400">
+                  {blogPosts[0].data.title}
+                </h2>
+                <p class="font-sans text-lg text-charcoal-600 dark:text-cream-200 leading-relaxed mt-4">
+                  {blogPosts[0].data.excerpt}
+                </p>
+                <div class="flex items-center gap-3 mt-6 font-sans text-sm text-charcoal-600 dark:text-cream-200">
+                  <time datetime={blogPosts[0].data.date.toISOString()}>{formatDate(blogPosts[0].data.date)}</time>
+                </div>
+                <span class="inline-flex items-center mt-6 font-sans font-medium text-terracotta-500 dark:text-amber-400 transition-colors duration-300 group-hover:text-charcoal-900 dark:group-hover:text-cream-50">
+                  Read Article
+                  <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </div>
             </a>
-          ))}
-        </div>
-      </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="h-px bg-charcoal-200 dark:bg-forest-800 mb-12"></div>
+
+          <!-- Recent Posts Grid -->
+          {blogPosts.length > 1 && (
+            <div>
+              <h3 class="font-serif text-2xl font-semibold text-charcoal-900 dark:text-cream-50 mb-8">
+                Recent Posts
+              </h3>
+              <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                {blogPosts.slice(1).map((post) => (
+                  <a href={`/blog/${post.slug}`} class="group block bg-cream-100 dark:bg-forest-900 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+                    <div class="relative aspect-[16/10] overflow-hidden">
+                      <div class="absolute inset-0 bg-gradient-to-br from-terracotta-500 to-cream-200 dark:from-amber-400 dark:to-forest-800"></div>
+                      {post.data.image && (
+                        <img
+                          src={post.data.image}
+                          alt={post.data.title}
+                          class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                          loading="lazy"
+                        />
+                      )}
+                    </div>
+                    <div class="p-6">
+                      <span class="inline-block text-terracotta-500 dark:text-amber-400 font-sans text-xs font-semibold uppercase tracking-widest">
+                        {post.data.category}
+                      </span>
+                      <h4 class="font-serif text-xl font-semibold text-charcoal-900 dark:text-cream-50 leading-snug mt-2 transition-colors duration-300 group-hover:text-terracotta-500 dark:group-hover:text-amber-400 line-clamp-2">
+                        {post.data.title}
+                      </h4>
+                      <p class="font-sans text-sm text-charcoal-600 dark:text-cream-200 leading-relaxed mt-3 line-clamp-3">
+                        {post.data.excerpt}
+                      </p>
+                      <div class="flex items-center gap-3 mt-4 font-sans text-xs text-charcoal-600 dark:text-cream-200">
+                        <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
+                      </div>
+                    </div>
+                  </a>
+                ))}
+              </div>
+            </div>
+          )}
+        </>
+      )}
 
       <!-- Newsletter CTA -->
       <div class="mt-20 p-8 md:p-12 bg-cream-100 dark:bg-forest-900 rounded-3xl text-center">
