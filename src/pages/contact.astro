@@ -5,82 +5,91 @@ const baseUrl = import.meta.env.BASE_URL;
 
 const tripTypes = [
   { value: '', label: 'Select trip type' },
-  { value: 'adventure', label: 'Adventure' },
-  { value: 'luxury', label: 'Luxury' },
-  { value: 'honeymoon', label: 'Honeymoon' },
-  { value: 'group', label: 'Group' },
-  { value: 'other', label: 'Other' },
+  { value: 'adventure', label: 'Adventure & Expedition' },
+  { value: 'luxury', label: 'Luxury Escape' },
+  { value: 'honeymoon', label: 'Honeymoon & Romance' },
+  { value: 'group', label: 'Group Travel' },
+  { value: 'family', label: 'Family Adventure' },
+  { value: 'solo', label: 'Solo Journey' },
+  { value: 'other', label: 'Something Else' },
 ];
 ---
 
 <Layout title="Contact" description="Get in touch with Zak Winnick, your certified Fora travel advisor. Let's start planning your dream adventure.">
   <!-- Hero Section -->
-  <section class="bg-gradient-to-b from-sage-50 to-stone-50">
-    <div class="container-narrow section-padding text-center">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-stone-900 mb-6">
-        Let's Plan Your Adventure
+  <section class="section-padding" style="background-color: var(--bg-primary);">
+    <div class="container-narrow text-center">
+      <p class="uppercase tracking-[0.3em] text-sm mb-6" style="color: var(--accent);">
+        Begin Your Journey
+      </p>
+      <h1 class="text-editorial mb-8" style="color: var(--text-primary);">
+        Let's<br />
+        <em class="italic">Connect</em>
       </h1>
-      <p class="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto">
-        Ready to turn your travel dreams into reality? I'd love to hear about where you want to go and help craft an unforgettable journey tailored just for you.
+      <p class="text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto" style="color: var(--text-secondary);">
+        Every great adventure starts with a conversation. Tell me about your travel dreams, and together we'll craft an experience you'll treasure forever.
       </p>
     </div>
   </section>
 
   <!-- Contact Form Section -->
-  <section class="bg-stone-50">
-    <div class="container-wide section-padding !pt-0">
-      <div class="grid lg:grid-cols-3 gap-12 lg:gap-16">
-        <!-- Form -->
-        <div class="lg:col-span-2">
-          <div class="bg-white rounded-2xl shadow-sm border border-stone-200 p-8 md:p-10">
-            <h2 class="font-display text-2xl md:text-3xl font-semibold text-stone-900 mb-2">
+  <section class="section-padding !pt-0" style="background-color: var(--bg-primary);">
+    <div class="container-wide">
+      <div class="grid lg:grid-cols-5 gap-16 lg:gap-20">
+        <!-- Form Column -->
+        <div class="lg:col-span-3">
+          <div class="p-8 md:p-12" style="background-color: var(--bg-secondary); border: 1px solid var(--border);">
+            <h2 class="font-display text-3xl md:text-4xl font-medium mb-3" style="color: var(--text-primary);">
               Tell Me About Your Dream Trip
             </h2>
-            <p class="text-stone-600 mb-8">
-              Fill out the form below and I'll get back to you within 1-2 business days to start the conversation.
+            <p class="text-lg mb-10" style="color: var(--text-secondary);">
+              The more details you share, the better I can understand your vision and craft the perfect journey.
             </p>
 
-            <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-6">
-              <!-- Name -->
-              <div>
-                <label for="name" class="block text-sm font-medium text-stone-700 mb-2">
-                  Name <span class="text-sage-600">*</span>
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-sage-500 focus:ring-2 focus:ring-sage-500/20 outline-none transition-all text-stone-900 placeholder-stone-400"
-                  placeholder="Your full name"
-                />
-              </div>
+            <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-8">
+              <!-- Name & Email Row -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <!-- Name -->
+                <div class="form-group">
+                  <label for="name" class="form-label">
+                    Name <span style="color: var(--accent);">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="form-input"
+                    placeholder="Your full name"
+                  />
+                </div>
 
-              <!-- Email -->
-              <div>
-                <label for="email" class="block text-sm font-medium text-stone-700 mb-2">
-                  Email <span class="text-sage-600">*</span>
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-sage-500 focus:ring-2 focus:ring-sage-500/20 outline-none transition-all text-stone-900 placeholder-stone-400"
-                  placeholder="you@example.com"
-                />
+                <!-- Email -->
+                <div class="form-group">
+                  <label for="email" class="form-label">
+                    Email <span style="color: var(--accent);">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="form-input"
+                    placeholder="you@example.com"
+                  />
+                </div>
               </div>
 
               <!-- Trip Type -->
-              <div>
-                <label for="trip-type" class="block text-sm font-medium text-stone-700 mb-2">
-                  Trip Type <span class="text-sage-600">*</span>
+              <div class="form-group">
+                <label for="trip-type" class="form-label">
+                  Trip Type <span style="color: var(--accent);">*</span>
                 </label>
                 <select
                   id="trip-type"
                   name="trip_type"
                   required
-                  class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-sage-500 focus:ring-2 focus:ring-sage-500/20 outline-none transition-all text-stone-900 bg-white"
+                  class="form-input form-select"
                 >
                   {tripTypes.map(type => (
                     <option value={type.value} disabled={type.value === ''} selected={type.value === ''}>
@@ -91,54 +100,54 @@ const tripTypes = [
               </div>
 
               <!-- Destination Interest -->
-              <div>
-                <label for="destination" class="block text-sm font-medium text-stone-700 mb-2">
+              <div class="form-group">
+                <label for="destination" class="form-label">
                   Destination Interest
                 </label>
                 <input
                   type="text"
                   id="destination"
                   name="destination"
-                  class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-sage-500 focus:ring-2 focus:ring-sage-500/20 outline-none transition-all text-stone-900 placeholder-stone-400"
+                  class="form-input"
                   placeholder="e.g., Iceland, Japan, Patagonia, or 'I'm open to suggestions!'"
                 />
               </div>
 
               <!-- Travel Dates -->
-              <div>
-                <label for="travel-dates" class="block text-sm font-medium text-stone-700 mb-2">
-                  Travel Dates (Approximate)
+              <div class="form-group">
+                <label for="travel-dates" class="form-label">
+                  Travel Dates
                 </label>
                 <input
                   type="text"
                   id="travel-dates"
                   name="travel_dates"
-                  class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-sage-500 focus:ring-2 focus:ring-sage-500/20 outline-none transition-all text-stone-900 placeholder-stone-400"
+                  class="form-input"
                   placeholder="e.g., Summer 2025, March 15-25, or 'Flexible'"
                 />
               </div>
 
               <!-- Message -->
-              <div>
-                <label for="message" class="block text-sm font-medium text-stone-700 mb-2">
-                  Tell Me About Your Dream Trip <span class="text-sage-600">*</span>
+              <div class="form-group">
+                <label for="message" class="form-label">
+                  Your Vision <span style="color: var(--accent);">*</span>
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   required
-                  rows="5"
-                  class="w-full px-4 py-3 rounded-lg border border-stone-300 focus:border-sage-500 focus:ring-2 focus:ring-sage-500/20 outline-none transition-all text-stone-900 placeholder-stone-400 resize-y"
+                  rows="6"
+                  class="form-input form-textarea"
                   placeholder="What does your ideal trip look like? Any must-see places, activities, or experiences? Special occasions to celebrate? The more you share, the better I can help!"
                 ></textarea>
               </div>
 
               <!-- Submit Button -->
-              <div class="pt-2">
-                <button type="submit" class="btn-primary w-full md:w-auto">
+              <div class="pt-4">
+                <button type="submit" class="btn-primary">
                   Send Message
-                  <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                  <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </button>
               </div>
@@ -146,92 +155,101 @@ const tripTypes = [
           </div>
 
           <!-- Response Time Note -->
-          <div class="mt-6 flex items-start gap-3 p-4 bg-sage-50 rounded-lg border border-sage-100">
-            <svg class="w-6 h-6 text-sage-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            <p class="text-sm text-stone-700">
-              <span class="font-medium">Response Time:</span> I typically respond within 1-2 business days. If you have an urgent travel need, please mention it in your message and I'll do my best to prioritize your request.
-            </p>
+          <div class="mt-8 flex items-start gap-4 p-6" style="background-color: var(--bg-secondary); border: 1px solid var(--border);">
+            <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center" style="border: 1px solid var(--accent);">
+              <svg class="w-6 h-6" style="color: var(--accent);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+            </div>
+            <div>
+              <p class="font-display text-lg font-medium mb-1" style="color: var(--text-primary);">
+                Response Time
+              </p>
+              <p style="color: var(--text-secondary);">
+                I typically respond within <strong style="color: var(--accent);">1-2 business days</strong>. If you have an urgent travel need, please mention it in your message and I'll do my best to prioritize your request.
+              </p>
+            </div>
           </div>
         </div>
 
-        <!-- Sidebar -->
-        <div class="space-y-8">
-          <!-- Alternative Contact -->
-          <div class="bg-white rounded-2xl shadow-sm border border-stone-200 p-8">
-            <h3 class="font-display text-xl font-semibold text-stone-900 mb-4">
+        <!-- Sidebar Column -->
+        <div class="lg:col-span-2 space-y-8">
+          <!-- Alternative Contact Card -->
+          <div class="p-8" style="background-color: var(--bg-secondary); border: 1px solid var(--border);">
+            <h3 class="font-display text-2xl font-medium mb-6" style="color: var(--text-primary);">
               Other Ways to Connect
             </h3>
-            <div class="space-y-4">
-              <div class="flex items-start gap-3">
-                <div class="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center flex-shrink-0">
-                  <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+            <div class="space-y-6">
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center" style="background-color: var(--bg-tertiary);">
+                  <svg class="w-5 h-5" style="color: var(--accent);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
-                  <p class="font-medium text-stone-900">Email</p>
-                  <p class="text-stone-600 text-sm">Prefer email? Reach out directly and I'll get back to you soon.</p>
+                  <p class="font-display text-lg font-medium" style="color: var(--text-primary);">Email Direct</p>
+                  <p class="text-sm" style="color: var(--text-secondary);">Prefer email? Reach out directly and I'll get back to you soon.</p>
                 </div>
               </div>
 
-              <div class="flex items-start gap-3">
-                <div class="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center flex-shrink-0">
-                  <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center" style="background-color: var(--bg-tertiary);">
+                  <svg class="w-5 h-5" style="color: var(--accent);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
                 <div>
-                  <p class="font-medium text-stone-900">Based In</p>
-                  <p class="text-stone-600 text-sm">Northern California</p>
-                  <p class="text-stone-500 text-xs mt-1">Working with travelers worldwide</p>
+                  <p class="font-display text-lg font-medium" style="color: var(--text-primary);">Based In</p>
+                  <p class="text-sm" style="color: var(--text-secondary);">Northern California</p>
+                  <p class="text-xs mt-1" style="color: var(--text-muted);">Working with travelers worldwide</p>
                 </div>
               </div>
 
-              <div class="flex items-start gap-3">
-                <div class="w-10 h-10 rounded-full bg-sage-100 flex items-center justify-center flex-shrink-0">
-                  <svg class="w-5 h-5 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+              <div class="flex items-start gap-4">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center" style="background-color: var(--bg-tertiary);">
+                  <svg class="w-5 h-5" style="color: var(--accent);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
                 </div>
                 <div>
-                  <p class="font-medium text-stone-900">Certified Advisor</p>
-                  <p class="text-stone-600 text-sm">Fora Travel certified with access to exclusive perks and upgrades.</p>
+                  <p class="font-display text-lg font-medium" style="color: var(--text-primary);">Certified Advisor</p>
+                  <p class="text-sm" style="color: var(--text-secondary);">Fora Travel certified with access to exclusive perks and upgrades.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- FAQ Teaser -->
-          <div class="bg-gradient-to-br from-sage-600 to-sage-700 rounded-2xl p-8 text-white">
-            <h3 class="font-display text-xl font-semibold mb-3">
-              Have Questions First?
-            </h3>
-            <p class="text-sage-100 text-sm mb-6">
-              Curious about how the planning process works, what a travel advisor does, or what to expect? Check out my frequently asked questions.
-            </p>
-            <a href={`${baseUrl}faq`} class="inline-flex items-center text-white font-medium hover:text-sage-100 transition-colors group">
-              Browse FAQ
-              <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
+          <!-- FAQ Card -->
+          <div class="p-8 relative overflow-hidden" style="background-color: var(--accent);">
+            <div class="relative z-10">
+              <h3 class="font-display text-2xl font-medium mb-4 text-cream-100 dark:text-forest-900">
+                Have Questions First?
+              </h3>
+              <p class="mb-8 text-cream-200 dark:text-forest-800">
+                Curious about how the planning process works, what a travel advisor does, or what to expect? Check out my frequently asked questions.
+              </p>
+              <a href={`${baseUrl}faq`} class="inline-flex items-center font-medium text-cream-100 dark:text-forest-900 hover:opacity-80 transition-opacity group uppercase tracking-wider text-sm">
+                Browse FAQ
+                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </a>
+            </div>
           </div>
 
-          <!-- About Zak Mini -->
-          <div class="bg-sand-50 rounded-2xl p-8 border border-sand-200">
-            <h3 class="font-display text-xl font-semibold text-stone-900 mb-3">
+          <!-- About Card -->
+          <div class="p-8" style="background-color: var(--bg-secondary); border: 1px solid var(--border);">
+            <h3 class="font-display text-2xl font-medium mb-4" style="color: var(--text-primary);">
               About Your Advisor
             </h3>
-            <p class="text-stone-600 text-sm mb-4">
+            <p class="mb-6" style="color: var(--text-secondary);">
               Hi, I'm Zak Winnick! I'm passionate about crafting unique travel experiences that balance adventure with comfort. Every trip I plan is tailored to your interests, pace, and travel style.
             </p>
-            <a href={`${baseUrl}about`} class="inline-flex items-center text-sage-600 font-medium hover:text-sage-700 transition-colors group">
+            <a href={`${baseUrl}about`} class="btn-secondary">
               Learn more about me
-              <svg class="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
               </svg>
             </a>
           </div>
@@ -240,3 +258,69 @@ const tripTypes = [
     </div>
   </section>
 </Layout>
+
+<style>
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  .form-input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+  }
+
+  .form-input::placeholder {
+    color: var(--text-muted);
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(var(--accent-rgb, 183, 104, 84), 0.1);
+  }
+
+  .dark .form-input:focus {
+    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.15);
+  }
+
+  .form-select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.25rem;
+    padding-right: 3rem;
+  }
+
+  .dark .form-select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23d1d5db'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
+  }
+
+  .form-textarea {
+    resize: vertical;
+    min-height: 150px;
+  }
+
+  /* Hover states for inputs */
+  .form-input:hover:not(:focus) {
+    border-color: var(--text-muted);
+  }
+</style>

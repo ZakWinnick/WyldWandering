@@ -160,127 +160,107 @@ const relatedPosts = Object.entries(blogPosts)
   title={post.title}
   description={post.excerpt}
 >
-  <!-- Article Header -->
-  <article>
-    <header class="bg-stone-100">
-      <div class="container-narrow section-padding !py-12 lg:!py-16">
+  <article class="article">
+    <!-- Article Header -->
+    <header class="article-header">
+      <div class="container-narrow">
         <!-- Back Link -->
-        <a
-          href={`${baseUrl}blog`}
-          class="inline-flex items-center text-sage-600 hover:text-sage-700 font-medium transition-colors mb-8"
-        >
-          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a href={`${baseUrl}blog`} class="back-link">
+          <svg class="back-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
           </svg>
-          Back to Blog
+          Back to Journal
         </a>
 
         <!-- Category -->
-        <span class="text-sage-600 text-sm font-medium uppercase tracking-wider">
-          {post.category}
-        </span>
+        <span class="article-category">{post.category}</span>
 
         <!-- Title -->
-        <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-stone-800 mt-4 leading-tight">
-          {post.title}
-        </h1>
+        <h1 class="article-title">{post.title}</h1>
 
         <!-- Meta -->
-        <div class="flex flex-wrap items-center gap-4 mt-6 text-stone-500">
-          <div class="flex items-center gap-2">
-            <div class="w-10 h-10 rounded-full bg-sage-200 flex items-center justify-center">
-              <span class="text-sage-700 font-medium text-sm">ZW</span>
-            </div>
-            <span class="font-medium text-stone-700">Zak Winnick</span>
+        <div class="article-meta">
+          <div class="author-info">
+            <div class="author-avatar">ZW</div>
+            <span class="author-name">Zak Winnick</span>
           </div>
-          <span class="w-1 h-1 bg-stone-400 rounded-full"></span>
+          <span class="meta-divider"></span>
           <time datetime={post.date}>{formatDate(post.date)}</time>
-          <span class="w-1 h-1 bg-stone-400 rounded-full"></span>
+          <span class="meta-divider"></span>
           <span>{post.readingTime}</span>
         </div>
       </div>
     </header>
 
     <!-- Featured Image -->
-    <div class="relative h-[40vh] md:h-[50vh] lg:h-[60vh]">
+    <div class="article-hero">
+      <div class="hero-gradient-placeholder"></div>
       <img
         src={post.image}
         alt={post.title}
-        class="absolute inset-0 w-full h-full object-cover"
+        class="hero-image"
+        loading="eager"
       />
-      <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+      <div class="hero-overlay"></div>
     </div>
 
     <!-- Article Content -->
-    <div class="bg-white">
-      <div class="container-narrow section-padding !py-12 lg:!py-16">
-        <div class="prose prose-lg max-w-none" set:html={post.content} />
+    <div class="article-body">
+      <div class="container-narrow">
+        <div class="prose" set:html={post.content} />
       </div>
     </div>
 
     <!-- Author Box -->
-    <div class="bg-stone-100">
-      <div class="container-narrow section-padding !py-12">
-        <div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
-          <div class="w-20 h-20 rounded-full bg-sage-200 flex-shrink-0 flex items-center justify-center">
-            <span class="text-sage-700 font-semibold text-2xl">ZW</span>
-          </div>
-          <div>
-            <h3 class="text-xl font-display font-semibold text-stone-800">About Zak Winnick</h3>
-            <p class="text-stone-600 mt-2">
+    <aside class="author-box">
+      <div class="container-narrow">
+        <div class="author-box-inner">
+          <div class="author-box-avatar">ZW</div>
+          <div class="author-box-content">
+            <h3 class="author-box-name">About Zak Winnick</h3>
+            <p class="author-box-bio">
               Travel advisor based in Northern California, specializing in adventure travel with comfort.
               Helping wanderers explore the world without roughing it too much.
             </p>
-            <a
-              href={`${baseUrl}about`}
-              class="inline-flex items-center text-sage-600 hover:text-sage-700 font-medium mt-4 transition-colors"
-            >
+            <a href={`${baseUrl}about`} class="author-box-link">
               Learn More
-              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
             </a>
           </div>
         </div>
       </div>
-    </div>
+    </aside>
   </article>
 
   <!-- Related Posts -->
   {relatedPosts.length > 0 && (
-    <section class="bg-white border-t border-stone-200">
+    <section class="related-posts">
       <div class="container-wide section-padding">
-        <h2 class="text-2xl md:text-3xl font-display font-semibold text-stone-800 mb-8">
-          Continue Reading
-        </h2>
-        <div class="grid md:grid-cols-2 gap-8">
+        <h2 class="related-title">Continue Reading</h2>
+        <div class="related-grid">
           {relatedPosts.map((relatedPost) => (
-            <a href={`${baseUrl}blog/${relatedPost.slug}`} class="group block">
-              <article class="bg-stone-50 rounded-xl overflow-hidden hover:shadow-md transition-shadow duration-300">
-                <div class="relative aspect-[16/9] overflow-hidden">
-                  <img
-                    src={relatedPost.image}
-                    alt={relatedPost.title}
-                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
+            <a href={`${baseUrl}blog/${relatedPost.slug}`} class="card related-card">
+              <div class="related-image-container">
+                <div class="related-gradient-placeholder"></div>
+                <img
+                  src={relatedPost.image}
+                  alt={relatedPost.title}
+                  class="related-image"
+                  loading="lazy"
+                />
+              </div>
+              <div class="related-content">
+                <span class="related-category">{relatedPost.category}</span>
+                <h3 class="related-card-title">{relatedPost.title}</h3>
+                <p class="related-excerpt">{relatedPost.excerpt}</p>
+                <div class="related-meta">
+                  <time datetime={relatedPost.date}>{formatDate(relatedPost.date)}</time>
+                  <span class="meta-divider"></span>
+                  <span>{relatedPost.readingTime}</span>
                 </div>
-                <div class="p-6">
-                  <span class="text-sage-600 text-xs font-medium uppercase tracking-wider">
-                    {relatedPost.category}
-                  </span>
-                  <h3 class="text-xl font-display font-semibold text-stone-800 mt-2 group-hover:text-sage-700 transition-colors">
-                    {relatedPost.title}
-                  </h3>
-                  <p class="text-stone-600 mt-3 text-sm line-clamp-2">
-                    {relatedPost.excerpt}
-                  </p>
-                  <div class="flex items-center gap-3 mt-4 text-stone-500 text-xs">
-                    <time datetime={relatedPost.date}>{formatDate(relatedPost.date)}</time>
-                    <span class="w-1 h-1 bg-stone-400 rounded-full"></span>
-                    <span>{relatedPost.readingTime}</span>
-                  </div>
-                </div>
-              </article>
+              </div>
             </a>
           ))}
         </div>
@@ -289,15 +269,13 @@ const relatedPosts = Object.entries(blogPosts)
   )}
 
   <!-- CTA Section -->
-  <section class="bg-sage-700 text-white">
-    <div class="container-narrow section-padding text-center">
-      <h2 class="text-2xl md:text-3xl font-display font-semibold">
-        Ready to Plan Your Adventure?
-      </h2>
-      <p class="text-sage-100 mt-4 max-w-xl mx-auto">
+  <section class="cta-section">
+    <div class="container-narrow section-padding">
+      <h2 class="cta-title">Ready to Plan Your Adventure?</h2>
+      <p class="cta-description">
         Let's create a journey that matches your sense of adventure with the comfort you deserve.
       </p>
-      <a href={`${baseUrl}contact`} class="inline-flex items-center justify-center px-8 py-4 bg-white text-sage-700 font-medium rounded-md hover:bg-stone-100 transition-colors mt-8">
+      <a href={`${baseUrl}contact`} class="btn-secondary cta-button">
         Start Planning
       </a>
     </div>
@@ -305,64 +283,509 @@ const relatedPosts = Object.entries(blogPosts)
 </Layout>
 
 <style>
-  /* Prose styling for article content */
+  /* Article Header */
+  .article-header {
+    background: var(--bg-secondary);
+    padding: 3rem 0 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    .article-header {
+      padding: 4rem 0 5rem;
+    }
+  }
+
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    margin-bottom: 2rem;
+    transition: color 0.3s ease;
+  }
+
+  .back-link:hover {
+    color: var(--text-primary);
+  }
+
+  .back-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-right: 0.5rem;
+    transition: transform 0.3s ease;
+  }
+
+  .back-link:hover .back-icon {
+    transform: translateX(-4px);
+  }
+
+  .article-category {
+    display: inline-block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+
+  .article-title {
+    font-family: 'Cormorant', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.15;
+    margin: 1rem 0 0 0;
+    max-width: 48rem;
+  }
+
+  .article-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+  }
+
+  .author-info {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+  }
+
+  .author-avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 0.875rem;
+  }
+
+  .author-name {
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  .meta-divider {
+    width: 4px;
+    height: 4px;
+    background: var(--border);
+    border-radius: 50%;
+  }
+
+  /* Article Hero */
+  .article-hero {
+    position: relative;
+    height: 40vh;
+    min-height: 300px;
+    max-height: 600px;
+  }
+
+  @media (min-width: 768px) {
+    .article-hero {
+      height: 50vh;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .article-hero {
+      height: 60vh;
+    }
+  }
+
+  .hero-gradient-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--bg-secondary) 100%);
+  }
+
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 50%);
+  }
+
+  /* Article Body */
+  .article-body {
+    background: var(--bg-primary);
+    padding: 3rem 0 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    .article-body {
+      padding: 4rem 0 5rem;
+    }
+  }
+
+  /* Prose Styling - Editorial Typography */
   .prose {
-    @apply text-stone-700;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    color: var(--text-primary);
   }
 
   .prose :global(p) {
-    @apply mb-6 leading-relaxed;
+    margin-bottom: 1.5rem;
   }
 
   .prose :global(p.lead) {
-    @apply text-xl text-stone-600 leading-relaxed mb-8;
+    font-family: 'Cormorant', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-secondary);
+    margin-bottom: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .prose :global(p.lead) {
+      font-size: 1.625rem;
+    }
   }
 
   .prose :global(h2) {
-    @apply text-2xl md:text-3xl font-display font-semibold text-stone-800 mt-12 mb-6;
+    font-family: 'Cormorant', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 3rem;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    .prose :global(h2) {
+      font-size: 2.25rem;
+    }
   }
 
   .prose :global(h3) {
-    @apply text-xl md:text-2xl font-display font-semibold text-stone-800 mt-10 mb-4;
+    font-family: 'Cormorant', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+  }
+
+  @media (min-width: 768px) {
+    .prose :global(h3) {
+      font-size: 1.75rem;
+    }
   }
 
   .prose :global(ul),
   .prose :global(ol) {
-    @apply mb-6 pl-6;
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
   }
 
   .prose :global(ul) {
-    @apply list-disc;
+    list-style-type: disc;
   }
 
   .prose :global(ol) {
-    @apply list-decimal;
+    list-style-type: decimal;
   }
 
   .prose :global(li) {
-    @apply mb-2 leading-relaxed;
+    margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .prose :global(li::marker) {
+    color: var(--accent);
   }
 
   .prose :global(blockquote) {
-    @apply border-l-4 border-sage-400 pl-6 py-2 my-8 italic text-stone-600;
+    position: relative;
+    margin: 2.5rem 0;
+    padding: 1.5rem 0 1.5rem 2rem;
+    border-left: 3px solid var(--accent);
   }
 
   .prose :global(blockquote p) {
-    @apply text-xl mb-0;
+    font-family: 'Cormorant', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    margin-bottom: 0;
+  }
+
+  @media (min-width: 768px) {
+    .prose :global(blockquote p) {
+      font-size: 1.75rem;
+    }
   }
 
   .prose :global(a) {
-    @apply text-sage-600 underline hover:text-sage-700 transition-colors;
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color 0.3s ease;
+  }
+
+  .prose :global(a:hover) {
+    color: var(--text-primary);
   }
 
   .prose :global(strong) {
-    @apply font-semibold text-stone-800;
+    font-weight: 600;
+    color: var(--text-primary);
   }
 
-  .line-clamp-2 {
+  .prose :global(em) {
+    font-style: italic;
+  }
+
+  /* Author Box */
+  .author-box {
+    background: var(--bg-secondary);
+    padding: 3rem 0;
+  }
+
+  .author-box-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  @media (min-width: 768px) {
+    .author-box-inner {
+      flex-direction: row;
+      align-items: center;
+    }
+  }
+
+  .author-box-avatar {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .author-box-content {
+    flex: 1;
+  }
+
+  .author-box-name {
+    font-family: 'Cormorant', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .author-box-bio {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: 0.5rem;
+  }
+
+  .author-box-link {
+    display: inline-flex;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--accent);
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: color 0.3s ease;
+  }
+
+  .author-box-link:hover {
+    color: var(--text-primary);
+  }
+
+  .link-icon {
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.375rem;
+    transition: transform 0.3s ease;
+  }
+
+  .author-box-link:hover .link-icon {
+    transform: translateX(4px);
+  }
+
+  /* Related Posts */
+  .related-posts {
+    background: var(--bg-primary);
+    border-top: 1px solid var(--border);
+  }
+
+  .related-title {
+    font-family: 'Cormorant', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0 0 2rem 0;
+  }
+
+  .related-grid {
+    display: grid;
+    gap: 2rem;
+  }
+
+  @media (min-width: 768px) {
+    .related-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .related-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    background: var(--bg-secondary);
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .related-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .related-image-container {
+    position: relative;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .related-gradient-placeholder {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--bg-secondary) 100%);
+  }
+
+  .related-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .related-card:hover .related-image {
+    transform: scale(1.05);
+  }
+
+  .related-content {
+    padding: 1.5rem;
+  }
+
+  .related-category {
+    display: inline-block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+  }
+
+  .related-card-title {
+    font-family: 'Cormorant', serif;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    line-height: 1.3;
+    margin: 0.5rem 0 0 0;
+    transition: color 0.3s ease;
+  }
+
+  .related-card:hover .related-card-title {
+    color: var(--accent);
+  }
+
+  .related-excerpt {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9375rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+    margin-top: 0.75rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
+  }
+
+  .related-meta {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-top: 1rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    background: var(--bg-secondary);
+    text-align: center;
+  }
+
+  .cta-title {
+    font-family: 'Cormorant', serif;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .cta-description {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.125rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 1rem auto 0;
+    max-width: 32rem;
+  }
+
+  .cta-button {
+    margin-top: 2rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
   }
 </style>

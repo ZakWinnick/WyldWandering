@@ -9,7 +9,6 @@ interface Props {
 }
 
 const { title, description = 'Wyld Wandering - Adventure travel with comfort. Expert travel planning for those who want to explore without roughing it.' } = Astro.props;
-const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <!DOCTYPE html>
@@ -18,11 +17,20 @@ const baseUrl = import.meta.env.BASE_URL;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <link rel="icon" type="image/svg+xml" href={`${baseUrl}favicon.svg`} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title} | Wyld Wandering</title>
     <script src="https://tinylytics.app/embed/B27AqNz_r1_hRY6gk6ju.js" defer></script>
+    <script is:inline>
+      // Prevent flash of wrong theme
+      (function() {
+        const theme = localStorage.getItem('theme');
+        if (theme === 'dark' || (!theme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
-  <body class="min-h-screen flex flex-col">
+  <body class="min-h-screen flex flex-col overflow-x-hidden">
     <Header />
     <main class="flex-1">
       <slot />

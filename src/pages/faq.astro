@@ -75,50 +75,56 @@ const faqSections = [
 
 <Layout title="Frequently Asked Questions" description="Get answers to common questions about working with Wyld Wandering for your adventure travel planning.">
   <!-- Hero Section -->
-  <section class="section-padding bg-gradient-to-b from-sage-50 to-stone-50">
-    <div class="container-narrow text-center">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-stone-800 mb-6">
-        Frequently Asked Questions
-      </h1>
-      <p class="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto">
-        Everything you need to know about working with a travel advisor to plan your next adventure.
-      </p>
+  <section class="faq-hero section-padding">
+    <div class="container-narrow">
+      <div class="hero-content">
+        <span class="hero-label">Questions & Answers</span>
+        <h1 class="hero-title">
+          Everything You<br />
+          <span class="hero-title-accent">Need to Know</span>
+        </h1>
+        <p class="hero-subtitle">
+          Curious about how working with a travel advisor can transform your next adventure? Find your answers here.
+        </p>
+      </div>
     </div>
   </section>
 
   <!-- FAQ Sections -->
-  <section class="section-padding">
+  <section class="faq-sections section-padding">
     <div class="container-narrow">
       {faqSections.map((section, sectionIndex) => (
-        <div class="mb-12 last:mb-0">
-          <h2 class="text-2xl md:text-3xl font-display font-semibold text-stone-800 mb-6 pb-3 border-b border-stone-200">
-            {section.title}
-          </h2>
-          <div class="space-y-4">
+        <div class="faq-category" data-section={sectionIndex}>
+          <div class="category-header">
+            <span class="category-number">{String(sectionIndex + 1).padStart(2, '0')}</span>
+            <h2 class="category-title">{section.title}</h2>
+          </div>
+          <div class="faq-list">
             {section.faqs.map((faq, faqIndex) => (
               <div
-                class="faq-item border border-stone-200 rounded-lg overflow-hidden bg-white hover:border-sage-300 transition-colors duration-200"
+                class="faq-item"
                 data-section={sectionIndex}
                 data-faq={faqIndex}
               >
                 <button
-                  class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:ring-inset"
+                  class="faq-trigger"
                   aria-expanded="false"
+                  aria-controls={`faq-content-${sectionIndex}-${faqIndex}`}
                 >
-                  <span class="text-lg font-medium text-stone-800 pr-4">
-                    {faq.question}
-                  </span>
-                  <span class="faq-icon flex-shrink-0 w-6 h-6 text-sage-600 transition-transform duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                  <span class="faq-question">{faq.question}</span>
+                  <span class="faq-icon" aria-hidden="true">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
                   </span>
                 </button>
-                <div class="faq-content hidden">
-                  <div class="px-6 pb-6 pt-0">
-                    <p class="text-stone-600 leading-relaxed">
-                      {faq.answer}
-                    </p>
+                <div
+                  class="faq-content"
+                  id={`faq-content-${sectionIndex}-${faqIndex}`}
+                  aria-hidden="true"
+                >
+                  <div class="faq-answer">
+                    <p>{faq.answer}</p>
                   </div>
                 </div>
               </div>
@@ -130,39 +136,239 @@ const faqSections = [
   </section>
 
   <!-- CTA Section -->
-  <section class="section-padding bg-sage-600">
-    <div class="container-narrow text-center">
-      <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-4">
-        Still have questions?
-      </h2>
-      <p class="text-lg text-sage-100 mb-8 max-w-xl mx-auto">
-        I'd love to hear about your travel dreams and answer any questions you might have.
-      </p>
-      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-white text-sage-700 font-medium rounded-md hover:bg-sage-50 transition-colors duration-200">
-        Get in Touch
-      </a>
+  <section class="faq-cta section-padding">
+    <div class="container-narrow">
+      <div class="cta-content">
+        <h2 class="cta-title">Still have questions?</h2>
+        <p class="cta-text">
+          Let's start a conversation. I'd love to hear about your travel dreams and help turn them into reality.
+        </p>
+        <a href="/contact" class="btn-primary">Get in Touch</a>
+      </div>
     </div>
   </section>
 </Layout>
 
 <style>
+  /* Hero Section */
+  .faq-hero {
+    background-color: var(--bg-secondary);
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero-label {
+    display: inline-block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant', serif;
+    font-size: clamp(3rem, 8vw, 5.5rem);
+    font-weight: 500;
+    line-height: 0.95;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title-accent {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-subtitle {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  /* FAQ Sections */
+  .faq-sections {
+    background-color: var(--bg-primary);
+  }
+
+  .faq-category {
+    margin-bottom: 4rem;
+  }
+
+  .faq-category:last-child {
+    margin-bottom: 0;
+  }
+
+  .category-header {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .category-number {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+
+  .category-title {
+    font-family: 'Cormorant', serif;
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: var(--text-primary);
+  }
+
+  /* FAQ Items */
+  .faq-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+  }
+
+  .faq-trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 1.5rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    transition: color 0.3s ease;
+  }
+
+  .faq-trigger:hover {
+    color: var(--accent);
+  }
+
+  .faq-trigger:focus {
+    outline: none;
+  }
+
+  .faq-trigger:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+  }
+
+  .faq-question {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+  }
+
+  .faq-trigger:hover .faq-question {
+    color: var(--accent);
+  }
+
+  .faq-icon {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
   .faq-item.active .faq-icon {
     transform: rotate(45deg);
   }
 
-  .faq-item.active {
-    border-color: rgb(163 177 163); /* sage-300 */
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
-  }
-
+  /* FAQ Content */
   .faq-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s ease-out;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .faq-item.active .faq-content {
-    max-height: 500px;
+    grid-template-rows: 1fr;
+  }
+
+  .faq-answer {
+    overflow: hidden;
+  }
+
+  .faq-answer p {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    padding-bottom: 1.5rem;
+    padding-right: 3rem;
+  }
+
+  /* CTA Section */
+  .faq-cta {
+    background-color: var(--bg-secondary);
+  }
+
+  .cta-content {
+    text-align: center;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .cta-title {
+    font-family: 'Cormorant', serif;
+    font-size: clamp(2rem, 5vw, 2.75rem);
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+  }
+
+  .cta-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .hero-title {
+      font-size: clamp(2.5rem, 10vw, 3.5rem);
+    }
+
+    .category-title {
+      font-size: 1.5rem;
+    }
+
+    .faq-question {
+      font-size: 1rem;
+    }
+
+    .faq-answer p {
+      padding-right: 0;
+    }
+
+    .faq-trigger {
+      gap: 1rem;
+    }
   }
 </style>
 
@@ -177,18 +383,20 @@ const faqSections = [
       if (trigger && content) {
         trigger.addEventListener('click', () => {
           const isActive = item.classList.contains('active');
+          const sectionIndex = item.getAttribute('data-section');
 
           // Close all other items in the same section
-          const sectionIndex = item.getAttribute('data-section');
           const sectionItems = document.querySelectorAll(`.faq-item[data-section="${sectionIndex}"]`);
-
           sectionItems.forEach((sectionItem) => {
             if (sectionItem !== item) {
               sectionItem.classList.remove('active');
-              sectionItem.querySelector('.faq-trigger')?.setAttribute('aria-expanded', 'false');
+              const sectionTrigger = sectionItem.querySelector('.faq-trigger');
               const sectionContent = sectionItem.querySelector('.faq-content');
+              if (sectionTrigger) {
+                sectionTrigger.setAttribute('aria-expanded', 'false');
+              }
               if (sectionContent) {
-                sectionContent.classList.add('hidden');
+                sectionContent.setAttribute('aria-hidden', 'true');
               }
             }
           });
@@ -197,11 +405,19 @@ const faqSections = [
           if (isActive) {
             item.classList.remove('active');
             trigger.setAttribute('aria-expanded', 'false');
-            content.classList.add('hidden');
+            content.setAttribute('aria-hidden', 'true');
           } else {
             item.classList.add('active');
             trigger.setAttribute('aria-expanded', 'true');
-            content.classList.remove('hidden');
+            content.setAttribute('aria-hidden', 'false');
+          }
+        });
+
+        // Keyboard accessibility
+        trigger.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            trigger.click();
           }
         });
       }

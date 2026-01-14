@@ -1,50 +1,83 @@
 ---
-const baseUrl = import.meta.env.BASE_URL;
 const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+  { href: '/about', label: 'About' },
+  { href: '/services', label: 'Services' },
+  { href: '/destinations', label: 'Destinations' },
+  { href: '/blog', label: 'Journal' },
+  { href: '/testimonials', label: 'Testimonials' },
+  { href: '/faq', label: 'FAQ' },
+  { href: '/contact', label: 'Contact' },
+];
 ---
 
-<footer class="bg-stone-900 text-stone-300">
-  <div class="container-wide section-padding !py-12">
-    <div class="grid md:grid-cols-4 gap-8">
-      <!-- Brand -->
-      <div class="md:col-span-2">
-        <span class="font-display text-2xl font-semibold text-white">Wyld Wandering</span>
-        <p class="mt-4 text-stone-400 max-w-md">
+<footer class="border-t" style="border-color: var(--border); background-color: var(--bg-secondary);">
+  <div class="container-wide section-padding !py-16 lg:!py-24">
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
+      <!-- Brand Column -->
+      <div class="lg:col-span-5">
+        <a href="/" class="inline-block">
+          <span class="text-3xl md:text-4xl font-display font-medium" style="color: var(--text-primary);">
+            Wyld Wandering
+          </span>
+        </a>
+        <p class="mt-6 text-lg max-w-sm leading-relaxed" style="color: var(--text-secondary);">
           Adventure travel with intention. For those who want to explore the world without roughing it too much.
         </p>
-        <p class="mt-4 text-sm text-stone-500">
+        <p class="mt-4 text-sm font-medium tracking-wide uppercase" style="color: var(--accent);">
           Certified Fora Travel Advisor
         </p>
       </div>
 
-      <!-- Quick Links -->
-      <div>
-        <h4 class="font-semibold text-white mb-4">Explore</h4>
-        <ul class="space-y-2">
-          <li><a href={`${baseUrl}destinations`} class="hover:text-sage-400 transition-colors">Destinations</a></li>
-          <li><a href={`${baseUrl}services`} class="hover:text-sage-400 transition-colors">Services</a></li>
-          <li><a href={`${baseUrl}blog`} class="hover:text-sage-400 transition-colors">Blog</a></li>
-          <li><a href={`${baseUrl}faq`} class="hover:text-sage-400 transition-colors">FAQ</a></li>
-        </ul>
+      <!-- Navigation Column -->
+      <div class="lg:col-span-3 lg:col-start-7">
+        <h4 class="text-sm font-medium tracking-wider uppercase mb-6" style="color: var(--text-muted);">
+          Navigate
+        </h4>
+        <nav class="flex flex-col gap-3">
+          {footerLinks.map(link => (
+            <a
+              href={link.href}
+              class="text-base hover:translate-x-1 transition-transform"
+              style="color: var(--text-secondary);"
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
       </div>
 
-      <!-- Contact -->
-      <div>
-        <h4 class="font-semibold text-white mb-4">Connect</h4>
-        <ul class="space-y-2">
-          <li><a href={`${baseUrl}about`} class="hover:text-sage-400 transition-colors">About Zak</a></li>
-          <li><a href={`${baseUrl}contact`} class="hover:text-sage-400 transition-colors">Contact</a></li>
-          <li><a href={`${baseUrl}testimonials`} class="hover:text-sage-400 transition-colors">Testimonials</a></li>
-        </ul>
+      <!-- Connect Column -->
+      <div class="lg:col-span-3">
+        <h4 class="text-sm font-medium tracking-wider uppercase mb-6" style="color: var(--text-muted);">
+          Connect
+        </h4>
+        <div class="space-y-4">
+          <p class="text-base" style="color: var(--text-secondary);">
+            Based in Northern California
+          </p>
+          <a
+            href="/contact"
+            class="inline-flex items-center gap-2 text-base font-medium group"
+            style="color: var(--accent);"
+          >
+            Get in Touch
+            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+        </div>
       </div>
     </div>
 
-    <div class="mt-12 pt-8 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-sm text-stone-500">
+    <!-- Bottom Bar -->
+    <div class="mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style="border-top: 1px solid var(--border);">
+      <p class="text-sm" style="color: var(--text-muted);">
         &copy; {currentYear} Wyld Wandering. All rights reserved.
       </p>
-      <p class="text-sm text-stone-500">
-        Northern California
+      <p class="text-sm" style="color: var(--text-muted);">
+        Designed with wanderlust
       </p>
     </div>
   </div>

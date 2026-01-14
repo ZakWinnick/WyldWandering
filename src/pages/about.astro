@@ -8,256 +8,268 @@ const baseUrl = import.meta.env.BASE_URL;
   title="About"
   description="Meet Zak Winnick, your Northern California-based Fora travel advisor specializing in adventure travel with comfort and intention."
 >
-  <!-- Hero Section -->
-  <section class="bg-sage-50">
+  <!-- Dramatic Hero Section -->
+  <section style="background-color: var(--bg-primary);">
     <div class="container-wide section-padding">
-      <div class="max-w-3xl">
-        <p class="text-sage-600 font-medium mb-4 tracking-wide uppercase text-sm">About Wyld Wandering</p>
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-stone-900 leading-tight">
-          Adventure with intention.<br />
-          <span class="text-sage-600">Comfort by design.</span>
-        </h1>
-        <p class="mt-6 text-lg md:text-xl text-stone-600 leading-relaxed max-w-2xl">
-          I'm Zak Winnick, a Northern California-based certified Fora travel advisor who believes the best adventures
-          don't require sacrificing comfort or spontaneity.
-        </p>
+      <div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end min-h-[60vh]">
+        <div class="lg:col-span-8">
+          <p class="font-sans text-sm tracking-[0.2em] uppercase mb-6" style="color: var(--accent);">
+            Fora Travel Advisor
+          </p>
+          <h1 class="text-editorial" style="color: var(--text-primary);">
+            Zak<br />
+            <span style="color: var(--accent);">Winnick</span>
+          </h1>
+        </div>
+        <div class="lg:col-span-4 pb-4">
+          <p class="text-xl md:text-2xl font-display leading-relaxed" style="color: var(--text-secondary);">
+            Northern California-based travel advisor who believes the best adventures blend rugged exploration with comfort and intention.
+          </p>
+        </div>
       </div>
     </div>
+    <div class="w-full h-px" style="background-color: var(--border);"></div>
   </section>
 
-  <!-- Personal Story Section -->
-  <section class="bg-white">
+  <!-- Personal Story - Asymmetric Layout -->
+  <section style="background-color: var(--bg-secondary);">
     <div class="container-wide section-padding">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-        <div>
-          <h2 class="text-3xl md:text-4xl font-display font-semibold text-stone-900 mb-6">
-            My Journey
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <!-- Left Column - Narrow -->
+        <div class="lg:col-span-4">
+          <p class="font-sans text-sm tracking-[0.2em] uppercase mb-4" style="color: var(--accent);">
+            Background
+          </p>
+          <h2 class="text-3xl md:text-4xl font-display font-medium mb-8" style="color: var(--text-primary);">
+            A path less<br />conventional
           </h2>
-          <div class="space-y-4 text-stone-600 leading-relaxed">
-            <p>
-              My path to travel advising wasn't conventional. I spent years in the tech industry, solving complex problems
-              and learning that the best solutions come from understanding what people actually need, not just what they
-              think they want.
+          <div class="w-16 h-px mb-8" style="background-color: var(--accent);"></div>
+          <div class="space-y-6">
+            <div>
+              <p class="text-xs tracking-[0.15em] uppercase mb-2" style="color: var(--text-muted);">Previous</p>
+              <p class="font-display text-lg" style="color: var(--text-primary);">Tech Industry</p>
+            </div>
+            <div>
+              <p class="text-xs tracking-[0.15em] uppercase mb-2" style="color: var(--text-muted);">Foundation</p>
+              <p class="font-display text-lg" style="color: var(--text-primary);">Luxury Hospitality</p>
+            </div>
+            <div>
+              <p class="text-xs tracking-[0.15em] uppercase mb-2" style="color: var(--text-muted);">Location</p>
+              <p class="font-display text-lg" style="color: var(--text-primary);">Northern California</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column - Wide -->
+        <div class="lg:col-span-8 lg:pt-16">
+          <div class="space-y-8 max-w-2xl" style="color: var(--text-secondary);">
+            <p class="text-lg md:text-xl leading-relaxed">
+              My path to travel advising was shaped by two distinct worlds. In tech, I learned to solve complex problems by understanding what people actually need, not just what they think they want. The best solutions emerge from deep listening and thoughtful iteration.
             </p>
-            <p>
-              Before that, I worked in luxury hospitality, where I discovered my passion for creating memorable experiences.
-              I learned the art of anticipating needs, the importance of those small details that transform a good trip into
-              an unforgettable one, and the difference that genuine care makes in someone's experience.
+            <p class="text-lg md:text-xl leading-relaxed">
+              Before that, luxury hospitality taught me the art of anticipating needs. I discovered how small, considered details transform a good experience into an unforgettable one, and how genuine care changes everything.
             </p>
-            <p>
-              These two worlds shaped how I approach travel planning today: with technical precision and heartfelt attention
+            <p class="text-lg md:text-xl leading-relaxed">
+              These worlds converge in how I approach travel planning today:
+              <span style="color: var(--accent);">with technical precision and heartfelt attention</span>
               to what matters most to each traveler.
             </p>
           </div>
         </div>
-        <div class="bg-sand-100 rounded-2xl p-8 lg:p-12">
-          <blockquote class="text-xl md:text-2xl font-display text-stone-800 leading-relaxed">
-            "The best trips aren't about checking boxes. They're about finding those unexpected moments that stay with you long after you've unpacked."
-          </blockquote>
-          <p class="mt-6 text-sage-600 font-medium">- Zak Winnick</p>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- Philosophy Section -->
-  <section class="bg-stone-50">
+  <!-- Philosophy Section - Large Typography -->
+  <section style="background-color: var(--bg-primary);">
     <div class="container-wide section-padding">
-      <div class="max-w-3xl mx-auto text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-display font-semibold text-stone-900 mb-6">
-          The Wyld Wandering Philosophy
-        </h2>
-        <p class="text-lg text-stone-600 leading-relaxed">
-          I believe adventure and comfort aren't opposites. They're dance partners.
+      <div class="text-center mb-20">
+        <p class="font-sans text-sm tracking-[0.2em] uppercase mb-8" style="color: var(--accent);">
+          Philosophy
         </p>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-medium leading-[1.1] max-w-5xl mx-auto" style="color: var(--text-primary);">
+          Blending <span style="color: var(--accent);">rugged adventure</span> with comfort and intention
+        </h2>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="bg-white rounded-xl p-8 shadow-sm">
-          <div class="w-12 h-12 bg-sage-100 rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-display font-semibold text-stone-900 mb-3">Rugged, Not Rough</h3>
-          <p class="text-stone-600">
-            You can explore a slot canyon at sunrise and still return to a hot shower and a proper bed.
-            Adventure doesn't mean discomfort.
+      <div class="grid md:grid-cols-3 gap-px" style="background-color: var(--border);">
+        <div class="p-8 lg:p-12 hover-lift" style="background-color: var(--bg-primary);">
+          <span class="text-6xl font-display font-medium" style="color: var(--accent);">01</span>
+          <h3 class="text-xl font-display font-medium mt-6 mb-4" style="color: var(--text-primary);">Rugged, Not Rough</h3>
+          <p class="leading-relaxed" style="color: var(--text-secondary);">
+            Explore slot canyons at sunrise and return to a hot shower and a proper bed. Adventure doesn't require discomfort.
           </p>
         </div>
 
-        <div class="bg-white rounded-xl p-8 shadow-sm">
-          <div class="w-12 h-12 bg-sage-100 rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-display font-semibold text-stone-900 mb-3">Intentional Design</h3>
-          <p class="text-stone-600">
-            Every element of your trip should serve a purpose. I focus on thoughtful itineraries that balance
-            exploration with restoration.
+        <div class="p-8 lg:p-12 hover-lift" style="background-color: var(--bg-primary);">
+          <span class="text-6xl font-display font-medium" style="color: var(--accent);">02</span>
+          <h3 class="text-xl font-display font-medium mt-6 mb-4" style="color: var(--text-primary);">Intentional Design</h3>
+          <p class="leading-relaxed" style="color: var(--text-secondary);">
+            Every element serves a purpose. Thoughtful itineraries that balance exploration with restoration.
           </p>
         </div>
 
-        <div class="bg-white rounded-xl p-8 shadow-sm">
-          <div class="w-12 h-12 bg-sage-100 rounded-lg flex items-center justify-center mb-6">
-            <svg class="w-6 h-6 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-            </svg>
-          </div>
-          <h3 class="text-xl font-display font-semibold text-stone-900 mb-3">Personal Connection</h3>
-          <p class="text-stone-600">
-            I take the time to understand how you travel, what excites you, and what recharges you.
-            Your trip should feel like yours.
+        <div class="p-8 lg:p-12 hover-lift" style="background-color: var(--bg-primary);">
+          <span class="text-6xl font-display font-medium" style="color: var(--accent);">03</span>
+          <h3 class="text-xl font-display font-medium mt-6 mb-4" style="color: var(--text-primary);">Personal Connection</h3>
+          <p class="leading-relaxed" style="color: var(--text-secondary);">
+            Understanding how you travel, what excites you, what recharges you. Your trip should feel like yours.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Credentials Section -->
-  <section class="bg-white">
+  <!-- What Drives Me - Editorial Grid -->
+  <section style="background-color: var(--bg-tertiary);">
     <div class="container-wide section-padding">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div class="order-2 lg:order-1">
-          <div class="bg-sage-50 rounded-2xl p-8 lg:p-12">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="w-16 h-16 bg-sage-600 rounded-full flex items-center justify-center">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div>
+          <p class="font-sans text-sm tracking-[0.2em] uppercase mb-6" style="color: var(--accent);">
+            What Drives Me
+          </p>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-medium leading-tight mb-8" style="color: var(--text-primary);">
+            Off the beaten path,<br />
+            <span style="color: var(--accent);">by design</span>
+          </h2>
+          <p class="text-lg leading-relaxed mb-8" style="color: var(--text-secondary);">
+            When I'm not planning adventures for others, you'll find me on dirt roads, rocky trails, and remote landscapes. Off-roading, overlanding, exploring deserts, wandering through Redwood forests, and tracing coastal trails.
+          </p>
+          <div class="w-full h-px mb-8" style="background-color: var(--border);"></div>
+          <p class="text-lg leading-relaxed" style="color: var(--text-secondary);">
+            I appreciate boutique hotels that feel like discoveries, thoughtfully designed cabins tucked away from crowds, and well-equipped campsites where you can enjoy nature without sacrificing comfort.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-6 lg:p-8 hover-lift" style="background-color: var(--bg-primary); border: 1px solid var(--border);">
+            <span class="text-3xl font-display" style="color: var(--accent);">01</span>
+            <p class="text-lg font-display mt-4" style="color: var(--text-primary);">Off-Roading</p>
+            <p class="text-sm mt-2" style="color: var(--text-secondary);">Beyond the pavement</p>
+          </div>
+          <div class="p-6 lg:p-8 hover-lift" style="background-color: var(--bg-primary); border: 1px solid var(--border);">
+            <span class="text-3xl font-display" style="color: var(--accent);">02</span>
+            <p class="text-lg font-display mt-4" style="color: var(--text-primary);">Overlanding</p>
+            <p class="text-sm mt-2" style="color: var(--text-secondary);">Self-reliant travel</p>
+          </div>
+          <div class="p-6 lg:p-8 hover-lift" style="background-color: var(--bg-primary); border: 1px solid var(--border);">
+            <span class="text-3xl font-display" style="color: var(--accent);">03</span>
+            <p class="text-lg font-display mt-4" style="color: var(--text-primary);">Desert Exploration</p>
+            <p class="text-sm mt-2" style="color: var(--text-secondary);">Stark, open beauty</p>
+          </div>
+          <div class="p-6 lg:p-8 hover-lift" style="background-color: var(--bg-primary); border: 1px solid var(--border);">
+            <span class="text-3xl font-display" style="color: var(--accent);">04</span>
+            <p class="text-lg font-display mt-4" style="color: var(--text-primary);">Redwood Forests</p>
+            <p class="text-sm mt-2" style="color: var(--text-secondary);">Towering giants</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Credentials / Fora Affiliation -->
+  <section style="background-color: var(--bg-primary);">
+    <div class="container-wide section-padding">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <div class="lg:col-span-5">
+          <p class="font-sans text-sm tracking-[0.2em] uppercase mb-6" style="color: var(--accent);">
+            Credentials
+          </p>
+          <h2 class="text-3xl md:text-4xl lg:text-5xl font-display font-medium leading-tight" style="color: var(--text-primary);">
+            Certified<br />
+            <span style="color: var(--accent);">Fora</span> Travel<br />
+            Advisor
+          </h2>
+        </div>
+
+        <div class="lg:col-span-7 lg:pt-8">
+          <div class="p-8 lg:p-12" style="background-color: var(--bg-secondary); border: 1px solid var(--border);">
+            <div class="flex items-start gap-6 mb-8">
+              <div class="w-16 h-16 flex items-center justify-center flex-shrink-0" style="background-color: var(--accent);">
+                <svg class="w-8 h-8" style="color: var(--bg-primary);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                 </svg>
               </div>
               <div>
-                <p class="text-sm text-sage-600 font-medium uppercase tracking-wide">Certified</p>
-                <p class="text-xl font-display font-semibold text-stone-900">Fora Travel Advisor</p>
+                <p class="text-xs tracking-[0.15em] uppercase mb-2" style="color: var(--text-muted);">Partnership</p>
+                <p class="text-xl font-display font-medium" style="color: var(--text-primary);">Fora Travel</p>
               </div>
             </div>
-            <p class="text-stone-600 leading-relaxed">
-              As a Fora travel advisor, I have access to exclusive perks, upgrades, and insider knowledge
-              that can transform your trip. From complimentary breakfast and room upgrades to special
-              amenities and VIP treatment, I leverage these partnerships to add extra value to every journey I plan.
-            </p>
-          </div>
-        </div>
-        <div class="order-1 lg:order-2">
-          <h2 class="text-3xl md:text-4xl font-display font-semibold text-stone-900 mb-6">
-            Professional Credentials
-          </h2>
-          <div class="space-y-4 text-stone-600 leading-relaxed">
-            <p>
-              I partnered with Fora because they share my belief that travel should be personal,
-              not transactional. Their platform gives me the tools and relationships to deliver
-              exceptional experiences while maintaining the personal touch that makes travel planning meaningful.
-            </p>
-            <p>
-              Being a Fora advisor means I'm continuously learning, connected to a community of
-              passionate travel professionals, and equipped with the resources to handle anything
-              from simple getaways to complex multi-destination adventures.
-            </p>
+
+            <div class="space-y-6" style="color: var(--text-secondary);">
+              <p class="text-lg leading-relaxed">
+                I partnered with Fora because they share my belief that travel should be personal, not transactional. Their platform provides the tools and relationships to deliver exceptional experiences while maintaining the personal touch that makes travel planning meaningful.
+              </p>
+              <p class="leading-relaxed">
+                As a Fora advisor, I have access to exclusive perks, upgrades, and insider knowledge that transform your trip, from complimentary breakfast and room upgrades to special amenities and VIP treatment.
+              </p>
+            </div>
+
+            <div class="mt-8 pt-8" style="border-top: 1px solid var(--border);">
+              <div class="grid grid-cols-3 gap-6">
+                <div>
+                  <p class="text-2xl font-display font-medium" style="color: var(--accent);">Exclusive</p>
+                  <p class="text-sm mt-1" style="color: var(--text-muted);">Hotel Perks</p>
+                </div>
+                <div>
+                  <p class="text-2xl font-display font-medium" style="color: var(--accent);">VIP</p>
+                  <p class="text-sm mt-1" style="color: var(--text-muted);">Treatment</p>
+                </div>
+                <div>
+                  <p class="text-2xl font-display font-medium" style="color: var(--accent);">Insider</p>
+                  <p class="text-sm mt-1" style="color: var(--text-muted);">Knowledge</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Travel Style Section -->
-  <section class="bg-stone-900 text-white">
-    <div class="container-wide section-padding">
-      <div class="max-w-3xl mx-auto text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-display font-semibold mb-6">
-          What Gets Me Out There
-        </h2>
-        <p class="text-lg text-stone-300 leading-relaxed">
-          When I'm not planning adventures for others, here's where you'll find me.
+  <!-- Quote Section -->
+  <section style="background-color: var(--bg-secondary);">
+    <div class="container-narrow section-padding text-center">
+      <blockquote>
+        <p class="text-2xl md:text-3xl lg:text-4xl font-display font-medium leading-relaxed mb-8" style="color: var(--text-primary);">
+          "The best trips aren't about checking boxes. They're about finding those
+          <span style="color: var(--accent);">unexpected moments</span>
+          that stay with you long after you've unpacked."
         </p>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-stone-800 rounded-xl p-6 text-center">
-          <div class="w-12 h-12 bg-sage-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-            </svg>
-          </div>
-          <h3 class="font-display font-semibold text-lg mb-2">Off-Roading</h3>
-          <p class="text-stone-400 text-sm">
-            Dirt roads, rocky trails, and the freedom to explore beyond the pavement.
-          </p>
-        </div>
-
-        <div class="bg-stone-800 rounded-xl p-6 text-center">
-          <div class="w-12 h-12 bg-sage-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-          </div>
-          <h3 class="font-display font-semibold text-lg mb-2">Overlanding</h3>
-          <p class="text-stone-400 text-sm">
-            Self-reliant travel through remote landscapes, camping under the stars.
-          </p>
-        </div>
-
-        <div class="bg-stone-800 rounded-xl p-6 text-center">
-          <div class="w-12 h-12 bg-sage-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-            </svg>
-          </div>
-          <h3 class="font-display font-semibold text-lg mb-2">Desert Exploration</h3>
-          <p class="text-stone-400 text-sm">
-            The stark beauty of wide-open spaces and ancient landscapes.
-          </p>
-        </div>
-
-        <div class="bg-stone-800 rounded-xl p-6 text-center">
-          <div class="w-12 h-12 bg-sage-600 rounded-lg flex items-center justify-center mx-auto mb-4">
-            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-          </div>
-          <h3 class="font-display font-semibold text-lg mb-2">Redwood Forests</h3>
-          <p class="text-stone-400 text-sm">
-            Towering giants and misty trails in my Northern California backyard.
-          </p>
-        </div>
-      </div>
-
-      <div class="mt-12 text-center">
-        <p class="text-stone-300 max-w-2xl mx-auto leading-relaxed">
-          I appreciate boutique hotels that feel like discoveries, thoughtfully designed cabins tucked away from the crowds,
-          and well-equipped campsites where you can enjoy nature without sacrificing a hot shower.
-          If this resonates with how you like to travel, we'll get along just fine.
-        </p>
-      </div>
+        <footer>
+          <div class="w-12 h-px mx-auto mb-6" style="background-color: var(--accent);"></div>
+          <cite class="not-italic font-sans text-sm tracking-[0.2em] uppercase" style="color: var(--text-muted);">
+            Zak Winnick
+          </cite>
+        </footer>
+      </blockquote>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="bg-sage-600">
-    <div class="container-wide section-padding text-center">
-      <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-6">
-        Ready to Plan Your Next Adventure?
-      </h2>
-      <p class="text-lg text-sage-100 max-w-2xl mx-auto mb-8 leading-relaxed">
-        Whether you're dreaming of coastal road trips, desert expeditions, or mountain retreats,
-        I'd love to help you design a journey that fits your style.
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a
-          href={`${baseUrl}contact`}
-          class="inline-flex items-center justify-center px-8 py-4 bg-white text-sage-700 font-semibold rounded-md hover:bg-stone-100 transition-colors duration-200"
-        >
-          Let's Talk
-          <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-          </svg>
-        </a>
-        <a
-          href={`${baseUrl}services`}
-          class="inline-flex items-center justify-center px-8 py-4 border-2 border-white text-white font-semibold rounded-md hover:bg-sage-700 transition-colors duration-200"
-        >
-          View Services
-        </a>
+  <section style="background-color: var(--bg-primary);">
+    <div class="container-wide section-padding">
+      <div class="max-w-4xl mx-auto text-center">
+        <p class="font-sans text-sm tracking-[0.2em] uppercase mb-6" style="color: var(--accent);">
+          Start Planning
+        </p>
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-tight mb-8" style="color: var(--text-primary);">
+          Ready to plan your next adventure?
+        </h2>
+        <p class="text-xl leading-relaxed max-w-2xl mx-auto mb-12" style="color: var(--text-secondary);">
+          Whether you're dreaming of coastal road trips, desert expeditions, or mountain retreats, I'd love to help you design a journey that fits your style.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center">
+          <a href={`${baseUrl}contact`} class="btn-primary">
+            Let's Talk
+            <svg class="w-4 h-4 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <a href={`${baseUrl}services`} class="btn-secondary">
+            View Services
+          </a>
+        </div>
       </div>
     </div>
   </section>
