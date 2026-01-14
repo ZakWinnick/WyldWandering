@@ -1,0 +1,202 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+// Blog posts data - in production, this would come from content collections
+const blogPosts = [
+  {
+    slug: 'sample-post',
+    title: 'The Art of Adventure Travel Without Roughing It',
+    excerpt: 'Discover how to experience authentic adventures while maintaining the comfort and quality you deserve. From boutique lodges to curated experiences.',
+    date: '2025-01-10',
+    readingTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=800&q=80',
+    category: 'Travel Philosophy',
+  },
+  {
+    slug: 'patagonia-guide',
+    title: 'A Complete Guide to Patagonia: Timing, Trails, and Tips',
+    excerpt: 'Everything you need to know about planning your Patagonia adventure. When to go, what to pack, and the experiences you cannot miss.',
+    date: '2024-12-15',
+    readingTime: '8 min read',
+    image: 'https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=800&q=80',
+    category: 'Destination Guide',
+  },
+  {
+    slug: 'sustainable-travel-tips',
+    title: '10 Ways to Travel More Sustainably in 2025',
+    excerpt: 'Practical tips for reducing your environmental footprint while still having incredible travel experiences. Small changes, big impact.',
+    date: '2024-11-28',
+    readingTime: '6 min read',
+    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80',
+    category: 'Travel Tips',
+  },
+  {
+    slug: 'northern-california-hidden-gems',
+    title: 'Hidden Gems of Northern California: Local Favorites',
+    excerpt: 'As a Northern California native, I share my favorite lesser-known spots for adventure seekers looking to explore closer to home.',
+    date: '2024-11-10',
+    readingTime: '7 min read',
+    image: 'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&w=800&q=80',
+    category: 'Local Insights',
+  },
+];
+
+// Helper function to format dates
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+---
+
+<Layout
+  title="Blog"
+  description="Travel tips, destination guides, and adventure inspiration from Wyld Wandering. Expert insights for those who want to explore with comfort."
+>
+  <!-- Hero Section -->
+  <section class="bg-sage-700 text-white">
+    <div class="container-wide section-padding !py-20 lg:!py-28">
+      <div class="max-w-3xl">
+        <span class="text-sage-300 uppercase tracking-wider text-sm font-medium">The Wyld Wandering Blog</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-semibold mt-4 leading-tight">
+          Stories, Tips &amp; Inspiration
+        </h1>
+        <p class="text-xl text-sage-100 mt-6 max-w-2xl">
+          Insights from the trail and beyond. Destination guides, travel tips, and thoughts on exploring the world with intention and comfort.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Grid -->
+  <section class="bg-stone-50">
+    <div class="container-wide section-padding">
+      <!-- Featured Post -->
+      <div class="mb-16">
+        <a href={`${baseUrl}blog/${blogPosts[0].slug}`} class="group block">
+          <div class="grid lg:grid-cols-2 gap-8 items-center">
+            <div class="relative aspect-[4/3] overflow-hidden rounded-xl">
+              <img
+                src={blogPosts[0].image}
+                alt={blogPosts[0].title}
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div class="absolute top-4 left-4">
+                <span class="bg-sage-600 text-white px-3 py-1 rounded-full text-sm font-medium">
+                  Featured
+                </span>
+              </div>
+            </div>
+            <div class="lg:pl-8">
+              <span class="text-sage-600 text-sm font-medium uppercase tracking-wider">
+                {blogPosts[0].category}
+              </span>
+              <h2 class="text-3xl md:text-4xl font-display font-semibold text-stone-800 mt-3 group-hover:text-sage-700 transition-colors">
+                {blogPosts[0].title}
+              </h2>
+              <p class="text-stone-600 text-lg mt-4 leading-relaxed">
+                {blogPosts[0].excerpt}
+              </p>
+              <div class="flex items-center gap-4 mt-6 text-stone-500 text-sm">
+                <time datetime={blogPosts[0].date}>{formatDate(blogPosts[0].date)}</time>
+                <span class="w-1 h-1 bg-stone-400 rounded-full"></span>
+                <span>{blogPosts[0].readingTime}</span>
+              </div>
+              <div class="mt-6">
+                <span class="inline-flex items-center text-sage-600 font-medium group-hover:text-sage-700">
+                  Read Article
+                  <svg class="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </span>
+              </div>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Divider -->
+      <div class="border-t border-stone-200 mb-12"></div>
+
+      <!-- Recent Posts Grid -->
+      <div>
+        <h3 class="text-2xl font-display font-semibold text-stone-800 mb-8">Recent Posts</h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {blogPosts.slice(1).map((post) => (
+            <a href={`${baseUrl}blog/${post.slug}`} class="group block">
+              <article class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+                <div class="relative aspect-[16/10] overflow-hidden">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div class="p-6">
+                  <span class="text-sage-600 text-xs font-medium uppercase tracking-wider">
+                    {post.category}
+                  </span>
+                  <h4 class="text-xl font-display font-semibold text-stone-800 mt-2 group-hover:text-sage-700 transition-colors line-clamp-2">
+                    {post.title}
+                  </h4>
+                  <p class="text-stone-600 mt-3 text-sm leading-relaxed line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <div class="flex items-center gap-3 mt-4 text-stone-500 text-xs">
+                    <time datetime={post.date}>{formatDate(post.date)}</time>
+                    <span class="w-1 h-1 bg-stone-400 rounded-full"></span>
+                    <span>{post.readingTime}</span>
+                  </div>
+                </div>
+              </article>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      <!-- Newsletter CTA -->
+      <div class="mt-20 bg-sage-50 rounded-2xl p-8 md:p-12 text-center">
+        <h3 class="text-2xl md:text-3xl font-display font-semibold text-stone-800">
+          Stay in the Loop
+        </h3>
+        <p class="text-stone-600 mt-4 max-w-xl mx-auto">
+          Get travel inspiration, destination spotlights, and exclusive tips delivered straight to your inbox.
+        </p>
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
+          <input
+            type="email"
+            placeholder="Your email address"
+            class="flex-1 px-4 py-3 rounded-md border border-stone-300 focus:border-sage-500 focus:ring-2 focus:ring-sage-200 outline-none transition-all"
+          />
+          <button class="btn-primary whitespace-nowrap">
+            Subscribe
+          </button>
+        </div>
+        <p class="text-xs text-stone-500 mt-4">
+          No spam, ever. Unsubscribe anytime.
+        </p>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

@@ -1,0 +1,294 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const baseUrl = import.meta.env.BASE_URL;
+
+const destinationCategories = [
+  {
+    title: 'California & Pacific Coast',
+    description: 'Towering Redwoods, dramatic Big Sur cliffs, and rugged coastal trails. Experience the best of the Golden State from behind the wheel.',
+    highlights: ['Redwood National Park', 'Big Sur Highway 1', 'Lost Coast Trail', 'Point Reyes'],
+    gradient: 'from-emerald-800 via-emerald-600 to-teal-500',
+  },
+  {
+    title: 'Desert Southwest',
+    description: 'Vast canyons, red rock formations, and endless desert skies. Utah and Arizona offer some of the most dramatic overlanding terrain in the world.',
+    highlights: ['Moab & Canyonlands', 'Monument Valley', 'Sedona Trails', 'White Pocket'],
+    gradient: 'from-orange-700 via-red-600 to-amber-500',
+  },
+  {
+    title: 'Pacific Northwest',
+    description: 'Lush rainforests, volcanic peaks, and pristine wilderness. Oregon and Washington deliver adventure seekers unforgettable landscapes.',
+    highlights: ['Olympic Peninsula', 'Cascade Range', 'Oregon Coast', 'Mount Rainier'],
+    gradient: 'from-slate-700 via-emerald-700 to-cyan-600',
+  },
+  {
+    title: 'Mountain West',
+    description: 'Alpine meadows, rugged mountain passes, and wide-open spaces. Colorado and Montana are calling for your next high-altitude adventure.',
+    highlights: ['Rocky Mountain NP', 'Glacier National Park', 'San Juan Mountains', 'Beartooth Highway'],
+    gradient: 'from-indigo-800 via-blue-600 to-sky-500',
+  },
+  {
+    title: 'International Adventures',
+    description: 'For those ready to explore beyond borders. From volcanic landscapes to glacial fjords, the world awaits.',
+    highlights: ['Iceland Ring Road', 'New Zealand South Island', 'Patagonia', 'Scottish Highlands'],
+    gradient: 'from-violet-800 via-purple-600 to-fuchsia-500',
+  },
+  {
+    title: 'Luxury Wilderness',
+    description: 'Adventure meets comfort. Glamping retreats and upscale outdoor experiences for those who want nature without sacrificing amenities.',
+    highlights: ['Under Canvas Resorts', 'Safari-style Camps', 'Treehouse Retreats', 'Desert Glamping'],
+    gradient: 'from-amber-700 via-yellow-600 to-lime-500',
+  },
+];
+
+const featuredTrips = [
+  {
+    name: 'Redwood Coast Explorer',
+    duration: '5 Days',
+    category: 'California & Pacific Coast',
+    description: 'Wind through ancient Redwood groves, camp along the rugged Mendocino coast, and discover hidden coastal gems.',
+    gradient: 'from-emerald-700 to-teal-600',
+  },
+  {
+    name: 'Utah Canyonlands Overland',
+    duration: '7 Days',
+    category: 'Desert Southwest',
+    description: 'An epic journey through Moab, Canyonlands, and Capitol Reef with carefully selected campsites and off-road trails.',
+    gradient: 'from-orange-600 to-red-600',
+  },
+  {
+    name: 'Iceland Highlands Circuit',
+    duration: '10 Days',
+    category: 'International Adventures',
+    description: 'Traverse the legendary F-roads, soak in hot springs, and witness otherworldly volcanic landscapes.',
+    gradient: 'from-slate-600 to-blue-700',
+  },
+  {
+    name: 'Pacific Northwest Grand Loop',
+    duration: '8 Days',
+    category: 'Pacific Northwest',
+    description: 'From Olympic rainforests to Cascade volcanoes, experience the full range of PNW wilderness.',
+    gradient: 'from-emerald-600 to-cyan-600',
+  },
+];
+---
+
+<Layout title="Destinations" description="Explore our curated adventure destinations - from California Redwoods to international overlanding expeditions. Find your next adventure with Wyld Wandering.">
+  <!-- Hero Section -->
+  <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden">
+    <!-- Gradient Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-stone-900 via-sage-900 to-stone-800"></div>
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmZmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItSDI0di0yaDEyek0zNiAyNHYySDI0di0yaDEyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-50"></div>
+
+    <div class="relative z-10 container-wide section-padding text-center">
+      <p class="text-sage-400 font-medium tracking-wide uppercase text-sm mb-4">Where Will You Wander?</p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-white mb-6 max-w-4xl mx-auto leading-tight">
+        Curated Destinations for the <span class="text-sage-400">Adventurous Soul</span>
+      </h1>
+      <p class="text-lg md:text-xl text-stone-300 max-w-2xl mx-auto mb-8">
+        From Northern California's towering Redwoods to international overlanding expeditions, every journey is crafted with care and expertise.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={`${baseUrl}contact`} class="btn-primary">
+          Plan Your Adventure
+        </a>
+        <a href="#destinations" class="btn-secondary !border-stone-400 !text-stone-300 hover:!bg-stone-800">
+          Explore Destinations
+        </a>
+      </div>
+    </div>
+
+    <!-- Decorative Elements -->
+    <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-stone-50 to-transparent"></div>
+  </section>
+
+  <!-- Destination Categories -->
+  <section id="destinations" class="section-padding bg-stone-50">
+    <div class="container-wide">
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-4xl font-display font-semibold text-stone-800 mb-4">
+          Destination Categories
+        </h2>
+        <p class="text-stone-600 max-w-2xl mx-auto">
+          Whether you're drawn to desert landscapes, coastal trails, or international expeditions, we specialize in creating unforgettable adventure experiences.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        {destinationCategories.map((dest) => (
+          <div class="group relative overflow-hidden rounded-xl bg-white shadow-sm hover:shadow-xl transition-all duration-300">
+            <!-- Gradient Image Placeholder -->
+            <div class={`h-48 bg-gradient-to-br ${dest.gradient} relative overflow-hidden`}>
+              <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300"></div>
+              <!-- Decorative Pattern -->
+              <div class="absolute inset-0 opacity-20">
+                <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+                  <path d="M0,50 Q25,30 50,50 T100,50 V100 H0 Z" fill="currentColor" class="text-white/30"/>
+                </svg>
+              </div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <h3 class="text-xl font-display font-semibold text-white drop-shadow-lg">
+                  {dest.title}
+                </h3>
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6">
+              <p class="text-stone-600 text-sm mb-4 leading-relaxed">
+                {dest.description}
+              </p>
+              <div class="flex flex-wrap gap-2">
+                {dest.highlights.map((highlight) => (
+                  <span class="text-xs bg-sage-50 text-sage-700 px-2 py-1 rounded-full">
+                    {highlight}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Trips Section -->
+  <section class="section-padding bg-stone-100">
+    <div class="container-wide">
+      <div class="text-center mb-12 md:mb-16">
+        <p class="text-sage-600 font-medium tracking-wide uppercase text-sm mb-2">Signature Experiences</p>
+        <h2 class="text-3xl md:text-4xl font-display font-semibold text-stone-800 mb-4">
+          Featured Trips & Experiences
+        </h2>
+        <p class="text-stone-600 max-w-2xl mx-auto">
+          These carefully curated itineraries showcase what adventure with comfort truly means. Each trip is fully customizable to your preferences.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6 lg:gap-8">
+        {featuredTrips.map((trip) => (
+          <div class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col md:flex-row">
+            <!-- Gradient Placeholder -->
+            <div class={`md:w-1/3 h-48 md:h-auto bg-gradient-to-br ${trip.gradient} relative flex-shrink-0`}>
+              <div class="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300"></div>
+              <!-- Duration Badge -->
+              <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-stone-800 text-xs font-medium px-3 py-1 rounded-full">
+                {trip.duration}
+              </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-6 flex-1 flex flex-col justify-center">
+              <span class="text-sage-600 text-xs font-medium uppercase tracking-wide mb-1">
+                {trip.category}
+              </span>
+              <h3 class="text-xl font-display font-semibold text-stone-800 mb-2 group-hover:text-sage-700 transition-colors">
+                {trip.name}
+              </h3>
+              <p class="text-stone-600 text-sm leading-relaxed">
+                {trip.description}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Wyld Wandering -->
+  <section class="section-padding bg-white">
+    <div class="container-wide">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-sage-600 font-medium tracking-wide uppercase text-sm mb-2">The Wyld Wandering Difference</p>
+          <h2 class="text-3xl md:text-4xl font-display font-semibold text-stone-800 mb-6">
+            Adventure Planning, Elevated
+          </h2>
+          <p class="text-stone-600 mb-6 leading-relaxed">
+            As a Northern California-based travel advisor specializing in off-roading, overlanding, and outdoor adventures, I bring firsthand experience to every trip I plan. From the Redwood forests I call home to the deserts of Utah and beyond, every destination is one I've either explored personally or researched extensively.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 bg-sage-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-stone-600">Local expertise and insider knowledge</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 bg-sage-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-stone-600">Comfort-focused adventure planning</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 bg-sage-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-stone-600">Fully customized itineraries</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <span class="w-6 h-6 bg-sage-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg class="w-4 h-4 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                </svg>
+              </span>
+              <span class="text-stone-600">Support before, during, and after your trip</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Decorative Gradient Block -->
+        <div class="relative">
+          <div class="aspect-[4/3] rounded-xl bg-gradient-to-br from-sage-600 via-sage-500 to-emerald-600 overflow-hidden">
+            <div class="absolute inset-0 bg-black/10"></div>
+            <!-- Decorative Elements -->
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center text-white p-8">
+                <svg class="w-16 h-16 mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <p class="font-display text-2xl font-semibold mb-2">Adventure Awaits</p>
+                <p class="text-white/80 text-sm">Let's plan your next journey</p>
+              </div>
+            </div>
+          </div>
+          <!-- Floating Badge -->
+          <div class="absolute -bottom-4 -right-4 bg-sand-100 rounded-lg p-4 shadow-lg">
+            <p class="text-stone-800 font-display font-semibold">100+</p>
+            <p class="text-stone-600 text-sm">Trips Planned</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-gradient-to-br from-stone-900 via-sage-900 to-stone-800 text-white">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl md:text-4xl font-display font-semibold mb-4">
+        Not Seeing Your Dream Destination?
+      </h2>
+      <p class="text-stone-300 text-lg mb-8 max-w-xl mx-auto">
+        These are just a few of the adventures we can create together. Whether it's a hidden gem you've discovered or a bucket-list expedition, let's make it happen.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={`${baseUrl}contact`} class="btn-primary !bg-white !text-sage-700 hover:!bg-stone-100">
+          Start the Conversation
+        </a>
+        <a href={`${baseUrl}services`} class="btn-secondary !border-stone-400 !text-stone-300 hover:!bg-stone-800">
+          View Our Services
+        </a>
+      </div>
+      <p class="text-stone-500 text-sm mt-8">
+        Free initial consultation to discuss your adventure goals
+      </p>
+    </div>
+  </section>
+</Layout>

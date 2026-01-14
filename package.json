@@ -1,0 +1,27 @@
+{
+  "name": "wyldwandering",
+  "version": "1.0.0",
+  "description": "Wyld Wandering - Adventure Travel with Comfort",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZakWinnick/WyldWandering.git"
+  },
+  "keywords": ["travel", "adventure", "fora"],
+  "author": "Zak Winnick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZakWinnick/WyldWandering/issues"
+  },
+  "homepage": "https://github.com/ZakWinnick/WyldWandering#readme",
+  "dependencies": {
+    "@astrojs/tailwind": "^6.0.2",
+    "astro": "^5.16.9",
+    "tailwindcss": "^3.4.19"
+  }
+}

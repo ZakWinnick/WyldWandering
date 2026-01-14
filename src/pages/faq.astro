@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const faqSections = [
+  {
+    title: "Working with a Travel Advisor",
+    faqs: [
+      {
+        question: "How does working with you differ from booking myself?",
+        answer: "When you book yourself, you're on your own navigating countless options, reviews, and logistics. As your travel advisor, I bring expertise, insider connections, and personalized service to every trip. I handle the research, negotiations, and details so you can focus on the excitement of your upcoming adventure. Plus, I have access to exclusive perks, upgrades, and amenities that aren't available to the general public. Think of me as your dedicated travel partner who knows the ins and outs of creating unforgettable experiences."
+      },
+      {
+        question: "What does it cost to use your services?",
+        answer: "For most trips, my services come at no additional cost to you. I earn commissions directly from hotels, tour operators, and other travel suppliers when I book through them. For highly customized or complex itineraries that require extensive research and planning, I may charge a planning fee, which I'll always discuss with you upfront before we begin. My goal is to add tremendous value to your travel experience without adding to your budget."
+      },
+      {
+        question: "How do you get paid?",
+        answer: "I'm a certified Fora travel advisor, which means I work with a network of trusted travel partners who pay me a commission when I book your travel arrangements through them. This industry-standard model means you get expert guidance and personalized service while paying the same prices (or often better) than you'd find booking directly. It's a win-win that allows me to dedicate my time and expertise to crafting your perfect trip."
+      }
+    ]
+  },
+  {
+    title: "Planning Process",
+    faqs: [
+      {
+        question: "How far in advance should I book?",
+        answer: "It depends on your destination and travel style. For popular destinations during peak seasons, I recommend booking 6-12 months in advance to secure the best accommodations and experiences. For adventure travel with specific activities like guided treks or wildlife experiences, 4-6 months is ideal. Last-minute trips can work too, but you may have fewer options. The earlier we start planning, the more flexibility we have to create something truly special."
+      },
+      {
+        question: "What information do you need to plan my trip?",
+        answer: "To get started, I'll want to understand your travel dates (or flexibility), budget range, must-see destinations or experiences, travel style preferences, and any special requirements. I'll also ask about your interests, what your ideal day looks like, and what you absolutely want to avoid. The more you share about your dream trip, the better I can tailor every detail to exceed your expectations."
+      },
+      {
+        question: "How long does the planning process take?",
+        answer: "A straightforward trip might come together in 1-2 weeks, while a complex multi-destination adventure could take 4-6 weeks of collaboration. After our initial consultation, I'll provide a preliminary itinerary within a week. From there, we refine the details together until everything is perfect. I believe in thorough planning that leaves no stone unturned, so you can travel with complete confidence."
+      }
+    ]
+  },
+  {
+    title: "Trip Types",
+    faqs: [
+      {
+        question: "What kind of trips do you specialize in?",
+        answer: "I specialize in adventure travel with comfort. This means crafting experiences that get you off the beaten path and into authentic adventures, but without sacrificing quality accommodations, excellent dining, and thoughtful logistics. Whether it's a safari in Tanzania, hiking in Patagonia, exploring Iceland's landscapes, or discovering hidden gems in Southeast Asia, I create journeys that balance thrilling experiences with the comfort you deserve."
+      },
+      {
+        question: "Do you only do adventure travel?",
+        answer: "While adventure travel is my passion and specialty, I'm happy to help with a variety of trip types. Whether you're planning a romantic getaway, a family vacation, a celebration trip, or a relaxing beach escape, I bring the same attention to detail and personalized service. That said, my network and expertise are strongest in the adventure and experiential travel space, so that's where I can add the most value."
+      },
+      {
+        question: "Can you help with luxury hotel bookings?",
+        answer: "Absolutely! Through my partnerships with luxury hotel programs, I can often secure complimentary upgrades, resort credits, early check-in, late checkout, and other VIP amenities at top properties worldwide. Even if you're not planning a full trip and just need a special hotel stay, I'm here to help. These perks come at no extra cost to you and can significantly enhance your experience."
+      }
+    ]
+  },
+  {
+    title: "Logistics",
+    faqs: [
+      {
+        question: "What happens if something goes wrong during my trip?",
+        answer: "This is where having a travel advisor truly shines. If flights get canceled, hotels have issues, or unexpected situations arise, you have me in your corner. I monitor your trips and am available to help troubleshoot and rearrange plans when needed. Unlike booking platforms where you're just a confirmation number, you have a real person who knows your itinerary inside and out and can advocate on your behalf."
+      },
+      {
+        question: "Do you handle flights and transportation?",
+        answer: "Yes, I can book flights, airport transfers, car rentals, trains, and other transportation as part of your trip planning. I'll look for the best routes and values while considering factors like layover times, arrival schedules, and how your flights connect with your overall itinerary. For some travelers, I recommend booking flights separately to use points or miles, and I'm happy to advise on the best approach for your situation."
+      },
+      {
+        question: "What about travel insurance?",
+        answer: "I strongly recommend travel insurance for every trip and can help you understand your options. While I don't sell insurance directly, I'll point you toward reputable providers and help you understand what coverage makes sense for your specific trip. From medical emergencies to trip cancellations, having the right insurance provides peace of mind and protects your investment in your adventure."
+      }
+    ]
+  }
+];
+---
+
+<Layout title="Frequently Asked Questions" description="Get answers to common questions about working with Wyld Wandering for your adventure travel planning.">
+  <!-- Hero Section -->
+  <section class="section-padding bg-gradient-to-b from-sage-50 to-stone-50">
+    <div class="container-narrow text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-semibold text-stone-800 mb-6">
+        Frequently Asked Questions
+      </h1>
+      <p class="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto">
+        Everything you need to know about working with a travel advisor to plan your next adventure.
+      </p>
+    </div>
+  </section>
+
+  <!-- FAQ Sections -->
+  <section class="section-padding">
+    <div class="container-narrow">
+      {faqSections.map((section, sectionIndex) => (
+        <div class="mb-12 last:mb-0">
+          <h2 class="text-2xl md:text-3xl font-display font-semibold text-stone-800 mb-6 pb-3 border-b border-stone-200">
+            {section.title}
+          </h2>
+          <div class="space-y-4">
+            {section.faqs.map((faq, faqIndex) => (
+              <div
+                class="faq-item border border-stone-200 rounded-lg overflow-hidden bg-white hover:border-sage-300 transition-colors duration-200"
+                data-section={sectionIndex}
+                data-faq={faqIndex}
+              >
+                <button
+                  class="faq-trigger w-full px-6 py-5 text-left flex items-center justify-between gap-4 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:ring-inset"
+                  aria-expanded="false"
+                >
+                  <span class="text-lg font-medium text-stone-800 pr-4">
+                    {faq.question}
+                  </span>
+                  <span class="faq-icon flex-shrink-0 w-6 h-6 text-sage-600 transition-transform duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                    </svg>
+                  </span>
+                </button>
+                <div class="faq-content hidden">
+                  <div class="px-6 pb-6 pt-0">
+                    <p class="text-stone-600 leading-relaxed">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-padding bg-sage-600">
+    <div class="container-narrow text-center">
+      <h2 class="text-3xl md:text-4xl font-display font-semibold text-white mb-4">
+        Still have questions?
+      </h2>
+      <p class="text-lg text-sage-100 mb-8 max-w-xl mx-auto">
+        I'd love to hear about your travel dreams and answer any questions you might have.
+      </p>
+      <a href="/contact" class="inline-flex items-center justify-center px-8 py-4 bg-white text-sage-700 font-medium rounded-md hover:bg-sage-50 transition-colors duration-200">
+        Get in Touch
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .faq-item.active .faq-icon {
+    transform: rotate(45deg);
+  }
+
+  .faq-item.active {
+    border-color: rgb(163 177 163); /* sage-300 */
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05);
+  }
+
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+  }
+
+  .faq-item.active .faq-content {
+    max-height: 500px;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach((item) => {
+      const trigger = item.querySelector('.faq-trigger');
+      const content = item.querySelector('.faq-content');
+
+      if (trigger && content) {
+        trigger.addEventListener('click', () => {
+          const isActive = item.classList.contains('active');
+
+          // Close all other items in the same section
+          const sectionIndex = item.getAttribute('data-section');
+          const sectionItems = document.querySelectorAll(`.faq-item[data-section="${sectionIndex}"]`);
+
+          sectionItems.forEach((sectionItem) => {
+            if (sectionItem !== item) {
+              sectionItem.classList.remove('active');
+              sectionItem.querySelector('.faq-trigger')?.setAttribute('aria-expanded', 'false');
+              const sectionContent = sectionItem.querySelector('.faq-content');
+              if (sectionContent) {
+                sectionContent.classList.add('hidden');
+              }
+            }
+          });
+
+          // Toggle current item
+          if (isActive) {
+            item.classList.remove('active');
+            trigger.setAttribute('aria-expanded', 'false');
+            content.classList.add('hidden');
+          } else {
+            item.classList.add('active');
+            trigger.setAttribute('aria-expanded', 'true');
+            content.classList.remove('hidden');
+          }
+        });
+      }
+    });
+  });
+</script>

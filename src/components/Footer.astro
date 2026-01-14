@@ -1,0 +1,51 @@
+---
+const baseUrl = import.meta.env.BASE_URL;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-stone-900 text-stone-300">
+  <div class="container-wide section-padding !py-12">
+    <div class="grid md:grid-cols-4 gap-8">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <span class="font-display text-2xl font-semibold text-white">Wyld Wandering</span>
+        <p class="mt-4 text-stone-400 max-w-md">
+          Adventure travel with intention. For those who want to explore the world without roughing it too much.
+        </p>
+        <p class="mt-4 text-sm text-stone-500">
+          Certified Fora Travel Advisor
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="font-semibold text-white mb-4">Explore</h4>
+        <ul class="space-y-2">
+          <li><a href={`${baseUrl}destinations`} class="hover:text-sage-400 transition-colors">Destinations</a></li>
+          <li><a href={`${baseUrl}services`} class="hover:text-sage-400 transition-colors">Services</a></li>
+          <li><a href={`${baseUrl}blog`} class="hover:text-sage-400 transition-colors">Blog</a></li>
+          <li><a href={`${baseUrl}faq`} class="hover:text-sage-400 transition-colors">FAQ</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-semibold text-white mb-4">Connect</h4>
+        <ul class="space-y-2">
+          <li><a href={`${baseUrl}about`} class="hover:text-sage-400 transition-colors">About Zak</a></li>
+          <li><a href={`${baseUrl}contact`} class="hover:text-sage-400 transition-colors">Contact</a></li>
+          <li><a href={`${baseUrl}testimonials`} class="hover:text-sage-400 transition-colors">Testimonials</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-stone-800 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-stone-500">
+        &copy; {currentYear} Wyld Wandering. All rights reserved.
+      </p>
+      <p class="text-sm text-stone-500">
+        Northern California
+      </p>
+    </div>
+  </div>
+</footer>

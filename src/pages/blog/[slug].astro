@@ -1,0 +1,368 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+// Blog posts data - in production, this would come from content collections
+const blogPosts: Record<string, {
+  title: string;
+  excerpt: string;
+  date: string;
+  readingTime: string;
+  image: string;
+  category: string;
+  content: string;
+}> = {
+  'sample-post': {
+    title: 'The Art of Adventure Travel Without Roughing It',
+    excerpt: 'Discover how to experience authentic adventures while maintaining the comfort and quality you deserve. From boutique lodges to curated experiences.',
+    date: '2025-01-10',
+    readingTime: '5 min read',
+    image: 'https://images.unsplash.com/photo-1501555088652-021faa106b9b?auto=format&fit=crop&w=1600&q=80',
+    category: 'Travel Philosophy',
+    content: `
+      <p class="lead">There is a common misconception that true adventure requires discomfort. That to really experience a destination, you need to sleep on the ground, eat questionable food, and push yourself to physical extremes. I am here to tell you that is simply not true.</p>
+
+      <h2>Redefining Adventure</h2>
+      <p>Adventure is about new experiences, personal growth, and connecting with places that move you. It is about stepping outside your comfort zone in ways that matter to you. For some, that might mean summiting a challenging peak. For others, it could be navigating a new culture, trying unfamiliar cuisines, or simply being present in nature far from the demands of daily life.</p>
+
+      <p>What adventure does not require is suffering. In fact, I would argue that exhaustion and discomfort can actually detract from the experience. When you are worried about where your next meal is coming from or whether you will get any sleep, you miss the subtle beauty of the sunset over the mountains or the fascinating conversation with a local guide.</p>
+
+      <h2>The Boutique Lodge Revolution</h2>
+      <p>The travel industry has evolved remarkably over the past decade. Today, some of the most remote and wild destinations on Earth are accessible through boutique lodges and camps that offer genuine luxury without compromising on authenticity.</p>
+
+      <p>Consider Patagonia. You can spend your days trekking through some of the most dramatic landscapes on the planet, hiking alongside glaciers and through ancient forests. Then return each evening to a beautifully designed lodge with farm-to-table dining, local wines, and views that rival anything you saw on the trail. This is not roughing it. This is adventure elevated.</p>
+
+      <blockquote>
+        <p>"The best adventures are the ones where you challenge your mind and spirit, not just your physical endurance."</p>
+      </blockquote>
+
+      <h2>Curated Experiences vs. DIY Travel</h2>
+      <p>There is absolutely a place for independent travel, for wandering without a plan and seeing where the road takes you. But for many destinations and many travelers, a curated experience actually provides more authentic access.</p>
+
+      <p>A good travel advisor or tour operator has relationships with local guides, access to experiences that are not available to walk-up visitors, and the knowledge to get you to the right places at the right times. They have already made the mistakes so you do not have to.</p>
+
+      <h2>Finding Your Balance</h2>
+      <p>The key is understanding what you actually want from a trip. Ask yourself:</p>
+
+      <ul>
+        <li>What experiences am I most excited about?</li>
+        <li>What would make me anxious or uncomfortable in a way that detracts from enjoyment?</li>
+        <li>How important is downtime and recovery between activities?</li>
+        <li>What does "adventure" mean to me personally?</li>
+      </ul>
+
+      <p>There are no wrong answers here. Your perfect adventure might look completely different from mine, and that is exactly as it should be.</p>
+
+      <h2>The Wyld Wandering Approach</h2>
+      <p>This philosophy is at the heart of how I work with my clients. I believe everyone deserves access to transformative travel experiences, and that those experiences should not require you to sacrifice your wellbeing or ignore your personal preferences.</p>
+
+      <p>Whether you dream of photographing wildlife in the Galapagos, wine tasting in South America, or exploring the temples of Southeast Asia, there is a way to do it that honors both the adventure you seek and the comfort you deserve.</p>
+
+      <p>Adventure travel with intention. That is what Wyld Wandering is all about.</p>
+    `,
+  },
+  'patagonia-guide': {
+    title: 'A Complete Guide to Patagonia: Timing, Trails, and Tips',
+    excerpt: 'Everything you need to know about planning your Patagonia adventure. When to go, what to pack, and the experiences you cannot miss.',
+    date: '2024-12-15',
+    readingTime: '8 min read',
+    image: 'https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=1600&q=80',
+    category: 'Destination Guide',
+    content: `
+      <p class="lead">Patagonia has long been on the bucket list of adventure travelers worldwide, and for good reason. This region spanning southern Chile and Argentina offers some of the most dramatic landscapes on Earth.</p>
+
+      <h2>When to Visit</h2>
+      <p>The best time to visit Patagonia is during the Southern Hemisphere summer, from November to March. December through February offers the warmest temperatures and longest days, making it ideal for hiking and outdoor activities.</p>
+
+      <p>Keep in mind that Patagonia is famous for its unpredictable weather. You can experience all four seasons in a single day, so come prepared for anything.</p>
+
+      <h2>Must-See Destinations</h2>
+      <p>Torres del Paine National Park in Chile is the crown jewel of Patagonia, featuring the iconic granite towers, pristine lakes, and diverse wildlife. The W Trek and O Circuit are world-renowned hiking routes that attract thousands of visitors each year.</p>
+
+      <p>On the Argentine side, Los Glaciares National Park is home to the spectacular Perito Moreno Glacier, one of the few glaciers in the world that is still advancing.</p>
+
+      <h2>Planning Your Trip</h2>
+      <p>I recommend spending at least 10-14 days in Patagonia to truly experience the region. This allows time for both Chilean and Argentine Patagonia, with flexibility for weather delays.</p>
+    `,
+  },
+  'sustainable-travel-tips': {
+    title: '10 Ways to Travel More Sustainably in 2025',
+    excerpt: 'Practical tips for reducing your environmental footprint while still having incredible travel experiences. Small changes, big impact.',
+    date: '2024-11-28',
+    readingTime: '6 min read',
+    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=1600&q=80',
+    category: 'Travel Tips',
+    content: `
+      <p class="lead">Sustainable travel does not mean giving up on exploring the world. It means being more intentional about how we do it.</p>
+
+      <h2>Simple Changes, Big Impact</h2>
+      <p>From choosing direct flights to supporting local businesses, there are countless ways to reduce your environmental footprint while traveling. Here are ten practical tips you can implement on your next trip.</p>
+
+      <p>The key is progress over perfection. You do not need to be a perfect sustainable traveler. Every positive choice makes a difference.</p>
+    `,
+  },
+  'northern-california-hidden-gems': {
+    title: 'Hidden Gems of Northern California: Local Favorites',
+    excerpt: 'As a Northern California native, I share my favorite lesser-known spots for adventure seekers looking to explore closer to home.',
+    date: '2024-11-10',
+    readingTime: '7 min read',
+    image: 'https://images.unsplash.com/photo-1449034446853-66c86144b0ad?auto=format&fit=crop&w=1600&q=80',
+    category: 'Local Insights',
+    content: `
+      <p class="lead">Living in Northern California means having world-class adventure right in my backyard. From rugged coastlines to towering redwoods, this region offers endless opportunities for exploration.</p>
+
+      <h2>Beyond the Tourist Trail</h2>
+      <p>While places like Yosemite and Lake Tahoe attract millions of visitors each year, Northern California has countless lesser-known gems waiting to be discovered.</p>
+
+      <p>These are the places where I go to reconnect with nature, find solitude, and remember why I fell in love with adventure travel in the first place.</p>
+    `,
+  },
+};
+
+// Generate static paths for all blog posts
+export function getStaticPaths() {
+  return [
+    { params: { slug: 'sample-post' } },
+    { params: { slug: 'patagonia-guide' } },
+    { params: { slug: 'sustainable-travel-tips' } },
+    { params: { slug: 'northern-california-hidden-gems' } },
+  ];
+}
+
+const baseUrl = import.meta.env.BASE_URL;
+const { slug } = Astro.params;
+
+// Get current post
+const post = blogPosts[slug as string];
+
+// Handle 404
+if (!post) {
+  return Astro.redirect(`${baseUrl}blog`);
+}
+
+// Helper function to format dates
+function formatDate(dateString: string): string {
+  const date = new Date(dateString);
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  });
+}
+
+// Get related posts (excluding current)
+const relatedPosts = Object.entries(blogPosts)
+  .filter(([postSlug]) => postSlug !== slug)
+  .slice(0, 2)
+  .map(([postSlug, postData]) => ({ slug: postSlug, ...postData }));
+---
+
+<Layout
+  title={post.title}
+  description={post.excerpt}
+>
+  <!-- Article Header -->
+  <article>
+    <header class="bg-stone-100">
+      <div class="container-narrow section-padding !py-12 lg:!py-16">
+        <!-- Back Link -->
+        <a
+          href={`${baseUrl}blog`}
+          class="inline-flex items-center text-sage-600 hover:text-sage-700 font-medium transition-colors mb-8"
+        >
+          <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
+          </svg>
+          Back to Blog
+        </a>
+
+        <!-- Category -->
+        <span class="text-sage-600 text-sm font-medium uppercase tracking-wider">
+          {post.category}
+        </span>
+
+        <!-- Title -->
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-display font-semibold text-stone-800 mt-4 leading-tight">
+          {post.title}
+        </h1>
+
+        <!-- Meta -->
+        <div class="flex flex-wrap items-center gap-4 mt-6 text-stone-500">
+          <div class="flex items-center gap-2">
+            <div class="w-10 h-10 rounded-full bg-sage-200 flex items-center justify-center">
+              <span class="text-sage-700 font-medium text-sm">ZW</span>
+            </div>
+            <span class="font-medium text-stone-700">Zak Winnick</span>
+          </div>
+          <span class="w-1 h-1 bg-stone-400 rounded-full"></span>
+          <time datetime={post.date}>{formatDate(post.date)}</time>
+          <span class="w-1 h-1 bg-stone-400 rounded-full"></span>
+          <span>{post.readingTime}</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Featured Image -->
+    <div class="relative h-[40vh] md:h-[50vh] lg:h-[60vh]">
+      <img
+        src={post.image}
+        alt={post.title}
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+    </div>
+
+    <!-- Article Content -->
+    <div class="bg-white">
+      <div class="container-narrow section-padding !py-12 lg:!py-16">
+        <div class="prose prose-lg max-w-none" set:html={post.content} />
+      </div>
+    </div>
+
+    <!-- Author Box -->
+    <div class="bg-stone-100">
+      <div class="container-narrow section-padding !py-12">
+        <div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+          <div class="w-20 h-20 rounded-full bg-sage-200 flex-shrink-0 flex items-center justify-center">
+            <span class="text-sage-700 font-semibold text-2xl">ZW</span>
+          </div>
+          <div>
+            <h3 class="text-xl font-display font-semibold text-stone-800">About Zak Winnick</h3>
+            <p class="text-stone-600 mt-2">
+              Travel advisor based in Northern California, specializing in adventure travel with comfort.
+              Helping wanderers explore the world without roughing it too much.
+            </p>
+            <a
+              href={`${baseUrl}about`}
+              class="inline-flex items-center text-sage-600 hover:text-sage-700 font-medium mt-4 transition-colors"
+            >
+              Learn More
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Related Posts -->
+  {relatedPosts.length > 0 && (
+    <section class="bg-white border-t border-stone-200">
+      <div class="container-wide section-padding">
+        <h2 class="text-2xl md:text-3xl font-display font-semibold text-stone-800 mb-8">
+          Continue Reading
+        </h2>
+        <div class="grid md:grid-cols-2 gap-8">
+          {relatedPosts.map((relatedPost) => (
+            <a href={`${baseUrl}blog/${relatedPost.slug}`} class="group block">
+              <article class="bg-stone-50 rounded-xl overflow-hidden hover:shadow-md transition-shadow duration-300">
+                <div class="relative aspect-[16/9] overflow-hidden">
+                  <img
+                    src={relatedPost.image}
+                    alt={relatedPost.title}
+                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div class="p-6">
+                  <span class="text-sage-600 text-xs font-medium uppercase tracking-wider">
+                    {relatedPost.category}
+                  </span>
+                  <h3 class="text-xl font-display font-semibold text-stone-800 mt-2 group-hover:text-sage-700 transition-colors">
+                    {relatedPost.title}
+                  </h3>
+                  <p class="text-stone-600 mt-3 text-sm line-clamp-2">
+                    {relatedPost.excerpt}
+                  </p>
+                  <div class="flex items-center gap-3 mt-4 text-stone-500 text-xs">
+                    <time datetime={relatedPost.date}>{formatDate(relatedPost.date)}</time>
+                    <span class="w-1 h-1 bg-stone-400 rounded-full"></span>
+                    <span>{relatedPost.readingTime}</span>
+                  </div>
+                </div>
+              </article>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- CTA Section -->
+  <section class="bg-sage-700 text-white">
+    <div class="container-narrow section-padding text-center">
+      <h2 class="text-2xl md:text-3xl font-display font-semibold">
+        Ready to Plan Your Adventure?
+      </h2>
+      <p class="text-sage-100 mt-4 max-w-xl mx-auto">
+        Let's create a journey that matches your sense of adventure with the comfort you deserve.
+      </p>
+      <a href={`${baseUrl}contact`} class="inline-flex items-center justify-center px-8 py-4 bg-white text-sage-700 font-medium rounded-md hover:bg-stone-100 transition-colors mt-8">
+        Start Planning
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Prose styling for article content */
+  .prose {
+    @apply text-stone-700;
+  }
+
+  .prose :global(p) {
+    @apply mb-6 leading-relaxed;
+  }
+
+  .prose :global(p.lead) {
+    @apply text-xl text-stone-600 leading-relaxed mb-8;
+  }
+
+  .prose :global(h2) {
+    @apply text-2xl md:text-3xl font-display font-semibold text-stone-800 mt-12 mb-6;
+  }
+
+  .prose :global(h3) {
+    @apply text-xl md:text-2xl font-display font-semibold text-stone-800 mt-10 mb-4;
+  }
+
+  .prose :global(ul),
+  .prose :global(ol) {
+    @apply mb-6 pl-6;
+  }
+
+  .prose :global(ul) {
+    @apply list-disc;
+  }
+
+  .prose :global(ol) {
+    @apply list-decimal;
+  }
+
+  .prose :global(li) {
+    @apply mb-2 leading-relaxed;
+  }
+
+  .prose :global(blockquote) {
+    @apply border-l-4 border-sage-400 pl-6 py-2 my-8 italic text-stone-600;
+  }
+
+  .prose :global(blockquote p) {
+    @apply text-xl mb-0;
+  }
+
+  .prose :global(a) {
+    @apply text-sage-600 underline hover:text-sage-700 transition-colors;
+  }
+
+  .prose :global(strong) {
+    @apply font-semibold text-stone-800;
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

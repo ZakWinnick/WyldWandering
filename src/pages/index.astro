@@ -1,0 +1,259 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Home">
+  <!-- Hero Section -->
+  <section class="relative bg-stone-900 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-sage-900/90 to-stone-900/95"></div>
+    <div class="relative section-padding">
+      <div class="container-wide">
+        <div class="max-w-3xl py-16 md:py-24 lg:py-32">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-display font-semibold leading-tight mb-6">
+            Adventure Awaits.<br />
+            <span class="text-sand-300">Comfort Included.</span>
+          </h1>
+          <p class="text-lg md:text-xl text-stone-300 mb-8 max-w-2xl leading-relaxed">
+            Expertly crafted travel experiences for those who want to explore the wild without roughing it.
+            Off-roading, overlanding, and adventure travel—with intention and comfort woven into every detail.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/contact" class="btn-primary">
+              Start Planning Your Adventure
+            </a>
+            <a href="/about" class="btn-secondary border-white/30 text-white hover:bg-white/10">
+              Learn More
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="section-padding bg-stone-50">
+    <div class="container-wide">
+      <div class="max-w-3xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-semibold text-stone-800 mb-6">
+          The Wyld Wandering Approach
+        </h2>
+        <p class="text-lg text-stone-600 leading-relaxed mb-8">
+          Founded by Zak Winnick, a Northern California-based certified Fora travel advisor with a background
+          in tech and luxury hospitality, Wyld Wandering blends rugged adventure with comfort and intention.
+          Whether you're chasing remote trails, vast landscapes, or unique destinations, every trip is
+          thoughtfully designed for travelers who want to get out there—without sacrificing the experience.
+        </p>
+        <div class="flex justify-center gap-8 text-center">
+          <div>
+            <div class="text-3xl font-display font-semibold text-sage-600">10+</div>
+            <div class="text-sm text-stone-500 mt-1">Years in Travel</div>
+          </div>
+          <div>
+            <div class="text-3xl font-display font-semibold text-sage-600">Fora</div>
+            <div class="text-sm text-stone-500 mt-1">Certified Advisor</div>
+          </div>
+          <div>
+            <div class="text-3xl font-display font-semibold text-sage-600">100%</div>
+            <div class="text-sm text-stone-500 mt-1">Personalized</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Destinations -->
+  <section class="section-padding bg-sand-50">
+    <div class="container-wide">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-display font-semibold text-stone-800 mb-4">
+          Featured Destinations
+        </h2>
+        <p class="text-stone-600 max-w-2xl mx-auto">
+          From rugged backcountry trails to refined wilderness lodges—discover destinations
+          that balance adventure with exceptional comfort.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Destination Card 1 -->
+        <article class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+          <div class="aspect-[4/3] bg-stone-200 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-xs font-medium text-sand-300 uppercase tracking-wider">Overlanding</span>
+              <h3 class="text-xl font-display font-semibold text-white mt-1">Patagonia, Chile</h3>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Navigate the legendary Carretera Austral with luxury basecamp accommodations and expert local guides.
+            </p>
+            <a href="/destinations" class="inline-flex items-center text-sage-600 font-medium text-sm mt-4 group-hover:text-sage-700">
+              Explore
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Destination Card 2 -->
+        <article class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+          <div class="aspect-[4/3] bg-stone-200 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-xs font-medium text-sand-300 uppercase tracking-wider">Off-Roading</span>
+              <h3 class="text-xl font-display font-semibold text-white mt-1">Moab, Utah</h3>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Red rock adventures by day, boutique desert lodging by night. The ultimate American Southwest experience.
+            </p>
+            <a href="/destinations" class="inline-flex items-center text-sage-600 font-medium text-sm mt-4 group-hover:text-sage-700">
+              Explore
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </article>
+
+        <!-- Destination Card 3 -->
+        <article class="group bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-300">
+          <div class="aspect-[4/3] bg-stone-200 relative overflow-hidden">
+            <div class="absolute inset-0 bg-gradient-to-t from-stone-900/60 to-transparent"></div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <span class="text-xs font-medium text-sand-300 uppercase tracking-wider">Adventure</span>
+              <h3 class="text-xl font-display font-semibold text-white mt-1">Iceland Ring Road</h3>
+            </div>
+          </div>
+          <div class="p-6">
+            <p class="text-stone-600 text-sm leading-relaxed">
+              Circle the land of fire and ice with curated stays at design-forward lodges and hidden hot springs.
+            </p>
+            <a href="/destinations" class="inline-flex items-center text-sage-600 font-medium text-sm mt-4 group-hover:text-sage-700">
+              Explore
+              <svg class="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </article>
+      </div>
+      <div class="text-center mt-12">
+        <a href="/destinations" class="btn-secondary">
+          View All Destinations
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Overview -->
+  <section class="section-padding bg-white">
+    <div class="container-wide">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-display font-semibold text-stone-800 mb-4">
+          How I Can Help
+        </h2>
+        <p class="text-stone-600 max-w-2xl mx-auto">
+          From initial inspiration to your return home, every detail is handled with care and expertise.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Service 1 -->
+        <div class="text-center p-6">
+          <div class="w-14 h-14 mx-auto mb-4 bg-sage-100 rounded-full flex items-center justify-center">
+            <svg class="w-7 h-7 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l5.447 2.724A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"></path>
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-stone-800 mb-2">Trip Planning</h3>
+          <p class="text-sm text-stone-600">
+            Custom itineraries built around your adventure style and comfort preferences.
+          </p>
+        </div>
+
+        <!-- Service 2 -->
+        <div class="text-center p-6">
+          <div class="w-14 h-14 mx-auto mb-4 bg-sage-100 rounded-full flex items-center justify-center">
+            <svg class="w-7 h-7 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-stone-800 mb-2">Accommodations</h3>
+          <p class="text-sm text-stone-600">
+            From wilderness lodges to boutique hotels—comfort without compromise.
+          </p>
+        </div>
+
+        <!-- Service 3 -->
+        <div class="text-center p-6">
+          <div class="w-14 h-14 mx-auto mb-4 bg-sage-100 rounded-full flex items-center justify-center">
+            <svg class="w-7 h-7 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-stone-800 mb-2">Logistics</h3>
+          <p class="text-sm text-stone-600">
+            Vehicle rentals, permits, guides, and all the details you'd rather not worry about.
+          </p>
+        </div>
+
+        <!-- Service 4 -->
+        <div class="text-center p-6">
+          <div class="w-14 h-14 mx-auto mb-4 bg-sage-100 rounded-full flex items-center justify-center">
+            <svg class="w-7 h-7 text-sage-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+          </div>
+          <h3 class="font-display font-semibold text-stone-800 mb-2">On-Trip Support</h3>
+          <p class="text-sm text-stone-600">
+            Available when you need me, from departure to your safe return home.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial -->
+  <section class="section-padding bg-sage-600 text-white">
+    <div class="container-narrow">
+      <div class="text-center">
+        <svg class="w-12 h-12 mx-auto mb-6 text-sage-300 opacity-50" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"></path>
+        </svg>
+        <blockquote class="text-xl md:text-2xl font-display leading-relaxed mb-6">
+          "Zak understood exactly what we were looking for—real adventure without sacrificing comfort.
+          Our Iceland trip was perfectly planned down to the last detail, yet felt completely spontaneous."
+        </blockquote>
+        <cite class="text-sage-200 not-italic">
+          <span class="font-medium text-white">Sarah & Michael T.</span>
+          <span class="block text-sm mt-1">Iceland Ring Road, 2024</span>
+        </cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section-padding bg-stone-100">
+    <div class="container-narrow">
+      <div class="text-center">
+        <h2 class="text-3xl md:text-4xl font-display font-semibold text-stone-800 mb-4">
+          Ready to Go Wyld?
+        </h2>
+        <p class="text-lg text-stone-600 mb-8 max-w-xl mx-auto">
+          Let's plan your next adventure together. Whether you have a destination in mind or need
+          inspiration, I'm here to help craft your perfect trip.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/contact" class="btn-primary">
+            Start Planning
+          </a>
+          <a href="/about" class="btn-secondary">
+            Learn More About Zak
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
