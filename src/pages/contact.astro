@@ -17,32 +17,32 @@ const tripTypes = [
 
 <Layout title="Contact" description="Get in touch with Zak Winnick, your certified Fora travel advisor. Let's start planning your dream adventure.">
   <!-- Hero Section -->
-  <section class="section-padding" style="background-color: var(--bg-primary);">
-    <div class="container-narrow text-center">
-      <p class="uppercase tracking-[0.3em] text-sm mb-6" style="color: var(--accent);">
+  <section class="py-16 md:py-24 px-6 bg-cream-50 dark:bg-forest-950">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="uppercase tracking-[0.3em] text-sm mb-6 text-terracotta-500 dark:text-amber-400">
         Begin Your Journey
       </p>
-      <h1 class="text-editorial mb-8" style="color: var(--text-primary);">
+      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl font-medium mb-8 text-charcoal-900 dark:text-cream-50">
         Let's<br />
         <em class="italic">Connect</em>
       </h1>
-      <p class="text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto" style="color: var(--text-secondary);">
+      <p class="text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto text-charcoal-600 dark:text-cream-200">
         Every great adventure starts with a conversation. Tell me about your travel dreams, and together we'll craft an experience you'll treasure forever.
       </p>
     </div>
   </section>
 
   <!-- Contact Form Section -->
-  <section class="section-padding !pt-0" style="background-color: var(--bg-primary);">
-    <div class="container-wide">
+  <section class="py-16 md:py-24 px-6 pt-0 bg-cream-50 dark:bg-forest-950">
+    <div class="max-w-7xl mx-auto">
       <div class="grid lg:grid-cols-5 gap-16 lg:gap-20">
         <!-- Form Column -->
         <div class="lg:col-span-3">
-          <div class="p-8 md:p-12" style="background-color: var(--bg-secondary); border: 1px solid var(--border);">
-            <h2 class="font-display text-3xl md:text-4xl font-medium mb-3" style="color: var(--text-primary);">
+          <div class="p-8 md:p-12 bg-cream-100 dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600">
+            <h2 class="font-display text-3xl md:text-4xl font-medium mb-3 text-charcoal-900 dark:text-cream-50">
               Tell Me About Your Dream Trip
             </h2>
-            <p class="text-lg mb-10" style="color: var(--text-secondary);">
+            <p class="text-lg mb-10 text-charcoal-600 dark:text-cream-200">
               The more details you share, the better I can understand your vision and craft the perfect journey.
             </p>
 
@@ -50,46 +50,47 @@ const tripTypes = [
               <!-- Name & Email Row -->
               <div class="grid md:grid-cols-2 gap-6">
                 <!-- Name -->
-                <div class="form-group">
-                  <label for="name" class="form-label">
-                    Name <span style="color: var(--accent);">*</span>
+                <div class="flex flex-col">
+                  <label for="name" class="font-display text-sm font-medium tracking-wider uppercase mb-3 text-charcoal-600 dark:text-cream-200">
+                    Name <span class="text-terracotta-500 dark:text-amber-400">*</span>
                   </label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     required
-                    class="form-input"
+                    class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300"
                     placeholder="Your full name"
                   />
                 </div>
 
                 <!-- Email -->
-                <div class="form-group">
-                  <label for="email" class="form-label">
-                    Email <span style="color: var(--accent);">*</span>
+                <div class="flex flex-col">
+                  <label for="email" class="font-display text-sm font-medium tracking-wider uppercase mb-3 text-charcoal-600 dark:text-cream-200">
+                    Email <span class="text-terracotta-500 dark:text-amber-400">*</span>
                   </label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     required
-                    class="form-input"
+                    class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300"
                     placeholder="you@example.com"
                   />
                 </div>
               </div>
 
               <!-- Trip Type -->
-              <div class="form-group">
-                <label for="trip-type" class="form-label">
-                  Trip Type <span style="color: var(--accent);">*</span>
+              <div class="flex flex-col">
+                <label for="trip-type" class="font-display text-sm font-medium tracking-wider uppercase mb-3 text-charcoal-600 dark:text-cream-200">
+                  Trip Type <span class="text-terracotta-500 dark:text-amber-400">*</span>
                 </label>
                 <select
                   id="trip-type"
                   name="trip_type"
                   required
-                  class="form-input form-select"
+                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 cursor-pointer appearance-none bg-no-repeat bg-[right_1rem_center] bg-[length:1.25rem] pr-12"
+                  style="background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E&quot;)"
                 >
                   {tripTypes.map(type => (
                     <option value={type.value} disabled={type.value === ''} selected={type.value === ''}>
@@ -99,52 +100,52 @@ const tripTypes = [
                 </select>
               </div>
 
-              <!-- Destination Interest -->
-              <div class="form-group">
-                <label for="destination" class="form-label">
-                  Destination Interest
+              <!-- Destination -->
+              <div class="flex flex-col">
+                <label for="destination" class="font-display text-sm font-medium tracking-wider uppercase mb-3 text-charcoal-600 dark:text-cream-200">
+                  Destination
                 </label>
                 <input
                   type="text"
                   id="destination"
                   name="destination"
-                  class="form-input"
+                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300"
                   placeholder="e.g., Iceland, Japan, Patagonia, or 'I'm open to suggestions!'"
                 />
               </div>
 
-              <!-- Travel Dates -->
-              <div class="form-group">
-                <label for="travel-dates" class="form-label">
-                  Travel Dates
+              <!-- Dates -->
+              <div class="flex flex-col">
+                <label for="travel-dates" class="font-display text-sm font-medium tracking-wider uppercase mb-3 text-charcoal-600 dark:text-cream-200">
+                  Dates
                 </label>
                 <input
                   type="text"
                   id="travel-dates"
                   name="travel_dates"
-                  class="form-input"
+                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300"
                   placeholder="e.g., Summer 2025, March 15-25, or 'Flexible'"
                 />
               </div>
 
               <!-- Message -->
-              <div class="form-group">
-                <label for="message" class="form-label">
-                  Your Vision <span style="color: var(--accent);">*</span>
+              <div class="flex flex-col">
+                <label for="message" class="font-display text-sm font-medium tracking-wider uppercase mb-3 text-charcoal-600 dark:text-cream-200">
+                  Message <span class="text-terracotta-500 dark:text-amber-400">*</span>
                 </label>
                 <textarea
                   id="message"
                   name="message"
                   required
                   rows="6"
-                  class="form-input form-textarea"
+                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 resize-y min-h-[150px]"
                   placeholder="What does your ideal trip look like? Any must-see places, activities, or experiences? Special occasions to celebrate? The more you share, the better I can help!"
                 ></textarea>
               </div>
 
               <!-- Submit Button -->
               <div class="pt-4">
-                <button type="submit" class="btn-primary">
+                <button type="submit" class="inline-flex items-center justify-center px-8 py-4 font-display text-sm font-medium tracking-wider uppercase bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-900 hover:bg-terracotta-600 dark:hover:bg-amber-500 transition-colors duration-300">
                   Send Message
                   <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -155,18 +156,18 @@ const tripTypes = [
           </div>
 
           <!-- Response Time Note -->
-          <div class="mt-8 flex items-start gap-4 p-6" style="background-color: var(--bg-secondary); border: 1px solid var(--border);">
-            <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center" style="border: 1px solid var(--accent);">
-              <svg class="w-6 h-6" style="color: var(--accent);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div class="mt-8 flex items-start gap-4 p-6 bg-cream-100 dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600">
+            <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-terracotta-500 dark:border-amber-400">
+              <svg class="w-6 h-6 text-terracotta-500 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
             </div>
             <div>
-              <p class="font-display text-lg font-medium mb-1" style="color: var(--text-primary);">
+              <p class="font-display text-lg font-medium mb-1 text-charcoal-900 dark:text-cream-50">
                 Response Time
               </p>
-              <p style="color: var(--text-secondary);">
-                I typically respond within <strong style="color: var(--accent);">1-2 business days</strong>. If you have an urgent travel need, please mention it in your message and I'll do my best to prioritize your request.
+              <p class="text-charcoal-600 dark:text-cream-200">
+                I typically respond within <strong class="text-terracotta-500 dark:text-amber-400">1-2 business days</strong>. If you have an urgent travel need, please mention it in your message and I'll do my best to prioritize your request.
               </p>
             </div>
           </div>
@@ -175,53 +176,53 @@ const tripTypes = [
         <!-- Sidebar Column -->
         <div class="lg:col-span-2 space-y-8">
           <!-- Alternative Contact Card -->
-          <div class="p-8" style="background-color: var(--bg-secondary); border: 1px solid var(--border);">
-            <h3 class="font-display text-2xl font-medium mb-6" style="color: var(--text-primary);">
+          <div class="p-8 bg-cream-100 dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600">
+            <h3 class="font-display text-2xl font-medium mb-6 text-charcoal-900 dark:text-cream-50">
               Other Ways to Connect
             </h3>
             <div class="space-y-6">
               <div class="flex items-start gap-4">
-                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center" style="background-color: var(--bg-tertiary);">
-                  <svg class="w-5 h-5" style="color: var(--accent);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-cream-50 dark:bg-forest-950">
+                  <svg class="w-5 h-5 text-terracotta-500 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
-                  <p class="font-display text-lg font-medium" style="color: var(--text-primary);">Email Direct</p>
-                  <p class="text-sm" style="color: var(--text-secondary);">Prefer email? Reach out directly and I'll get back to you soon.</p>
+                  <p class="font-display text-lg font-medium text-charcoal-900 dark:text-cream-50">Email Direct</p>
+                  <p class="text-sm text-charcoal-600 dark:text-cream-200">Prefer email? Reach out directly and I'll get back to you soon.</p>
                 </div>
               </div>
 
               <div class="flex items-start gap-4">
-                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center" style="background-color: var(--bg-tertiary);">
-                  <svg class="w-5 h-5" style="color: var(--accent);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-cream-50 dark:bg-forest-950">
+                  <svg class="w-5 h-5 text-terracotta-500 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
                 <div>
-                  <p class="font-display text-lg font-medium" style="color: var(--text-primary);">Based In</p>
-                  <p class="text-sm" style="color: var(--text-secondary);">Northern California</p>
-                  <p class="text-xs mt-1" style="color: var(--text-muted);">Working with travelers worldwide</p>
+                  <p class="font-display text-lg font-medium text-charcoal-900 dark:text-cream-50">Based In</p>
+                  <p class="text-sm text-charcoal-600 dark:text-cream-200">Northern California</p>
+                  <p class="text-xs mt-1 text-charcoal-400 dark:text-cream-400">Working with travelers worldwide</p>
                 </div>
               </div>
 
               <div class="flex items-start gap-4">
-                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center" style="background-color: var(--bg-tertiary);">
-                  <svg class="w-5 h-5" style="color: var(--accent);" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-cream-50 dark:bg-forest-950">
+                  <svg class="w-5 h-5 text-terracotta-500 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                   </svg>
                 </div>
                 <div>
-                  <p class="font-display text-lg font-medium" style="color: var(--text-primary);">Certified Advisor</p>
-                  <p class="text-sm" style="color: var(--text-secondary);">Fora Travel certified with access to exclusive perks and upgrades.</p>
+                  <p class="font-display text-lg font-medium text-charcoal-900 dark:text-cream-50">Certified Advisor</p>
+                  <p class="text-sm text-charcoal-600 dark:text-cream-200">Fora Travel certified with access to exclusive perks and upgrades.</p>
                 </div>
               </div>
             </div>
           </div>
 
           <!-- FAQ Card -->
-          <div class="p-8 relative overflow-hidden" style="background-color: var(--accent);">
+          <div class="p-8 relative overflow-hidden bg-terracotta-500 dark:bg-amber-400">
             <div class="relative z-10">
               <h3 class="font-display text-2xl font-medium mb-4 text-cream-100 dark:text-forest-900">
                 Have Questions First?
@@ -239,14 +240,14 @@ const tripTypes = [
           </div>
 
           <!-- About Card -->
-          <div class="p-8" style="background-color: var(--bg-secondary); border: 1px solid var(--border);">
-            <h3 class="font-display text-2xl font-medium mb-4" style="color: var(--text-primary);">
+          <div class="p-8 bg-cream-100 dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600">
+            <h3 class="font-display text-2xl font-medium mb-4 text-charcoal-900 dark:text-cream-50">
               About Your Advisor
             </h3>
-            <p class="mb-6" style="color: var(--text-secondary);">
+            <p class="mb-6 text-charcoal-600 dark:text-cream-200">
               Hi, I'm Zak Winnick! I'm passionate about crafting unique travel experiences that balance adventure with comfort. Every trip I plan is tailored to your interests, pace, and travel style.
             </p>
-            <a href={`${baseUrl}about`} class="btn-secondary">
+            <a href={`${baseUrl}about`} class="inline-flex items-center justify-center px-6 py-3 font-display text-sm font-medium tracking-wider uppercase border border-charcoal-900 dark:border-cream-50 text-charcoal-900 dark:text-cream-50 hover:bg-charcoal-900 hover:text-cream-50 dark:hover:bg-cream-50 dark:hover:text-forest-900 transition-colors duration-300">
               Learn more about me
               <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -260,67 +261,8 @@ const tripTypes = [
 </Layout>
 
 <style>
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .form-label {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    margin-bottom: 0.75rem;
-    color: var(--text-secondary);
-  }
-
-  .form-input {
-    width: 100%;
-    padding: 1rem 1.25rem;
-    font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
-    background-color: var(--bg-primary);
-    border: 1px solid var(--border);
-    color: var(--text-primary);
-    transition: all 0.3s ease;
-  }
-
-  .form-input::placeholder {
-    color: var(--text-muted);
-  }
-
-  .form-input:focus {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px rgba(var(--accent-rgb, 183, 104, 84), 0.1);
-  }
-
-  .dark .form-input:focus {
-    box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.15);
-  }
-
-  .form-select {
-    cursor: pointer;
-    appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 1rem center;
-    background-size: 1.25rem;
-    padding-right: 3rem;
-  }
-
-  .dark .form-select {
+  /* Dark mode select arrow */
+  :global(.dark) select {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23d1d5db'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
-  }
-
-  .form-textarea {
-    resize: vertical;
-    min-height: 150px;
-  }
-
-  /* Hover states for inputs */
-  .form-input:hover:not(:focus) {
-    border-color: var(--text-muted);
   }
 </style>

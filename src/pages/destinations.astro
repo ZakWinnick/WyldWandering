@@ -8,37 +8,43 @@ const destinationCategories = [
     title: 'California & Pacific Coast',
     description: 'Towering Redwoods, dramatic Big Sur cliffs, and rugged coastal trails. Experience the best of the Golden State from behind the wheel.',
     highlights: ['Redwood National Park', 'Big Sur Highway 1', 'Lost Coast Trail', 'Point Reyes'],
-    gradient: 'linear-gradient(135deg, #2d5a4a 0%, #8b5a3c 50%, #c17f59 100%)',
+    gradientLight: 'bg-gradient-to-br from-emerald-700 via-amber-700 to-orange-400',
+    gradientDark: 'dark:from-emerald-800 dark:via-amber-800 dark:to-orange-500',
   },
   {
     title: 'Desert Southwest',
     description: 'Vast canyons, red rock formations, and endless desert skies. Utah and Arizona offer some of the most dramatic overlanding terrain in the world.',
     highlights: ['Moab & Canyonlands', 'Monument Valley', 'Sedona Trails', 'White Pocket'],
-    gradient: 'linear-gradient(135deg, #c17f59 0%, #d4a574 50%, #e8c9a0 100%)',
+    gradientLight: 'bg-gradient-to-br from-orange-500 via-amber-400 to-yellow-200',
+    gradientDark: 'dark:from-orange-600 dark:via-amber-500 dark:to-yellow-300',
   },
   {
     title: 'Pacific Northwest',
     description: 'Lush rainforests, volcanic peaks, and pristine wilderness. Oregon and Washington deliver adventure seekers unforgettable landscapes.',
     highlights: ['Olympic Peninsula', 'Cascade Range', 'Oregon Coast', 'Mount Rainier'],
-    gradient: 'linear-gradient(135deg, #1a3a2f 0%, #2d5a4a 50%, #3d7a5a 100%)',
+    gradientLight: 'bg-gradient-to-br from-green-900 via-emerald-700 to-green-500',
+    gradientDark: 'dark:from-green-950 dark:via-emerald-800 dark:to-green-600',
   },
   {
     title: 'Mountain West',
     description: 'Alpine meadows, rugged mountain passes, and wide-open spaces. Colorado and Montana are calling for your next high-altitude adventure.',
     highlights: ['Rocky Mountain NP', 'Glacier National Park', 'San Juan Mountains', 'Beartooth Highway'],
-    gradient: 'linear-gradient(135deg, #3d3d3d 0%, #5a5a5a 50%, #8b8b8b 100%)',
+    gradientLight: 'bg-gradient-to-br from-slate-700 via-slate-500 to-slate-400',
+    gradientDark: 'dark:from-slate-800 dark:via-slate-600 dark:to-slate-500',
   },
   {
     title: 'International Adventures',
     description: 'For those ready to explore beyond borders. From volcanic landscapes to glacial fjords, the world awaits.',
     highlights: ['Iceland Ring Road', 'New Zealand South Island', 'Patagonia', 'Scottish Highlands'],
-    gradient: 'linear-gradient(135deg, #2d5a4a 0%, #1a3a2f 50%, #0f2a1f 100%)',
+    gradientLight: 'bg-gradient-to-br from-emerald-800 via-green-900 to-green-950',
+    gradientDark: 'dark:from-emerald-900 dark:via-green-950 dark:to-black',
   },
   {
     title: 'Luxury Wilderness',
     description: 'Adventure meets comfort. Glamping retreats and upscale outdoor experiences for those who want nature without sacrificing amenities.',
     highlights: ['Under Canvas Resorts', 'Safari-style Camps', 'Treehouse Retreats', 'Desert Glamping'],
-    gradient: 'linear-gradient(135deg, #d4a574 0%, #c9a227 50%, #e8c9a0 100%)',
+    gradientLight: 'bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-200',
+    gradientDark: 'dark:from-amber-500 dark:via-yellow-600 dark:to-amber-300',
   },
 ];
 
@@ -48,79 +54,108 @@ const featuredTrips = [
     duration: '5 Days',
     category: 'California & Pacific Coast',
     description: 'Wind through ancient Redwood groves, camp along the rugged Mendocino coast, and discover hidden coastal gems.',
-    gradient: 'linear-gradient(135deg, #2d5a4a 0%, #3d7a5a 100%)',
+    gradientLight: 'bg-gradient-to-br from-emerald-700 to-green-500',
+    gradientDark: 'dark:from-emerald-800 dark:to-green-600',
   },
   {
     name: 'Utah Canyonlands Overland',
     duration: '7 Days',
     category: 'Desert Southwest',
     description: 'An epic journey through Moab, Canyonlands, and Capitol Reef with carefully selected campsites and off-road trails.',
-    gradient: 'linear-gradient(135deg, #c17f59 0%, #8b5a3c 100%)',
+    gradientLight: 'bg-gradient-to-br from-orange-500 to-amber-700',
+    gradientDark: 'dark:from-orange-600 dark:to-amber-800',
   },
   {
     name: 'Iceland Highlands Circuit',
     duration: '10 Days',
     category: 'International Adventures',
     description: 'Traverse the legendary F-roads, soak in hot springs, and witness otherworldly volcanic landscapes.',
-    gradient: 'linear-gradient(135deg, #3d3d3d 0%, #5a5a5a 100%)',
+    gradientLight: 'bg-gradient-to-br from-slate-700 to-slate-500',
+    gradientDark: 'dark:from-slate-800 dark:to-slate-600',
   },
   {
     name: 'Pacific Northwest Grand Loop',
     duration: '8 Days',
     category: 'Pacific Northwest',
     description: 'From Olympic rainforests to Cascade volcanoes, experience the full range of PNW wilderness.',
-    gradient: 'linear-gradient(135deg, #1a3a2f 0%, #2d5a4a 100%)',
+    gradientLight: 'bg-gradient-to-br from-green-900 to-emerald-700',
+    gradientDark: 'dark:from-green-950 dark:to-emerald-800',
   },
 ];
 ---
 
 <Layout title="Destinations" description="Explore our curated adventure destinations - from California Redwoods to international overlanding expeditions. Find your next adventure with Wyld Wandering.">
-  <!-- Dramatic Hero Section -->
-  <section class="hero-section">
-    <div class="hero-content container-wide section-padding">
-      <div class="hero-text">
-        <span class="hero-label">Where Will You Wander?</span>
-        <h1 class="hero-title">
-          <span class="hero-title-line">Curated</span>
-          <span class="hero-title-line hero-title-accent">Destinations</span>
-          <span class="hero-title-line">for the</span>
-          <span class="hero-title-line">Adventurous Soul</span>
+  <!-- Hero Section -->
+  <section class="relative min-h-[90vh] flex items-center bg-cream-100 dark:bg-forest-950 overflow-hidden">
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 py-24 lg:px-8">
+      <div class="max-w-4xl">
+        <span class="inline-block font-sans text-sm font-medium tracking-widest uppercase text-terracotta-500 dark:text-amber-400 mb-8">
+          Where Will You Wander?
+        </span>
+        <h1 class="mb-8">
+          <span class="block font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-none tracking-tight text-charcoal-900 dark:text-cream-50">
+            Curated
+          </span>
+          <span class="block font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-none tracking-tight text-terracotta-500 dark:text-amber-400 italic">
+            Destinations
+          </span>
+          <span class="block font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-none tracking-tight text-charcoal-900 dark:text-cream-50">
+            for the
+          </span>
+          <span class="block font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-none tracking-tight text-charcoal-900 dark:text-cream-50">
+            Adventurous Soul
+          </span>
         </h1>
-        <p class="hero-description">
+        <p class="font-sans text-xl leading-relaxed text-charcoal-600 dark:text-cream-200 max-w-2xl mb-12">
           From Northern California's towering Redwoods to international overlanding expeditions, every journey is crafted with care and expertise.
         </p>
-        <div class="hero-actions">
-          <a href={`${baseUrl}contact`} class="btn-primary">Plan Your Adventure</a>
-          <a href="#destinations" class="btn-secondary">Explore Destinations</a>
+        <div class="flex flex-wrap gap-6 items-center">
+          <a href={`${baseUrl}contact`} class="inline-flex items-center px-8 py-4 font-sans font-semibold text-sm tracking-wide uppercase bg-terracotta-500 text-white hover:bg-terracotta-600 dark:bg-amber-400 dark:text-charcoal-900 dark:hover:bg-amber-500 transition-colors duration-300">
+            Plan Your Adventure
+          </a>
+          <a href="#destinations" class="inline-flex items-center px-8 py-4 font-sans font-semibold text-sm tracking-wide uppercase border-2 border-charcoal-900 text-charcoal-900 hover:bg-charcoal-900 hover:text-cream-50 dark:border-cream-50 dark:text-cream-50 dark:hover:bg-cream-50 dark:hover:text-charcoal-900 transition-colors duration-300">
+            Explore Destinations
+          </a>
         </div>
       </div>
     </div>
-    <div class="hero-decoration"></div>
+    <!-- Decorative gradient -->
+    <div class="absolute top-0 right-0 bottom-0 w-2/5 bg-gradient-to-bl from-terracotta-500/10 to-transparent dark:from-amber-400/10 dark:to-transparent z-0"></div>
   </section>
 
   <!-- Destination Categories Grid -->
-  <section id="destinations" class="destinations-section section-padding">
-    <div class="container-wide">
-      <header class="section-header">
-        <span class="section-label">Explore By Region</span>
-        <h2 class="section-title">Destination Categories</h2>
-        <p class="section-description">
+  <section id="destinations" class="py-24 lg:py-32 bg-cream-50 dark:bg-forest-900">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <header class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta-500 dark:text-amber-400 mb-4">
+          Explore By Region
+        </span>
+        <h2 class="font-serif text-4xl md:text-5xl font-medium leading-tight text-charcoal-900 dark:text-cream-50 mb-4">
+          Destination Categories
+        </h2>
+        <p class="font-sans text-lg leading-relaxed text-charcoal-600 dark:text-cream-200">
           Whether you're drawn to desert landscapes, coastal trails, or international expeditions, we specialize in creating unforgettable adventure experiences.
         </p>
       </header>
 
-      <div class="destinations-grid">
-        {destinationCategories.map((dest, index) => (
-          <article class="destination-card card hover-lift" style={`--stagger: ${index}`}>
-            <div class="destination-image" style={`background: ${dest.gradient};`}>
-              <div class="destination-image-overlay"></div>
-              <h3 class="destination-title">{dest.title}</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {destinationCategories.map((dest) => (
+          <article class="group bg-cream-100 dark:bg-forest-950 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class={`relative h-56 flex items-end p-6 ${dest.gradientLight} ${dest.gradientDark}`}>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+              <h3 class="relative z-10 font-serif text-2xl font-semibold text-white drop-shadow-lg">
+                {dest.title}
+              </h3>
             </div>
-            <div class="destination-content">
-              <p class="destination-description">{dest.description}</p>
-              <div class="destination-highlights">
+            <div class="p-6">
+              <p class="font-sans text-base leading-relaxed text-charcoal-600 dark:text-cream-200 mb-5">
+                {dest.description}
+              </p>
+              <div class="flex flex-wrap gap-2">
                 {dest.highlights.map((highlight) => (
-                  <span class="highlight-tag">{highlight}</span>
+                  <span class="font-sans text-xs font-medium px-3 py-1.5 bg-cream-50 dark:bg-forest-900 text-charcoal-600 dark:text-cream-200 border border-charcoal-200 dark:border-forest-800 group-hover:border-terracotta-500 group-hover:text-terracotta-500 dark:group-hover:border-amber-400 dark:group-hover:text-amber-400 transition-colors duration-300">
+                    {highlight}
+                  </span>
                 ))}
               </div>
             </div>
@@ -131,27 +166,39 @@ const featuredTrips = [
   </section>
 
   <!-- Featured Trips Section -->
-  <section class="featured-section section-padding">
-    <div class="container-wide">
-      <header class="section-header">
-        <span class="section-label">Signature Experiences</span>
-        <h2 class="section-title">Featured Trips & Experiences</h2>
-        <p class="section-description">
+  <section class="py-24 lg:py-32 bg-cream-100 dark:bg-forest-950">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <header class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta-500 dark:text-amber-400 mb-4">
+          Signature Experiences
+        </span>
+        <h2 class="font-serif text-4xl md:text-5xl font-medium leading-tight text-charcoal-900 dark:text-cream-50 mb-4">
+          Featured Trips & Experiences
+        </h2>
+        <p class="font-sans text-lg leading-relaxed text-charcoal-600 dark:text-cream-200">
           These carefully curated itineraries showcase what adventure with comfort truly means. Each trip is fully customizable to your preferences.
         </p>
       </header>
 
-      <div class="featured-grid">
-        {featuredTrips.map((trip, index) => (
-          <article class="featured-card card hover-lift" style={`--stagger: ${index}`}>
-            <div class="featured-image" style={`background: ${trip.gradient};`}>
-              <div class="featured-image-overlay"></div>
-              <span class="featured-duration">{trip.duration}</span>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {featuredTrips.map((trip) => (
+          <article class="group flex flex-col md:flex-row bg-cream-50 dark:bg-forest-900 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+            <div class={`relative min-h-[180px] md:w-2/5 flex-shrink-0 ${trip.gradientLight} ${trip.gradientDark}`}>
+              <div class="absolute inset-0 bg-black/10"></div>
+              <span class="absolute top-4 left-4 font-sans text-xs font-semibold tracking-wide px-4 py-2 bg-cream-50 dark:bg-forest-950 text-charcoal-900 dark:text-cream-50">
+                {trip.duration}
+              </span>
             </div>
-            <div class="featured-content">
-              <span class="featured-category">{trip.category}</span>
-              <h3 class="featured-name">{trip.name}</h3>
-              <p class="featured-description">{trip.description}</p>
+            <div class="flex-1 p-6 flex flex-col justify-center">
+              <span class="font-sans text-[11px] font-semibold tracking-[0.15em] uppercase text-terracotta-500 dark:text-amber-400 mb-2">
+                {trip.category}
+              </span>
+              <h3 class="font-serif text-2xl font-semibold text-charcoal-900 dark:text-cream-50 mb-3 group-hover:text-terracotta-500 dark:group-hover:text-amber-400 transition-colors duration-300">
+                {trip.name}
+              </h3>
+              <p class="font-sans text-base leading-relaxed text-charcoal-600 dark:text-cream-200">
+                {trip.description}
+              </p>
             </div>
           </article>
         ))}
@@ -159,374 +206,29 @@ const featuredTrips = [
     </div>
   </section>
 
-  <!-- Custom Destinations CTA -->
-  <section class="cta-section section-padding">
-    <div class="container-narrow">
-      <div class="cta-content">
-        <span class="cta-label">Dream Bigger</span>
-        <h2 class="cta-title">Not Seeing Your Dream Destination?</h2>
-        <p class="cta-description">
-          These are just a few of the adventures we can create together. Whether it's a hidden gem you've discovered or a bucket-list expedition, let's make it happen.
-        </p>
-        <div class="cta-actions">
-          <a href={`${baseUrl}contact`} class="btn-primary">Start the Conversation</a>
-          <a href={`${baseUrl}services`} class="btn-secondary">View Our Services</a>
-        </div>
-        <p class="cta-note">Free initial consultation to discuss your adventure goals</p>
+  <!-- CTA Section -->
+  <section class="py-24 lg:py-32 bg-cream-50 dark:bg-forest-900">
+    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
+      <span class="inline-block font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta-500 dark:text-amber-400 mb-4">
+        Dream Bigger
+      </span>
+      <h2 class="font-serif text-4xl md:text-5xl font-medium leading-tight text-charcoal-900 dark:text-cream-50 mb-6">
+        Not Seeing Your Dream Destination?
+      </h2>
+      <p class="font-sans text-lg leading-relaxed text-charcoal-600 dark:text-cream-200 max-w-2xl mx-auto mb-10">
+        These are just a few of the adventures we can create together. Whether it's a hidden gem you've discovered or a bucket-list expedition, let's make it happen.
+      </p>
+      <div class="flex flex-wrap gap-6 justify-center items-center mb-8">
+        <a href={`${baseUrl}contact`} class="inline-flex items-center px-8 py-4 font-sans font-semibold text-sm tracking-wide uppercase bg-terracotta-500 text-white hover:bg-terracotta-600 dark:bg-amber-400 dark:text-charcoal-900 dark:hover:bg-amber-500 transition-colors duration-300">
+          Start the Conversation
+        </a>
+        <a href={`${baseUrl}services`} class="inline-flex items-center px-8 py-4 font-sans font-semibold text-sm tracking-wide uppercase border-2 border-charcoal-900 text-charcoal-900 hover:bg-charcoal-900 hover:text-cream-50 dark:border-cream-50 dark:text-cream-50 dark:hover:bg-cream-50 dark:hover:text-charcoal-900 transition-colors duration-300">
+          View Our Services
+        </a>
       </div>
+      <p class="font-sans text-sm text-charcoal-600 dark:text-cream-200">
+        Free initial consultation to discuss your adventure goals
+      </p>
     </div>
   </section>
 </Layout>
-
-<style>
-  /* Hero Section */
-  .hero-section {
-    position: relative;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    background-color: var(--bg-secondary);
-    overflow: hidden;
-  }
-
-  .hero-content {
-    position: relative;
-    z-index: 2;
-    width: 100%;
-  }
-
-  .hero-text {
-    max-width: 900px;
-  }
-
-  .hero-label {
-    display: inline-block;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.875rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 2rem;
-  }
-
-  .hero-title {
-    margin-bottom: 2rem;
-  }
-
-  .hero-title-line {
-    display: block;
-    font-family: 'Cormorant', serif;
-    font-size: clamp(3rem, 10vw, 7rem);
-    font-weight: 500;
-    line-height: 1;
-    letter-spacing: -0.02em;
-    color: var(--text-primary);
-  }
-
-  .hero-title-accent {
-    color: var(--accent);
-    font-style: italic;
-  }
-
-  .hero-description {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.25rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin-bottom: 3rem;
-  }
-
-  .hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    align-items: center;
-  }
-
-  .hero-decoration {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 40%;
-    background: linear-gradient(135deg, var(--accent) 0%, transparent 60%);
-    opacity: 0.08;
-    z-index: 1;
-  }
-
-  /* Section Styles */
-  .destinations-section {
-    background-color: var(--bg-primary);
-  }
-
-  .featured-section {
-    background-color: var(--bg-secondary);
-  }
-
-  .section-header {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 4rem;
-  }
-
-  .section-label {
-    display: inline-block;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-  }
-
-  .section-title {
-    font-family: 'Cormorant', serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 500;
-    line-height: 1.1;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-  }
-
-  .section-description {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
-  }
-
-  /* Destinations Grid */
-  .destinations-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
-  }
-
-  @media (min-width: 640px) {
-    .destinations-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .destinations-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  /* Destination Card */
-  .destination-card {
-    border-radius: 0;
-  }
-
-  .destination-image {
-    position: relative;
-    height: 220px;
-    display: flex;
-    align-items: flex-end;
-    padding: 1.5rem;
-  }
-
-  .destination-image-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 60%);
-  }
-
-  .destination-title {
-    position: relative;
-    z-index: 1;
-    font-family: 'Cormorant', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  }
-
-  .destination-content {
-    padding: 1.5rem;
-    background-color: var(--bg-secondary);
-  }
-
-  .destination-description {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    margin-bottom: 1.25rem;
-  }
-
-  .destination-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-
-  .highlight-tag {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.375rem 0.75rem;
-    background-color: var(--bg-tertiary);
-    color: var(--text-secondary);
-    border: 1px solid var(--border);
-    transition: all 0.3s ease;
-  }
-
-  .destination-card:hover .highlight-tag {
-    border-color: var(--accent);
-    color: var(--accent);
-  }
-
-  /* Featured Grid */
-  .featured-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 2rem;
-  }
-
-  @media (min-width: 768px) {
-    .featured-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  /* Featured Card */
-  .featured-card {
-    display: flex;
-    flex-direction: column;
-    border-radius: 0;
-  }
-
-  @media (min-width: 768px) {
-    .featured-card {
-      flex-direction: row;
-    }
-  }
-
-  .featured-image {
-    position: relative;
-    min-height: 180px;
-    flex-shrink: 0;
-  }
-
-  @media (min-width: 768px) {
-    .featured-image {
-      width: 40%;
-    }
-  }
-
-  .featured-image-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.1);
-  }
-
-  .featured-duration {
-    position: absolute;
-    top: 1rem;
-    left: 1rem;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    padding: 0.5rem 1rem;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-  }
-
-  .featured-content {
-    flex: 1;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background-color: var(--bg-secondary);
-  }
-
-  .featured-category {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 0.5rem;
-  }
-
-  .featured-name {
-    font-family: 'Cormorant', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-bottom: 0.75rem;
-    transition: color 0.3s ease;
-  }
-
-  .featured-card:hover .featured-name {
-    color: var(--accent);
-  }
-
-  .featured-description {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
-  }
-
-  /* CTA Section */
-  .cta-section {
-    background-color: var(--bg-tertiary);
-  }
-
-  .cta-content {
-    text-align: center;
-  }
-
-  .cta-label {
-    display: inline-block;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1rem;
-  }
-
-  .cta-title {
-    font-family: 'Cormorant', serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 500;
-    line-height: 1.1;
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-  }
-
-  .cta-description {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
-  }
-
-  .cta-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 2rem;
-  }
-
-  .cta-note {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.875rem;
-    color: var(--text-muted);
-  }
-</style>

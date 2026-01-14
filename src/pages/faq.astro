@@ -75,56 +75,64 @@ const faqSections = [
 
 <Layout title="Frequently Asked Questions" description="Get answers to common questions about working with Wyld Wandering for your adventure travel planning.">
   <!-- Hero Section -->
-  <section class="faq-hero section-padding">
-    <div class="container-narrow">
-      <div class="hero-content">
-        <span class="hero-label">Questions & Answers</span>
-        <h1 class="hero-title">
-          Everything You<br />
-          <span class="hero-title-accent">Need to Know</span>
-        </h1>
-        <p class="hero-subtitle">
-          Curious about how working with a travel advisor can transform your next adventure? Find your answers here.
-        </p>
-      </div>
+  <section class="bg-cream-100 dark:bg-forest-900 py-20 md:py-28 lg:py-32">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <span class="inline-block font-sans text-xs font-medium tracking-[0.2em] uppercase text-terracotta-500 dark:text-amber-400 mb-6">
+        Questions & Answers
+      </span>
+      <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-medium leading-[0.95] tracking-tight text-charcoal-900 dark:text-cream-50 mb-6">
+        Everything You<br />
+        <span class="italic text-terracotta-500 dark:text-amber-400">Need to Know</span>
+      </h1>
+      <p class="font-sans text-lg leading-relaxed text-charcoal-600 dark:text-cream-200 max-w-xl mx-auto">
+        Curious about how working with a travel advisor can transform your next adventure? Find your answers here.
+      </p>
     </div>
   </section>
 
   <!-- FAQ Sections -->
-  <section class="faq-sections section-padding">
-    <div class="container-narrow">
+  <section class="bg-cream-50 dark:bg-forest-950 py-20 md:py-28">
+    <div class="max-w-3xl mx-auto px-6">
       {faqSections.map((section, sectionIndex) => (
-        <div class="faq-category" data-section={sectionIndex}>
-          <div class="category-header">
-            <span class="category-number">{String(sectionIndex + 1).padStart(2, '0')}</span>
-            <h2 class="category-title">{section.title}</h2>
+        <div class="mb-16 last:mb-0" data-section={sectionIndex}>
+          <div class="flex items-baseline gap-4 mb-6 pb-4 border-b border-charcoal-200 dark:border-forest-700">
+            <span class="font-sans text-xs font-medium tracking-wide text-terracotta-500 dark:text-amber-400">
+              {String(sectionIndex + 1).padStart(2, '0')}
+            </span>
+            <h2 class="font-serif text-2xl md:text-3xl font-medium text-charcoal-900 dark:text-cream-50">
+              {section.title}
+            </h2>
           </div>
-          <div class="faq-list">
+          <div class="flex flex-col">
             {section.faqs.map((faq, faqIndex) => (
               <div
-                class="faq-item"
+                class="faq-item border-b border-charcoal-200 dark:border-forest-700"
                 data-section={sectionIndex}
                 data-faq={faqIndex}
               >
                 <button
-                  class="faq-trigger"
+                  class="faq-trigger w-full flex items-center justify-between gap-4 md:gap-8 py-6 text-left group"
                   aria-expanded="false"
                   aria-controls={`faq-content-${sectionIndex}-${faqIndex}`}
                 >
-                  <span class="faq-question">{faq.question}</span>
-                  <span class="faq-icon" aria-hidden="true">
+                  <span class="font-sans text-base md:text-lg font-medium text-charcoal-900 dark:text-cream-50 group-hover:text-terracotta-500 dark:group-hover:text-amber-400 transition-colors duration-300">
+                    {faq.question}
+                  </span>
+                  <span class="faq-icon flex-shrink-0 w-6 h-6 flex items-center justify-center text-terracotta-500 dark:text-amber-400 transition-transform duration-400" aria-hidden="true">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
                     </svg>
                   </span>
                 </button>
                 <div
-                  class="faq-content"
+                  class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-400 ease-out"
                   id={`faq-content-${sectionIndex}-${faqIndex}`}
                   aria-hidden="true"
                 >
-                  <div class="faq-answer">
-                    <p>{faq.answer}</p>
+                  <div class="overflow-hidden">
+                    <p class="font-sans text-base leading-relaxed text-charcoal-600 dark:text-cream-200 pb-6 pr-0 md:pr-12">
+                      {faq.answer}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -136,239 +144,35 @@ const faqSections = [
   </section>
 
   <!-- CTA Section -->
-  <section class="faq-cta section-padding">
-    <div class="container-narrow">
-      <div class="cta-content">
-        <h2 class="cta-title">Still have questions?</h2>
-        <p class="cta-text">
-          Let's start a conversation. I'd love to hear about your travel dreams and help turn them into reality.
-        </p>
-        <a href="/contact" class="btn-primary">Get in Touch</a>
-      </div>
+  <section class="bg-cream-100 dark:bg-forest-900 py-20 md:py-28">
+    <div class="max-w-xl mx-auto px-6 text-center">
+      <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-charcoal-900 dark:text-cream-50 mb-4">
+        Still have questions?
+      </h2>
+      <p class="font-sans text-base md:text-lg leading-relaxed text-charcoal-600 dark:text-cream-200 mb-8">
+        Let's start a conversation. I'd love to hear about your travel dreams and help turn them into reality.
+      </p>
+      <a
+        href="/contact"
+        class="inline-flex items-center justify-center px-8 py-4 font-sans text-sm font-medium tracking-wide uppercase bg-terracotta-500 hover:bg-terracotta-600 dark:bg-amber-400 dark:hover:bg-amber-500 text-white dark:text-forest-950 rounded-full transition-colors duration-300"
+      >
+        Get in Touch
+      </a>
     </div>
   </section>
 </Layout>
 
 <style>
-  /* Hero Section */
-  .faq-hero {
-    background-color: var(--bg-secondary);
-    text-align: center;
-  }
-
-  .hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-
-  .hero-label {
-    display: inline-block;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-title {
-    font-family: 'Cormorant', serif;
-    font-size: clamp(3rem, 8vw, 5.5rem);
-    font-weight: 500;
-    line-height: 0.95;
-    letter-spacing: -0.02em;
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
-  }
-
-  .hero-title-accent {
-    font-style: italic;
-    color: var(--accent);
-  }
-
-  .hero-subtitle {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.7;
-    color: var(--text-secondary);
-    max-width: 520px;
-    margin: 0 auto;
-  }
-
-  /* FAQ Sections */
-  .faq-sections {
-    background-color: var(--bg-primary);
-  }
-
-  .faq-category {
-    margin-bottom: 4rem;
-  }
-
-  .faq-category:last-child {
-    margin-bottom: 0;
-  }
-
-  .category-header {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid var(--border);
-  }
-
-  .category-number {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 500;
-    color: var(--accent);
-    letter-spacing: 0.05em;
-  }
-
-  .category-title {
-    font-family: 'Cormorant', serif;
-    font-size: 1.75rem;
-    font-weight: 500;
-    color: var(--text-primary);
-  }
-
-  /* FAQ Items */
-  .faq-list {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .faq-item {
-    border-bottom: 1px solid var(--border);
-  }
-
-  .faq-trigger {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    padding: 1.5rem 0;
-    background: none;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-    transition: color 0.3s ease;
-  }
-
-  .faq-trigger:hover {
-    color: var(--accent);
-  }
-
-  .faq-trigger:focus {
-    outline: none;
-  }
-
-  .faq-trigger:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 4px;
-  }
-
-  .faq-question {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.0625rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    transition: color 0.3s ease;
-  }
-
-  .faq-trigger:hover .faq-question {
-    color: var(--accent);
-  }
-
-  .faq-icon {
-    flex-shrink: 0;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--accent);
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-
   .faq-item.active .faq-icon {
     transform: rotate(45deg);
-  }
-
-  /* FAQ Content */
-  .faq-content {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .faq-item.active .faq-content {
     grid-template-rows: 1fr;
   }
 
-  .faq-answer {
-    overflow: hidden;
-  }
-
-  .faq-answer p {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
-    padding-bottom: 1.5rem;
-    padding-right: 3rem;
-  }
-
-  /* CTA Section */
-  .faq-cta {
-    background-color: var(--bg-secondary);
-  }
-
-  .cta-content {
-    text-align: center;
-    max-width: 500px;
-    margin: 0 auto;
-  }
-
-  .cta-title {
-    font-family: 'Cormorant', serif;
-    font-size: clamp(2rem, 5vw, 2.75rem);
-    font-weight: 500;
-    color: var(--text-primary);
-    margin-bottom: 1rem;
-  }
-
-  .cta-text {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.0625rem;
-    line-height: 1.7;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-  }
-
-  /* Responsive */
-  @media (max-width: 640px) {
-    .hero-title {
-      font-size: clamp(2.5rem, 10vw, 3.5rem);
-    }
-
-    .category-title {
-      font-size: 1.5rem;
-    }
-
-    .faq-question {
-      font-size: 1rem;
-    }
-
-    .faq-answer p {
-      padding-right: 0;
-    }
-
-    .faq-trigger {
-      gap: 1rem;
-    }
+  .duration-400 {
+    transition-duration: 400ms;
   }
 </style>
 
@@ -417,7 +221,7 @@ const faqSections = [
         trigger.addEventListener('keydown', (e) => {
           if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault();
-            trigger.click();
+            (trigger as HTMLElement).click();
           }
         });
       }

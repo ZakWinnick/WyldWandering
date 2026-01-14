@@ -160,71 +160,81 @@ const relatedPosts = Object.entries(blogPosts)
   title={post.title}
   description={post.excerpt}
 >
-  <article class="article">
+  <article>
     <!-- Article Header -->
-    <header class="article-header">
-      <div class="container-narrow">
+    <header class="bg-cream-100 dark:bg-forest-900 py-12 lg:py-16">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         <!-- Back Link -->
-        <a href={`${baseUrl}blog`} class="back-link">
-          <svg class="back-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <a href={`${baseUrl}blog`} class="inline-flex items-center font-sans text-sm font-medium text-terracotta-500 dark:text-amber-400 mb-8 transition-colors duration-300 hover:text-charcoal-900 dark:hover:text-cream-50 group">
+          <svg class="w-5 h-5 mr-2 transition-transform duration-300 group-hover:-translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16l-4-4m0 0l4-4m-4 4h18" />
           </svg>
           Back to Journal
         </a>
 
         <!-- Category -->
-        <span class="article-category">{post.category}</span>
+        <span class="inline-block font-sans text-xs font-semibold uppercase tracking-widest text-terracotta-500 dark:text-amber-400">
+          {post.category}
+        </span>
 
         <!-- Title -->
-        <h1 class="article-title">{post.title}</h1>
+        <h1 class="font-serif text-3xl md:text-4xl lg:text-5xl font-semibold text-charcoal-900 dark:text-cream-50 leading-tight mt-4 max-w-3xl">
+          {post.title}
+        </h1>
 
         <!-- Meta -->
-        <div class="article-meta">
-          <div class="author-info">
-            <div class="author-avatar">ZW</div>
-            <span class="author-name">Zak Winnick</span>
+        <div class="flex flex-wrap items-center gap-3 mt-6 font-sans text-sm text-charcoal-600 dark:text-cream-200">
+          <div class="flex items-center gap-2.5">
+            <div class="w-10 h-10 rounded-full bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-950 flex items-center justify-center font-semibold text-sm">
+              ZW
+            </div>
+            <span class="font-medium text-charcoal-900 dark:text-cream-50">Zak Winnick</span>
           </div>
-          <span class="meta-divider"></span>
+          <span class="w-1 h-1 bg-charcoal-300 dark:bg-cream-600 rounded-full"></span>
           <time datetime={post.date}>{formatDate(post.date)}</time>
-          <span class="meta-divider"></span>
+          <span class="w-1 h-1 bg-charcoal-300 dark:bg-cream-600 rounded-full"></span>
           <span>{post.readingTime}</span>
         </div>
       </div>
     </header>
 
     <!-- Featured Image -->
-    <div class="article-hero">
-      <div class="hero-gradient-placeholder"></div>
+    <div class="relative h-[40vh] min-h-[300px] max-h-[600px] md:h-[50vh] lg:h-[60vh]">
+      <div class="absolute inset-0 bg-gradient-to-br from-terracotta-500 to-cream-200 dark:from-amber-400 dark:to-forest-800"></div>
       <img
         src={post.image}
         alt={post.title}
-        class="hero-image"
+        class="absolute inset-0 w-full h-full object-cover"
         loading="eager"
       />
-      <div class="hero-overlay"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
     </div>
 
     <!-- Article Content -->
-    <div class="article-body">
-      <div class="container-narrow">
-        <div class="prose" set:html={post.content} />
+    <div class="bg-cream-50 dark:bg-forest-950 py-12 lg:py-16">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="prose-content" set:html={post.content} />
       </div>
     </div>
 
     <!-- Author Box -->
-    <aside class="author-box">
-      <div class="container-narrow">
-        <div class="author-box-inner">
-          <div class="author-box-avatar">ZW</div>
-          <div class="author-box-content">
-            <h3 class="author-box-name">About Zak Winnick</h3>
-            <p class="author-box-bio">
+    <aside class="bg-cream-100 dark:bg-forest-900 py-12">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row gap-6 items-start md:items-center">
+          <div class="w-20 h-20 rounded-full bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-950 flex items-center justify-center font-sans font-semibold text-2xl flex-shrink-0">
+            ZW
+          </div>
+          <div class="flex-1">
+            <h3 class="font-serif text-2xl font-semibold text-charcoal-900 dark:text-cream-50">
+              About Zak Winnick
+            </h3>
+            <p class="font-sans text-base text-charcoal-600 dark:text-cream-200 leading-relaxed mt-2">
               Travel advisor based in Northern California, specializing in adventure travel with comfort.
               Helping wanderers explore the world without roughing it too much.
             </p>
-            <a href={`${baseUrl}about`} class="author-box-link">
+            <a href={`${baseUrl}about`} class="inline-flex items-center font-sans text-sm font-medium text-terracotta-500 dark:text-amber-400 mt-4 transition-colors duration-300 hover:text-charcoal-900 dark:hover:text-cream-50 group">
               Learn More
-              <svg class="link-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg class="w-4 h-4 ml-1.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
               </svg>
             </a>
@@ -236,28 +246,36 @@ const relatedPosts = Object.entries(blogPosts)
 
   <!-- Related Posts -->
   {relatedPosts.length > 0 && (
-    <section class="related-posts">
-      <div class="container-wide section-padding">
-        <h2 class="related-title">Continue Reading</h2>
-        <div class="related-grid">
+    <section class="bg-cream-50 dark:bg-forest-950 border-t border-charcoal-200 dark:border-forest-800 py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="font-serif text-3xl font-semibold text-charcoal-900 dark:text-cream-50 mb-8">
+          Continue Reading
+        </h2>
+        <div class="grid gap-8 md:grid-cols-2">
           {relatedPosts.map((relatedPost) => (
-            <a href={`${baseUrl}blog/${relatedPost.slug}`} class="card related-card">
-              <div class="related-image-container">
-                <div class="related-gradient-placeholder"></div>
+            <a href={`${baseUrl}blog/${relatedPost.slug}`} class="group block bg-cream-100 dark:bg-forest-900 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+              <div class="relative aspect-video overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-terracotta-500 to-cream-200 dark:from-amber-400 dark:to-forest-800"></div>
                 <img
                   src={relatedPost.image}
                   alt={relatedPost.title}
-                  class="related-image"
+                  class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>
-              <div class="related-content">
-                <span class="related-category">{relatedPost.category}</span>
-                <h3 class="related-card-title">{relatedPost.title}</h3>
-                <p class="related-excerpt">{relatedPost.excerpt}</p>
-                <div class="related-meta">
+              <div class="p-6">
+                <span class="inline-block font-sans text-xs font-semibold uppercase tracking-widest text-terracotta-500 dark:text-amber-400">
+                  {relatedPost.category}
+                </span>
+                <h3 class="font-serif text-xl font-semibold text-charcoal-900 dark:text-cream-50 leading-snug mt-2 transition-colors duration-300 group-hover:text-terracotta-500 dark:group-hover:text-amber-400">
+                  {relatedPost.title}
+                </h3>
+                <p class="font-sans text-sm text-charcoal-600 dark:text-cream-200 leading-relaxed mt-3 line-clamp-2">
+                  {relatedPost.excerpt}
+                </p>
+                <div class="flex items-center gap-2.5 mt-4 font-sans text-xs text-charcoal-600 dark:text-cream-200">
                   <time datetime={relatedPost.date}>{formatDate(relatedPost.date)}</time>
-                  <span class="meta-divider"></span>
+                  <span class="w-1 h-1 bg-charcoal-300 dark:bg-cream-600 rounded-full"></span>
                   <span>{relatedPost.readingTime}</span>
                 </div>
               </div>
@@ -269,13 +287,15 @@ const relatedPosts = Object.entries(blogPosts)
   )}
 
   <!-- CTA Section -->
-  <section class="cta-section">
-    <div class="container-narrow section-padding">
-      <h2 class="cta-title">Ready to Plan Your Adventure?</h2>
-      <p class="cta-description">
+  <section class="bg-cream-100 dark:bg-forest-900 py-16 lg:py-24 px-4 sm:px-6 lg:px-8 text-center">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="font-serif text-2xl md:text-3xl font-semibold text-charcoal-900 dark:text-cream-50">
+        Ready to Plan Your Adventure?
+      </h2>
+      <p class="font-sans text-lg text-charcoal-600 dark:text-cream-200 leading-relaxed mt-4 max-w-lg mx-auto">
         Let's create a journey that matches your sense of adventure with the comfort you deserve.
       </p>
-      <a href={`${baseUrl}contact`} class="btn-secondary cta-button">
+      <a href={`${baseUrl}contact`} class="inline-flex items-center justify-center px-8 py-4 mt-8 bg-transparent border-2 border-terracotta-500 dark:border-amber-400 text-terracotta-500 dark:text-amber-400 font-sans font-medium rounded-lg transition-all duration-300 hover:bg-terracotta-500 dark:hover:bg-amber-400 hover:text-white dark:hover:text-forest-950">
         Start Planning
       </a>
     </div>
@@ -283,509 +303,65 @@ const relatedPosts = Object.entries(blogPosts)
 </Layout>
 
 <style>
-  /* Article Header */
-  .article-header {
-    background: var(--bg-secondary);
-    padding: 3rem 0 4rem;
+  /* Prose Content Styling - Using Tailwind-compatible approach */
+  .prose-content {
+    @apply font-sans text-lg leading-relaxed text-charcoal-900 dark:text-cream-50;
   }
 
-  @media (min-width: 1024px) {
-    .article-header {
-      padding: 4rem 0 5rem;
-    }
+  .prose-content :global(p) {
+    @apply mb-6;
   }
 
-  .back-link {
-    display: inline-flex;
-    align-items: center;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    color: var(--accent);
-    text-decoration: none;
-    margin-bottom: 2rem;
-    transition: color 0.3s ease;
+  .prose-content :global(p.lead) {
+    @apply font-serif text-2xl md:text-[1.625rem] font-normal leading-relaxed text-charcoal-600 dark:text-cream-200 mb-10;
   }
 
-  .back-link:hover {
-    color: var(--text-primary);
+  .prose-content :global(h2) {
+    @apply font-serif text-3xl md:text-4xl font-semibold text-charcoal-900 dark:text-cream-50 mt-12 mb-5 leading-tight;
   }
 
-  .back-icon {
-    width: 1.25rem;
-    height: 1.25rem;
-    margin-right: 0.5rem;
-    transition: transform 0.3s ease;
+  .prose-content :global(h3) {
+    @apply font-serif text-2xl md:text-[1.75rem] font-semibold text-charcoal-900 dark:text-cream-50 mt-10 mb-4 leading-snug;
   }
 
-  .back-link:hover .back-icon {
-    transform: translateX(-4px);
+  .prose-content :global(ul),
+  .prose-content :global(ol) {
+    @apply mb-6 pl-6;
   }
 
-  .article-category {
-    display: inline-block;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.75rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent);
+  .prose-content :global(ul) {
+    @apply list-disc;
   }
 
-  .article-title {
-    font-family: 'Cormorant', serif;
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.15;
-    margin: 1rem 0 0 0;
-    max-width: 48rem;
+  .prose-content :global(ol) {
+    @apply list-decimal;
   }
 
-  .article-meta {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.9375rem;
-    color: var(--text-secondary);
+  .prose-content :global(li) {
+    @apply mb-2 pl-2;
   }
 
-  .author-info {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
+  .prose-content :global(li::marker) {
+    @apply text-terracotta-500 dark:text-amber-400;
   }
 
-  .author-avatar {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background: var(--accent);
-    color: var(--bg-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: 0.875rem;
+  .prose-content :global(blockquote) {
+    @apply relative my-10 py-6 pl-8 border-l-[3px] border-terracotta-500 dark:border-amber-400;
   }
 
-  .author-name {
-    font-weight: 500;
-    color: var(--text-primary);
+  .prose-content :global(blockquote p) {
+    @apply font-serif text-2xl md:text-[1.75rem] italic font-medium leading-snug text-charcoal-600 dark:text-cream-200 mb-0;
   }
 
-  .meta-divider {
-    width: 4px;
-    height: 4px;
-    background: var(--border);
-    border-radius: 50%;
+  .prose-content :global(a) {
+    @apply text-terracotta-500 dark:text-amber-400 underline underline-offset-2 transition-colors duration-300 hover:text-charcoal-900 dark:hover:text-cream-50;
   }
 
-  /* Article Hero */
-  .article-hero {
-    position: relative;
-    height: 40vh;
-    min-height: 300px;
-    max-height: 600px;
+  .prose-content :global(strong) {
+    @apply font-semibold text-charcoal-900 dark:text-cream-50;
   }
 
-  @media (min-width: 768px) {
-    .article-hero {
-      height: 50vh;
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .article-hero {
-      height: 60vh;
-    }
-  }
-
-  .hero-gradient-placeholder {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, var(--accent) 0%, var(--bg-secondary) 100%);
-  }
-
-  .hero-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .hero-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.2) 0%, transparent 50%);
-  }
-
-  /* Article Body */
-  .article-body {
-    background: var(--bg-primary);
-    padding: 3rem 0 4rem;
-  }
-
-  @media (min-width: 1024px) {
-    .article-body {
-      padding: 4rem 0 5rem;
-    }
-  }
-
-  /* Prose Styling - Editorial Typography */
-  .prose {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.125rem;
-    line-height: 1.75;
-    color: var(--text-primary);
-  }
-
-  .prose :global(p) {
-    margin-bottom: 1.5rem;
-  }
-
-  .prose :global(p.lead) {
-    font-family: 'Cormorant', serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    line-height: 1.5;
-    color: var(--text-secondary);
-    margin-bottom: 2.5rem;
-  }
-
-  @media (min-width: 768px) {
-    .prose :global(p.lead) {
-      font-size: 1.625rem;
-    }
-  }
-
-  .prose :global(h2) {
-    font-family: 'Cormorant', serif;
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-top: 3rem;
-    margin-bottom: 1.25rem;
-    line-height: 1.2;
-  }
-
-  @media (min-width: 768px) {
-    .prose :global(h2) {
-      font-size: 2.25rem;
-    }
-  }
-
-  .prose :global(h3) {
-    font-family: 'Cormorant', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin-top: 2.5rem;
-    margin-bottom: 1rem;
-    line-height: 1.3;
-  }
-
-  @media (min-width: 768px) {
-    .prose :global(h3) {
-      font-size: 1.75rem;
-    }
-  }
-
-  .prose :global(ul),
-  .prose :global(ol) {
-    margin-bottom: 1.5rem;
-    padding-left: 1.5rem;
-  }
-
-  .prose :global(ul) {
-    list-style-type: disc;
-  }
-
-  .prose :global(ol) {
-    list-style-type: decimal;
-  }
-
-  .prose :global(li) {
-    margin-bottom: 0.5rem;
-    padding-left: 0.5rem;
-  }
-
-  .prose :global(li::marker) {
-    color: var(--accent);
-  }
-
-  .prose :global(blockquote) {
-    position: relative;
-    margin: 2.5rem 0;
-    padding: 1.5rem 0 1.5rem 2rem;
-    border-left: 3px solid var(--accent);
-  }
-
-  .prose :global(blockquote p) {
-    font-family: 'Cormorant', serif;
-    font-size: 1.5rem;
-    font-style: italic;
-    font-weight: 500;
-    line-height: 1.4;
-    color: var(--text-secondary);
-    margin-bottom: 0;
-  }
-
-  @media (min-width: 768px) {
-    .prose :global(blockquote p) {
-      font-size: 1.75rem;
-    }
-  }
-
-  .prose :global(a) {
-    color: var(--accent);
-    text-decoration: underline;
-    text-underline-offset: 2px;
-    transition: color 0.3s ease;
-  }
-
-  .prose :global(a:hover) {
-    color: var(--text-primary);
-  }
-
-  .prose :global(strong) {
-    font-weight: 600;
-    color: var(--text-primary);
-  }
-
-  .prose :global(em) {
-    font-style: italic;
-  }
-
-  /* Author Box */
-  .author-box {
-    background: var(--bg-secondary);
-    padding: 3rem 0;
-  }
-
-  .author-box-inner {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-start;
-  }
-
-  @media (min-width: 768px) {
-    .author-box-inner {
-      flex-direction: row;
-      align-items: center;
-    }
-  }
-
-  .author-box-avatar {
-    width: 5rem;
-    height: 5rem;
-    border-radius: 50%;
-    background: var(--accent);
-    color: var(--bg-primary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Outfit', sans-serif;
-    font-weight: 600;
-    font-size: 1.5rem;
-    flex-shrink: 0;
-  }
-
-  .author-box-content {
-    flex: 1;
-  }
-
-  .author-box-name {
-    font-family: 'Cormorant', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 0;
-  }
-
-  .author-box-bio {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-top: 0.5rem;
-  }
-
-  .author-box-link {
-    display: inline-flex;
-    align-items: center;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    color: var(--accent);
-    text-decoration: none;
-    margin-top: 1rem;
-    transition: color 0.3s ease;
-  }
-
-  .author-box-link:hover {
-    color: var(--text-primary);
-  }
-
-  .link-icon {
-    width: 1rem;
-    height: 1rem;
-    margin-left: 0.375rem;
-    transition: transform 0.3s ease;
-  }
-
-  .author-box-link:hover .link-icon {
-    transform: translateX(4px);
-  }
-
-  /* Related Posts */
-  .related-posts {
-    background: var(--bg-primary);
-    border-top: 1px solid var(--border);
-  }
-
-  .related-title {
-    font-family: 'Cormorant', serif;
-    font-size: 2rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 0 0 2rem 0;
-  }
-
-  .related-grid {
-    display: grid;
-    gap: 2rem;
-  }
-
-  @media (min-width: 768px) {
-    .related-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  .related-card {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    background: var(--bg-secondary);
-    border-radius: 1rem;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-
-  .related-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
-  }
-
-  .related-image-container {
-    position: relative;
-    aspect-ratio: 16 / 9;
-    overflow: hidden;
-  }
-
-  .related-gradient-placeholder {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, var(--accent) 0%, var(--bg-secondary) 100%);
-  }
-
-  .related-image {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-  }
-
-  .related-card:hover .related-image {
-    transform: scale(1.05);
-  }
-
-  .related-content {
-    padding: 1.5rem;
-  }
-
-  .related-category {
-    display: inline-block;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.6875rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent);
-  }
-
-  .related-card-title {
-    font-family: 'Cormorant', serif;
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--text-primary);
-    line-height: 1.3;
-    margin: 0.5rem 0 0 0;
-    transition: color 0.3s ease;
-  }
-
-  .related-card:hover .related-card-title {
-    color: var(--accent);
-  }
-
-  .related-excerpt {
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.9375rem;
-    color: var(--text-secondary);
-    line-height: 1.5;
-    margin-top: 0.75rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .related-meta {
-    display: flex;
-    align-items: center;
-    gap: 0.625rem;
-    margin-top: 1rem;
-    font-family: 'Outfit', sans-serif;
-    font-size: 0.8125rem;
-    color: var(--text-secondary);
-  }
-
-  /* CTA Section */
-  .cta-section {
-    background: var(--bg-secondary);
-    text-align: center;
-  }
-
-  .cta-title {
-    font-family: 'Cormorant', serif;
-    font-size: clamp(1.75rem, 4vw, 2.25rem);
-    font-weight: 600;
-    color: var(--text-primary);
-    margin: 0;
-  }
-
-  .cta-description {
-    font-family: 'Outfit', sans-serif;
-    font-size: 1.125rem;
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin: 1rem auto 0;
-    max-width: 32rem;
-  }
-
-  .cta-button {
-    margin-top: 2rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 2rem;
+  .prose-content :global(em) {
+    @apply italic;
   }
 </style>

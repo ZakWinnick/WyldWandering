@@ -26,12 +26,12 @@ const services = [
   },
   {
     number: '05',
-    title: 'Group Travel Coordination',
+    title: 'Group Travel',
     description: 'Planning an adventure with friends, family, or fellow enthusiasts? I handle the logistics of group trips, coordinating vehicles, accommodations, and activities so everyone can focus on the experience rather than the details.',
   },
   {
     number: '06',
-    title: 'Honeymoon & Special Occasions',
+    title: 'Special Occasions',
     description: 'Celebrate life\'s milestones with an adventure that matches your spirit. Whether it\'s an adventurous honeymoon through Patagonia or an anniversary trip exploring the Scottish Highlands, I create memorable journeys that balance romance with exploration.',
   },
 ];
@@ -61,15 +61,15 @@ const processSteps = [
 ---
 
 <Layout title="Services" description="Expert travel planning services for adventure seekers who appreciate comfort. Custom itineraries, boutique hotels, and overlanding trips planned by a certified Fora travel advisor.">
-  <!-- Hero Section -->
-  <section class="section-padding" style="background-color: var(--bg-primary);">
-    <div class="container-wide">
+  <!-- Hero Section - Dark -->
+  <section class="py-20 md:py-28 lg:py-32 px-6 md:px-12 bg-forest-950 dark:bg-forest-950">
+    <div class="max-w-7xl mx-auto">
       <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-end">
         <div>
-          <span class="inline-block text-sm uppercase tracking-[0.2em] font-medium mb-6" style="color: var(--accent);">
+          <span class="inline-block text-sm uppercase tracking-[0.2em] font-medium mb-6 text-amber-400 dark:text-amber-400">
             Services
           </span>
-          <h1 class="text-editorial" style="color: var(--text-primary);">
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-display leading-[1.1] text-cream-50 dark:text-cream-50">
             Adventure,
             <br />
             <em class="font-normal">thoughtfully</em>
@@ -78,53 +78,44 @@ const processSteps = [
           </h1>
         </div>
         <div class="lg:pb-4">
-          <p class="text-xl md:text-2xl font-display leading-relaxed" style="color: var(--text-secondary);">
+          <p class="text-xl md:text-2xl font-display leading-relaxed text-cream-200 dark:text-cream-200">
             I believe adventure doesn't mean sacrificing comfort. As a certified Fora travel advisor with a background in luxury hospitality, I specialize in creating journeys that push boundaries during the day and reward you with exceptional accommodations at night.
           </p>
         </div>
       </div>
 
       <!-- Decorative line -->
-      <div class="mt-16 lg:mt-24 h-px w-full" style="background-color: var(--border);"></div>
+      <div class="mt-16 lg:mt-24 h-px w-full bg-forest-800 dark:bg-forest-800"></div>
     </div>
   </section>
 
   <!-- Services Grid -->
-  <section class="section-padding" style="background-color: var(--bg-secondary);">
-    <div class="container-wide">
+  <section class="py-20 md:py-28 lg:py-32 px-6 md:px-12 bg-cream-100 dark:bg-forest-900">
+    <div class="max-w-7xl mx-auto">
       <div class="mb-16 lg:mb-24">
-        <span class="inline-block text-sm uppercase tracking-[0.2em] font-medium mb-4" style="color: var(--accent);">
+        <span class="inline-block text-sm uppercase tracking-[0.2em] font-medium mb-4 text-terracotta-500 dark:text-amber-400">
           What I Offer
         </span>
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-display" style="color: var(--text-primary);">
+        <h2 class="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900 dark:text-cream-50">
           Comprehensive travel planning
           <br class="hidden md:block" />
-          <span style="color: var(--text-secondary);">for those who want more</span>
+          <span class="text-charcoal-600 dark:text-cream-200">for those who want more</span>
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px" style="background-color: var(--border);">
-        {services.map((service, index) => (
-          <article
-            class="group p-8 lg:p-10 hover-lift cursor-default"
-            style="background-color: var(--bg-secondary);"
-          >
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-charcoal-200 dark:bg-forest-700">
+        {services.map((service) => (
+          <article class="group p-8 lg:p-10 bg-cream-100 dark:bg-forest-900 transition-all duration-300 hover:-translate-y-1">
             <div class="flex items-start justify-between mb-8">
-              <span
-                class="text-5xl md:text-6xl font-display font-medium transition-colors duration-300"
-                style="color: var(--border);"
-              >
+              <span class="text-5xl md:text-6xl font-display font-medium text-charcoal-200 dark:text-forest-700 transition-colors duration-300 group-hover:text-terracotta-500 dark:group-hover:text-amber-400">
                 {service.number}
               </span>
-              <div
-                class="w-3 h-3 rounded-full mt-4 transition-transform duration-300 group-hover:scale-150"
-                style="background-color: var(--accent);"
-              ></div>
+              <div class="w-3 h-3 rounded-full mt-4 bg-terracotta-500 dark:bg-amber-400 transition-transform duration-300 group-hover:scale-150"></div>
             </div>
-            <h3 class="text-xl md:text-2xl font-display mb-4" style="color: var(--text-primary);">
+            <h3 class="text-xl md:text-2xl font-display mb-4 text-charcoal-900 dark:text-cream-50">
               {service.title}
             </h3>
-            <p class="leading-relaxed" style="color: var(--text-secondary);">
+            <p class="leading-relaxed text-charcoal-600 dark:text-cream-200">
               {service.description}
             </p>
           </article>
@@ -134,20 +125,20 @@ const processSteps = [
   </section>
 
   <!-- Process Section -->
-  <section class="section-padding" style="background-color: var(--bg-tertiary);">
-    <div class="container-wide">
+  <section class="py-20 md:py-28 lg:py-32 px-6 md:px-12 bg-cream-50 dark:bg-forest-950">
+    <div class="max-w-7xl mx-auto">
       <div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
         <!-- Left Column - Title -->
         <div class="lg:col-span-4">
-          <span class="inline-block text-sm uppercase tracking-[0.2em] font-medium mb-4" style="color: var(--accent);">
+          <span class="inline-block text-sm uppercase tracking-[0.2em] font-medium mb-4 text-terracotta-500 dark:text-amber-400">
             The Process
           </span>
-          <h2 class="text-4xl md:text-5xl font-display mb-6" style="color: var(--text-primary);">
+          <h2 class="text-4xl md:text-5xl font-display mb-6 text-charcoal-900 dark:text-cream-50">
             How it
             <br />
             <em class="font-normal">works</em>
           </h2>
-          <p class="text-lg" style="color: var(--text-secondary);">
+          <p class="text-lg text-charcoal-600 dark:text-cream-200">
             A straightforward approach to planning your next adventure. No surprises, just thoughtful collaboration.
           </p>
         </div>
@@ -158,17 +149,14 @@ const processSteps = [
             {processSteps.map((step) => (
               <div class="relative">
                 <div class="flex items-baseline gap-4 mb-4">
-                  <span
-                    class="text-7xl md:text-8xl font-display font-medium leading-none"
-                    style="color: var(--accent); opacity: 0.2;"
-                  >
+                  <span class="text-7xl md:text-8xl font-display font-medium leading-none text-terracotta-500/20 dark:text-amber-400/20">
                     {step.number}
                   </span>
-                  <h3 class="text-2xl font-display" style="color: var(--text-primary);">
+                  <h3 class="text-2xl font-display text-charcoal-900 dark:text-cream-50">
                     {step.title}
                   </h3>
                 </div>
-                <p class="pl-0 sm:pl-4" style="color: var(--text-secondary);">
+                <p class="pl-0 sm:pl-4 text-charcoal-600 dark:text-cream-200">
                   {step.description}
                 </p>
               </div>
@@ -180,79 +168,68 @@ const processSteps = [
   </section>
 
   <!-- Pricing Transparency -->
-  <section class="section-padding" style="background-color: var(--bg-primary);">
-    <div class="container-narrow text-center">
-      <span class="inline-block text-sm uppercase tracking-[0.2em] font-medium mb-6" style="color: var(--accent);">
+  <section class="py-20 md:py-28 lg:py-32 px-6 md:px-12 bg-white dark:bg-forest-900">
+    <div class="max-w-3xl mx-auto text-center">
+      <span class="inline-block text-sm uppercase tracking-[0.2em] font-medium mb-6 text-terracotta-500 dark:text-amber-400">
         Pricing
       </span>
-      <h2 class="text-4xl md:text-5xl lg:text-6xl font-display mb-8" style="color: var(--text-primary);">
+      <h2 class="text-4xl md:text-5xl lg:text-6xl font-display mb-8 text-charcoal-900 dark:text-cream-50">
         My services are
         <br />
         <em class="font-normal">free to you</em>
       </h2>
 
       <div class="max-w-2xl mx-auto space-y-6">
-        <p class="text-xl leading-relaxed" style="color: var(--text-secondary);">
+        <p class="text-xl leading-relaxed text-charcoal-600 dark:text-cream-200">
           As a Fora travel advisor, I'm compensated by hotels and travel partners when you book through me - not by you. This means you get expert planning, personalized service, and often exclusive perks and amenities, all at no additional cost compared to booking directly.
         </p>
-        <p class="text-lg" style="color: var(--text-muted);">
+        <p class="text-lg text-charcoal-600/70 dark:text-cream-200/70">
           The same room, the same rate, but with someone in your corner who genuinely cares about making your trip exceptional.
         </p>
       </div>
 
       <!-- Visual accent -->
       <div class="flex justify-center gap-2 mt-12">
-        <div class="w-12 h-px" style="background-color: var(--accent);"></div>
-        <div class="w-3 h-px" style="background-color: var(--accent);"></div>
-        <div class="w-1 h-px" style="background-color: var(--accent);"></div>
+        <div class="w-12 h-px bg-terracotta-500 dark:bg-amber-400"></div>
+        <div class="w-3 h-px bg-terracotta-500 dark:bg-amber-400"></div>
+        <div class="w-1 h-px bg-terracotta-500 dark:bg-amber-400"></div>
       </div>
     </div>
   </section>
 
   <!-- CTA Section -->
-  <section class="section-padding" style="background-color: var(--bg-secondary);">
-    <div class="container-wide">
-      <div
-        class="relative overflow-hidden p-12 md:p-16 lg:p-24"
-        style="background-color: var(--bg-tertiary); border: 1px solid var(--border);"
-      >
+  <section class="py-20 md:py-28 lg:py-32 px-6 md:px-12 bg-cream-100 dark:bg-forest-950">
+    <div class="max-w-7xl mx-auto">
+      <div class="relative overflow-hidden p-12 md:p-16 lg:p-24 bg-cream-50 dark:bg-forest-900 border border-charcoal-200 dark:border-forest-700">
         <div class="relative z-10 max-w-3xl">
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-display mb-6" style="color: var(--text-primary);">
+          <h2 class="text-4xl md:text-5xl lg:text-6xl font-display mb-6 text-charcoal-900 dark:text-cream-50">
             Ready to start
             <br />
             <em class="font-normal">planning?</em>
           </h2>
-          <p class="text-xl mb-10 max-w-xl" style="color: var(--text-secondary);">
+          <p class="text-xl mb-10 max-w-xl text-charcoal-600 dark:text-cream-200">
             Let's talk about where you want to go and how you want to get there. No pressure, no commitment - just a conversation about adventure.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
-            <a href={`${baseUrl}contact`} class="btn-primary">
+            <a
+              href={`${baseUrl}contact`}
+              class="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-wider font-medium bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-950 hover:bg-terracotta-600 dark:hover:bg-amber-500 transition-colors duration-300"
+            >
               Schedule a Discovery Call
             </a>
-            <a href={`${baseUrl}destinations`} class="btn-secondary">
+            <a
+              href={`${baseUrl}destinations`}
+              class="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-wider font-medium border border-charcoal-900 dark:border-cream-50 text-charcoal-900 dark:text-cream-50 hover:bg-charcoal-900 hover:text-white dark:hover:bg-cream-50 dark:hover:text-forest-950 transition-colors duration-300"
+            >
               Explore Destinations
             </a>
           </div>
         </div>
 
         <!-- Decorative elements -->
-        <div
-          class="absolute -top-20 -right-20 w-80 h-80 rounded-full opacity-10"
-          style="background-color: var(--accent);"
-        ></div>
-        <div
-          class="absolute -bottom-10 -right-10 w-40 h-40 rounded-full opacity-5"
-          style="background-color: var(--accent);"
-        ></div>
+        <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-terracotta-500/10 dark:bg-amber-400/10"></div>
+        <div class="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-terracotta-500/5 dark:bg-amber-400/5"></div>
       </div>
     </div>
   </section>
 </Layout>
-
-<style>
-  /* Service card number color transition on hover */
-  .group:hover span:first-child {
-    color: var(--accent) !important;
-    opacity: 0.4;
-  }
-</style>

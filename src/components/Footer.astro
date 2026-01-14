@@ -1,84 +1,51 @@
 ---
 const currentYear = new Date().getFullYear();
-
-const footerLinks = [
+const links = [
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
   { href: '/destinations', label: 'Destinations' },
   { href: '/blog', label: 'Journal' },
-  { href: '/testimonials', label: 'Testimonials' },
   { href: '/faq', label: 'FAQ' },
   { href: '/contact', label: 'Contact' },
 ];
 ---
 
-<footer class="border-t" style="border-color: var(--border); background-color: var(--bg-secondary);">
-  <div class="container-wide section-padding !py-16 lg:!py-24">
-    <div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
-      <!-- Brand Column -->
-      <div class="lg:col-span-5">
-        <a href="/" class="inline-block">
-          <span class="text-3xl md:text-4xl font-display font-medium" style="color: var(--text-primary);">
-            Wyld Wandering
-          </span>
-        </a>
-        <p class="mt-6 text-lg max-w-sm leading-relaxed" style="color: var(--text-secondary);">
+<footer class="bg-charcoal-900 dark:bg-forest-950 text-cream-100">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-16 lg:py-20">
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div class="lg:col-span-2">
+        <span class="font-display text-3xl font-semibold">Wyld Wandering</span>
+        <p class="mt-4 text-cream-300 max-w-md leading-relaxed">
           Adventure travel with intention. For those who want to explore the world without roughing it too much.
         </p>
-        <p class="mt-4 text-sm font-medium tracking-wide uppercase" style="color: var(--accent);">
+        <p class="mt-4 text-sm text-terracotta-400 dark:text-amber-400 font-medium uppercase tracking-wide">
           Certified Fora Travel Advisor
         </p>
       </div>
 
-      <!-- Navigation Column -->
-      <div class="lg:col-span-3 lg:col-start-7">
-        <h4 class="text-sm font-medium tracking-wider uppercase mb-6" style="color: var(--text-muted);">
-          Navigate
-        </h4>
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-cream-400 mb-4">Navigate</h4>
         <nav class="flex flex-col gap-3">
-          {footerLinks.map(link => (
-            <a
-              href={link.href}
-              class="text-base hover:translate-x-1 transition-transform"
-              style="color: var(--text-secondary);"
-            >
-              {link.label}
-            </a>
+          {links.map(link => (
+            <a href={link.href} class="text-cream-300 hover:text-white transition-colors">{link.label}</a>
           ))}
         </nav>
       </div>
 
-      <!-- Connect Column -->
-      <div class="lg:col-span-3">
-        <h4 class="text-sm font-medium tracking-wider uppercase mb-6" style="color: var(--text-muted);">
-          Connect
-        </h4>
-        <div class="space-y-4">
-          <p class="text-base" style="color: var(--text-secondary);">
-            Based in Northern California
-          </p>
-          <a
-            href="/contact"
-            class="inline-flex items-center gap-2 text-base font-medium group"
-            style="color: var(--accent);"
-          >
-            Get in Touch
-            <svg class="w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-            </svg>
-          </a>
-        </div>
+      <div>
+        <h4 class="text-sm font-semibold uppercase tracking-wider text-cream-400 mb-4">Connect</h4>
+        <p class="text-cream-300">Based in Northern California</p>
+        <a href="/contact" class="inline-flex items-center gap-2 mt-4 text-terracotta-400 dark:text-amber-400 font-medium hover:underline">
+          Get in Touch
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+          </svg>
+        </a>
       </div>
     </div>
 
-    <!-- Bottom Bar -->
-    <div class="mt-16 pt-8 flex flex-col md:flex-row justify-between items-center gap-4" style="border-top: 1px solid var(--border);">
-      <p class="text-sm" style="color: var(--text-muted);">
-        &copy; {currentYear} Wyld Wandering. All rights reserved.
-      </p>
-      <p class="text-sm" style="color: var(--text-muted);">
-        Designed with wanderlust
-      </p>
+    <div class="mt-12 pt-8 border-t border-cream-800 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-sm text-cream-500">&copy; {currentYear} Wyld Wandering. All rights reserved.</p>
     </div>
   </div>
 </footer>

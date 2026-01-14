@@ -3,321 +3,131 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Home">
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-end pb-20 lg:pb-32 overflow-hidden">
-    <!-- Background Image Placeholder -->
-    <div class="absolute inset-0">
-      <div class="absolute inset-0 bg-gradient-to-br from-charcoal-900 via-forest-900 to-charcoal-900"></div>
-      <!-- Decorative elements -->
-      <div class="absolute top-1/4 right-0 w-96 h-96 bg-terracotta-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-amber-400/5 rounded-full blur-3xl"></div>
-    </div>
-
-    <!-- Content -->
-    <div class="relative z-10 container-wide px-6 md:px-10 lg:px-16">
-      <div class="max-w-5xl">
-        <!-- Tagline -->
-        <p class="text-cream-300 text-sm md:text-base font-medium tracking-ultra-wide uppercase mb-6 opacity-0 animate-fade-in stagger-1">
-          Adventure Travel Reimagined
-        </p>
-
-        <!-- Main Headline - Editorial Style -->
-        <h1 class="text-cream-100 font-display font-medium leading-[0.9] tracking-tight opacity-0 animate-slide-up stagger-2">
-          <span class="block text-5xl md:text-7xl lg:text-8xl xl:text-9xl">Go Wyld.</span>
-          <span class="block text-5xl md:text-7xl lg:text-8xl xl:text-9xl mt-2">Stay</span>
-          <span class="block text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-terracotta-400 italic">Comfortable.</span>
-        </h1>
-
-        <!-- Subtext -->
-        <p class="mt-10 md:mt-16 text-cream-300 text-lg md:text-xl max-w-xl leading-relaxed opacity-0 animate-fade-in stagger-3">
-          Curated adventures for those who crave the extraordinary without sacrificing the finer things. Off-road by day. Boutique lodges by night.
-        </p>
-
-        <!-- CTA -->
-        <div class="mt-10 flex flex-wrap gap-6 opacity-0 animate-slide-up stagger-4">
-          <a href="/contact" class="btn-primary !border-cream-100 !text-cream-100 before:!bg-cream-100 hover:!text-charcoal-900">
-            Plan Your Journey
-          </a>
-          <a href="/about" class="btn-secondary !text-cream-300 !border-cream-300 hover:!text-cream-100">
-            Meet Zak
-          </a>
-        </div>
-      </div>
-
-      <!-- Scroll Indicator -->
-      <div class="absolute bottom-8 right-6 md:right-10 lg:right-16 hidden md:flex flex-col items-center gap-2 opacity-0 animate-fade-in stagger-5">
-        <span class="text-cream-400 text-xs tracking-widest uppercase rotate-90 origin-center translate-x-4">Scroll</span>
-        <div class="w-px h-16 bg-gradient-to-b from-cream-400 to-transparent"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Philosophy Section -->
-  <section class="section-padding" style="background-color: var(--bg-primary);">
-    <div class="container-wide">
-      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-start">
-        <!-- Label -->
-        <div class="lg:col-span-3">
-          <span class="text-xs font-medium tracking-ultra-wide uppercase" style="color: var(--accent);">
-            The Philosophy
-          </span>
-        </div>
-
-        <!-- Content -->
-        <div class="lg:col-span-7">
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-tight" style="color: var(--text-primary);">
-            Adventure doesn't mean
-            <span class="italic" style="color: var(--accent);">discomfort.</span>
-          </h2>
-          <p class="mt-8 text-lg md:text-xl leading-relaxed" style="color: var(--text-secondary);">
-            I believe the best travel experiences happen when you're well-rested, well-fed, and free to be fully present. That's why I specialize in crafting journeys that blend rugged exploration with thoughtful comfort.
-          </p>
-          <p class="mt-6 text-lg md:text-xl leading-relaxed" style="color: var(--text-secondary);">
-            From overlanding through Utah's backcountry to chasing the Northern Lights in Iceland—always with a warm bed and a good meal waiting at the end of the day.
-          </p>
-          <a href="/about" class="btn-secondary mt-10 inline-flex">
-            Read My Story
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Destinations Section - Full Width -->
-  <section class="py-20 lg:py-32 overflow-hidden" style="background-color: var(--bg-secondary);">
-    <div class="container-wide px-6 md:px-10 lg:px-16 mb-12">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
-        <div>
-          <span class="text-xs font-medium tracking-ultra-wide uppercase" style="color: var(--accent);">
-            Destinations
-          </span>
-          <h2 class="mt-4 text-4xl md:text-5xl font-display font-medium" style="color: var(--text-primary);">
-            Where to Next?
-          </h2>
-        </div>
-        <a href="/destinations" class="btn-secondary">
-          View All Destinations
+  <!-- Hero -->
+  <section class="relative min-h-screen flex items-center bg-charcoal-900">
+    <div class="absolute inset-0 bg-gradient-to-br from-charcoal-900 via-forest-900 to-charcoal-800"></div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32">
+      <p class="text-terracotta-400 text-sm font-medium tracking-widest uppercase mb-6">Adventure Travel Reimagined</p>
+      <h1 class="font-display text-5xl md:text-7xl lg:text-8xl text-cream-50 leading-[0.95]">
+        Go Wyld.<br/>
+        Stay <span class="italic text-terracotta-400">Comfortable.</span>
+      </h1>
+      <p class="mt-8 text-cream-200 text-lg md:text-xl max-w-xl leading-relaxed">
+        Curated adventures for those who crave the extraordinary without sacrificing the finer things.
+      </p>
+      <div class="mt-10 flex flex-wrap gap-4">
+        <a href="/contact" class="inline-flex items-center px-8 py-4 bg-terracotta-500 text-white font-medium text-sm uppercase tracking-wide hover:bg-terracotta-600 transition-colors">
+          Plan Your Journey
         </a>
-      </div>
-    </div>
-
-    <!-- Horizontal Scroll Container -->
-    <div class="relative">
-      <div class="flex gap-6 overflow-x-auto pb-8 px-6 md:px-10 lg:px-16 snap-x snap-mandatory scrollbar-hide" style="-webkit-overflow-scrolling: touch;">
-        <!-- Destination Card 1 -->
-        <a href="/destinations" class="group flex-shrink-0 w-[320px] md:w-[400px] snap-start">
-          <div class="relative aspect-[3/4] overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-amber-700 via-terracotta-600 to-amber-800"></div>
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
-              <span class="text-cream-300 text-xs font-medium tracking-wider uppercase">Desert Southwest</span>
-              <h3 class="text-cream-100 text-2xl md:text-3xl font-display font-medium mt-2">Utah Canyonlands</h3>
-            </div>
-          </div>
-        </a>
-
-        <!-- Destination Card 2 -->
-        <a href="/destinations" class="group flex-shrink-0 w-[320px] md:w-[400px] snap-start">
-          <div class="relative aspect-[3/4] overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-forest-700 via-forest-600 to-forest-800"></div>
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
-              <span class="text-cream-300 text-xs font-medium tracking-wider uppercase">Pacific Coast</span>
-              <h3 class="text-cream-100 text-2xl md:text-3xl font-display font-medium mt-2">Redwood Country</h3>
-            </div>
-          </div>
-        </a>
-
-        <!-- Destination Card 3 -->
-        <a href="/destinations" class="group flex-shrink-0 w-[320px] md:w-[400px] snap-start">
-          <div class="relative aspect-[3/4] overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-slate-600 via-slate-700 to-charcoal-800"></div>
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
-              <span class="text-cream-300 text-xs font-medium tracking-wider uppercase">International</span>
-              <h3 class="text-cream-100 text-2xl md:text-3xl font-display font-medium mt-2">Iceland Highlands</h3>
-            </div>
-          </div>
-        </a>
-
-        <!-- Destination Card 4 -->
-        <a href="/destinations" class="group flex-shrink-0 w-[320px] md:w-[400px] snap-start">
-          <div class="relative aspect-[3/4] overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-blue-900 via-slate-700 to-forest-900"></div>
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
-              <span class="text-cream-300 text-xs font-medium tracking-wider uppercase">South America</span>
-              <h3 class="text-cream-100 text-2xl md:text-3xl font-display font-medium mt-2">Patagonia</h3>
-            </div>
-          </div>
-        </a>
-
-        <!-- Destination Card 5 -->
-        <a href="/destinations" class="group flex-shrink-0 w-[320px] md:w-[400px] snap-start pr-6 md:pr-10 lg:pr-16">
-          <div class="relative aspect-[3/4] overflow-hidden">
-            <div class="absolute inset-0 bg-gradient-to-br from-emerald-800 via-forest-700 to-emerald-900"></div>
-            <div class="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-            <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/60 to-transparent">
-              <span class="text-cream-300 text-xs font-medium tracking-wider uppercase">Oceania</span>
-              <h3 class="text-cream-100 text-2xl md:text-3xl font-display font-medium mt-2">New Zealand</h3>
-            </div>
-          </div>
+        <a href="/about" class="inline-flex items-center px-8 py-4 border-2 border-cream-200 text-cream-200 font-medium text-sm uppercase tracking-wide hover:bg-cream-200 hover:text-charcoal-900 transition-colors">
+          Meet Zak
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section class="section-padding" style="background-color: var(--bg-primary);">
-    <div class="container-wide">
-      <div class="text-center max-w-2xl mx-auto mb-16">
-        <span class="text-xs font-medium tracking-ultra-wide uppercase" style="color: var(--accent);">
-          Services
-        </span>
-        <h2 class="mt-4 text-4xl md:text-5xl font-display font-medium" style="color: var(--text-primary);">
-          How I Can Help
+  <!-- Philosophy -->
+  <section class="py-24 lg:py-32 bg-cream-50 dark:bg-forest-950">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <p class="text-terracotta-500 dark:text-amber-400 text-sm font-medium tracking-widest uppercase mb-4">The Philosophy</p>
+        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-charcoal-900 dark:text-cream-50 leading-tight">
+          Adventure doesn't mean <span class="italic text-terracotta-500 dark:text-amber-400">discomfort.</span>
         </h2>
+        <p class="mt-8 text-charcoal-600 dark:text-cream-200 text-lg leading-relaxed">
+          I believe the best travel experiences happen when you're well-rested, well-fed, and free to be fully present. That's why I specialize in crafting journeys that blend rugged exploration with thoughtful comfort.
+        </p>
+        <a href="/about" class="btn-secondary mt-8">Read My Story</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Destinations Preview -->
+  <section class="py-24 lg:py-32 bg-cream-100 dark:bg-forest-900">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div>
+          <p class="text-terracotta-500 dark:text-amber-400 text-sm font-medium tracking-widest uppercase mb-4">Destinations</p>
+          <h2 class="font-display text-4xl md:text-5xl text-charcoal-900 dark:text-cream-50">Where to Next?</h2>
+        </div>
+        <a href="/destinations" class="btn-secondary">View All</a>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px" style="background-color: var(--border);">
-        <!-- Service 1 -->
-        <div class="p-8 lg:p-12 hover-lift" style="background-color: var(--bg-primary);">
-          <span class="text-5xl font-display" style="color: var(--accent);">01</span>
-          <h3 class="mt-6 text-xl font-display font-medium" style="color: var(--text-primary);">Custom Trip Planning</h3>
-          <p class="mt-4 leading-relaxed" style="color: var(--text-secondary);">
-            Every journey is unique. I'll craft a personalized itinerary that matches your adventure style and comfort preferences.
-          </p>
-        </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <a href="/destinations" class="group relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-amber-700 to-terracotta-800">
+          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <p class="text-cream-200 text-xs font-medium tracking-wider uppercase">Desert Southwest</p>
+            <h3 class="font-display text-2xl text-cream-50 mt-1">Utah Canyonlands</h3>
+          </div>
+        </a>
+        <a href="/destinations" class="group relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-forest-700 to-forest-900">
+          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <p class="text-cream-200 text-xs font-medium tracking-wider uppercase">Pacific Coast</p>
+            <h3 class="font-display text-2xl text-cream-50 mt-1">Redwood Country</h3>
+          </div>
+        </a>
+        <a href="/destinations" class="group relative aspect-[4/5] overflow-hidden bg-gradient-to-br from-slate-600 to-charcoal-800">
+          <div class="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors"></div>
+          <div class="absolute bottom-0 left-0 right-0 p-6">
+            <p class="text-cream-200 text-xs font-medium tracking-wider uppercase">International</p>
+            <h3 class="font-display text-2xl text-cream-50 mt-1">Iceland Highlands</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-        <!-- Service 2 -->
-        <div class="p-8 lg:p-12 hover-lift" style="background-color: var(--bg-primary);">
-          <span class="text-5xl font-display" style="color: var(--accent);">02</span>
-          <h3 class="mt-6 text-xl font-display font-medium" style="color: var(--text-primary);">Boutique Accommodations</h3>
-          <p class="mt-4 leading-relaxed" style="color: var(--text-secondary);">
-            From luxury lodges to thoughtfully-designed cabins, I'll find the perfect places to rest between adventures.
-          </p>
-        </div>
+  <!-- Services Preview -->
+  <section class="py-24 lg:py-32 bg-cream-50 dark:bg-forest-950">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <p class="text-terracotta-500 dark:text-amber-400 text-sm font-medium tracking-widest uppercase mb-4">Services</p>
+        <h2 class="font-display text-4xl md:text-5xl text-charcoal-900 dark:text-cream-50">How I Can Help</h2>
+      </div>
 
-        <!-- Service 3 -->
-        <div class="p-8 lg:p-12 hover-lift" style="background-color: var(--bg-primary);">
-          <span class="text-5xl font-display" style="color: var(--accent);">03</span>
-          <h3 class="mt-6 text-xl font-display font-medium" style="color: var(--text-primary);">Overlanding Expertise</h3>
-          <p class="mt-4 leading-relaxed" style="color: var(--text-secondary);">
-            Passionate about off-roading? I specialize in crafting overland routes that balance adventure with accessibility.
-          </p>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="p-8 border border-charcoal-200 dark:border-forest-700 bg-white dark:bg-forest-900">
+          <span class="font-display text-4xl text-terracotta-500 dark:text-amber-400">01</span>
+          <h3 class="font-display text-xl text-charcoal-900 dark:text-cream-50 mt-4">Custom Trip Planning</h3>
+          <p class="mt-3 text-charcoal-600 dark:text-cream-300">Personalized itineraries that match your adventure style and comfort preferences.</p>
         </div>
-
-        <!-- Service 4 -->
-        <div class="p-8 lg:p-12 hover-lift" style="background-color: var(--bg-primary);">
-          <span class="text-5xl font-display" style="color: var(--accent);">04</span>
-          <h3 class="mt-6 text-xl font-display font-medium" style="color: var(--text-primary);">Local Connections</h3>
-          <p class="mt-4 leading-relaxed" style="color: var(--text-secondary);">
-            As a Fora advisor, I have access to exclusive perks, upgrades, and insider knowledge at properties worldwide.
-          </p>
+        <div class="p-8 border border-charcoal-200 dark:border-forest-700 bg-white dark:bg-forest-900">
+          <span class="font-display text-4xl text-terracotta-500 dark:text-amber-400">02</span>
+          <h3 class="font-display text-xl text-charcoal-900 dark:text-cream-50 mt-4">Boutique Accommodations</h3>
+          <p class="mt-3 text-charcoal-600 dark:text-cream-300">From luxury lodges to thoughtfully-designed cabins, the perfect places to rest.</p>
         </div>
-
-        <!-- Service 5 -->
-        <div class="p-8 lg:p-12 hover-lift" style="background-color: var(--bg-primary);">
-          <span class="text-5xl font-display" style="color: var(--accent);">05</span>
-          <h3 class="mt-6 text-xl font-display font-medium" style="color: var(--text-primary);">Group Adventures</h3>
-          <p class="mt-4 leading-relaxed" style="color: var(--text-secondary);">
-            Traveling with friends or family? I'll coordinate every detail so everyone has an unforgettable experience.
-          </p>
-        </div>
-
-        <!-- Service 6 -->
-        <div class="p-8 lg:p-12 hover-lift" style="background-color: var(--bg-primary);">
-          <span class="text-5xl font-display" style="color: var(--accent);">06</span>
-          <h3 class="mt-6 text-xl font-display font-medium" style="color: var(--text-primary);">Ongoing Support</h3>
-          <p class="mt-4 leading-relaxed" style="color: var(--text-secondary);">
-            From planning to return, I'm here to help with any changes, questions, or unexpected situations along the way.
-          </p>
+        <div class="p-8 border border-charcoal-200 dark:border-forest-700 bg-white dark:bg-forest-900">
+          <span class="font-display text-4xl text-terracotta-500 dark:text-amber-400">03</span>
+          <h3 class="font-display text-xl text-charcoal-900 dark:text-cream-50 mt-4">Overlanding Expertise</h3>
+          <p class="mt-3 text-charcoal-600 dark:text-cream-300">Off-road routes that balance adventure with accessibility and comfort.</p>
         </div>
       </div>
 
       <div class="text-center mt-12">
-        <a href="/services" class="btn-primary">
-          Explore All Services
+        <a href="/services" class="btn-primary">Explore All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 lg:py-32 bg-charcoal-900 dark:bg-forest-950">
+    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-cream-50 leading-tight">
+        Ready for your next <span class="italic text-terracotta-400 dark:text-amber-400">adventure?</span>
+      </h2>
+      <p class="mt-6 text-cream-200 text-lg max-w-2xl mx-auto">
+        Tell me about your travel dreams. Whether it's a specific destination or just a feeling you're chasing, I'll help you find the perfect journey.
+      </p>
+      <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <a href="/contact" class="inline-flex items-center px-8 py-4 bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-950 font-medium text-sm uppercase tracking-wide hover:bg-terracotta-600 dark:hover:bg-amber-300 transition-colors">
+          Start Planning
+        </a>
+        <a href="/faq" class="inline-flex items-center px-8 py-4 border-2 border-cream-200 text-cream-200 font-medium text-sm uppercase tracking-wide hover:bg-cream-200 hover:text-charcoal-900 transition-colors">
+          Common Questions
         </a>
       </div>
     </div>
   </section>
-
-  <!-- Testimonial Section -->
-  <section class="relative py-32 lg:py-48 overflow-hidden">
-    <div class="absolute inset-0 bg-charcoal-900 dark:bg-forest-950"></div>
-    <div class="absolute inset-0">
-      <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-terracotta-500/10 rounded-full blur-3xl"></div>
-      <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-amber-400/5 rounded-full blur-3xl"></div>
-    </div>
-
-    <div class="relative container-narrow px-6 md:px-10 lg:px-16 text-center">
-      <svg class="w-12 h-12 mx-auto text-cream-500/30" fill="currentColor" viewBox="0 0 24 24">
-        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-      </svg>
-      <blockquote class="mt-8">
-        <p class="text-2xl md:text-3xl lg:text-4xl font-display font-medium text-cream-100 leading-relaxed">
-          "Zak transformed our dream of exploring Patagonia into reality. Every detail was thoughtful—from the remote lodges to the perfectly timed glacier hikes. Adventure with intention, exactly as promised."
-        </p>
-      </blockquote>
-      <div class="mt-10">
-        <p class="text-cream-300 font-medium">Marcus & Elena</p>
-        <p class="text-cream-500 text-sm mt-1">Patagonia, 2024</p>
-      </div>
-      <a href="/testimonials" class="inline-flex items-center gap-2 mt-10 text-amber-400 dark:text-amber-400 font-medium text-sm tracking-wide uppercase">
-        Read More Stories
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-        </svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="section-padding" style="background-color: var(--bg-primary);">
-    <div class="container-wide">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-        <div>
-          <span class="text-xs font-medium tracking-ultra-wide uppercase" style="color: var(--accent);">
-            Ready?
-          </span>
-          <h2 class="mt-4 text-4xl md:text-5xl lg:text-6xl font-display font-medium leading-tight" style="color: var(--text-primary);">
-            Let's plan your next
-            <span class="italic" style="color: var(--accent);">adventure.</span>
-          </h2>
-          <p class="mt-6 text-lg leading-relaxed" style="color: var(--text-secondary);">
-            Tell me about your travel dreams. Whether it's a specific destination or just a feeling you're chasing, I'll help you find the perfect journey.
-          </p>
-          <div class="mt-10 flex flex-wrap gap-6">
-            <a href="/contact" class="btn-primary">
-              Start Planning
-            </a>
-            <a href="/faq" class="btn-secondary">
-              Common Questions
-            </a>
-          </div>
-        </div>
-
-        <!-- Decorative Element -->
-        <div class="relative hidden lg:block">
-          <div class="aspect-square rounded-full border" style="border-color: var(--border);"></div>
-          <div class="absolute inset-8 rounded-full border" style="border-color: var(--border);"></div>
-          <div class="absolute inset-16 rounded-full border" style="border-color: var(--border);"></div>
-          <div class="absolute inset-0 flex items-center justify-center">
-            <span class="text-8xl font-display italic" style="color: var(--accent);">W</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 </Layout>
-
-<style>
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-</style>
