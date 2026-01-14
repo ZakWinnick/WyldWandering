@@ -11,8 +11,8 @@ const navLinks = [
 
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
-    <a href="/" class="font-display text-2xl font-semibold text-white">
-      Wyld Wandering
+    <a href="/" class="block">
+      <img src="/logo/wyld-final-lockup-light.svg" alt="Wyld Wandering" class="h-10 w-auto" />
     </a>
 
     <div class="hidden lg:flex items-center gap-8">
@@ -61,61 +61,64 @@ const navLinks = [
   </div>
 </div>
 
-<script>
-  function updateIcons() {
-    const isDark = document.documentElement.classList.contains('dark');
+<script is:inline>
+  (function() {
+    function updateIcons() {
+      const isDark = document.documentElement.classList.contains('dark');
 
-    const sunIcon = document.getElementById('sun-icon');
-    const moonIcon = document.getElementById('moon-icon');
-    const sunIconMobile = document.getElementById('sun-icon-mobile');
-    const moonIconMobile = document.getElementById('moon-icon-mobile');
+      const sunIcon = document.getElementById('sun-icon');
+      const moonIcon = document.getElementById('moon-icon');
+      const sunIconMobile = document.getElementById('sun-icon-mobile');
+      const moonIconMobile = document.getElementById('moon-icon-mobile');
 
-    if (isDark) {
-      sunIcon?.classList.remove('hidden');
-      moonIcon?.classList.add('hidden');
-      sunIconMobile?.classList.remove('hidden');
-      moonIconMobile?.classList.add('hidden');
-    } else {
-      sunIcon?.classList.add('hidden');
-      moonIcon?.classList.remove('hidden');
-      sunIconMobile?.classList.add('hidden');
-      moonIconMobile?.classList.remove('hidden');
+      if (isDark) {
+        sunIcon?.classList.remove('hidden');
+        moonIcon?.classList.add('hidden');
+        sunIconMobile?.classList.remove('hidden');
+        moonIconMobile?.classList.add('hidden');
+      } else {
+        sunIcon?.classList.add('hidden');
+        moonIcon?.classList.remove('hidden');
+        sunIconMobile?.classList.add('hidden');
+        moonIconMobile?.classList.remove('hidden');
+      }
     }
-  }
 
-  function toggleTheme() {
-    const isDark = document.documentElement.classList.toggle('dark');
-    localStorage.setItem('theme', isDark ? 'dark' : 'light');
-    updateIcons();
-  }
-
-  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
-  document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleTheme);
-
-  // Mobile menu
-  const menuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  const menuPath = document.getElementById('menu-icon-path');
-
-  menuBtn?.addEventListener('click', () => {
-    const isOpen = mobileMenu?.classList.toggle('hidden') === false;
-    if (isOpen) {
-      menuPath?.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-      document.body.style.overflow = 'hidden';
-    } else {
-      menuPath?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-      document.body.style.overflow = '';
+    function toggleTheme() {
+      const isDark = document.documentElement.classList.toggle('dark');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateIcons();
     }
-  });
 
-  mobileMenu?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.add('hidden');
-      menuPath?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-      document.body.style.overflow = '';
+    // Theme toggle buttons
+    document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme);
+    document.getElementById('theme-toggle-mobile')?.addEventListener('click', toggleTheme);
+
+    // Mobile menu
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuPath = document.getElementById('menu-icon-path');
+
+    menuBtn?.addEventListener('click', () => {
+      const isOpen = mobileMenu?.classList.toggle('hidden') === false;
+      if (isOpen) {
+        menuPath?.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+        document.body.style.overflow = 'hidden';
+      } else {
+        menuPath?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        document.body.style.overflow = '';
+      }
     });
-  });
 
-  // Initial icon state
-  updateIcons();
+    mobileMenu?.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuPath?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Initial icon state
+    updateIcons();
+  })();
 </script>
