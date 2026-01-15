@@ -5,30 +5,31 @@ const baseUrl = import.meta.env.BASE_URL;
 
 const tripTypes = [
   { value: '', label: 'Select trip type' },
-  { value: 'adventure', label: 'Adventure & Expedition' },
-  { value: 'luxury', label: 'Luxury Escape' },
   { value: 'honeymoon', label: 'Honeymoon & Romance' },
+  { value: 'anniversary', label: 'Anniversary & Celebration' },
+  { value: 'beach', label: 'Beach & Island' },
+  { value: 'europe', label: 'European Escape' },
+  { value: 'city', label: 'City Break' },
   { value: 'group', label: 'Group Travel' },
-  { value: 'family', label: 'Family Adventure' },
-  { value: 'solo', label: 'Solo Journey' },
+  { value: 'family', label: 'Family Vacation' },
   { value: 'other', label: 'Something Else' },
 ];
 ---
 
-<Layout title="Contact" description="Get in touch with Zak Winnick, your certified Fora travel advisor. Let's start planning your dream adventure.">
+<Layout title="Contact" description="Get in touch with Zak Winnick, your certified Fora travel advisor. Let's start planning your next trip.">
   <!-- Hero Section -->
   <section class="relative min-h-[50vh] flex items-center bg-charcoal-900">
     <div class="absolute inset-0 bg-gradient-to-br from-charcoal-900 via-forest-900 to-charcoal-800"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-6 py-32 text-center">
       <p class="uppercase tracking-[0.3em] text-sm mb-6 text-terracotta-400">
-        Begin Your Journey
+        Let's Talk
       </p>
       <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-cream-50 leading-[0.95] mb-8">
-        Let's<br />
-        <em class="italic text-terracotta-400">Connect</em>
+        Start<br />
+        <em class="italic text-terracotta-400">Here</em>
       </h1>
       <p class="text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto text-cream-200">
-        Every great adventure starts with a conversation. Tell me about your travel dreams, and together we'll craft an experience you'll treasure forever.
+        Tell me where you want to go—or just tell me what you're in the mood for. Either way, we'll figure it out.
       </p>
     </div>
   </section>
@@ -111,7 +112,7 @@ const tripTypes = [
                   id="destination"
                   name="destination"
                   class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300"
-                  placeholder="e.g., Iceland, Japan, Patagonia, or 'I'm open to suggestions!'"
+                  placeholder="e.g., Italy, Maldives, Tokyo, or 'I'm open to suggestions!'"
                 />
               </div>
 
@@ -246,7 +247,7 @@ const tripTypes = [
               About Your Advisor
             </h3>
             <p class="mb-6 text-charcoal-600 dark:text-cream-200">
-              Hi, I'm Zak Winnick! I'm passionate about crafting unique travel experiences that balance adventure with comfort. Every trip I plan is tailored to your interests, pace, and travel style.
+              Hi, I'm Zak Winnick. I plan trips for people who've been disappointed by "luxury" before—the kind of travel that actually delivers on its promise. Every trip I plan is tailored to how you want to travel.
             </p>
             <a href={`${baseUrl}about`} class="inline-flex items-center justify-center px-6 py-3 font-display text-sm font-medium tracking-wider uppercase border border-charcoal-900 dark:border-cream-50 text-charcoal-900 dark:text-cream-50 hover:bg-charcoal-900 hover:text-cream-50 dark:hover:bg-cream-50 dark:hover:text-forest-900 transition-colors duration-300">
               Learn more about me

@@ -6,33 +6,33 @@ const baseUrl = import.meta.env.BASE_URL;
 const services = [
   {
     number: '01',
-    title: 'Custom Trip Planning',
-    description: 'Every adventure is unique. I create personalized itineraries tailored to your interests, pace, and comfort level - whether you want to tackle remote mountain passes or discover hidden coastal roads, all while ensuring you have a comfortable place to rest at the end of each day.',
+    title: 'Custom Itineraries',
+    description: 'Trips designed around how you actually want to travel, not a template with your name on it. I learn what matters to you—pace, preferences, the experiences you crave—and build something that feels like yours.',
   },
   {
     number: '02',
-    title: 'Boutique Accommodations',
-    description: 'With years of experience in the luxury hospitality industry, I have insider knowledge of the best boutique properties worldwide. From restored historic haciendas to modern eco-lodges, I match you with accommodations that enhance your adventure rather than compromise it.',
+    title: 'Hotels & Resorts',
+    description: 'Preferred partner rates, room upgrades, resort credits, and the perks that actually matter. I work with the world\'s best properties to get you benefits you can\'t get booking on your own.',
   },
   {
     number: '03',
-    title: 'Overlanding Adventures',
-    description: 'For those drawn to the road less traveled. I specialize in planning overland routes that balance adventure with practicality - identifying the best trails, waypoints, and off-road experiences while ensuring you have reliable lodging and resupply points along the way.',
+    title: 'Reservations & Access',
+    description: 'The restaurant that\'s "fully booked." The private tour that\'s not on the website. The experience that requires knowing who to ask. Some doors just open when you have the right connections.',
   },
   {
     number: '04',
-    title: 'Destination Research',
-    description: 'Not sure where to go? I dig deep into destinations to find the perfect balance of adventure and comfort for your travel style. From seasonal considerations to local conditions, I do the research so you can make informed decisions about your next expedition.',
+    title: 'Destination Expertise',
+    description: 'Not sure where to go? I research destinations obsessively—the right season, the right neighborhood, the property worth choosing. Tell me what you\'re in the mood for and I\'ll find places that deliver.',
   },
   {
     number: '05',
     title: 'Group Travel',
-    description: 'Planning an adventure with friends, family, or fellow enthusiasts? I handle the logistics of group trips, coordinating vehicles, accommodations, and activities so everyone can focus on the experience rather than the details.',
+    description: 'Planning with friends, family, or colleagues? I coordinate the logistics so everyone gets what they want—separate bookings, group dining, activities that work for different interests—without the usual headaches.',
   },
   {
     number: '06',
     title: 'Special Occasions',
-    description: 'Celebrate life\'s milestones with an adventure that matches your spirit. Whether it\'s an adventurous honeymoon through Patagonia or an anniversary trip exploring the Scottish Highlands, I create memorable journeys that balance romance with exploration.',
+    description: 'Honeymoons, anniversaries, milestone birthdays, proposals. Some trips need to be flawless. I handle the pressure so you can focus on the moment.',
   },
 ];
 
@@ -40,17 +40,17 @@ const processSteps = [
   {
     number: '01',
     title: 'Discovery',
-    description: 'We start with a conversation about your travel dreams, comfort preferences, and adventure appetite. No commitment, just exploration.',
+    description: 'We start with a conversation about where you want to go, how you like to travel, and what makes a trip feel worth it. No commitment, just exploration.',
   },
   {
     number: '02',
     title: 'Design',
-    description: 'Based on our conversation, I create a detailed itinerary with route options, accommodation recommendations, and activity suggestions.',
+    description: 'Based on our conversation, I create a detailed itinerary—properties, dining, experiences—all tailored to what actually matters to you.',
   },
   {
     number: '03',
     title: 'Refine',
-    description: 'We refine the plan together until it feels exactly right. Adjust the pace, swap properties, add experiences - it\'s your adventure.',
+    description: 'We refine the plan together until it feels exactly right. Adjust the pace, swap properties, add experiences—it\'s your trip.',
   },
   {
     number: '04',
@@ -60,7 +60,7 @@ const processSteps = [
 ];
 ---
 
-<Layout title="Services" description="Expert travel planning services for adventure seekers who appreciate comfort. Custom itineraries, boutique hotels, and overlanding trips planned by a certified Fora travel advisor.">
+<Layout title="Services" description="Premium travel planning for discerning travelers. Custom itineraries, luxury hotels with exclusive perks, and reservations you can't get on your own. Certified Fora travel advisor.">
   <!-- Hero Section - Dark -->
   <section class="py-20 md:py-28 lg:py-32 px-6 md:px-12 bg-forest-950 dark:bg-forest-950">
     <div class="max-w-7xl mx-auto">
@@ -70,16 +70,14 @@ const processSteps = [
             Services
           </span>
           <h1 class="text-5xl md:text-6xl lg:text-7xl font-display leading-[1.1] text-cream-50 dark:text-cream-50">
-            Adventure,
+            Everything,
             <br />
-            <em class="font-normal">thoughtfully</em>
-            <br />
-            planned
+            <em class="font-normal">handled.</em>
           </h1>
         </div>
         <div class="lg:pb-4">
           <p class="text-xl md:text-2xl font-display leading-relaxed text-cream-200 dark:text-cream-200">
-            I believe adventure doesn't mean sacrificing comfort. As a certified Fora travel advisor with a background in luxury hospitality, I specialize in creating journeys that push boundaries during the day and reward you with exceptional accommodations at night.
+            The best hotels. The impossible reservations. The upgrades that just happen. As a certified Fora travel advisor with a background in luxury hospitality, I take care of the details so your trip actually delivers on the promise.
           </p>
         </div>
       </div>
@@ -97,9 +95,9 @@ const processSteps = [
           What I Offer
         </span>
         <h2 class="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900 dark:text-cream-50">
-          Comprehensive travel planning
+          Premium travel planning
           <br class="hidden md:block" />
-          <span class="text-charcoal-600 dark:text-cream-200">for those who want more</span>
+          <span class="text-charcoal-600 dark:text-cream-200">for people who know the difference</span>
         </h2>
       </div>
 
@@ -139,7 +137,7 @@ const processSteps = [
             <em class="font-normal">works</em>
           </h2>
           <p class="text-lg text-charcoal-600 dark:text-cream-200">
-            A straightforward approach to planning your next adventure. No surprises, just thoughtful collaboration.
+            A straightforward approach to planning your next trip. No surprises, just thoughtful collaboration.
           </p>
         </div>
 
@@ -208,7 +206,7 @@ const processSteps = [
             <em class="font-normal">planning?</em>
           </h2>
           <p class="text-xl mb-10 max-w-xl text-charcoal-600 dark:text-cream-200">
-            Let's talk about where you want to go and how you want to get there. No pressure, no commitment - just a conversation about adventure.
+            Let's talk about where you want to go and what you're looking for. No pressure, no commitment—just a conversation about what's possible.
           </p>
           <div class="flex flex-col sm:flex-row gap-4">
             <a

@@ -5,105 +5,104 @@ const baseUrl = import.meta.env.BASE_URL;
 
 const destinationCategories = [
   {
-    title: 'California & Pacific Coast',
-    description: 'Towering Redwoods, dramatic Big Sur cliffs, and rugged coastal trails. Experience the best of the Golden State from behind the wheel.',
-    highlights: ['Redwood National Park', 'Big Sur Highway 1', 'Lost Coast Trail', 'Point Reyes'],
-    gradientLight: 'bg-gradient-to-br from-emerald-700 via-amber-700 to-orange-400',
-    gradientDark: 'dark:from-emerald-800 dark:via-amber-800 dark:to-orange-500',
+    title: 'European Escapes',
+    description: 'Historic cities, coastal villages, and countryside retreats. From Tuscan villas to Parisian apartments to Santorini sunsets.',
+    highlights: ['Italy', 'France', 'Spain', 'Greece'],
+    gradientLight: 'bg-gradient-to-br from-amber-700 via-terracotta-600 to-orange-400',
+    gradientDark: 'dark:from-amber-800 dark:via-terracotta-700 dark:to-orange-500',
   },
   {
-    title: 'Desert Southwest',
-    description: 'Vast canyons, red rock formations, and endless desert skies. Utah and Arizona offer some of the most dramatic overlanding terrain in the world.',
-    highlights: ['Moab & Canyonlands', 'Monument Valley', 'Sedona Trails', 'White Pocket'],
-    gradientLight: 'bg-gradient-to-br from-orange-500 via-amber-400 to-yellow-200',
-    gradientDark: 'dark:from-orange-600 dark:via-amber-500 dark:to-yellow-300',
+    title: 'Beach & Island',
+    description: 'Crystal waters, white sand, and properties worth staying at. Caribbean hideaways, Maldives overwater villas, and Mediterranean coastlines.',
+    highlights: ['Maldives', 'Caribbean', 'Bali', 'Thailand'],
+    gradientLight: 'bg-gradient-to-br from-cyan-500 via-blue-400 to-teal-300',
+    gradientDark: 'dark:from-cyan-600 dark:via-blue-500 dark:to-teal-400',
   },
   {
-    title: 'Pacific Northwest',
-    description: 'Lush rainforests, volcanic peaks, and pristine wilderness. Oregon and Washington deliver adventure seekers unforgettable landscapes.',
-    highlights: ['Olympic Peninsula', 'Cascade Range', 'Oregon Coast', 'Mount Rainier'],
-    gradientLight: 'bg-gradient-to-br from-green-900 via-emerald-700 to-green-500',
-    gradientDark: 'dark:from-green-950 dark:via-emerald-800 dark:to-green-600',
-  },
-  {
-    title: 'Mountain West',
-    description: 'Alpine meadows, rugged mountain passes, and wide-open spaces. Colorado and Montana are calling for your next high-altitude adventure.',
-    highlights: ['Rocky Mountain NP', 'Glacier National Park', 'San Juan Mountains', 'Beartooth Highway'],
+    title: 'City Breaks',
+    description: 'The best neighborhoods, the right hotels, the reservations worth having. New York to Tokyo, London to Buenos Aires.',
+    highlights: ['New York', 'London', 'Tokyo', 'Paris'],
     gradientLight: 'bg-gradient-to-br from-slate-700 via-slate-500 to-slate-400',
     gradientDark: 'dark:from-slate-800 dark:via-slate-600 dark:to-slate-500',
   },
   {
-    title: 'International Adventures',
-    description: 'For those ready to explore beyond borders. From volcanic landscapes to glacial fjords, the world awaits.',
-    highlights: ['Iceland Ring Road', 'New Zealand South Island', 'Patagonia', 'Scottish Highlands'],
-    gradientLight: 'bg-gradient-to-br from-emerald-800 via-green-900 to-green-950',
-    gradientDark: 'dark:from-emerald-900 dark:via-green-950 dark:to-black',
+    title: 'Safari & Wildlife',
+    description: 'Luxury safari lodges, private game reserves, and once-in-a-lifetime wildlife encounters. Africa, South America, and beyond.',
+    highlights: ['Kenya', 'Tanzania', 'Botswana', 'South Africa'],
+    gradientLight: 'bg-gradient-to-br from-amber-600 via-yellow-500 to-orange-300',
+    gradientDark: 'dark:from-amber-700 dark:via-yellow-600 dark:to-orange-400',
   },
   {
-    title: 'Luxury Wilderness',
-    description: 'Adventure meets comfort. Glamping retreats and upscale outdoor experiences for those who want nature without sacrificing amenities.',
-    highlights: ['Under Canvas Resorts', 'Safari-style Camps', 'Treehouse Retreats', 'Desert Glamping'],
-    gradientLight: 'bg-gradient-to-br from-amber-400 via-yellow-500 to-amber-200',
-    gradientDark: 'dark:from-amber-500 dark:via-yellow-600 dark:to-amber-300',
+    title: 'Luxury Wellness',
+    description: 'World-class spas, wellness retreats, and restorative escapes. Places that actually leave you feeling better than when you arrived.',
+    highlights: ['Aman Resorts', 'Six Senses', 'Como Hotels', 'Canyon Ranch'],
+    gradientLight: 'bg-gradient-to-br from-emerald-600 via-green-500 to-teal-400',
+    gradientDark: 'dark:from-emerald-700 dark:via-green-600 dark:to-teal-500',
+  },
+  {
+    title: 'Wine & Culinary',
+    description: 'Vineyard tours, Michelin-starred dining, and food experiences that become the trip. Napa to Burgundy to Rioja.',
+    highlights: ['Napa Valley', 'Bordeaux', 'Tuscany', 'Mendoza'],
+    gradientLight: 'bg-gradient-to-br from-purple-700 via-red-600 to-rose-400',
+    gradientDark: 'dark:from-purple-800 dark:via-red-700 dark:to-rose-500',
   },
 ];
 
 const featuredTrips = [
   {
-    name: 'Redwood Coast Explorer',
-    duration: '5 Days',
-    category: 'California & Pacific Coast',
-    description: 'Wind through ancient Redwood groves, camp along the rugged Mendocino coast, and discover hidden coastal gems.',
-    gradientLight: 'bg-gradient-to-br from-emerald-700 to-green-500',
-    gradientDark: 'dark:from-emerald-800 dark:to-green-600',
-  },
-  {
-    name: 'Utah Canyonlands Overland',
-    duration: '7 Days',
-    category: 'Desert Southwest',
-    description: 'An epic journey through Moab, Canyonlands, and Capitol Reef with carefully selected campsites and off-road trails.',
-    gradientLight: 'bg-gradient-to-br from-orange-500 to-amber-700',
-    gradientDark: 'dark:from-orange-600 dark:to-amber-800',
-  },
-  {
-    name: 'Iceland Highlands Circuit',
+    name: 'Amalfi Coast & Rome',
     duration: '10 Days',
-    category: 'International Adventures',
-    description: 'Traverse the legendary F-roads, soak in hot springs, and witness otherworldly volcanic landscapes.',
+    category: 'European Escapes',
+    description: 'Cliffside hotels overlooking the Mediterranean, private transfers, and reservations at restaurants that matter.',
+    gradientLight: 'bg-gradient-to-br from-amber-600 to-orange-400',
+    gradientDark: 'dark:from-amber-700 dark:to-orange-500',
+  },
+  {
+    name: 'Maldives Honeymoon',
+    duration: '7 Days',
+    category: 'Beach & Island',
+    description: 'Overwater villas, private beach dinners, spa treatments, and the kind of seclusion that honeymoons deserve.',
+    gradientLight: 'bg-gradient-to-br from-cyan-500 to-teal-400',
+    gradientDark: 'dark:from-cyan-600 dark:to-teal-500',
+  },
+  {
+    name: 'Tokyo & Kyoto',
+    duration: '12 Days',
+    category: 'City Breaks',
+    description: 'From modern Tokyo hotels to traditional Kyoto ryokans. Omakase dinners, temple visits, and the experiences not in the guidebooks.',
     gradientLight: 'bg-gradient-to-br from-slate-700 to-slate-500',
     gradientDark: 'dark:from-slate-800 dark:to-slate-600',
   },
   {
-    name: 'Pacific Northwest Grand Loop',
+    name: 'Kenya Safari',
     duration: '8 Days',
-    category: 'Pacific Northwest',
-    description: 'From Olympic rainforests to Cascade volcanoes, experience the full range of PNW wilderness.',
-    gradientLight: 'bg-gradient-to-br from-green-900 to-emerald-700',
-    gradientDark: 'dark:from-green-950 dark:to-emerald-800',
+    category: 'Safari & Wildlife',
+    description: 'Luxury tented camps, private game drives, and the Great Migration. Wildlife encounters that change how you see the world.',
+    gradientLight: 'bg-gradient-to-br from-amber-600 to-yellow-400',
+    gradientDark: 'dark:from-amber-700 dark:to-yellow-500',
   },
 ];
 ---
 
-<Layout title="Destinations" description="Explore our curated adventure destinations - from California Redwoods to international overlanding expeditions. Find your next adventure with Wyld Wandering.">
+<Layout title="Destinations" description="Curated destinations for discerning travelers. European escapes, beach retreats, city breaks, and experiences worth having. Premium travel planning by Wyld Wandering.">
   <!-- Hero Section -->
   <section class="relative min-h-[70vh] flex items-center bg-charcoal-900">
     <div class="absolute inset-0 bg-gradient-to-br from-charcoal-900 via-forest-900 to-charcoal-800"></div>
     <div class="relative z-10 w-full max-w-7xl mx-auto px-6 py-32 lg:px-8">
       <div class="max-w-4xl">
         <span class="inline-block font-sans text-sm font-medium tracking-widest uppercase text-terracotta-400 mb-8">
-          Where Will You Wander?
+          Destinations
         </span>
         <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-cream-50 leading-[0.95] mb-8">
-          Curated<br/>
-          <span class="italic text-terracotta-400">Destinations</span><br/>
-          for the Adventurous Soul
+          We know<br/>
+          <span class="italic text-terracotta-400">a place.</span>
         </h1>
         <p class="font-sans text-xl leading-relaxed text-cream-200 max-w-2xl mb-12">
-          From Northern California's towering Redwoods to international overlanding expeditions, every journey is crafted with care and expertise.
+          European coastlines, tropical islands, world-class cities, and everything in between. Tell me what you're in the mood for—I'll find the places worth going.
         </p>
         <div class="flex flex-wrap gap-6 items-center">
           <a href="/contact" class="inline-flex items-center px-8 py-4 bg-terracotta-500 text-white font-medium text-sm uppercase tracking-wide hover:bg-terracotta-600 transition-colors">
-            Plan Your Adventure
+            Start Planning
           </a>
           <a href="#destinations" class="inline-flex items-center px-8 py-4 border-2 border-cream-200 text-cream-200 font-medium text-sm uppercase tracking-wide hover:bg-cream-200 hover:text-charcoal-900 transition-colors">
             Explore Destinations
@@ -118,13 +117,13 @@ const featuredTrips = [
     <div class="max-w-7xl mx-auto px-6 lg:px-8">
       <header class="text-center max-w-3xl mx-auto mb-16">
         <span class="inline-block font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta-500 dark:text-amber-400 mb-4">
-          Explore By Region
+          Explore By Type
         </span>
         <h2 class="font-serif text-4xl md:text-5xl font-medium leading-tight text-charcoal-900 dark:text-cream-50 mb-4">
-          Destination Categories
+          Where Do You Want to Go?
         </h2>
         <p class="font-sans text-lg leading-relaxed text-charcoal-600 dark:text-cream-200">
-          Whether you're drawn to desert landscapes, coastal trails, or international expeditions, we specialize in creating unforgettable adventure experiences.
+          Beach escapes, European getaways, culinary journeys, or safari adventures—we specialize in creating trips that deliver on every promise.
         </p>
       </header>
 
@@ -163,10 +162,10 @@ const featuredTrips = [
           Signature Experiences
         </span>
         <h2 class="font-serif text-4xl md:text-5xl font-medium leading-tight text-charcoal-900 dark:text-cream-50 mb-4">
-          Featured Trips & Experiences
+          Featured Trips
         </h2>
         <p class="font-sans text-lg leading-relaxed text-charcoal-600 dark:text-cream-200">
-          These carefully curated itineraries showcase what adventure with comfort truly means. Each trip is fully customizable to your preferences.
+          A few examples of what's possible. Each itinerary is fully customizable—these are starting points, not packages.
         </p>
       </header>
 
@@ -200,24 +199,24 @@ const featuredTrips = [
   <section class="py-24 lg:py-32 bg-cream-50 dark:bg-forest-900">
     <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
       <span class="inline-block font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta-500 dark:text-amber-400 mb-4">
-        Dream Bigger
+        Somewhere Else?
       </span>
       <h2 class="font-serif text-4xl md:text-5xl font-medium leading-tight text-charcoal-900 dark:text-cream-50 mb-6">
-        Not Seeing Your Dream Destination?
+        Don't See What You're Looking For?
       </h2>
       <p class="font-sans text-lg leading-relaxed text-charcoal-600 dark:text-cream-200 max-w-2xl mx-auto mb-10">
-        These are just a few of the adventures we can create together. Whether it's a hidden gem you've discovered or a bucket-list expedition, let's make it happen.
+        These are just examples. Tell me where you want to go—or just tell me what you're in the mood for. We'll figure it out together.
       </p>
       <div class="flex flex-wrap gap-6 justify-center items-center mb-8">
         <a href={`${baseUrl}contact`} class="inline-flex items-center px-8 py-4 font-sans font-semibold text-sm tracking-wide uppercase bg-terracotta-500 text-white hover:bg-terracotta-600 dark:bg-amber-400 dark:text-charcoal-900 dark:hover:bg-amber-500 transition-colors duration-300">
-          Start the Conversation
+          Let's Talk
         </a>
         <a href={`${baseUrl}services`} class="inline-flex items-center px-8 py-4 font-sans font-semibold text-sm tracking-wide uppercase border-2 border-charcoal-900 text-charcoal-900 hover:bg-charcoal-900 hover:text-cream-50 dark:border-cream-50 dark:text-cream-50 dark:hover:bg-cream-50 dark:hover:text-charcoal-900 transition-colors duration-300">
-          View Our Services
+          See How It Works
         </a>
       </div>
       <p class="font-sans text-sm text-charcoal-600 dark:text-cream-200">
-        Free initial consultation to discuss your adventure goals
+        Free consultation—no commitment, just a conversation
       </p>
     </div>
   </section>
