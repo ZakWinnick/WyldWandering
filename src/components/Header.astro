@@ -11,8 +11,16 @@ const navLinks = [
 
 <header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
   <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
-    <a href="/" class="block">
-      <img src="/logo/wyld-final-lockup-light.svg" alt="Wyld Wandering" class="h-16 w-auto" />
+    <a href="/" class="block" aria-label="Wyld Wandering Home">
+      <svg class="h-16 w-auto" viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(60, 60)">
+          <path d="M-38 -18 L-12 38 L0 -5 L12 38 L38 -18" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="0" cy="-32" r="5.5" fill="currentColor"/>
+        </g>
+        <line x1="125" y1="32" x2="125" y2="96" stroke="currentColor" stroke-width="1" opacity="0.3"/>
+        <text x="145" y="62" font-family="'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" font-weight="500" letter-spacing="3" fill="currentColor">WYLD</text>
+        <text x="145" y="96" font-family="'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="16" font-weight="300" letter-spacing="7" fill="currentColor">WANDERING</text>
+      </svg>
     </a>
 
     <div class="hidden lg:flex items-center gap-8">
