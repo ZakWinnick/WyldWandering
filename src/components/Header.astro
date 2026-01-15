@@ -9,7 +9,7 @@ const navLinks = [
 ];
 ---
 
-<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-charcoal-900 dark:bg-forest-950">
+<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-cream-50 dark:bg-charcoal-900 text-charcoal-900 dark:text-cream-50">
   <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
     <a href="/" class="block" aria-label="Wyld Wandering Home">
       <svg class="h-16 w-auto" viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg">
@@ -25,13 +25,13 @@ const navLinks = [
 
     <div class="hidden lg:flex items-center gap-8">
       {navLinks.map(link => (
-        <a href={link.href} class="text-sm font-medium text-white/90 hover:text-white transition-colors">
+        <a href={link.href} class="text-sm font-medium text-charcoal-900/80 hover:text-charcoal-900 dark:text-cream-50/90 dark:hover:text-cream-50 transition-colors">
           {link.label}
         </a>
       ))}
     </div>
 
-    <button id="mobile-menu-btn" class="p-2 text-white lg:hidden" aria-label="Menu">
+    <button id="mobile-menu-btn" class="p-2 text-charcoal-900 dark:text-cream-50 lg:hidden" aria-label="Menu">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
       </svg>
