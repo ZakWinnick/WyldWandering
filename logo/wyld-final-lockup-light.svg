@@ -26,10 +26,10 @@
         fill="#ffffff">WYLD</text>
 
   <!-- WANDERING -->
-  <text x="145" y="96"
+  <text x="145" y="100"
         font-family="'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif"
         font-size="16"
-        font-weight="300"
+        font-weight="400"
         letter-spacing="7"
         fill="#ffffff">WANDERING</text>
 </svg>
