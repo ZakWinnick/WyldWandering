@@ -18,7 +18,7 @@
   <line x1="125" y1="32" x2="125" y2="96" stroke="#ffffff" stroke-width="1" opacity="0.3"/>
 
   <!-- WYLD -->
-  <text x="145" y="62"
+  <text x="145" y="68"
         font-family="'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif"
         font-size="38"
         font-weight="500"
@@ -26,7 +26,7 @@
         fill="#ffffff">WYLD</text>
 
   <!-- WANDERING -->
-  <text x="145" y="100"
+  <text x="145" y="106"
         font-family="'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif"
         font-size="16"
         font-weight="400"
