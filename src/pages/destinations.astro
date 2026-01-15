@@ -8,43 +8,43 @@ const destinationCategories = [
     title: 'European Escapes',
     description: 'Historic cities, coastal villages, and countryside retreats. From Tuscan villas to Parisian apartments to Santorini sunsets.',
     highlights: ['Italy', 'France', 'Spain', 'Greece'],
-    gradientLight: 'bg-gradient-to-br from-amber-700 via-terracotta-600 to-orange-400',
-    gradientDark: 'dark:from-amber-800 dark:via-terracotta-700 dark:to-orange-500',
+    image: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=80',
+    imageAlt: 'Venice canal with gondolas',
   },
   {
     title: 'Beach & Island',
     description: 'Crystal waters, white sand, and properties worth staying at. Caribbean hideaways, Maldives overwater villas, and Mediterranean coastlines.',
     highlights: ['Maldives', 'Caribbean', 'Bali', 'Thailand'],
-    gradientLight: 'bg-gradient-to-br from-cyan-500 via-blue-400 to-teal-300',
-    gradientDark: 'dark:from-cyan-600 dark:via-blue-500 dark:to-teal-400',
+    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80',
+    imageAlt: 'Tropical beach with palm trees',
   },
   {
     title: 'City Breaks',
     description: 'The best neighborhoods, the right hotels, the reservations worth having. New York to Tokyo, London to Buenos Aires.',
     highlights: ['New York', 'London', 'Tokyo', 'Paris'],
-    gradientLight: 'bg-gradient-to-br from-slate-700 via-slate-500 to-slate-400',
-    gradientDark: 'dark:from-slate-800 dark:via-slate-600 dark:to-slate-500',
+    image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80',
+    imageAlt: 'Tokyo city skyline at night',
   },
   {
     title: 'Safari & Wildlife',
     description: 'Luxury safari lodges, private game reserves, and once-in-a-lifetime wildlife encounters. Africa, South America, and beyond.',
     highlights: ['Kenya', 'Tanzania', 'Botswana', 'South Africa'],
-    gradientLight: 'bg-gradient-to-br from-amber-600 via-yellow-500 to-orange-300',
-    gradientDark: 'dark:from-amber-700 dark:via-yellow-600 dark:to-orange-400',
+    image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80',
+    imageAlt: 'Elephant in African savanna',
   },
   {
     title: 'Luxury Wellness',
     description: 'World-class spas, wellness retreats, and restorative escapes. Places that actually leave you feeling better than when you arrived.',
     highlights: ['Aman Resorts', 'Six Senses', 'Como Hotels', 'Canyon Ranch'],
-    gradientLight: 'bg-gradient-to-br from-emerald-600 via-green-500 to-teal-400',
-    gradientDark: 'dark:from-emerald-700 dark:via-green-600 dark:to-teal-500',
+    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80',
+    imageAlt: 'Luxury spa setting',
   },
   {
     title: 'Wine & Culinary',
     description: 'Vineyard tours, Michelin-starred dining, and food experiences that become the trip. Napa to Burgundy to Rioja.',
     highlights: ['Napa Valley', 'Bordeaux', 'Tuscany', 'Mendoza'],
-    gradientLight: 'bg-gradient-to-br from-purple-700 via-red-600 to-rose-400',
-    gradientDark: 'dark:from-purple-800 dark:via-red-700 dark:to-rose-500',
+    image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800&q=80',
+    imageAlt: 'Vineyard landscape',
   },
 ];
 
@@ -54,32 +54,32 @@ const featuredTrips = [
     duration: '10 Days',
     category: 'European Escapes',
     description: 'Cliffside hotels overlooking the Mediterranean, private transfers, and reservations at restaurants that matter.',
-    gradientLight: 'bg-gradient-to-br from-amber-600 to-orange-400',
-    gradientDark: 'dark:from-amber-700 dark:to-orange-500',
+    image: 'https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800&q=80',
+    imageAlt: 'Amalfi Coast cliffside village',
   },
   {
     name: 'Maldives Honeymoon',
     duration: '7 Days',
     category: 'Beach & Island',
     description: 'Overwater villas, private beach dinners, spa treatments, and the kind of seclusion that honeymoons deserve.',
-    gradientLight: 'bg-gradient-to-br from-cyan-500 to-teal-400',
-    gradientDark: 'dark:from-cyan-600 dark:to-teal-500',
+    image: 'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&q=80',
+    imageAlt: 'Maldives overwater bungalows',
   },
   {
     name: 'Tokyo & Kyoto',
     duration: '12 Days',
     category: 'City Breaks',
     description: 'From modern Tokyo hotels to traditional Kyoto ryokans. Omakase dinners, temple visits, and the experiences not in the guidebooks.',
-    gradientLight: 'bg-gradient-to-br from-slate-700 to-slate-500',
-    gradientDark: 'dark:from-slate-800 dark:to-slate-600',
+    image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80',
+    imageAlt: 'Traditional Kyoto temple',
   },
   {
     name: 'Kenya Safari',
     duration: '8 Days',
     category: 'Safari & Wildlife',
     description: 'Luxury tented camps, private game drives, and the Great Migration. Wildlife encounters that change how you see the world.',
-    gradientLight: 'bg-gradient-to-br from-amber-600 to-yellow-400',
-    gradientDark: 'dark:from-amber-700 dark:to-yellow-500',
+    image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80',
+    imageAlt: 'Giraffe on African savanna',
   },
 ];
 ---
@@ -130,8 +130,9 @@ const featuredTrips = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {destinationCategories.map((dest) => (
           <article class="group bg-cream-100 dark:bg-forest-950 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div class={`relative h-56 flex items-end p-6 ${dest.gradientLight} ${dest.gradientDark}`}>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+            <div class="relative h-56 flex items-end p-6 bg-charcoal-800 overflow-hidden">
+              <img src={dest.image} alt={dest.imageAlt} class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
               <h3 class="relative z-10 font-serif text-2xl font-semibold text-white drop-shadow-lg">
                 {dest.title}
               </h3>
@@ -172,8 +173,9 @@ const featuredTrips = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {featuredTrips.map((trip) => (
           <article class="group flex flex-col md:flex-row bg-cream-50 dark:bg-forest-900 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-            <div class={`relative min-h-[180px] md:w-2/5 flex-shrink-0 ${trip.gradientLight} ${trip.gradientDark}`}>
-              <div class="absolute inset-0 bg-black/10"></div>
+            <div class="relative min-h-[180px] md:w-2/5 flex-shrink-0 bg-charcoal-800 overflow-hidden">
+              <img src={trip.image} alt={trip.imageAlt} class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
+              <div class="absolute inset-0 bg-black/20"></div>
               <span class="absolute top-4 left-4 font-sans text-xs font-semibold tracking-wide px-4 py-2 bg-cream-50 dark:bg-forest-950 text-charcoal-900 dark:text-cream-50">
                 {trip.duration}
               </span>
