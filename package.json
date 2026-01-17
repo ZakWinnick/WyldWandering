@@ -12,7 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/ZakWinnick/WyldWandering.git"
   },
-  "keywords": ["travel", "adventure", "fora"],
+  "keywords": [
+    "travel",
+    "adventure",
+    "fora"
+  ],
   "author": "Zak Winnick",
   "license": "ISC",
   "bugs": {
@@ -20,6 +24,7 @@
   },
   "homepage": "https://github.com/ZakWinnick/WyldWandering#readme",
   "dependencies": {
+    "@astrojs/sitemap": "^3.7.0",
     "@astrojs/tailwind": "^6.0.2",
     "astro": "^5.16.9",
     "tailwindcss": "^3.4.19"
