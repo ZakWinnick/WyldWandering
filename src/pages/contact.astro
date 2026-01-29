@@ -40,7 +40,7 @@ const tripTypes = [
       <div class="grid lg:grid-cols-5 gap-16 lg:gap-20">
         <!-- Form Column -->
         <div class="lg:col-span-3">
-          <div class="p-8 md:p-12 bg-cream-100 dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600">
+          <div class="p-8 md:p-12 bg-cream-100 dark:bg-forest-900 rounded-3xl shadow-lg">
             <h2 class="font-display text-3xl md:text-4xl font-medium mb-3 text-charcoal-900 dark:text-cream-50">
               Tell Me About Your Dream Trip
             </h2>
@@ -61,7 +61,7 @@ const tripTypes = [
                     id="name"
                     name="name"
                     required
-                    class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300"
+                    class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 rounded-xl"
                     placeholder="Your full name"
                   />
                 </div>
@@ -76,7 +76,7 @@ const tripTypes = [
                     id="email"
                     name="email"
                     required
-                    class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300"
+                    class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 rounded-xl"
                     placeholder="you@example.com"
                   />
                 </div>
@@ -91,7 +91,7 @@ const tripTypes = [
                   id="trip-type"
                   name="trip_type"
                   required
-                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 cursor-pointer appearance-none bg-no-repeat bg-[right_1rem_center] bg-[length:1.25rem] pr-12"
+                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 rounded-xl cursor-pointer appearance-none bg-no-repeat bg-[right_1rem_center] bg-[length:1.25rem] pr-12"
                   style="background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E&quot;)"
                 >
                   {tripTypes.map(type => (
@@ -111,7 +111,7 @@ const tripTypes = [
                   type="text"
                   id="destination"
                   name="destination"
-                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300"
+                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 rounded-xl"
                   placeholder="e.g., Italy, Maldives, Tokyo, or 'I'm open to suggestions!'"
                 />
               </div>
@@ -125,7 +125,7 @@ const tripTypes = [
                   type="text"
                   id="travel-dates"
                   name="travel_dates"
-                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300"
+                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 rounded-xl"
                   placeholder="e.g., Summer 2025, March 15-25, or 'Flexible'"
                 />
               </div>
@@ -140,14 +140,14 @@ const tripTypes = [
                   name="message"
                   required
                   rows="6"
-                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 resize-y min-h-[150px]"
+                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 rounded-xl resize-y min-h-[150px]"
                   placeholder="What does your ideal trip look like? Any must-see places, activities, or experiences? Special occasions to celebrate? The more you share, the better I can help!"
                 ></textarea>
               </div>
 
               <!-- Submit Button -->
               <div class="pt-4">
-                <button type="submit" class="inline-flex items-center justify-center px-8 py-4 font-display text-sm font-medium tracking-wider uppercase bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-900 hover:bg-terracotta-600 dark:hover:bg-amber-500 transition-colors duration-300">
+                <button type="submit" class="inline-flex items-center justify-center px-8 py-4 font-display text-sm font-medium tracking-wider uppercase bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-900 hover:bg-terracotta-600 dark:hover:bg-amber-500 transition-colors duration-300 rounded-full">
                   Send Message
                   <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -158,7 +158,7 @@ const tripTypes = [
           </div>
 
           <!-- Response Time Note -->
-          <div class="mt-8 flex items-start gap-4 p-6 bg-cream-100 dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600">
+          <div class="mt-8 flex items-start gap-4 p-6 bg-cream-100 dark:bg-forest-900 rounded-2xl shadow-sm">
             <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-terracotta-500 dark:border-amber-400">
               <svg class="w-6 h-6 text-terracotta-500 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -178,7 +178,7 @@ const tripTypes = [
         <!-- Sidebar Column -->
         <div class="lg:col-span-2 space-y-8">
           <!-- Planning Fee Card -->
-          <div class="p-8 bg-cream-100 dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600">
+          <div class="p-8 bg-cream-100 dark:bg-forest-900 rounded-3xl shadow-md">
             <h3 class="font-display text-2xl font-medium mb-4 text-charcoal-900 dark:text-cream-50">
               Planning Fees
             </h3>
@@ -205,7 +205,7 @@ const tripTypes = [
           </div>
 
           <!-- Alternative Contact Card -->
-          <div class="p-8 bg-cream-100 dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600">
+          <div class="p-8 bg-cream-100 dark:bg-forest-900 rounded-3xl shadow-md">
             <h3 class="font-display text-2xl font-medium mb-6 text-charcoal-900 dark:text-cream-50">
               Other Ways to Connect
             </h3>
@@ -237,7 +237,7 @@ const tripTypes = [
           </div>
 
           <!-- FAQ Card -->
-          <div class="p-8 relative overflow-hidden bg-terracotta-500 dark:bg-amber-400">
+          <div class="p-8 relative overflow-hidden bg-terracotta-500 dark:bg-amber-400 rounded-3xl shadow-lg">
             <div class="relative z-10">
               <h3 class="font-display text-2xl font-medium mb-4 text-cream-100 dark:text-forest-900">
                 Have Questions First?
@@ -255,7 +255,7 @@ const tripTypes = [
           </div>
 
           <!-- About Card -->
-          <div class="p-8 bg-cream-100 dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600">
+          <div class="p-8 bg-cream-100 dark:bg-forest-900 rounded-3xl shadow-md">
             <h3 class="font-display text-2xl font-medium mb-4 text-charcoal-900 dark:text-cream-50">
               About Your Advisor
             </h3>

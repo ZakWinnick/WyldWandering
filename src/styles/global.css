@@ -34,6 +34,7 @@
     @apply dark:border-amber-400 dark:text-amber-400;
     @apply dark:hover:bg-amber-400 dark:hover:text-forest-950;
     @apply transition-all duration-300;
+    @apply rounded-full;
   }
 
   .btn-secondary {
@@ -43,5 +44,22 @@
     @apply border-b-2 border-terracotta-500 dark:border-amber-400;
     @apply hover:text-terracotta-500 dark:hover:text-amber-400;
     @apply transition-all duration-300;
+  }
+
+  .glass-panel {
+    @apply bg-white/60 dark:bg-charcoal-900/60;
+    @apply backdrop-blur-md;
+    @apply border border-white/20 dark:border-charcoal-700/30;
+  }
+
+  .reveal-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .reveal-on-scroll.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
