@@ -40,17 +40,18 @@ const destinations = [
       fetchpriority="high"
       class="absolute inset-0 h-full w-full object-cover object-[center_40%]"
     />
-    <div aria-hidden="true" class="absolute inset-0" style="background: linear-gradient(180deg, rgba(14,10,6,0.45) 0%, rgba(14,10,6,0) 26%, rgba(14,10,6,0) 42%, rgba(14,10,6,0.74) 100%)"></div>
+    <!-- Scrims: overall tint, darker on the text side (left), plus top and bottom fades -->
+    <div aria-hidden="true" class="absolute inset-0" style="background: linear-gradient(180deg, rgba(14,10,6,0.45) 0%, rgba(14,10,6,0.1) 24%, rgba(14,10,6,0.1) 40%, rgba(14,10,6,0.8) 100%), linear-gradient(90deg, rgba(14,10,6,0.66) 0%, rgba(14,10,6,0.46) 38%, rgba(14,10,6,0.12) 70%, rgba(14,10,6,0.12) 100%)"></div>
     <div aria-hidden="true" class="absolute inset-0 md:hidden" style="background: linear-gradient(180deg, rgba(14,10,6,0) 20%, rgba(14,10,6,0.45) 45%, rgba(14,10,6,0.35) 100%)"></div>
 
     <div class="container-site relative z-10 mt-auto flex flex-wrap items-end justify-between gap-10 pb-14 pt-40 md:pb-20">
-      <div class="flex max-w-3xl flex-col gap-7">
+      <div class="flex max-w-3xl flex-col gap-7" style="text-shadow: 0 1px 14px rgba(14,10,6,0.45)">
         <p class="text-[13px] font-medium uppercase tracking-eyebrow text-gold-soft">{SITE.tagline}</p>
         <h1 class="display-xl">Your trip, <em>handled.</em></h1>
         <p class="max-w-xl text-lg leading-relaxed text-[#F4ECE0] md:text-xl">
           The hotels you'll brag about. The reservations you couldn't get. The upgrades that just happen. Trips for people who've been disappointed by "luxury" before.
         </p>
-        <div class="mt-2 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+        <div class="mt-2 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center" style="text-shadow: none">
           <a href={INTAKE_URL} class="btn-primary min-h-[56px] px-8">Start planning <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
           <a href={PORTAL_URL} class="btn-outline-light min-h-[56px] px-8">Returning? Sign in to your portal</a>
         </div>
