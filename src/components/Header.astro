@@ -45,13 +45,13 @@ const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`)
     <div class="flex items-center gap-2 sm:gap-5">
       <a href={PORTAL_URL} class="hidden min-h-[44px] items-center gap-2 text-[15px] font-normal text-current hover:text-current hover:opacity-80 sm:inline-flex">
         <Icon name="lock" />
-        Client login
+        Client Login
       </a>
       <a
         href={INTAKE_URL}
         class="hidden min-h-[44px] items-center rounded-full px-5 text-sm font-medium tracking-[0.04em] transition-colors sm:inline-flex bg-clay text-white hover:bg-clay-dark hover:text-white dark:text-night dark:hover:text-night group-data-[solid=false]:bg-cream-50 group-data-[solid=false]:text-night group-data-[solid=false]:hover:bg-white"
       >
-        Start planning
+        Start Planning
       </a>
       <button
         id="menu-open"
@@ -88,8 +88,8 @@ const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`)
     <a href="/contact" class="font-display text-[44px] leading-tight text-cream-100 hover:text-gold">Contact</a>
   </nav>
   <div class="container-site flex flex-col gap-3 pb-10">
-    <a href={INTAKE_URL} class="btn-primary w-full">Start planning <Icon name="arrow" /></a>
-    <a href={PORTAL_URL} class="btn-outline-light w-full"><Icon name="lock" /> Client login</a>
+    <a href={INTAKE_URL} class="btn-primary w-full">Start Planning <Icon name="arrow" /></a>
+    <a href={PORTAL_URL} class="btn-outline-light w-full"><Icon name="lock" /> Client Login</a>
     <div class="mt-6 flex gap-6 text-sm text-pine-muted">
       <a href={SOCIAL.instagram} class="text-pine-muted hover:text-gold">Instagram</a>
       <a href={SOCIAL.x} class="text-pine-muted hover:text-gold">X {SOCIAL.xHandle}</a>
