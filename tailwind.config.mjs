@@ -21,25 +21,35 @@ export default {
           600: 'rgb(var(--c-ink-600) / <alpha-value>)',
           400: 'rgb(var(--c-ink-400) / <alpha-value>)',
         },
+        // Brand kit terracotta (#C45D3A) is 4.1:1 on ivory, short of AA for small
+        // text, so text and button fills use a slightly deeper terracotta.
         clay: {
           DEFAULT: 'rgb(var(--c-clay) / <alpha-value>)',
           dark: 'rgb(var(--c-clay-dark) / <alpha-value>)',
-          light: '#E99A79',
+        },
+        // Brand kit v1 values, exact. For artwork, rules and large display only.
+        brand: {
+          forest: '#0F1A14',
+          ivory: '#FFFBF5',
+          terracotta: '#C45D3A',
+          amber: '#D4A857',
         },
         // Fixed tokens: same in both schemes. Used on photos and dark bands.
         cream: {
-          50: '#FBF7F0',
-          100: '#F6EFE4',
+          50: '#FFFBF5', // brand ivory
+          100: '#F8F2E8',
           500: '#BFB6A6',
         },
-        night: '#1C1A17', // dark text on light fills that must not flip
+        night: '#0F1A14', // brand forest; dark text on light fills that must not flip
+        // Dark bands. Forest in light mode; lifts slightly in dark mode so bands
+        // still stand off the forest page ground.
         pine: {
-          DEFAULT: '#15231B',
-          deep: '#0E1712',
-          muted: '#C9C0B0',
+          DEFAULT: 'rgb(var(--c-pine) / <alpha-value>)',
+          deep: '#0A120E',
+          muted: '#C9C2B4',
         },
         gold: {
-          DEFAULT: '#D9B26A',
+          DEFAULT: '#D4A857', // brand amber. Not for text on ivory.
           soft: '#F3D9A8',
         },
       },

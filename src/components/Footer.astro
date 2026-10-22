@@ -3,19 +3,19 @@ import Logo from './Logo.astro';
 import { NAV_LINKS, INTAKE_URL, PORTAL_URL, SOCIAL, SITE, FORA_DISCLOSURE } from '../config/site';
 
 const year = new Date().getFullYear();
-const label = 'text-xs font-medium uppercase tracking-[0.2em] text-ink-400';
-const link = 'text-[#E6DED0] hover:text-gold';
+const label = 'text-xs font-medium uppercase tracking-[0.2em] text-cream-500';
+const link = 'text-cream-100 hover:text-gold';
 ---
 
-<footer class="bg-pine-deep pb-10 pt-16 text-[15px] text-[#CFC6B6] md:pt-20">
+<footer class="bg-pine-deep pb-10 pt-16 text-[15px] text-pine-muted dark:border-t dark:border-sand-300 md:pt-20">
   <div class="container-site flex flex-col gap-14">
     <div class="flex flex-col justify-between gap-12 lg:flex-row">
       <div class="flex max-w-sm flex-col gap-5 text-cream-100">
-        <Logo class="h-[52px] w-auto self-start" />
+        <Logo variant="stacked" class="h-[100px] w-auto self-start" />
         <p class="text-cream-500">Hotels you'll brag about. Itineraries you won't share. Premium travel planning for people who know the difference.</p>
         <div class="mt-2 flex items-center gap-3">
           <img src="/Fora_Logo_Wordmark_Sand_S.png" alt="Fora Travel" width="63" height="22" class="h-[22px] w-auto opacity-90" loading="lazy" />
-          <span class="text-xs uppercase tracking-[0.18em] text-ink-400">Certified advisor</span>
+          <span class="text-xs uppercase tracking-[0.18em] text-cream-500">Certified advisor</span>
         </div>
       </div>
 
@@ -41,7 +41,7 @@ const link = 'text-[#E6DED0] hover:text-gold';
       </div>
     </div>
 
-    <div class="flex flex-col gap-5 border-t border-cream-100/10 pt-7 text-[13px] leading-relaxed text-ink-400">
+    <div class="flex flex-col gap-5 border-t border-cream-100/10 pt-7 text-[13px] leading-relaxed text-cream-500">
       <p class="max-w-4xl">
         {FORA_DISCLOSURE.affiliation} {FORA_DISCLOSURE.registrationsIntro} {FORA_DISCLOSURE.registrations.join('; ')}.
       </p>

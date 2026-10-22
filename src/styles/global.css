@@ -3,37 +3,40 @@
 @tailwind utilities;
 
 @layer base {
+  /* Brand kit v1: forest #0F1A14, ivory #FFFBF5, terracotta #C45D3A, amber #D4A857. */
   :root {
     color-scheme: light dark;
-    --c-sand-50: 251 247 240;
-    --c-sand-100: 246 239 228;
-    --c-sand-200: 242 234 221;
-    --c-sand-300: 227 217 202;
-    --c-sand-400: 207 198 182;
+    --c-sand-50: 255 251 245; /* ivory */
+    --c-sand-100: 249 243 233;
+    --c-sand-200: 244 237 225;
+    --c-sand-300: 229 222 208;
+    --c-sand-400: 209 201 186;
     --c-sand-500: 191 182 166;
-    --c-ink: 28 26 23;
-    --c-ink-700: 74 68 61;
-    --c-ink-600: 91 84 76;
-    --c-ink-400: 143 134 118;
-    --c-clay: 166 74 41;
-    --c-clay-dark: 142 63 34;
+    --c-ink: 15 26 20; /* forest */
+    --c-ink-700: 55 66 59;
+    --c-ink-600: 74 84 77;
+    --c-ink-400: 128 137 131;
+    --c-clay: 176 79 46; /* deepened terracotta, 5.1:1 on ivory */
+    --c-clay-dark: 154 68 39;
+    --c-pine: 15 26 20; /* forest */
   }
 
-  /* Dark scheme follows the visitor's system setting. Warm charcoal ground keeps the pine bands distinct. */
+  /* Dark scheme follows the visitor's system setting: ivory on forest. */
   @media (prefers-color-scheme: dark) {
     :root {
-      --c-sand-50: 19 17 15;
-      --c-sand-100: 30 27 24;
-      --c-sand-200: 26 24 21;
-      --c-sand-300: 52 48 43;
-      --c-sand-400: 74 69 63;
-      --c-sand-500: 110 103 94;
-      --c-ink: 239 232 220;
-      --c-ink-700: 207 198 182;
-      --c-ink-600: 184 175 160;
-      --c-ink-400: 143 134 118;
-      --c-clay: 229 138 100;
-      --c-clay-dark: 240 165 132;
+      --c-sand-50: 15 26 20; /* forest */
+      --c-sand-100: 22 36 29;
+      --c-sand-200: 19 32 25;
+      --c-sand-300: 40 55 47;
+      --c-sand-400: 61 77 68;
+      --c-sand-500: 98 112 104;
+      --c-ink: 255 251 245; /* ivory */
+      --c-ink-700: 214 210 200;
+      --c-ink-600: 190 186 176;
+      --c-ink-400: 136 142 136;
+      --c-clay: 221 122 85; /* lifted terracotta, 5.9:1 on forest */
+      --c-clay-dark: 229 139 102;
+      --c-pine: 26 44 34;
     }
   }
 
@@ -119,7 +122,7 @@
   }
 
   .btn-primary {
-    @apply btn bg-clay text-white hover:bg-clay-dark hover:text-white dark:text-night dark:hover:text-night;
+    @apply btn bg-clay text-cream-50 hover:bg-clay-dark hover:text-cream-50 dark:text-night dark:hover:text-night;
   }
 
   .btn-dark {

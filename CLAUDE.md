@@ -16,7 +16,7 @@ This is a **premium travel advisor portfolio site** built with Astro 5.x, output
 
 ### Key Technologies
 - **Astro** - Static site generator with file-based routing
-- **Tailwind CSS** - Custom theme with brand colors (Sand, Ink, Clay, Pine, Gold)
+- **Tailwind CSS** - Custom theme mapped to brand kit v1 (Forest, Ivory, Terracotta, Amber)
 - **TypeScript** - Strict mode enabled
 - **GitHub Pages** - Deployment via GitHub Actions
 
@@ -55,8 +55,10 @@ src/
 - `PRICING` and `RETAINER` (including the $40K retainer invitation) in `src/config/site.ts` drive the homepage, Services and Contact pricing. The FAQ "What does it cost" answer is written out by hand, so update it too when prices change.
 
 ### Styling Conventions
+- Brand kit v1 colors: forest #0F1A14, ivory #FFFBF5, terracotta #C45D3A, amber #D4A857 (exact values in the `brand` Tailwind color). Lead with forest and ivory; terracotta for emphasis; amber for small details on dark grounds only, never as text on ivory. Text and button terracotta (`clay`) is deepened in light mode and lifted in dark mode for AA contrast
+- Logo: `Logo.astro` holds the kit's outlined artwork (`variant` horizontal, stacked or symbol) colored with currentColor. Never retype the wordmark in a font. Horizontal in the header (about 280px wide minimum), stacked in the footer. Favicons and app icons in `public/` come from the kit's web-icons
 - Dark mode follows the visitor's system setting (`darkMode: 'media'`, no toggle). Theme-aware tokens `sand` (grounds, lines), `ink` (text), `clay` (accent) are CSS variables in global.css that flip under `prefers-color-scheme: dark`
-- Fixed tokens that never flip: `cream` (light text on photos and pine bands), `night` (dark text on light fills), `pine` (dark bands), `gold` (accent on dark). Use these, not `sand`, for anything sitting on a photo or a pine band
+- Fixed tokens that never flip: `cream` (ivory, light text on photos and pine bands), `night` (forest, dark text on light fills), `gold` (amber, accent on dark). `pine` is a dark band in both modes (forest, lifted slightly in dark mode so bands stand off the forest ground). Use these, not `sand`, for anything sitting on a photo or a pine band
 - Fonts: Cormorant (display/headings), Outfit (body/sans), loaded in Layout.astro
 - Component classes in global.css: `.container-site`, `.eyebrow`, `.display-xl|lg|md`, `.lede`, `.btn-primary|dark|outline|outline-light`, `.link-underline`, `.link-accent`, `.prose-ww`
 - `.reveal` fades sections in on scroll (respects reduced motion, visible without JS)
