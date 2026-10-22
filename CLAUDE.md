@@ -69,5 +69,5 @@ src/
 
 ### Deployment
 - Pushes to `main` trigger GitHub Actions workflow
-- Builds with the Node version in `.nvmrc` (22.x), outputs to GitHub Pages
+- Builds with the Node version pinned in `.nvmrc`, outputs to GitHub Pages
 - Domain: wyldwandering.com (configured in `public/CNAME`)
