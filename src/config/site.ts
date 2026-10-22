@@ -65,6 +65,7 @@ export const RETAINER = {
   name: 'Annual retainer',
   price: 'By application',
   detail: 'Planning for every trip that year, priority response, and support whenever you need it.',
+  invite: "Once you've booked $40,000 in travel with me, you're invited to the retainer, no application needed.",
 } as const;
 
 export const NAV_LINKS = [

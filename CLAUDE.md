@@ -52,7 +52,7 @@ src/
 - Contact page keeps a short FormSubmit form for quick questions only.
 
 ### Pricing
-- `PRICING` and `RETAINER` in `src/config/site.ts` drive the homepage, Services and Contact pricing. The FAQ "What does it cost" answer is written out by hand, so update it too when prices change.
+- `PRICING` and `RETAINER` (including the $40K retainer invitation) in `src/config/site.ts` drive the homepage, Services and Contact pricing. The FAQ "What does it cost" answer is written out by hand, so update it too when prices change.
 
 ### Styling Conventions
 - Dark mode follows the visitor's system setting (`darkMode: 'media'`, no toggle). Theme-aware tokens `sand` (grounds, lines), `ink` (text), `clay` (accent) are CSS variables in global.css that flip under `prefers-color-scheme: dark`
