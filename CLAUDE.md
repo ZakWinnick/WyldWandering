@@ -12,11 +12,11 @@ npm run preview  # Preview production build locally
 
 ## Architecture Overview
 
-This is a **premium travel advisor portfolio site** built with Astro 5.x, outputting fully static HTML. No SSR or serverless functions.
+This is a **premium travel advisor portfolio site** built with Astro 7.x (Node 22.23.4 or newer, see `.nvmrc`), outputting fully static HTML. No SSR or serverless functions.
 
 ### Key Technologies
 - **Astro** - Static site generator with file-based routing
-- **Tailwind CSS** - Custom theme mapped to brand kit v1 (Forest, Ivory, Terracotta, Amber)
+- **Tailwind CSS 3** - Runs through PostCSS (`postcss.config.mjs`); custom theme mapped to brand kit v1 (Forest, Ivory, Terracotta, Amber)
 - **TypeScript** - Strict mode enabled
 - **GitHub Pages** - Deployment via GitHub Actions
 
@@ -30,14 +30,14 @@ src/
 ├── layouts/        # Layout.astro (main wrapper with meta management)
 ├── pages/          # File-based routes (.astro files)
 │   └── blog/       # Blog routes (excluded from search engines)
-├── content/        # Markdown blog posts with Zod schema validation
-│   └── config.ts   # Content collection schema definition
+├── content/blog/   # Markdown blog posts
+└── content.config.ts # Content collection (glob loader + Zod schema)
 └── styles/         # global.css with Tailwind and custom animations
 ```
 
 ### Content Management
 - Blog posts are Markdown files in `src/content/blog/`
-- Schema defined in `src/content/config.ts` with Zod validation
+- Schema defined in `src/content.config.ts` with a glob loader and Zod (`astro/zod`); entries use `post.id` and `render(post)`
 - Dynamic routing via `src/pages/blog/[...slug].astro`
 - Draft posts are filtered from listings
 
@@ -69,5 +69,5 @@ src/
 
 ### Deployment
 - Pushes to `main` trigger GitHub Actions workflow
-- Builds with Node 20, outputs to GitHub Pages
+- Builds with the Node version in `.nvmrc` (22.x), outputs to GitHub Pages
 - Domain: wyldwandering.com (configured in `public/CNAME`)

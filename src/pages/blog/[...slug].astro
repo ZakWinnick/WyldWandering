@@ -1,18 +1,18 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import StartHere from '../../components/StartHere.astro';
-import { getCollection } from 'astro:content';
+import { getCollection, render } from 'astro:content';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
-  return posts.map((post) => ({ params: { slug: post.slug }, props: { post } }));
+  return posts.map((post) => ({ params: { slug: post.id }, props: { post } }));
 }
 
 const { post } = Astro.props;
-const { Content } = await post.render();
+const { Content } = await render(post);
 
 const related = (await getCollection('blog', ({ data }) => !data.draft))
-  .filter((p) => p.slug !== post.slug)
+  .filter((p) => p.id !== post.id)
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
   .slice(0, 2);
 
@@ -64,7 +64,7 @@ const readingTime = `${Math.max(1, Math.ceil(post.body.split(/\s+/).length / 200
           <h2 class="display-md">Keep Reading</h2>
           <div class="grid gap-10 md:grid-cols-2">
             {related.map((p) => (
-              <a href={`/blog/${p.slug}`} class="group flex flex-col gap-3 text-ink hover:text-ink">
+              <a href={`/blog/${p.id}`} class="group flex flex-col gap-3 text-ink hover:text-ink">
                 <span class="text-xs font-medium uppercase tracking-[0.2em] text-clay">{p.data.category}</span>
                 <h3 class="text-[30px] leading-tight group-hover:text-clay">{p.data.title}</h3>
                 <p class="text-ink-600">{p.data.excerpt}</p>

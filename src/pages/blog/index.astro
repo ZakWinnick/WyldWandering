@@ -21,7 +21,7 @@ const [featured, ...rest] = posts;
     <div class="container-site flex flex-col gap-16">
       {
         featured && (
-          <a href={`/blog/${featured.slug}`} class="reveal group grid items-center gap-10 text-ink hover:text-ink lg:grid-cols-12">
+          <a href={`/blog/${featured.id}`} class="reveal group grid items-center gap-10 text-ink hover:text-ink lg:grid-cols-12">
             {featured.data.image && (
               <div class="overflow-hidden rounded-card lg:col-span-7">
                 <img src={featured.data.image} alt="" class="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="eager" />
@@ -43,7 +43,7 @@ const [featured, ...rest] = posts;
         rest.length > 0 && (
           <div class="grid gap-x-8 gap-y-14 border-t border-sand-300 pt-14 md:grid-cols-2 lg:grid-cols-3">
             {rest.map((post) => (
-              <a href={`/blog/${post.slug}`} class="reveal group flex flex-col gap-4 text-ink hover:text-ink">
+              <a href={`/blog/${post.id}`} class="reveal group flex flex-col gap-4 text-ink hover:text-ink">
                 {post.data.image && (
                   <div class="overflow-hidden rounded-card">
                     <img src={post.data.image} alt="" class="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
