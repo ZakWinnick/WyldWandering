@@ -19,15 +19,15 @@ const label = 'mb-2 block text-sm font-medium text-ink';
     <div class="container-site grid gap-5 md:grid-cols-2 md:gap-6">
       <div class="reveal flex flex-col gap-5 rounded-card bg-pine p-8 text-cream-100 md:p-12">
         <p class="text-[13px] font-medium uppercase tracking-eyebrow text-gold">New to Wyld Wandering</p>
-        <h2 class="text-[40px] leading-tight md:text-[48px]">Plan a trip</h2>
+        <h2 class="text-[40px] leading-tight md:text-[48px]">Plan a Trip</h2>
         <p class="max-w-md text-pine-muted">The intake takes a few minutes and sets up your traveler profile: who's traveling, where you're based, how you like to be contacted, and the hotels you already love. I'll follow up to set up a conversation about the trip.</p>
-        <a href={INTAKE_URL} class="btn-primary mt-3 self-start" target="_blank" rel="noopener noreferrer">Begin the intake <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
+        <a href={INTAKE_URL} class="btn-primary mt-3 self-start" target="_blank" rel="noopener noreferrer">Begin the Intake <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
       </div>
       <div class="reveal flex flex-col gap-5 rounded-card bg-sand-200 p-8 md:p-12">
         <p class="eyebrow">Already a client</p>
-        <h2 class="text-[40px] leading-tight md:text-[48px]">Client portal</h2>
+        <h2 class="text-[40px] leading-tight md:text-[48px]">Client Portal</h2>
         <p class="max-w-md text-ink-700">Sign in with the email or phone number on your profile to browse and book hotels with me, perks included.</p>
-        <a href={PORTAL_URL} class="btn-dark mt-3 self-start" target="_blank" rel="noopener noreferrer"><Icon name="lock" /> Client login</a>
+        <a href={PORTAL_URL} class="btn-dark mt-3 self-start" target="_blank" rel="noopener noreferrer"><Icon name="lock" /> Client Login</a>
       </div>
     </div>
   </section>
@@ -59,7 +59,7 @@ const label = 'mb-2 block text-sm font-medium text-ink';
             <label for="message" class={label}>Your question <span class="text-clay" aria-hidden="true">*</span></label>
             <textarea id="message" name="message" required rows="6" class={field} placeholder="Ask about a destination, a hotel, or how working together works."></textarea>
           </div>
-          <button type="submit" class="btn-dark self-start">Send question <Icon name="arrow" class="h-[18px] w-[18px]" /></button>
+          <button type="submit" class="btn-dark self-start">Send Question <Icon name="arrow" class="h-[18px] w-[18px]" /></button>
         </form>
       </div>
 
@@ -68,14 +68,14 @@ const label = 'mb-2 block text-sm font-medium text-ink';
           <div class="flex items-start gap-4">
             <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sand-200 text-clay"><Icon name="mail" class="h-5 w-5" /></span>
             <div>
-              <p class="text-sm font-medium text-ink">Email direct</p>
+              <p class="text-sm font-medium text-ink">Email Direct</p>
               <a href={`mailto:${SITE.email}`} class="link-accent">{SITE.email}</a>
             </div>
           </div>
           <div class="flex items-start gap-4">
             <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sand-200 text-clay"><Icon name="clock" class="h-5 w-5" /></span>
             <div>
-              <p class="text-sm font-medium text-ink">Response time</p>
+              <p class="text-sm font-medium text-ink">Response Time</p>
               <p class="text-ink-700">I typically respond within 1 to 2 business days. If something is urgent, say so and I'll prioritize it.</p>
             </div>
           </div>
@@ -86,16 +86,15 @@ const label = 'mb-2 block text-sm font-medium text-ink';
         </div>
 
         <div class="flex flex-col gap-4 rounded-card bg-sand-200 p-8">
-          <h3 class="text-[28px] leading-tight">Planning fees</h3>
+          <h3 class="text-[28px] leading-tight">Planning Fees</h3>
           <ul class="flex flex-col gap-2 text-ink-700">
-            {PRICING.map((tier) => <li><strong class="font-medium text-ink">{tier.price}</strong> {tier.name.toLowerCase()}</li>)}
-            <li><strong class="font-medium text-ink">{RETAINER.price}</strong> {RETAINER.name.toLowerCase()}</li>
+            {[...PRICING, RETAINER].map((tier) => <li class="flex items-baseline justify-between gap-4 border-b border-sand-300 pb-2 last:border-0 last:pb-0"><span>{tier.name}</span><strong class="text-right font-medium text-ink">{tier.price}</strong></li>)}
           </ul>
-          <a href="/services#pricing" class="link-accent self-start text-[15px]">Full pricing details</a>
+          <a href="/services#pricing" class="link-accent self-start text-[15px]">Full Pricing Details</a>
         </div>
 
         <div class="flex flex-col gap-3 rounded-card border border-sand-300 p-8">
-          <h3 class="text-[28px] leading-tight">Have questions first?</h3>
+          <h3 class="text-[28px] leading-tight">Have Questions First?</h3>
           <p class="text-ink-700">How planning works, what an advisor does, and what to expect.</p>
           <a href="/faq" class="link-accent self-start text-[15px]">Browse the FAQ</a>
         </div>

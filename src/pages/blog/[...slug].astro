@@ -49,10 +49,10 @@ const readingTime = `${Math.max(1, Math.ceil(post.body.split(/\s+/).length / 200
 
     <aside class="container-site max-w-3xl pb-20">
       <div class="flex flex-col gap-3 rounded-card bg-sand-200 p-8 md:p-10">
-        <p class="eyebrow">About the author</p>
+        <p class="eyebrow">About the Author</p>
         <h2 class="text-[30px] leading-tight">Zak Winnick</h2>
         <p class="text-ink-700">After fifteen years in luxury hospitality, I know which hotels live up to the hype and which ones just have good photographers. I only book clients into places I'd stay at myself.</p>
-        <a href="/about" class="link-accent self-start text-[15px]">More about Zak</a>
+        <a href="/about" class="link-accent self-start text-[15px]">More About Zak</a>
       </div>
     </aside>
   </article>
@@ -61,7 +61,7 @@ const readingTime = `${Math.max(1, Math.ceil(post.body.split(/\s+/).length / 200
     related.length > 0 && (
       <section class="border-t border-sand-300 py-20">
         <div class="container-site flex flex-col gap-10">
-          <h2 class="display-md">Keep reading</h2>
+          <h2 class="display-md">Keep Reading</h2>
           <div class="grid gap-10 md:grid-cols-2">
             {related.map((p) => (
               <a href={`/blog/${p.slug}`} class="group flex flex-col gap-3 text-ink hover:text-ink">

@@ -40,30 +40,30 @@ export const FORA_DISCLOSURE = {
 // Planning fees. Home, Services, Contact and FAQ all read from here.
 export const PRICING = [
   {
-    name: 'Hotel only',
+    name: 'Hotel Only',
     price: 'Complimentary',
     detail: 'I book the hotel you choose and add the VIP perks: breakfast, resort credits, and upgrades when available.',
   },
   {
-    name: 'Hotel and flights',
+    name: 'Hotel and Flights',
     price: '$250',
     detail: 'Your hotel with perks, plus flights that connect sensibly with the rest of the trip.',
   },
   {
-    name: 'Full itinerary',
+    name: 'Full Itinerary',
     price: '$1,000',
     detail: 'Hotels, flights, restaurants, and experiences, planned day by day.',
   },
   {
-    name: 'Group room blocks',
+    name: 'Group Room Blocks',
     price: 'From $500',
     detail: 'Up to 10 rooms $500. 11 to 25 rooms $1,000. Larger groups by quote. Group itineraries quoted separately.',
   },
 ] as const;
 
 export const RETAINER = {
-  name: 'Annual retainer',
-  price: 'By application',
+  name: 'Annual Retainer',
+  price: 'By Application',
   detail: 'Planning for every trip that year, priority response, and support whenever you need it.',
   invite: "Once you've booked $40,000 in travel with me, you're invited to the retainer, no application needed.",
 } as const;
