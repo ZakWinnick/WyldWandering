@@ -1,281 +1,161 @@
 ---
 import Layout from '../layouts/Layout.astro';
-
-const baseUrl = import.meta.env.BASE_URL;
+import PageHero from '../components/PageHero.astro';
+import StartHere from '../components/StartHere.astro';
+import Icon from '../components/Icon.astro';
+import { INTAKE_URL, PORTAL_URL } from '../config/site';
 
 const services = [
   {
-    number: '01',
-    title: 'Custom Itineraries',
-    description: 'Trips designed around how you actually want to travel, not a template with your name on it. I learn what matters to you: pace, preferences, the experiences you crave. Then I build something that feels like yours.',
+    n: '01',
+    title: 'Custom itineraries',
+    body: 'Trips designed around how you actually want to travel, not a template with your name on it. I learn what matters to you: pace, preferences, the experiences you crave. Then I build something that feels like yours.',
   },
   {
-    number: '02',
-    title: 'Hotels & Resorts',
-    description: 'Preferred partner rates, room upgrades, resort credits, and the perks that actually matter. I work with the world\'s best properties to get you benefits you can\'t get booking on your own.',
+    n: '02',
+    title: 'Hotels and resorts',
+    body: "Preferred partner rates, room upgrades, resort credits, and the perks that actually matter. I work with the world's best properties to get you benefits you can't get booking on your own.",
   },
   {
-    number: '03',
-    title: 'Reservations & Access',
-    description: 'The restaurant that\'s "fully booked." The private tour that\'s not on the website. The experience that requires knowing who to ask. Some doors just open when you have the right connections.',
+    n: '03',
+    title: 'Reservations and access',
+    body: 'The restaurant that\'s "fully booked." The private tour that\'s not on the website. The experience that requires knowing who to ask. Some doors just open when you have the right connections.',
   },
   {
-    number: '04',
-    title: 'Destination Expertise',
-    description: 'Not sure where to go? I research destinations obsessively: the right season, the right neighborhood, the property worth choosing. Tell me what you\'re in the mood for and I\'ll find places that deliver.',
+    n: '04',
+    title: 'Destination expertise',
+    body: "Not sure where to go? I research destinations obsessively: the right season, the right neighborhood, the property worth choosing. Tell me what you're in the mood for and I'll find places that deliver.",
   },
   {
-    number: '05',
-    title: 'Group Travel',
-    description: 'Planning with friends, family, or colleagues? I coordinate the logistics so everyone gets what they want: separate bookings, group dining, activities that work for different interests. All without the usual headaches.',
+    n: '05',
+    title: 'Group travel',
+    body: 'Planning with friends, family, or colleagues? I coordinate the logistics so everyone gets what they want: separate bookings, group dining, activities that work for different interests. All without the usual headaches.',
   },
   {
-    number: '06',
-    title: 'Special Occasions',
-    description: 'Honeymoons, anniversaries, milestone birthdays, proposals. Some trips need to be flawless. I handle the pressure so you can focus on the moment.',
-  },
-];
-
-const processSteps = [
-  {
-    number: '01',
-    title: 'Discovery',
-    description: 'We start with a conversation about where you want to go, how you like to travel, and what makes a trip feel worth it. No commitment, just exploration.',
-  },
-  {
-    number: '02',
-    title: 'Design',
-    description: 'Based on our conversation, I create a detailed itinerary covering properties, dining, and experiences. All tailored to what actually matters to you.',
-  },
-  {
-    number: '03',
-    title: 'Refine',
-    description: 'We refine the plan together until it feels exactly right. Adjust the pace, swap properties, add experiences. It\'s your trip.',
-  },
-  {
-    number: '04',
-    title: 'Depart',
-    description: 'I handle all reservations and logistics. Throughout your trip, I\'m available for support and can help pivot plans if needed.',
+    n: '06',
+    title: 'Special occasions',
+    body: 'Honeymoons, anniversaries, milestone birthdays, proposals. Some trips need to be flawless. I handle the pressure so you can focus on the moment.',
   },
 ];
 ---
 
 <Layout title="Services" description="Premium travel planning for discerning travelers. Custom itineraries, luxury hotels with exclusive perks, and reservations you can't get on your own. Certified Fora travel advisor.">
-  <!-- Hero Section - Dark -->
-  <section class="pt-28 pb-20 md:pt-36 md:pb-28 lg:pt-40 lg:pb-32 px-6 md:px-12 bg-forest-950 dark:bg-forest-950">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-end">
-        <div>
-          <span class="inline-block text-sm uppercase tracking-[0.2em] font-medium mb-6 text-amber-400 dark:text-amber-400">
-            Services
-          </span>
-          <h1 class="text-5xl md:text-6xl lg:text-7xl font-display leading-[1.1] text-cream-50 dark:text-cream-50">
-            Everything,
-            <br />
-            <em class="font-normal">handled.</em>
-          </h1>
-        </div>
-        <div class="lg:pb-4">
-          <p class="text-xl md:text-2xl font-display leading-relaxed text-cream-200 dark:text-cream-200">
-            The best hotels. The impossible reservations. The upgrades that just happen. As a certified Fora travel advisor with a background in luxury hospitality, I take care of the details so your trip actually delivers on the promise.
-          </p>
-        </div>
+  <PageHero eyebrow="Services" intro="The best hotels. The impossible reservations. The upgrades that just happen. As a certified Fora travel advisor with a background in luxury hospitality, I take care of the details so your trip actually delivers on the promise.">
+    Everything, <em>handled.</em>
+  </PageHero>
+
+  <!-- Services -->
+  <section class="py-24 md:py-32">
+    <div class="container-site flex flex-col gap-14 md:gap-16">
+      <div class="reveal flex max-w-3xl flex-col gap-5">
+        <p class="eyebrow">What I offer</p>
+        <h2 class="display-lg">Premium travel planning <em>for people who know the difference.</em></h2>
       </div>
-
-      <!-- Decorative line -->
-      <div class="mt-16 lg:mt-24 h-px w-full bg-forest-800 dark:bg-forest-800"></div>
-    </div>
-  </section>
-
-  <!-- Services Grid -->
-  <section class="py-20 md:py-28 lg:py-32 px-6 md:px-12 bg-cream-100 dark:bg-forest-900">
-    <div class="max-w-7xl mx-auto">
-      <div class="mb-16 lg:mb-24">
-        <span class="inline-block text-sm uppercase tracking-[0.2em] font-medium mb-4 text-terracotta-500 dark:text-amber-400">
-          What I Offer
-        </span>
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-display text-charcoal-900 dark:text-cream-50">
-          Premium travel planning
-          <br class="hidden md:block" />
-          <span class="text-charcoal-600 dark:text-cream-200">for people who know the difference</span>
-        </h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {services.map((service) => (
-          <article class="group p-8 lg:p-10 bg-cream-100/50 dark:bg-forest-900/50 backdrop-blur-sm rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
-            <div class="flex items-start justify-between mb-8">
-              <span class="text-5xl md:text-6xl font-display font-medium text-charcoal-200 dark:text-forest-700 transition-colors duration-300 group-hover:text-terracotta-500 dark:group-hover:text-amber-400">
-                {service.number}
-              </span>
-              <div class="w-3 h-3 rounded-full mt-4 bg-terracotta-500 dark:bg-amber-400 transition-transform duration-300 group-hover:scale-150"></div>
-            </div>
-            <h3 class="text-xl md:text-2xl font-display mb-4 text-charcoal-900 dark:text-cream-50">
-              {service.title}
-            </h3>
-            <p class="leading-relaxed text-charcoal-600 dark:text-cream-200">
-              {service.description}
-            </p>
-          </article>
-        ))}
+      <div class="grid gap-x-12 gap-y-2 md:grid-cols-2 lg:grid-cols-3">
+        {
+          services.map((s) => (
+            <article class="reveal flex flex-col gap-4 border-t border-sand-300 py-9">
+              <span class="font-display text-[22px] text-clay">{s.n}</span>
+              <h3 class="text-[32px] leading-tight">{s.title}</h3>
+              <p class="text-ink-600">{s.body}</p>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
 
-  <!-- Process Section -->
-  <section class="py-20 md:py-28 lg:py-32 px-6 md:px-12 bg-cream-50 dark:bg-forest-950">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8">
-        <!-- Left Column - Title -->
-        <div class="lg:col-span-4">
-          <span class="inline-block text-sm uppercase tracking-[0.2em] font-medium mb-4 text-terracotta-500 dark:text-amber-400">
-            The Process
-          </span>
-          <h2 class="text-4xl md:text-5xl font-display mb-6 text-charcoal-900 dark:text-cream-50">
-            How it
-            <br />
-            <em class="font-normal">works</em>
-          </h2>
-          <p class="text-lg text-charcoal-600 dark:text-cream-200">
-            A straightforward approach to planning your next trip. No surprises, just thoughtful collaboration.
-          </p>
-        </div>
-
-        <!-- Right Column - Steps -->
-        <div class="lg:col-span-8">
-          <div class="grid sm:grid-cols-2 gap-8 lg:gap-12">
-            {processSteps.map((step) => (
-              <div class="relative">
-                <div class="flex items-baseline gap-4 mb-4">
-                  <span class="text-7xl md:text-8xl font-display font-medium leading-none text-terracotta-500/20 dark:text-amber-400/20">
-                    {step.number}
-                  </span>
-                  <h3 class="text-2xl font-display text-charcoal-900 dark:text-cream-50">
-                    {step.title}
-                  </h3>
-                </div>
-                <p class="pl-0 sm:pl-4 text-charcoal-600 dark:text-cream-200">
-                  {step.description}
-                </p>
-              </div>
-            ))}
+  <!-- Process -->
+  <section class="bg-sand-200 py-24 md:py-28" id="process">
+    <div class="container-site grid gap-14 lg:grid-cols-12 lg:gap-20">
+      <div class="reveal flex flex-col gap-6 lg:sticky lg:top-32 lg:col-span-4 lg:self-start">
+        <p class="eyebrow">The process</p>
+        <h2 class="display-lg">How it <em>works.</em></h2>
+        <p class="text-ink-700">A straightforward approach to planning your next trip. No surprises, just thoughtful collaboration, with everything in one client portal.</p>
+        <a href={INTAKE_URL} class="btn-primary mt-2 self-start">Start planning <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
+      </div>
+      <ol class="flex flex-col gap-5 lg:col-span-8">
+        <li class="reveal grid gap-4 rounded-card bg-sand-50 p-8 sm:grid-cols-[96px_1fr] md:p-10">
+          <span class="font-display text-[56px] leading-none text-clay">01</span>
+          <div class="flex flex-col gap-3">
+            <h3 class="text-[32px] leading-tight">Discovery</h3>
+            <p class="text-ink-600">Start with a short intake so I know who's traveling, where you're based, and the hotels you already love. Then we talk about where you want to go, how you like to travel, and what makes a trip feel worth it. No commitment, just exploration.</p>
+            <a href={INTAKE_URL} class="link-accent self-start text-[15px]">Begin the intake</a>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Planning Fee -->
-  <section id="pricing" class="py-20 md:py-28 lg:py-32 px-6 md:px-12 bg-white dark:bg-forest-900">
-    <div class="max-w-3xl mx-auto">
-      <div class="text-center mb-12">
-        <span class="inline-block text-sm uppercase tracking-[0.2em] font-medium mb-6 text-terracotta-500 dark:text-amber-400">
-          Pricing
-        </span>
-        <h2 class="text-4xl md:text-5xl lg:text-6xl font-display mb-4 text-charcoal-900 dark:text-cream-50">
-          Planning Fee
-        </h2>
-        <p class="text-xl md:text-2xl font-display text-charcoal-600 dark:text-cream-200">
-          My planning fee depends on the scope of work:
-        </p>
-      </div>
-
-      <!-- Pricing List -->
-      <ul class="max-w-2xl mx-auto mb-12 space-y-3 text-lg text-charcoal-600 dark:text-cream-200">
-        <li class="flex items-start gap-3">
-          <span class="text-terracotta-500 dark:text-amber-400 mt-1.5">•</span>
-          <span><strong class="text-charcoal-900 dark:text-cream-50">$500</strong> for hotel and flights</span>
         </li>
-        <li class="flex items-start gap-3">
-          <span class="text-terracotta-500 dark:text-amber-400 mt-1.5">•</span>
-          <span><strong class="text-charcoal-900 dark:text-cream-50">$1,000</strong> for a full itinerary (hotel, flights, restaurants, experiences)</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <span class="text-terracotta-500 dark:text-amber-400 mt-1.5">•</span>
-          <span><strong class="text-charcoal-900 dark:text-cream-50">Custom quote</strong> for groups, events, or multi-country trips</span>
-        </li>
-      </ul>
-
-      <div class="max-w-2xl mx-auto mb-8 text-lg text-charcoal-600 dark:text-cream-200">
-        <p>
-          The fee is due at booking and is non-refundable.
-        </p>
-      </div>
-
-      <div class="max-w-2xl mx-auto space-y-6 text-lg leading-relaxed text-charcoal-600 dark:text-cream-200">
-        <p>
-          This covers everything: the research, the recommendations, the bookings, and the back-and-forth until we get it right. It also covers what happens after you book. I'm your point of contact if anything changes, if something goes sideways, or if you just want a second opinion on which restaurant is actually worth the reservation.
-        </p>
-        <p>
-          The fee is separate from the perks you get by booking through me. Upgrades, resort credits, early check-in, and preferred rates come through my relationships with hotels and suppliers. You'd pay the same room rate booking direct, but you wouldn't get any of that.
-        </p>
-      </div>
-
-      <!-- Referrals & Loyalty -->
-      <div class="max-w-2xl mx-auto mt-16 grid md:grid-cols-2 gap-8">
-        <div class="p-8 bg-cream-50 dark:bg-forest-950 rounded-3xl shadow-md">
-          <h3 class="text-2xl font-display mb-4 text-charcoal-900 dark:text-cream-50">Referrals</h3>
-          <p class="text-base leading-relaxed text-charcoal-600 dark:text-cream-200">
-            If you refer someone to me and they book a trip, your planning fee is waived on your next booking. Good travel advice is worth sharing, and I'd rather reward you for it than spend that money on advertising.
-          </p>
-        </div>
-        <div class="p-8 bg-cream-50 dark:bg-forest-950 rounded-3xl shadow-md">
-          <h3 class="text-2xl font-display mb-4 text-charcoal-900 dark:text-cream-50">Loyalty</h3>
-          <p class="text-base leading-relaxed text-charcoal-600 dark:text-cream-200">
-            Once you've booked $40,000 in travel with me, your planning fee drops to a flat $250 per trip, regardless of scope. That covers the time I spend making sure everything is handled. By then, I know how you like to travel, and you know what you're getting.
-          </p>
-        </div>
-      </div>
-
-      <!-- Closing statement -->
-      <div class="max-w-2xl mx-auto mt-12 text-lg leading-relaxed text-charcoal-600 dark:text-cream-200 text-center">
-        <p>
-          If you're looking for someone to forward confirmation emails, I'm probably not the right fit. If you want someone who knows the difference between a good hotel and a well-marketed one, let's talk.
-        </p>
-      </div>
-
-      <!-- Visual accent -->
-      <div class="flex justify-center gap-2 mt-12">
-        <div class="w-12 h-px bg-terracotta-500 dark:bg-amber-400"></div>
-        <div class="w-3 h-px bg-terracotta-500 dark:bg-amber-400"></div>
-        <div class="w-1 h-px bg-terracotta-500 dark:bg-amber-400"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="py-20 md:py-28 lg:py-32 px-6 md:px-12 bg-cream-100 dark:bg-forest-950">
-    <div class="max-w-7xl mx-auto">
-      <div class="relative overflow-hidden p-12 md:p-16 lg:p-24 bg-cream-50 dark:bg-forest-900 rounded-3xl shadow-xl">
-        <div class="relative z-10 max-w-3xl">
-          <h2 class="text-4xl md:text-5xl lg:text-6xl font-display mb-6 text-charcoal-900 dark:text-cream-50">
-            Ready to start
-            <br />
-            <em class="font-normal">planning?</em>
-          </h2>
-          <p class="text-xl mb-10 max-w-xl text-charcoal-600 dark:text-cream-200">
-            Let's talk about where you want to go and what you're looking for. No pressure, no commitment. Just a conversation about what's possible.
-          </p>
-          <div class="flex flex-col sm:flex-row gap-4">
-            <a
-              href={`${baseUrl}contact`}
-              class="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-wider font-medium bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-950 hover:bg-terracotta-600 dark:hover:bg-amber-500 transition-colors duration-300 rounded-full"
-            >
-              Schedule a Discovery Call
-            </a>
-            <a
-              href={`${baseUrl}destinations`}
-              class="inline-flex items-center justify-center px-8 py-4 text-sm uppercase tracking-wider font-medium border border-charcoal-900 dark:border-cream-50 text-charcoal-900 dark:text-cream-50 hover:bg-charcoal-900 hover:text-white dark:hover:bg-cream-50 dark:hover:text-forest-950 transition-colors duration-300 rounded-full"
-            >
-              Explore Destinations
-            </a>
+        <li class="reveal grid gap-4 rounded-card bg-sand-50 p-8 sm:grid-cols-[96px_1fr] md:p-10">
+          <span class="font-display text-[56px] leading-none text-clay">02</span>
+          <div class="flex flex-col gap-3">
+            <h3 class="text-[32px] leading-tight">Design</h3>
+            <p class="text-ink-600">Based on our conversation, I put together the properties, dining, and experiences. All tailored to what actually matters to you.</p>
           </div>
-        </div>
-
-        <!-- Decorative elements -->
-        <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-terracotta-500/10 dark:bg-amber-400/10"></div>
-        <div class="absolute -bottom-10 -right-10 w-40 h-40 rounded-full bg-terracotta-500/5 dark:bg-amber-400/5"></div>
-      </div>
+        </li>
+        <li class="reveal grid gap-4 rounded-card bg-pine p-8 text-sand-100 sm:grid-cols-[96px_1fr] md:p-10">
+          <span class="font-display text-[56px] leading-none text-gold">03</span>
+          <div class="flex flex-col gap-3">
+            <h3 class="text-[32px] leading-tight">Refine and book</h3>
+            <p class="text-pine-muted">We refine the plan together until it feels exactly right. Hotels are browsed and booked in your private Wyld Wandering client portal, powered by Fora, with the perks attached.</p>
+            <a href={PORTAL_URL} class="self-start text-[15px] font-medium text-gold underline-offset-4 hover:text-gold-soft hover:underline">Open client portal</a>
+          </div>
+        </li>
+        <li class="reveal grid gap-4 rounded-card bg-sand-50 p-8 sm:grid-cols-[96px_1fr] md:p-10">
+          <span class="font-display text-[56px] leading-none text-clay">04</span>
+          <div class="flex flex-col gap-3">
+            <h3 class="text-[32px] leading-tight">Depart</h3>
+            <p class="text-ink-600">I handle the reservations and logistics. Throughout your trip, I'm available for support and can help pivot plans if needed.</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
+
+  <!-- Pricing -->
+  <section id="pricing" class="scroll-mt-28 py-24 md:py-32">
+    <div class="container-site flex flex-col gap-14">
+      <div class="reveal flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+        <div class="flex flex-col gap-5">
+          <p class="eyebrow">Pricing</p>
+          <h2 class="display-lg">Planning <em>fee.</em></h2>
+        </div>
+        <p class="max-w-md text-ink-700">My planning fee depends on the scope of work. The fee is due at booking and is non-refundable.</p>
+      </div>
+
+      <div class="reveal grid gap-5 md:grid-cols-3">
+        <div class="flex flex-col gap-3 rounded-card border border-sand-300 p-8 md:p-10">
+          <span class="font-display text-[72px] font-medium leading-none">$500</span>
+          <span class="text-lg font-normal">Hotel and flights</span>
+        </div>
+        <div class="flex flex-col gap-3 rounded-card border border-sand-300 p-8 md:p-10">
+          <span class="font-display text-[72px] font-medium leading-none">$1,000</span>
+          <span class="text-lg font-normal">Full itinerary: hotel, flights, restaurants, experiences</span>
+        </div>
+        <div class="flex flex-col gap-3 rounded-card border border-sand-300 p-8 md:p-10">
+          <span class="font-display text-[72px] font-medium italic leading-none">Custom</span>
+          <span class="text-lg font-normal">Quote for groups, events, or multi-country trips</span>
+        </div>
+      </div>
+
+      <div class="reveal grid gap-10 text-[18px] leading-[1.8] text-ink-700 lg:grid-cols-2 lg:gap-16">
+        <p>This covers everything: the research, the recommendations, the bookings, and the back-and-forth until we get it right. It also covers what happens after you book. I'm your point of contact if anything changes, if something goes sideways, or if you just want a second opinion on which restaurant is actually worth the reservation.</p>
+        <p>The fee is separate from the perks you get by booking through me. Upgrades, resort credits, early check-in, and preferred rates come through my relationships with hotels and suppliers. You'd pay the same room rate booking direct, but you wouldn't get any of that.</p>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-2">
+        <div class="reveal flex flex-col gap-3 rounded-card bg-sand-200 p-8 md:p-10">
+          <h3 class="text-[30px] leading-tight">Referrals</h3>
+          <p class="text-ink-700">If you refer someone to me and they book a trip, your planning fee is waived on your next booking. Good travel advice is worth sharing, and I'd rather reward you for it than spend that money on advertising.</p>
+        </div>
+        <div class="reveal flex flex-col gap-3 rounded-card bg-sand-200 p-8 md:p-10">
+          <h3 class="text-[30px] leading-tight">Loyalty</h3>
+          <p class="text-ink-700">Once you've booked $40,000 in travel with me, your planning fee drops to a flat $250 per trip, regardless of scope. By then, I know how you like to travel, and you know what you're getting.</p>
+        </div>
+      </div>
+
+      <p class="reveal max-w-3xl font-display text-[28px] font-medium leading-snug md:text-[32px]">
+        If you're looking for someone to forward confirmation emails, I'm probably not the right fit. If you want someone who knows the difference between a good hotel and a well-marketed one, <em class="font-normal italic text-clay">let's talk.</em>
+      </p>
+    </div>
+  </section>
+
+  <StartHere />
 </Layout>

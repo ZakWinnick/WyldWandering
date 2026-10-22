@@ -1,179 +1,228 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import StartHere from '../components/StartHere.astro';
+import { INTAKE_URL, PORTAL_URL, SITE } from '../config/site';
+
+import hero from '../assets/images/hero-biarritz.jpg';
+import room from '../assets/images/room.jpg';
+import mediterranean from '../assets/images/mediterranean.jpg';
+import kyoto from '../assets/images/kyoto.jpg';
+import savanna from '../assets/images/savanna.jpg';
+import wine from '../assets/images/wine.jpg';
+import maldives from '../assets/images/maldives.jpg';
+import zak from '../assets/images/zak.jpg';
+
+const principles = [
+  { n: '01', title: 'The right room', body: 'Corner suite, best view, upgrade confirmed before you land.' },
+  { n: '02', title: 'Access, not availability', body: 'The table that\'s "fully booked." The experience that isn\'t on the website.' },
+  { n: '03', title: 'Curated, not generic', body: 'Built around how you actually travel, not a template with your name on it.' },
+];
+
+const destinations = [
+  { img: kyoto, alt: 'Lantern-lit lane leading to a pagoda in Kyoto at dusk', label: 'Tokyo and Kyoto', title: 'Japan' },
+  { img: savanna, alt: 'Acacia tree on the savanna at sunset', label: 'Kenya, Tanzania, Botswana', title: 'Safari' },
+  { img: wine, alt: 'Glass of red wine on a ledge above vineyard rows', label: 'Napa, Bordeaux, Mendoza', title: 'Wine country' },
+  { img: maldives, alt: 'Overwater villas above turquoise water', label: 'Maldives, Caribbean, Bali', title: 'Islands' },
+];
 ---
 
-<Layout title="Home">
+<Layout title="Home" overlayHeader>
   <!-- Hero -->
-  <section class="relative min-h-screen flex items-center bg-cream-50 dark:bg-charcoal-900 overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-cream-100 via-cream-50 to-cream-200 dark:from-charcoal-900 dark:via-forest-900 dark:to-charcoal-800"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32 w-full">
-      <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-        <!-- Text Content -->
-        <div>
-          <p class="text-terracotta-500 dark:text-terracotta-400 text-sm font-medium tracking-widest uppercase mb-6">Premium Travel Planning</p>
-          <h1 class="font-display text-5xl md:text-7xl lg:text-8xl text-charcoal-900 dark:text-cream-50 leading-[0.95]">
-            Your trip,<br/>
-            <span class="italic text-terracotta-500 dark:text-terracotta-400">handled.</span>
-          </h1>
-          <p class="mt-8 text-charcoal-600 dark:text-cream-200 text-lg md:text-xl max-w-xl leading-relaxed">
-            The hotels you'll brag about. The reservations you couldn't get. The upgrades that just happen. We plan trips for people who've been disappointed by "luxury" before.
-          </p>
-          <div class="mt-10 flex flex-wrap gap-4">
-            <a href="/contact" class="inline-flex items-center px-8 py-4 bg-terracotta-500 text-white font-medium text-sm uppercase tracking-wide hover:bg-terracotta-600 transition-colors rounded-full">
-              Start Planning
-            </a>
-            <a href="/about" class="inline-flex items-center px-8 py-4 border-2 border-charcoal-900 text-charcoal-900 dark:border-cream-200 dark:text-cream-200 font-medium text-sm uppercase tracking-wide hover:bg-charcoal-900 hover:text-cream-50 dark:hover:bg-cream-200 dark:hover:text-charcoal-900 transition-colors rounded-full">
-              Meet Zak
-            </a>
-          </div>
-        </div>
+  <section class="relative flex flex-col overflow-hidden bg-[#2A1A0E] text-sand-50" style="min-height: clamp(640px, 100svh, 980px)">
+    <Image
+      src={hero}
+      alt="Diners on a clifftop terrace above the sea at sunset in Biarritz"
+      widths={[800, 1280, 1800, 2600]}
+      sizes="100vw"
+      loading="eager"
+      fetchpriority="high"
+      class="absolute inset-0 h-full w-full object-cover object-[center_40%]"
+    />
+    <div aria-hidden="true" class="absolute inset-0" style="background: linear-gradient(180deg, rgba(14,10,6,0.45) 0%, rgba(14,10,6,0) 26%, rgba(14,10,6,0) 42%, rgba(14,10,6,0.74) 100%)"></div>
+    <div aria-hidden="true" class="absolute inset-0 md:hidden" style="background: linear-gradient(180deg, rgba(14,10,6,0) 20%, rgba(14,10,6,0.45) 45%, rgba(14,10,6,0.35) 100%)"></div>
 
-        <!-- Logo Mark -->
-        <div class="hidden lg:flex items-center justify-center">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" class="w-96 h-96 xl:w-[28rem] xl:h-[28rem] 2xl:w-[32rem] 2xl:h-[32rem] text-charcoal-200 dark:text-forest-700 opacity-60">
-            <path d="M32 72 L66 145 L100 80 L134 145 L168 72"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="7"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"/>
-            <circle cx="100" cy="52" r="7" fill="currentColor"/>
-          </svg>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Philosophy -->
-  <section class="py-24 lg:py-32 bg-cream-50 dark:bg-forest-950">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="max-w-3xl reveal-on-scroll">
-        <p class="text-terracotta-500 dark:text-amber-400 text-sm font-medium tracking-widest uppercase mb-4">The Approach</p>
-        <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-charcoal-900 dark:text-cream-50 leading-tight">
-          Details are <span class="italic text-terracotta-500 dark:text-amber-400">everything.</span>
-        </h2>
-        <p class="mt-8 text-charcoal-600 dark:text-cream-200 text-lg leading-relaxed">
-          Anyone can book a hotel room. We find the right room, at the right property, with the upgrade already waiting. The dinner reservation that's "fully booked." The experience that isn't on the website. Travel that actually delivers on the promise.
+    <div class="container-site relative z-10 mt-auto flex flex-wrap items-end justify-between gap-10 pb-14 pt-40 md:pb-20">
+      <div class="flex max-w-3xl flex-col gap-7">
+        <p class="text-[13px] font-medium uppercase tracking-eyebrow text-gold-soft">{SITE.tagline}</p>
+        <h1 class="display-xl">Your trip, <em>handled.</em></h1>
+        <p class="max-w-xl text-lg leading-relaxed text-[#F4ECE0] md:text-xl">
+          The hotels you'll brag about. The reservations you couldn't get. The upgrades that just happen. Trips for people who've been disappointed by "luxury" before.
         </p>
-        <a href="/services" class="btn-secondary mt-8">How It Works</a>
+        <div class="mt-2 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+          <a href={INTAKE_URL} class="btn-primary min-h-[56px] px-8">Start planning <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
+          <a href={PORTAL_URL} class="btn-outline-light min-h-[56px] px-8">Returning? Sign in to your portal</a>
+        </div>
+      </div>
+      <p class="hidden max-w-[220px] text-right text-[13px] tracking-[0.08em] text-sand-50/85 lg:block">Golden hour above the Atlantic, Biarritz</p>
+    </div>
+  </section>
+
+  <!-- Credentials -->
+  <section class="border-b border-sand-300">
+    <div class="container-site flex flex-col gap-6 py-10 lg:flex-row lg:items-center lg:justify-between lg:gap-8">
+      <p class="max-w-md font-display text-[26px] font-medium leading-tight">Fifteen years inside luxury hotels. Now on your side of the front desk.</p>
+      <ul class="flex flex-wrap gap-x-10 gap-y-3 text-[13px] font-medium uppercase tracking-[0.18em] text-ink-600">
+        <li>Wynn Las Vegas</li>
+        <li>The Cosmopolitan</li>
+        <li>Grand Hyatt Nashville</li>
+        <li class="text-clay">Fora certified advisor</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Approach -->
+  <section class="py-24 md:py-32">
+    <div class="container-site grid items-center gap-14 lg:grid-cols-12 lg:gap-24">
+      <div class="reveal lg:col-span-5">
+        <Image src={room} alt="Hotel room with French doors open to a balcony" widths={[600, 900, 1200]} sizes="(min-width: 1024px) 40vw, 100vw" class="h-[460px] w-full rounded-card object-cover md:h-[720px]" />
+      </div>
+      <div class="reveal flex flex-col gap-8 lg:col-span-7">
+        <p class="eyebrow">The approach</p>
+        <h2 class="display-lg">Details are <em>everything.</em></h2>
+        <p class="lede max-w-xl">Anyone can book a hotel room. I find the right room, at the right property, with the upgrade already waiting. I won't book a client into a property I wouldn't stay at myself.</p>
+        <div class="rule-list mt-2 flex flex-col">
+          {
+            principles.map((p) => (
+              <div class="flex gap-7 py-6">
+                <span class="min-w-8 font-display text-[22px] text-clay">{p.n}</span>
+                <div class="flex flex-col gap-1.5">
+                  <h3 class="text-[28px] leading-tight">{p.title}</h3>
+                  <p class="text-ink-600">{p.body}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+        <a href="/services" class="link-underline self-start">How I work</a>
       </div>
     </div>
   </section>
 
-  <!-- Destinations Preview -->
-  <section class="py-24 lg:py-32 bg-cream-100 dark:bg-forest-900">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 reveal-on-scroll">
-        <div>
-          <p class="text-terracotta-500 dark:text-amber-400 text-sm font-medium tracking-widest uppercase mb-4">Destinations</p>
-          <h2 class="font-display text-4xl md:text-5xl text-charcoal-900 dark:text-cream-50">We know a place.</h2>
+  <!-- How it works -->
+  <section class="bg-sand-200 py-24 md:py-28">
+    <div class="container-site flex flex-col gap-14 md:gap-16">
+      <div class="reveal flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+        <div class="flex max-w-2xl flex-col gap-5">
+          <p class="eyebrow">How it works</p>
+          <h2 class="display-lg">From first note to <em>final checkout.</em></h2>
         </div>
-        <a href="/destinations" class="btn-secondary">View All</a>
+        <p class="max-w-md text-ink-700">Planning runs through your own Wyld Wandering client portal, powered by Fora. Your options, bookings, and perks live in one place.</p>
       </div>
 
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <a href="/destinations" class="reveal-on-scroll group relative aspect-[4/5] overflow-hidden bg-charcoal-800 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500">
-          <img src="https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=80" alt="Venice canal" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/60 transition-colors"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-6">
-            <p class="text-cream-200 text-xs font-medium tracking-wider uppercase">Old World Charm</p>
-            <h3 class="font-display text-2xl text-cream-50 mt-1">European Escapes</h3>
+      <ol class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+        <li class="reveal flex flex-col gap-4 rounded-card bg-sand-50 p-8 md:p-9">
+          <span class="font-display text-[56px] leading-none text-clay">01</span>
+          <h3 class="text-[28px] leading-tight">Tell me how you travel</h3>
+          <p class="text-base text-ink-600">A short intake sets up your traveler profile: who's going, where you're based, the hotels you already love.</p>
+          <a href={INTAKE_URL} class="link-accent mt-auto inline-flex min-h-[44px] items-center text-[15px]">Start the intake</a>
+        </li>
+        <li class="reveal flex flex-col gap-4 rounded-card bg-sand-50 p-8 md:p-9">
+          <span class="font-display text-[56px] leading-none text-clay">02</span>
+          <h3 class="text-[28px] leading-tight">We talk it through</h3>
+          <p class="text-base text-ink-600">A discovery call about pace, priorities, and what makes a trip feel worth it. No commitment.</p>
+        </li>
+        <li class="reveal flex flex-col gap-4 rounded-card bg-pine p-8 text-sand-100 md:p-9">
+          <span class="font-display text-[56px] leading-none text-gold">03</span>
+          <h3 class="text-[28px] leading-tight">Book in your portal</h3>
+          <p class="text-base text-pine-muted">Browse and book hotels with me in your private client portal, with preferred-partner perks attached.</p>
+          <a href={PORTAL_URL} class="mt-auto inline-flex min-h-[44px] items-center text-[15px] font-medium text-gold underline-offset-4 hover:text-gold-soft hover:underline">Open client portal</a>
+        </li>
+        <li class="reveal flex flex-col gap-4 rounded-card bg-sand-50 p-8 md:p-9">
+          <span class="font-display text-[56px] leading-none text-clay">04</span>
+          <h3 class="text-[28px] leading-tight">Travel with backup</h3>
+          <p class="text-base text-ink-600">If a flight cancels or a room isn't right, you have a real person who knows your itinerary.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Destinations -->
+  <section class="py-24 md:py-32">
+    <div class="container-site flex flex-col gap-12 md:gap-14">
+      <div class="reveal flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+        <div class="flex flex-col gap-5">
+          <p class="eyebrow">Destinations</p>
+          <h2 class="display-lg">We know <em>a place.</em></h2>
+        </div>
+        <a href="/destinations" class="link-underline self-start sm:self-auto">All destinations</a>
+      </div>
+
+      <div class="grid auto-rows-[300px] gap-4 md:grid-cols-3 md:auto-rows-[340px]">
+        <a href="/destinations" class="reveal group relative row-span-2 block overflow-hidden rounded-card text-sand-50 hover:text-sand-50 max-md:min-h-[460px]">
+          <Image src={mediterranean} alt="Whitewashed steps and a blue door framed by bougainvillea" widths={[600, 900, 1300]} sizes="(min-width: 768px) 33vw, 100vw" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+          <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-b from-transparent from-55% to-black/60"></div>
+          <div class="absolute inset-x-7 bottom-7 flex flex-col gap-1.5">
+            <span class="text-xs font-medium uppercase tracking-[0.2em]">Italy, Greece, Spain, France</span>
+            <span class="font-display text-[40px] font-medium leading-none">The Mediterranean</span>
           </div>
         </a>
-        <a href="/destinations" class="reveal-on-scroll group relative aspect-[4/5] overflow-hidden bg-charcoal-800 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500">
-          <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80" alt="Tropical beach with palm trees" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/60 transition-colors"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-6">
-            <p class="text-cream-200 text-xs font-medium tracking-wider uppercase">Sun & Sand</p>
-            <h3 class="font-display text-2xl text-cream-50 mt-1">Beach & Island</h3>
-          </div>
-        </a>
-        <a href="/destinations" class="reveal-on-scroll group relative aspect-[4/5] overflow-hidden bg-charcoal-800 rounded-3xl shadow-lg hover:shadow-xl transition-all duration-500">
-          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80" alt="Tokyo city skyline" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-          <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/60 transition-colors"></div>
-          <div class="absolute bottom-0 left-0 right-0 p-6">
-            <p class="text-cream-200 text-xs font-medium tracking-wider uppercase">Culture & Energy</p>
-            <h3 class="font-display text-2xl text-cream-50 mt-1">City Breaks</h3>
-          </div>
-        </a>
+        {
+          destinations.map((d) => (
+            <a href="/destinations" class="reveal group relative block overflow-hidden rounded-card text-sand-50 hover:text-sand-50">
+              <Image src={d.img} alt={d.alt} widths={[600, 900, 1200]} sizes="(min-width: 768px) 33vw, 100vw" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+              <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-b from-transparent from-45% to-black/60" />
+              <div class="absolute inset-x-6 bottom-5 flex flex-col gap-1">
+                <span class="text-xs font-medium uppercase tracking-[0.2em]">{d.label}</span>
+                <span class="font-display text-[30px] font-medium leading-none">{d.title}</span>
+              </div>
+            </a>
+          ))
+        }
       </div>
     </div>
   </section>
 
-  <!-- Services Preview -->
-  <section class="py-24 lg:py-32 bg-cream-50 dark:bg-forest-950">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <div class="text-center mb-16 reveal-on-scroll">
-        <p class="text-terracotta-500 dark:text-amber-400 text-sm font-medium tracking-widest uppercase mb-4">Services</p>
-        <h2 class="font-display text-4xl md:text-5xl text-charcoal-900 dark:text-cream-50">What We Handle</h2>
-      </div>
-
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <div class="reveal-on-scroll p-8 bg-cream-100/50 dark:bg-forest-900/50 backdrop-blur-sm rounded-3xl hover:shadow-lg transition-all duration-300">
-          <span class="font-display text-4xl text-terracotta-500 dark:text-amber-400">01</span>
-          <h3 class="font-display text-xl text-charcoal-900 dark:text-cream-50 mt-4">Custom Itineraries</h3>
-          <p class="mt-3 text-charcoal-600 dark:text-cream-300">Trips designed around how you actually want to travel, not a template with your name on it.</p>
+  <!-- Pricing -->
+  <section class="pb-24 md:pb-32">
+    <div class="container-site">
+      <div class="reveal flex flex-col gap-12 border-t border-ink pt-12">
+        <div class="flex flex-col justify-between gap-8 lg:flex-row lg:items-start">
+          <div class="flex flex-col gap-5">
+            <p class="eyebrow">Planning fees</p>
+            <h2 class="display-md max-w-xl">Flat fees, set by scope. <em>Perks on top.</em></h2>
+          </div>
+          <p class="max-w-md text-ink-700">You pay the same room rate you would booking direct. The upgrades, credits, and early check-in come through my hotel relationships. The fee covers the planning, and me, until you're home.</p>
         </div>
-        <div class="reveal-on-scroll p-8 bg-cream-100/50 dark:bg-forest-900/50 backdrop-blur-sm rounded-3xl hover:shadow-lg transition-all duration-300">
-          <span class="font-display text-4xl text-terracotta-500 dark:text-amber-400">02</span>
-          <h3 class="font-display text-xl text-charcoal-900 dark:text-cream-50 mt-4">Hotels & Resorts</h3>
-          <p class="mt-3 text-charcoal-600 dark:text-cream-300">Preferred partner rates, room upgrades, resort credits, and the perks that matter.</p>
+        <div class="grid gap-8 md:grid-cols-3 md:gap-0">
+          <div class="flex flex-col gap-2.5 md:pr-10">
+            <span class="font-display text-[64px] font-medium leading-none">$500</span>
+            <span class="text-lg font-normal">Hotel and flights</span>
+          </div>
+          <div class="flex flex-col gap-2.5 border-sand-300 md:border-l md:px-10">
+            <span class="font-display text-[64px] font-medium leading-none">$1,000</span>
+            <span class="text-lg font-normal">Full itinerary: hotels, flights, restaurants, experiences</span>
+          </div>
+          <div class="flex flex-col gap-2.5 border-sand-300 md:border-l md:px-10">
+            <span class="font-display text-[64px] font-medium italic leading-none">Custom</span>
+            <span class="text-lg font-normal">Groups, events, and multi-country trips</span>
+          </div>
         </div>
-        <div class="reveal-on-scroll p-8 bg-cream-100/50 dark:bg-forest-900/50 backdrop-blur-sm rounded-3xl hover:shadow-lg transition-all duration-300">
-          <span class="font-display text-4xl text-terracotta-500 dark:text-amber-400">03</span>
-          <h3 class="font-display text-xl text-charcoal-900 dark:text-cream-50 mt-4">Reservations & Access</h3>
-          <p class="mt-3 text-charcoal-600 dark:text-cream-300">Restaurant bookings, private tours, and the "how did you get that?" moments.</p>
-        </div>
-      </div>
-
-      <div class="text-center mt-12 space-y-4 reveal-on-scroll">
-        <a href="/services" class="btn-primary">See All Services</a>
-        <p class="text-sm text-charcoal-500 dark:text-cream-300">
-          Planning fees start at $500. <a href="/services#pricing" class="text-terracotta-500 dark:text-amber-400 hover:underline">View pricing</a>
+        <p class="text-[15px] text-ink-600">
+          Due at booking. Refer a friend who books and your next fee is waived. After $40,000 booked, every trip is a flat $250. <a href="/services#pricing" class="link-accent">Full pricing details</a>
         </p>
       </div>
     </div>
   </section>
 
-  <!-- CTA -->
-  <section class="py-24 lg:py-32 bg-charcoal-900 dark:bg-forest-950">
-    <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center reveal-on-scroll">
-      <h2 class="font-display text-4xl md:text-5xl lg:text-6xl text-cream-50 leading-tight">
-        Trips worth <span class="italic text-terracotta-400 dark:text-amber-400">taking.</span>
-      </h2>
-      <p class="mt-6 text-cream-200 text-lg max-w-2xl mx-auto">
-        Tell me where you want to go. Or just tell me what you're in the mood for. Either way, we'll figure it out.
-      </p>
-      <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a href="/contact" class="inline-flex items-center px-8 py-4 bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-950 font-medium text-sm uppercase tracking-wide hover:bg-terracotta-600 dark:hover:bg-amber-300 transition-colors rounded-full">
-          Let's Talk
-        </a>
-        <a href="/faq" class="inline-flex items-center px-8 py-4 border-2 border-cream-200 text-cream-200 font-medium text-sm uppercase tracking-wide hover:bg-cream-200 hover:text-charcoal-900 transition-colors rounded-full">
-          Questions?
-        </a>
+  <!-- Meet Zak -->
+  <section class="bg-sand-200 py-24 md:py-28">
+    <div class="container-site grid items-center gap-12 lg:grid-cols-12 lg:gap-20">
+      <div class="reveal flex flex-col gap-7 lg:col-span-6">
+        <p class="eyebrow">Your advisor</p>
+        <p class="font-display font-medium leading-[1.12]" style="font-size: clamp(2rem, 3.2vw, 3rem)">"Working in luxury hospitality changes how you look at a hotel. You stop reading the marketing and start noticing what actually matters."</p>
+        <p class="max-w-xl text-ink-700">I'm Zak Winnick. I spent fifteen years at properties like the Wynn and the Cosmopolitan, at the front desk and behind it. Now I'm a certified Fora advisor helping clients find hotels that deserve their money, and getting them what they wouldn't get booking on their own.</p>
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="/about" class="link-underline">More about Zak</a>
+          <a href={`mailto:${SITE.email}`} class="text-[15px] text-ink-700 hover:text-clay">{SITE.email}</a>
+        </div>
+      </div>
+      <div class="reveal lg:col-span-6">
+        <Image src={zak} alt="Zak Winnick on a desert road at sunset" widths={[600, 900, 1300]} sizes="(min-width: 1024px) 45vw, 100vw" class="h-[380px] w-full rounded-card object-cover object-[62%_center] md:h-[520px]" />
       </div>
     </div>
   </section>
+
+  <StartHere />
 </Layout>
-
-<script>
-  const observerOptions = {
-    root: null,
-    rootMargin: '0px',
-    threshold: 0.1
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target); // Only animate once
-      }
-    });
-  }, observerOptions);
-
-  document.addEventListener('DOMContentLoaded', () => {
-    const revealElements = document.querySelectorAll('.reveal-on-scroll');
-    revealElements.forEach(el => observer.observe(el));
-  });
-</script>

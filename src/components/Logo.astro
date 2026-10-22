@@ -1,0 +1,16 @@
+---
+interface Props {
+  class?: string;
+}
+const { class: className = 'h-14 w-auto' } = Astro.props;
+---
+
+<svg class={className} viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Wyld Wandering">
+  <g transform="translate(60, 60)">
+    <path d="M-38 -18 L-12 38 L0 -5 L12 38 L38 -18" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"></path>
+    <circle cx="0" cy="-32" r="5.5" fill="currentColor"></circle>
+  </g>
+  <line x1="125" y1="32" x2="125" y2="96" stroke="currentColor" stroke-width="1" opacity="0.35"></line>
+  <text x="145" y="68" font-family="'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" font-weight="500" letter-spacing="3" fill="currentColor">WYLD</text>
+  <text x="145" y="106" font-family="'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="16" font-weight="400" letter-spacing="7" fill="currentColor">WANDERING</text>
+</svg>

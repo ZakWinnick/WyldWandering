@@ -1,231 +1,163 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import StartHere from '../components/StartHere.astro';
+import Icon from '../components/Icon.astro';
+import { INTAKE_URL, PORTAL_URL } from '../config/site';
 
-const faqSections = [
+interface Faq {
+  q: string;
+  a: string;
+}
+
+const sections: { title: string; faqs: Faq[] }[] = [
   {
-    title: "Working with a Travel Advisor",
+    title: 'Working with a travel advisor',
     faqs: [
       {
-        question: "How does working with you differ from booking myself?",
-        answer: "When you book yourself, you're navigating endless options and hoping for the best. As your travel advisor, I bring expertise, insider connections, and genuine relationships with the world's best hotels. I handle the research, the details, and the things you didn't know to ask for. Plus, I have access to exclusive perks, upgrades, and amenities that aren't available when you book directly. Same room, same rate, but with benefits that actually make a difference."
+        q: 'How does working with you differ from booking myself?',
+        a: "When you book yourself, you're navigating endless options and hoping for the best. As your travel advisor, I bring expertise, insider connections, and genuine relationships with the world's best hotels. I handle the research, the details, and the things you didn't know to ask for. Plus, I have access to perks, upgrades, and amenities that aren't available when you book directly. Same room, same rate, but with benefits that actually make a difference.",
       },
       {
-        question: "What does it cost to use your services?",
-        answer: "I charge a planning fee based on the scope of work: $500 for hotel and flights, $1,000 for a full itinerary including restaurants and experiences, and a custom quote for groups, events, or multi-country trips. The fee covers everything from research to booking to ongoing support throughout your trip. Once you've booked $40,000 in travel with me, the fee drops to a flat $250 for any scope."
+        q: 'What does it cost to use your services?',
+        a: "I charge a planning fee based on the scope of work: $500 for hotel and flights, $1,000 for a full itinerary including restaurants and experiences, and a custom quote for groups, events, or multi-country trips. The fee covers everything from research to booking to ongoing support throughout your trip. Once you've booked $40,000 in travel with me, the fee drops to a flat $250 for any scope.",
       },
       {
-        question: "How do you get paid?",
-        answer: "Two ways: a planning fee that covers my time and expertise, and commissions from hotels and travel partners when I book through them. The commission structure means you pay the same room rates as booking direct, but you get access to upgrades, resort credits, and amenities you wouldn't get on your own. It's how the industry works, and it allows me to dedicate real time to crafting trips that actually deliver."
-      }
-    ]
+        q: 'How do you get paid?',
+        a: "Two ways: a planning fee that covers my time and expertise, and commissions from hotels and travel partners when I book through them. The commission structure means you pay the same room rates as booking direct, but you get access to upgrades, resort credits, and amenities you wouldn't get on your own. It's how the industry works, and it allows me to dedicate real time to crafting trips that actually deliver.",
+      },
+    ],
   },
   {
-    title: "Planning Process",
+    title: 'Getting started and the client portal',
     faqs: [
       {
-        question: "How far in advance should I book?",
-        answer: "It depends on where you want to go and when. For popular destinations during peak seasons, 6-12 months in advance helps secure the best rooms and reservations. For high-demand experiences like Michelin restaurants, exclusive tours, or sought-after suites, even earlier is better. Last-minute trips can work too, but you may have fewer options. The earlier we start, the more doors I can open."
+        q: 'How do I get started?',
+        a: "Fill out the short intake form. It sets up your traveler profile with the basics: who's traveling, where you're based, how you like to be contacted, and the hotels you already love. Then we'll set up a conversation about the trip itself.",
       },
       {
-        question: "What information do you need to plan my trip?",
-        answer: "To get started, I'll want to understand your travel dates, budget range, destinations you're considering, and how you like to travel. I'll ask about your interests, what your ideal day looks like, and what you absolutely want to avoid. The more you share about what makes a trip feel worth it to you, the better I can tailor every detail."
+        q: 'What is the client portal?',
+        a: 'Your Wyld Wandering client portal is a private space, powered by Fora, where you can browse and book hotels in collaboration with me. It keeps your options and bookings in one place.',
       },
       {
-        question: "How long does the planning process take?",
-        answer: "A straightforward trip might come together in 1-2 weeks, while a complex multi-destination itinerary could take 4-6 weeks. After our initial conversation, I'll provide a preliminary itinerary within a week. From there, we refine together until everything feels right. I believe in thorough planning. The kind that means you never have to wonder 'what if we had done this instead.'"
-      }
-    ]
+        q: 'How do I sign in to the portal?',
+        a: 'Go to Client login and enter the email address or phone number on your traveler profile. If you are new, complete the intake form first so your profile exists.',
+      },
+    ],
   },
   {
-    title: "Trip Types",
+    title: 'Planning process',
     faqs: [
       {
-        question: "What kind of trips do you specialize in?",
-        answer: "I specialize in premium travel experiences. The kind where every detail has been considered. Luxury hotels with actual perks, restaurants that are worth the hype, and experiences that feel curated rather than packaged. Whether it's a European escape, a beach retreat, a city break, or a special occasion trip, I focus on creating journeys that deliver on their promise."
+        q: 'How far in advance should I book?',
+        a: 'It depends on where you want to go and when. For popular destinations during peak seasons, 6 to 12 months in advance helps secure the best rooms and reservations. For high-demand experiences like Michelin restaurants, exclusive tours, or sought-after suites, even earlier is better. Last-minute trips can work too, but you may have fewer options. The earlier we start, the more doors I can open.',
       },
       {
-        question: "Do you plan trips anywhere in the world?",
-        answer: "Yes. While I have particular expertise in certain destinations, I work with travelers planning trips across the globe. From the Amalfi Coast to Tokyo, Maldives to Patagonia. Wherever you want to go, I have the relationships and resources to make it happen the right way."
+        q: 'What information do you need to plan my trip?',
+        a: "To get started, I'll want to understand your travel dates, budget range, destinations you're considering, and how you like to travel. I'll ask about your interests, what your ideal day looks like, and what you absolutely want to avoid. The more you share about what makes a trip feel worth it to you, the better I can tailor every detail.",
       },
       {
-        question: "Can you help with just a hotel booking?",
-        answer: "Absolutely. Through my partnerships with luxury hotel programs, I can secure complimentary upgrades, resort credits, early check-in, late checkout, and other VIP amenities at top properties worldwide. Even if you just need one exceptional hotel stay (not a full trip), I'm here to help. These perks come at no extra cost to you."
-      }
-    ]
+        q: 'How long does the planning process take?',
+        a: "A straightforward trip might come together in 1 to 2 weeks, while a complex multi-destination itinerary could take 4 to 6 weeks. After our initial conversation, I'll provide a preliminary itinerary within a week. From there, we refine together until everything feels right.",
+      },
+    ],
   },
   {
-    title: "Logistics",
+    title: 'Trip types',
     faqs: [
       {
-        question: "What happens if something goes wrong during my trip?",
-        answer: "This is where having a travel advisor really matters. If flights get canceled, hotels have issues, or unexpected situations arise, you have me in your corner. I monitor your trips and am available to troubleshoot and rearrange plans when needed. Unlike booking platforms where you're just a confirmation number, you have a real person who knows your itinerary inside and out and can advocate on your behalf."
+        q: 'What kind of trips do you specialize in?',
+        a: "Premium travel experiences, the kind where every detail has been considered. Luxury hotels with actual perks, restaurants that are worth the hype, and experiences that feel curated rather than packaged. Whether it's a European escape, a beach retreat, a city break, or a special occasion trip, I focus on journeys that deliver on their promise.",
       },
       {
-        question: "Do you handle flights and transportation?",
-        answer: "Yes. I can book flights, airport transfers, car rentals, trains, and other transportation as part of your trip. I look for the best routes and values while considering how your flights connect with the rest of your itinerary. For some travelers, I recommend booking flights separately to use points or miles. I'm happy to advise on what makes sense for your situation."
+        q: 'Do you plan trips anywhere in the world?',
+        a: 'Yes. While I have particular expertise in certain destinations, I work with travelers planning trips across the globe. From the Amalfi Coast to Tokyo, the Maldives to Patagonia. Wherever you want to go, I have the relationships and resources to make it happen the right way.',
       },
       {
-        question: "What about travel insurance?",
-        answer: "I strongly recommend travel insurance for every trip and can help you understand your options. While I don't sell insurance directly, I'll point you toward reputable providers and help you figure out what coverage makes sense. Having the right insurance provides peace of mind and protects your investment."
-      }
-    ]
-  }
+        q: 'Can you help with just a hotel booking?',
+        a: "Absolutely. Through my partnerships with luxury hotel programs, I can secure upgrades, resort credits, early check-in, late checkout, and other VIP amenities at top properties worldwide, subject to availability. Even if you just need one exceptional hotel stay, not a full trip, I'm here to help.",
+      },
+    ],
+  },
+  {
+    title: 'Logistics',
+    faqs: [
+      {
+        q: 'What happens if something goes wrong during my trip?',
+        a: "This is where having a travel advisor really matters. If flights get canceled, hotels have issues, or unexpected situations come up, you have me in your corner. I'm available to troubleshoot and rearrange plans when needed. Unlike booking platforms where you're just a confirmation number, you have a real person who knows your itinerary inside and out and can advocate on your behalf.",
+      },
+      {
+        q: 'Do you handle flights and transportation?',
+        a: "Yes. I can book flights, airport transfers, car rentals, trains, and other transportation as part of your trip. I look for the best routes and values while considering how your flights connect with the rest of your itinerary. For some travelers, I recommend booking flights separately to use points or miles. I'm happy to advise on what makes sense for your situation.",
+      },
+      {
+        q: 'What about travel insurance?',
+        a: "I strongly recommend travel insurance for every trip and can help you understand your options. While I don't sell insurance directly, I'll point you toward reputable providers and help you figure out what coverage makes sense.",
+      },
+    ],
+  },
 ];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: sections.flatMap((s) =>
+    s.faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } }))
+  ),
+};
 ---
 
-<Layout title="Frequently Asked Questions" description="Get answers to common questions about working with Wyld Wandering for premium travel planning.">
-  <!-- Hero Section -->
-  <section class="relative min-h-[50vh] flex items-center bg-charcoal-900">
-    <div class="absolute inset-0 bg-gradient-to-br from-charcoal-900 via-forest-900 to-charcoal-800"></div>
-    <div class="relative z-10 max-w-3xl mx-auto px-6 py-32 text-center">
-      <span class="inline-block font-sans text-xs font-medium tracking-[0.2em] uppercase text-terracotta-400 mb-6">
-        Questions & Answers
-      </span>
-      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-cream-50 leading-[0.95] mb-6">
-        The Details,<br />
-        <span class="italic text-terracotta-400">Explained</span>
-      </h1>
-      <p class="font-sans text-lg leading-relaxed text-cream-200 max-w-xl mx-auto">
-        Curious about how working with a travel advisor actually works? Here's what you need to know.
-      </p>
-    </div>
-  </section>
+<Layout title="FAQ" description="Answers to common questions about working with Wyld Wandering: planning fees, the client portal, how the process works, and what happens if something goes wrong.">
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
-  <!-- FAQ Sections -->
-  <section class="bg-cream-50 dark:bg-forest-950 py-20 md:py-28">
-    <div class="max-w-3xl mx-auto px-6">
-      {faqSections.map((section, sectionIndex) => (
-        <div class="mb-16 last:mb-0" data-section={sectionIndex}>
-          <div class="flex items-baseline gap-4 mb-6 pb-4 border-b border-charcoal-200 dark:border-forest-700">
-            <span class="font-sans text-xs font-medium tracking-wide text-terracotta-500 dark:text-amber-400">
-              {String(sectionIndex + 1).padStart(2, '0')}
-            </span>
-            <h2 class="font-serif text-2xl md:text-3xl font-medium text-charcoal-900 dark:text-cream-50">
-              {section.title}
-            </h2>
+  <PageHero eyebrow="Questions and answers" intro="Curious about how working with a travel advisor actually works? Here's what you need to know.">
+    The details, <em>explained.</em>
+  </PageHero>
+
+  <section class="py-20 md:py-28">
+    <div class="container-site flex flex-col gap-16 md:gap-20">
+      {
+        sections.map((section, i) => (
+          <div class="reveal grid gap-6 lg:grid-cols-12 lg:gap-16">
+            <div class="flex items-baseline gap-4 lg:col-span-4 lg:flex-col lg:gap-3">
+              <span class="font-display text-[22px] text-clay">{String(i + 1).padStart(2, '0')}</span>
+              <h2 class="text-[34px] leading-tight md:text-[40px]">{section.title}</h2>
+            </div>
+            <div class="lg:col-span-8">
+              {section.faqs.map((f) => (
+                <details class="faq group border-t border-sand-300 last:border-b">
+                  <summary class="flex min-h-[64px] cursor-pointer list-none items-center justify-between gap-6 py-5 text-left text-[19px] font-normal text-ink hover:text-clay [&::-webkit-details-marker]:hidden">
+                    <span>{f.q}</span>
+                    <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-sand-300 transition-transform duration-300 group-open:rotate-45" aria-hidden="true">
+                      <Icon name="plus" class="h-4 w-4" />
+                    </span>
+                  </summary>
+                  <p class="max-w-2xl pb-7 pr-12 text-ink-700">{f.a}</p>
+                </details>
+              ))}
+            </div>
           </div>
-          <div class="flex flex-col">
-            {section.faqs.map((faq, faqIndex) => (
-              <div
-                class="faq-item border-b border-charcoal-200 dark:border-forest-700 hover:bg-cream-100/50 dark:hover:bg-forest-900/50 rounded-2xl transition-all duration-300 px-4"
-                data-section={sectionIndex}
-                data-faq={faqIndex}
-              >
-                <button
-                  class="faq-trigger w-full flex items-center justify-between gap-4 md:gap-8 py-6 text-left group"
-                  aria-expanded="false"
-                  aria-controls={`faq-content-${sectionIndex}-${faqIndex}`}
-                >
-                  <span class="font-sans text-base md:text-lg font-medium text-charcoal-900 dark:text-cream-50 group-hover:text-terracotta-500 dark:group-hover:text-amber-400 transition-colors duration-300">
-                    {faq.question}
-                  </span>
-                  <span class="faq-icon flex-shrink-0 w-6 h-6 flex items-center justify-center text-terracotta-500 dark:text-amber-400 transition-transform duration-400" aria-hidden="true">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M8 1V15M1 8H15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
-                  </span>
-                </button>
-                <div
-                  class="faq-content grid grid-rows-[0fr] transition-[grid-template-rows] duration-400 ease-out"
-                  id={`faq-content-${sectionIndex}-${faqIndex}`}
-                  aria-hidden="true"
-                >
-                  <div class="overflow-hidden">
-                    <p class="font-sans text-base leading-relaxed text-charcoal-600 dark:text-cream-200 pb-6 pr-0 md:pr-12">
-                      {faq.answer}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      ))}
-    </div>
-  </section>
-
-  <!-- CTA Section -->
-  <section class="bg-cream-100 dark:bg-forest-900 py-20 md:py-28">
-    <div class="max-w-xl mx-auto px-6 text-center">
-      <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-charcoal-900 dark:text-cream-50 mb-4">
-        Still have questions?
-      </h2>
-      <p class="font-sans text-base md:text-lg leading-relaxed text-charcoal-600 dark:text-cream-200 mb-8">
-        Let's start a conversation. Tell me where you want to go, and I'll handle the rest.
-      </p>
-      <a
-        href="/contact"
-        class="inline-flex items-center justify-center px-8 py-4 font-sans text-sm font-medium tracking-wide uppercase bg-terracotta-500 hover:bg-terracotta-600 dark:bg-amber-400 dark:hover:bg-amber-500 text-white dark:text-forest-950 rounded-full transition-colors duration-300"
-      >
-        Get in Touch
-      </a>
-    </div>
-  </section>
-</Layout>
-
-<style>
-  .faq-item.active .faq-icon {
-    transform: rotate(45deg);
-  }
-
-  .faq-item.active .faq-content {
-    grid-template-rows: 1fr;
-  }
-
-  .duration-400 {
-    transition-duration: 400ms;
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const faqItems = document.querySelectorAll('.faq-item');
-
-    faqItems.forEach((item) => {
-      const trigger = item.querySelector('.faq-trigger');
-      const content = item.querySelector('.faq-content');
-
-      if (trigger && content) {
-        trigger.addEventListener('click', () => {
-          const isActive = item.classList.contains('active');
-          const sectionIndex = item.getAttribute('data-section');
-
-          // Close all other items in the same section
-          const sectionItems = document.querySelectorAll(`.faq-item[data-section="${sectionIndex}"]`);
-          sectionItems.forEach((sectionItem) => {
-            if (sectionItem !== item) {
-              sectionItem.classList.remove('active');
-              const sectionTrigger = sectionItem.querySelector('.faq-trigger');
-              const sectionContent = sectionItem.querySelector('.faq-content');
-              if (sectionTrigger) {
-                sectionTrigger.setAttribute('aria-expanded', 'false');
-              }
-              if (sectionContent) {
-                sectionContent.setAttribute('aria-hidden', 'true');
-              }
-            }
-          });
-
-          // Toggle current item
-          if (isActive) {
-            item.classList.remove('active');
-            trigger.setAttribute('aria-expanded', 'false');
-            content.setAttribute('aria-hidden', 'true');
-          } else {
-            item.classList.add('active');
-            trigger.setAttribute('aria-expanded', 'true');
-            content.setAttribute('aria-hidden', 'false');
-          }
-        });
-
-        // Keyboard accessibility
-        trigger.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            (trigger as HTMLElement).click();
-          }
-        });
+        ))
       }
-    });
-  });
-</script>
+
+      <div class="reveal grid gap-5 md:grid-cols-2">
+        <a href={INTAKE_URL} class="group flex items-center justify-between gap-6 rounded-card bg-sand-200 p-8 text-ink hover:text-ink md:p-10">
+          <span class="flex flex-col gap-2">
+            <span class="eyebrow">New client</span>
+            <span class="font-display text-[30px] font-medium leading-tight">Start the intake</span>
+          </span>
+          <Icon name="arrow" class="h-6 w-6 transition-transform group-hover:translate-x-1" />
+        </a>
+        <a href={PORTAL_URL} class="group flex items-center justify-between gap-6 rounded-card bg-pine p-8 text-sand-100 hover:text-sand-100 md:p-10">
+          <span class="flex flex-col gap-2">
+            <span class="text-[13px] font-medium uppercase tracking-eyebrow text-gold">Existing client</span>
+            <span class="font-display text-[30px] font-medium leading-tight">Sign in to your portal</span>
+          </span>
+          <Icon name="lock" class="h-6 w-6" />
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <StartHere heading="Still have questions?" />
+</Layout>

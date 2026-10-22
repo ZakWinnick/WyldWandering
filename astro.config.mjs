@@ -7,7 +7,7 @@ export default defineConfig({
   integrations: [
     tailwind(),
     sitemap({
-      filter: (page) => !page.includes('/blog'),
+      filter: (page) => !page.includes('/blog') && !page.includes('/404'),
     }),
   ],
   output: 'static',

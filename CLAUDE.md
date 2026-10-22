@@ -16,7 +16,7 @@ This is a **premium travel advisor portfolio site** built with Astro 5.x, output
 
 ### Key Technologies
 - **Astro** - Static site generator with file-based routing
-- **Tailwind CSS** - Custom theme with brand colors (Cream, Charcoal, Terracotta, Forest, Amber)
+- **Tailwind CSS** - Custom theme with brand colors (Sand, Ink, Clay, Pine, Gold)
 - **TypeScript** - Strict mode enabled
 - **GitHub Pages** - Deployment via GitHub Actions
 
@@ -24,7 +24,9 @@ This is a **premium travel advisor portfolio site** built with Astro 5.x, output
 
 ```
 src/
-├── components/     # Header.astro, Footer.astro
+├── assets/images/  # Site photography (optimized to WebP at build via astro:assets)
+├── config/site.ts  # Fora intake URL, client portal URL, email, social, nav links
+├── components/     # Header, Footer, Logo, Icon, PageHero, StartHere (intake + portal band)
 ├── layouts/        # Layout.astro (main wrapper with meta management)
 ├── pages/          # File-based routes (.astro files)
 │   └── blog/       # Blog routes (excluded from search engines)
@@ -41,14 +43,21 @@ src/
 
 ### Important Configuration
 - **robots.txt** blocks `/blog/*` from search engines (intentional)
-- **Sitemap** filters out blog routes in `astro.config.mjs`
+- **Sitemap** filters out blog and 404 routes in `astro.config.mjs`
 - **Path alias**: `@/*` maps to `src/*`
 
+### Fora Client Portal and Intake
+- New clients: `INTAKE_URL` (Fora intake form). Existing clients: `PORTAL_URL` (Fora client portal).
+- Both are defined once in `src/config/site.ts`. Fora sends `X-Frame-Options: DENY`, so they are linked, never embedded.
+- Contact page keeps a short FormSubmit form for quick questions only.
+
 ### Styling Conventions
-- Custom fonts: Cormorant (display/headings), Outfit (body/sans)
-- Button classes: `.btn-primary`, `.btn-secondary` defined in global.css
-- Dark mode supported via Tailwind's `class` strategy
-- Animations: fade-in, slide-up, slide-in-right, scale-in, blur-in
+- Light theme only. Palette tokens in tailwind.config.mjs: `sand` (grounds, lines), `ink` (text), `clay` (accent), `pine` (dark bands), `gold` (accent on dark)
+- Fonts: Cormorant (display/headings), Outfit (body/sans), loaded in Layout.astro
+- Component classes in global.css: `.container-site`, `.eyebrow`, `.display-xl|lg|md`, `.lede`, `.btn-primary|dark|outline|outline-light`, `.link-underline`, `.link-accent`, `.prose-ww`
+- `.reveal` fades sections in on scroll (respects reduced motion, visible without JS)
+- Pages with a photo hero pass `overlayHeader` to Layout for the transparent header
+- No em dashes in site copy
 
 ### Deployment
 - Pushes to `main` trigger GitHub Actions workflow

@@ -1,162 +1,69 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import StartHere from '../../components/StartHere.astro';
 import { getCollection } from 'astro:content';
 
-// Get all blog posts, sorted by date (newest first)
-const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-const blogPosts = allPosts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const posts = (await getCollection('blog', ({ data }) => !data.draft)).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 
-// Helper function to format dates
-function formatDate(date: Date): string {
-  return date.toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-  });
-}
+const formatDate = (date: Date) => date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+const readingTime = (body: string) => `${Math.max(1, Math.ceil(body.split(/\s+/).length / 200))} min read`;
 
-// Calculate reading time (rough estimate: 200 words per minute)
-function getReadingTime(content: string): string {
-  const words = content.split(/\s+/).length;
-  const minutes = Math.ceil(words / 200);
-  return `${minutes} min read`;
-}
+const [featured, ...rest] = posts;
 ---
 
-<Layout
-  title="Journal"
-  description="Travel tips, destination guides, and adventure inspiration from Wyld Wandering. Expert insights for those who want to explore with comfort."
->
-  <!-- Hero Section -->
-  <section class="relative min-h-[50vh] flex items-center bg-charcoal-900">
-    <div class="absolute inset-0 bg-gradient-to-br from-charcoal-900 via-forest-900 to-charcoal-800"></div>
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-32">
-      <div class="max-w-3xl">
-        <span class="block text-terracotta-400 font-sans text-sm font-medium uppercase tracking-widest mb-4">
-          The Wyld Wandering Blog
-        </span>
-        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-cream-50 leading-[0.95]">
-          Journal
-        </h1>
-        <p class="font-sans text-xl text-cream-200 leading-relaxed mt-6 max-w-2xl">
-          Stories from the trail and beyond. Destination guides, travel wisdom, and thoughts on exploring the world with intention and comfort.
-        </p>
-      </div>
-    </div>
-  </section>
+<Layout title="Journal" description="Destination guides, travel thinking, and notes from the road by Zak Winnick." noindex>
+  <PageHero eyebrow="The Wyld Wandering journal" intro="Destination guides, travel thinking, and notes on exploring the world with intention and comfort.">
+    Journal
+  </PageHero>
 
-  <!-- Blog Grid -->
-  <section class="bg-cream-50 dark:bg-forest-950 py-16 lg:py-24 px-4 sm:px-6 lg:px-8">
-    <div class="max-w-7xl mx-auto">
-      {blogPosts.length > 0 && (
-        <>
-          <!-- Featured Post -->
-          <div class="mb-16">
-            <a href={`/blog/${blogPosts[0].slug}`} class="group grid gap-8 lg:grid-cols-2 lg:items-center">
-              <div class="relative aspect-[4/3] rounded-2xl overflow-hidden">
-                <div class="absolute inset-0 bg-gradient-to-br from-terracotta-500 to-cream-200 dark:from-amber-400 dark:to-forest-800"></div>
-                {blogPosts[0].data.image && (
-                  <img
-                    src={blogPosts[0].data.image}
-                    alt={blogPosts[0].data.title}
-                    class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                )}
-                <div class="absolute top-4 left-4 bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-950 px-4 py-1.5 rounded-full font-sans text-xs font-semibold uppercase tracking-wide">
-                  Featured
-                </div>
+  <section class="py-20 md:py-28">
+    <div class="container-site flex flex-col gap-16">
+      {
+        featured && (
+          <a href={`/blog/${featured.slug}`} class="reveal group grid items-center gap-10 text-ink hover:text-ink lg:grid-cols-12">
+            {featured.data.image && (
+              <div class="overflow-hidden rounded-card lg:col-span-7">
+                <img src={featured.data.image} alt="" class="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="eager" />
               </div>
-              <div class="lg:pl-8">
-                <span class="inline-block text-terracotta-500 dark:text-amber-400 font-sans text-xs font-semibold uppercase tracking-widest">
-                  {blogPosts[0].data.category}
-                </span>
-                <h2 class="font-serif text-3xl md:text-4xl font-semibold text-charcoal-900 dark:text-cream-50 leading-tight mt-3 transition-colors duration-300 group-hover:text-terracotta-500 dark:group-hover:text-amber-400">
-                  {blogPosts[0].data.title}
-                </h2>
-                <p class="font-sans text-lg text-charcoal-600 dark:text-cream-200 leading-relaxed mt-4">
-                  {blogPosts[0].data.excerpt}
-                </p>
-                <div class="flex items-center gap-3 mt-6 font-sans text-sm text-charcoal-600 dark:text-cream-200">
-                  <time datetime={blogPosts[0].data.date.toISOString()}>{formatDate(blogPosts[0].data.date)}</time>
-                </div>
-                <span class="inline-flex items-center mt-6 font-sans font-medium text-terracotta-500 dark:text-amber-400 transition-colors duration-300 group-hover:text-charcoal-900 dark:group-hover:text-cream-50">
-                  Read Article
-                  <svg class="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </span>
-              </div>
-            </a>
-          </div>
-
-          <!-- Divider -->
-          <div class="h-px bg-charcoal-200 dark:bg-forest-800 mb-12"></div>
-
-          <!-- Recent Posts Grid -->
-          {blogPosts.length > 1 && (
-            <div>
-              <h3 class="font-serif text-2xl font-semibold text-charcoal-900 dark:text-cream-50 mb-8">
-                Recent Posts
-              </h3>
-              <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-                {blogPosts.slice(1).map((post) => (
-                  <a href={`/blog/${post.slug}`} class="group block bg-cream-100 dark:bg-forest-900 rounded-2xl overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                    <div class="relative aspect-[16/10] overflow-hidden">
-                      <div class="absolute inset-0 bg-gradient-to-br from-terracotta-500 to-cream-200 dark:from-amber-400 dark:to-forest-800"></div>
-                      {post.data.image && (
-                        <img
-                          src={post.data.image}
-                          alt={post.data.title}
-                          class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                          loading="lazy"
-                        />
-                      )}
-                    </div>
-                    <div class="p-6">
-                      <span class="inline-block text-terracotta-500 dark:text-amber-400 font-sans text-xs font-semibold uppercase tracking-widest">
-                        {post.data.category}
-                      </span>
-                      <h4 class="font-serif text-xl font-semibold text-charcoal-900 dark:text-cream-50 leading-snug mt-2 transition-colors duration-300 group-hover:text-terracotta-500 dark:group-hover:text-amber-400 line-clamp-2">
-                        {post.data.title}
-                      </h4>
-                      <p class="font-sans text-sm text-charcoal-600 dark:text-cream-200 leading-relaxed mt-3 line-clamp-3">
-                        {post.data.excerpt}
-                      </p>
-                      <div class="flex items-center gap-3 mt-4 font-sans text-xs text-charcoal-600 dark:text-cream-200">
-                        <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time>
-                      </div>
-                    </div>
-                  </a>
-                ))}
-              </div>
+            )}
+            <div class="flex flex-col gap-4 lg:col-span-5">
+              <span class="eyebrow">{featured.data.category}</span>
+              <h2 class="display-md group-hover:text-clay">{featured.data.title}</h2>
+              <p class="text-ink-700">{featured.data.excerpt}</p>
+              <p class="text-sm text-ink-600">
+                <time datetime={featured.data.date.toISOString()}>{formatDate(featured.data.date)}</time> · {readingTime(featured.body)}
+              </p>
             </div>
-          )}
-        </>
-      )}
+          </a>
+        )
+      }
 
-      <!-- Newsletter CTA -->
-      <div class="mt-20 p-8 md:p-12 bg-cream-100 dark:bg-forest-900 rounded-3xl text-center shadow-lg">
-        <h3 class="font-serif text-2xl md:text-3xl font-semibold text-charcoal-900 dark:text-cream-50">
-          Stay in the Loop
-        </h3>
-        <p class="font-sans text-base text-charcoal-600 dark:text-cream-200 leading-relaxed mt-4 max-w-lg mx-auto">
-          Get travel inspiration, destination spotlights, and exclusive tips delivered straight to your inbox.
-        </p>
-        <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto mt-8">
-          <input
-            type="email"
-            placeholder="Your email address"
-            class="flex-1 px-4 py-3 font-sans text-base text-charcoal-900 dark:text-cream-50 bg-white dark:bg-forest-950 border border-charcoal-200 dark:border-forest-700 rounded-full outline-none transition-all duration-300 focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 placeholder:text-charcoal-400 dark:placeholder:text-cream-400"
-          />
-          <button type="submit" class="px-8 py-3 bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-950 font-sans font-medium rounded-full transition-all duration-300 hover:bg-terracotta-600 dark:hover:bg-amber-500">
-            Subscribe
-          </button>
-        </form>
-        <p class="font-sans text-xs text-charcoal-600 dark:text-cream-200 mt-4">
-          No spam, ever. Unsubscribe anytime.
-        </p>
-      </div>
+      {
+        rest.length > 0 && (
+          <div class="grid gap-x-8 gap-y-14 border-t border-sand-300 pt-14 md:grid-cols-2 lg:grid-cols-3">
+            {rest.map((post) => (
+              <a href={`/blog/${post.slug}`} class="reveal group flex flex-col gap-4 text-ink hover:text-ink">
+                {post.data.image && (
+                  <div class="overflow-hidden rounded-card">
+                    <img src={post.data.image} alt="" class="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" loading="lazy" />
+                  </div>
+                )}
+                <span class="text-xs font-medium uppercase tracking-[0.2em] text-clay">{post.data.category}</span>
+                <h3 class="text-[30px] leading-tight group-hover:text-clay">{post.data.title}</h3>
+                <p class="text-ink-600">{post.data.excerpt}</p>
+                <p class="text-sm text-ink-600">
+                  <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date)}</time> · {readingTime(post.body)}
+                </p>
+              </a>
+            ))}
+          </div>
+        )
+      }
+
+      {posts.length === 0 && <p class="text-ink-700">New posts are on the way.</p>}
     </div>
   </section>
+
+  <StartHere />
 </Layout>

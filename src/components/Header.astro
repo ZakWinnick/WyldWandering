@@ -1,111 +1,131 @@
 ---
-const navLinks = [
-  { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' },
-  { href: '/destinations', label: 'Destinations' },
-  { href: '/faq', label: 'FAQ' },
-  { href: '/contact', label: 'Contact' },
-];
+import Logo from './Logo.astro';
+import Icon from './Icon.astro';
+import { NAV_LINKS, INTAKE_URL, PORTAL_URL, SOCIAL, SITE } from '../config/site';
+
+interface Props {
+  /** Transparent header over a photo hero; turns solid on scroll. */
+  overlay?: boolean;
+}
+
+const { overlay = false } = Astro.props;
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`);
 ---
 
-<header id="site-header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-cream-50/80 dark:bg-charcoal-900/80 backdrop-blur-md text-charcoal-900 dark:text-cream-50">
-  <nav class="max-w-7xl mx-auto px-6 lg:px-8 py-5 flex items-center justify-between">
-    <a href="/" class="block" aria-label="Wyld Wandering Home">
-      <svg class="h-16 w-auto" viewBox="0 0 420 120" xmlns="http://www.w3.org/2000/svg">
-        <g transform="translate(60, 60)">
-          <path d="M-38 -18 L-12 38 L0 -5 L12 38 L38 -18" fill="none" stroke="currentColor" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
-          <circle cx="0" cy="-32" r="5.5" fill="currentColor"/>
-        </g>
-        <line x1="125" y1="32" x2="125" y2="96" stroke="currentColor" stroke-width="1" opacity="0.3"/>
-        <text x="145" y="68" font-family="'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="38" font-weight="500" letter-spacing="3" fill="currentColor">WYLD</text>
-        <text x="145" y="106" font-family="'SF Pro Display', 'Helvetica Neue', Helvetica, Arial, sans-serif" font-size="16" font-weight="400" letter-spacing="7" fill="currentColor">WANDERING</text>
-      </svg>
+<header
+  id="site-header"
+  data-overlay={overlay ? 'true' : 'false'}
+  data-solid={overlay ? 'false' : 'true'}
+  class:list={[
+    'group z-50 w-full transition-[background-color,color,box-shadow] duration-300',
+    overlay ? 'fixed left-0 right-0 top-0' : 'sticky top-0',
+    'text-sand-50 data-[solid=true]:bg-sand-50/95 data-[solid=true]:text-ink data-[solid=true]:shadow-[0_1px_0_#E3D9CA] data-[solid=true]:backdrop-blur-md',
+  ]}
+>
+  <div class="container-site flex items-center justify-between gap-6 py-4 group-data-[solid=false]:py-6 transition-[padding] duration-300">
+    <a href="/" aria-label={`${SITE.name} home`} class="block shrink-0 text-current hover:text-current">
+      <Logo class="h-12 w-auto md:h-14" />
     </a>
 
-    <div class="hidden lg:flex items-center gap-8">
-      {navLinks.map(link => (
-        <a href={link.href} class="text-sm font-medium text-charcoal-900/80 hover:text-charcoal-900 dark:text-cream-50/90 dark:hover:text-cream-50 transition-colors">
-          {link.label}
-        </a>
-      ))}
-      <div class="flex items-center gap-4 ml-4 pl-4 border-l border-charcoal-200 dark:border-cream-50/20">
-        <a href="https://x.com/wyldwandering" target="_blank" rel="noopener noreferrer" class="text-charcoal-900/60 hover:text-terracotta-500 dark:text-cream-50/60 dark:hover:text-amber-400 transition-colors" aria-label="Follow on X">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-          </svg>
-        </a>
-        <a href="https://instagram.com/wyldwandering" target="_blank" rel="noopener noreferrer" class="text-charcoal-900/60 hover:text-terracotta-500 dark:text-cream-50/60 dark:hover:text-amber-400 transition-colors" aria-label="Follow on Instagram">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-          </svg>
-        </a>
-        <a href="https://foratravel.com/advisors/zak-winnick" target="_blank" rel="noopener noreferrer" class="text-charcoal-900/60 hover:text-terracotta-500 dark:text-cream-50/60 dark:hover:text-amber-400 transition-colors" aria-label="View Fora Profile">
-          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-          </svg>
-        </a>
-      </div>
-    </div>
+    <nav aria-label="Main" class="hidden items-center gap-9 text-[15px] font-normal lg:flex">
+      {
+        NAV_LINKS.map((link) => (
+          <a
+            href={link.href}
+            aria-current={isCurrent(link.href) ? 'page' : undefined}
+            class="text-current opacity-90 transition-opacity hover:text-current hover:opacity-100 aria-[current=page]:opacity-100 aria-[current=page]:underline aria-[current=page]:decoration-1 aria-[current=page]:underline-offset-8"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </nav>
 
-    <button id="mobile-menu-btn" class="p-2 text-charcoal-900 dark:text-cream-50 lg:hidden" aria-label="Menu">
-      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path id="menu-icon-path" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-      </svg>
-    </button>
-  </nav>
+    <div class="flex items-center gap-2 sm:gap-5">
+      <a href={PORTAL_URL} class="hidden min-h-[44px] items-center gap-2 text-[15px] font-normal text-current hover:text-current hover:opacity-80 sm:inline-flex">
+        <Icon name="lock" />
+        Client login
+      </a>
+      <a
+        href={INTAKE_URL}
+        class="hidden min-h-[44px] items-center rounded-full px-5 text-sm font-medium tracking-[0.04em] transition-colors sm:inline-flex bg-clay text-white hover:bg-clay-dark hover:text-white group-data-[solid=false]:bg-sand-50 group-data-[solid=false]:text-ink group-data-[solid=false]:hover:bg-white"
+      >
+        Start planning
+      </a>
+      <button
+        id="menu-open"
+        type="button"
+        class="-mr-2 inline-flex h-11 w-11 items-center justify-center text-current lg:hidden"
+        aria-label="Open menu"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <Icon name="menu" class="h-6 w-6" />
+      </button>
+    </div>
+  </div>
 </header>
 
-<div id="mobile-menu" class="fixed inset-0 z-40 bg-charcoal-900 dark:bg-forest-950 hidden">
-  <div class="flex flex-col items-center justify-center h-full gap-8">
-    <a href="/" class="text-4xl font-display text-cream-50 hover:text-terracotta-400 dark:hover:text-amber-400 transition-colors">Home</a>
-    {navLinks.map(link => (
-      <a href={link.href} class="text-4xl font-display text-cream-50 hover:text-terracotta-400 dark:hover:text-amber-400 transition-colors">
-        {link.label}
-      </a>
-    ))}
-    <div class="flex items-center gap-6 mt-8 pt-8 border-t border-cream-50/20">
-      <a href="https://x.com/wyldwandering" target="_blank" rel="noopener noreferrer" class="text-cream-50/60 hover:text-terracotta-400 dark:hover:text-amber-400 transition-colors" aria-label="Follow on X">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-        </svg>
-      </a>
-      <a href="https://instagram.com/wyldwandering" target="_blank" rel="noopener noreferrer" class="text-cream-50/60 hover:text-terracotta-400 dark:hover:text-amber-400 transition-colors" aria-label="Follow on Instagram">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-        </svg>
-      </a>
-      <a href="https://foratravel.com/advisors/zak-winnick" target="_blank" rel="noopener noreferrer" class="text-cream-50/60 hover:text-terracotta-400 dark:hover:text-amber-400 transition-colors" aria-label="View Fora Profile">
-        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-        </svg>
-      </a>
+<div id="mobile-menu" class="fixed inset-0 z-[60] hidden flex-col overflow-y-auto bg-pine text-sand-100" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="container-site flex items-center justify-between py-4">
+    <a href="/" aria-label={`${SITE.name} home`} class="text-sand-100 hover:text-sand-100">
+      <Logo class="h-12 w-auto" />
+    </a>
+    <button id="menu-close" type="button" class="-mr-2 inline-flex h-11 w-11 items-center justify-center text-sand-100" aria-label="Close menu">
+      <Icon name="close" class="h-6 w-6" />
+    </button>
+  </div>
+  <nav aria-label="Mobile" class="container-site flex flex-1 flex-col justify-center gap-2 py-10">
+    <a href="/" class="font-display text-[44px] leading-tight text-sand-100 hover:text-gold">Home</a>
+    {
+      NAV_LINKS.map((link) => (
+        <a href={link.href} class="font-display text-[44px] leading-tight text-sand-100 hover:text-gold">
+          {link.label}
+        </a>
+      ))
+    }
+    <a href="/contact" class="font-display text-[44px] leading-tight text-sand-100 hover:text-gold">Contact</a>
+  </nav>
+  <div class="container-site flex flex-col gap-3 pb-10">
+    <a href={INTAKE_URL} class="btn-primary w-full">Start planning <Icon name="arrow" /></a>
+    <a href={PORTAL_URL} class="btn-outline-light w-full"><Icon name="lock" /> Client login</a>
+    <div class="mt-6 flex gap-6 text-sm text-pine-muted">
+      <a href={SOCIAL.instagram} class="text-pine-muted hover:text-gold">Instagram</a>
+      <a href={SOCIAL.x} class="text-pine-muted hover:text-gold">X</a>
+      <a href={`mailto:${SITE.email}`} class="text-pine-muted hover:text-gold">{SITE.email}</a>
     </div>
   </div>
 </div>
 
-<script is:inline>
-  (function() {
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const menuPath = document.getElementById('menu-icon-path');
+<script>
+  const header = document.getElementById('site-header');
+  const menu = document.getElementById('mobile-menu');
+  const openBtn = document.getElementById('menu-open');
+  const closeBtn = document.getElementById('menu-close');
 
-    menuBtn?.addEventListener('click', () => {
-      const isOpen = mobileMenu?.classList.toggle('hidden') === false;
-      if (isOpen) {
-        menuPath?.setAttribute('d', 'M6 18L18 6M6 6l12 12');
-        document.body.style.overflow = 'hidden';
-      } else {
-        menuPath?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-        document.body.style.overflow = '';
-      }
-    });
+  if (header && header.dataset.overlay === 'true') {
+    const update = () => {
+      header.dataset.solid = window.scrollY > 40 ? 'true' : 'false';
+    };
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+  }
 
-    mobileMenu?.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
-        menuPath?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
-        document.body.style.overflow = '';
-      });
-    });
-  })();
+  const setMenu = (open: boolean) => {
+    if (!menu || !openBtn) return;
+    menu.classList.toggle('hidden', !open);
+    menu.classList.toggle('flex', open);
+    openBtn.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) closeBtn?.focus();
+    else openBtn.focus();
+  };
+
+  openBtn?.addEventListener('click', () => setMenu(true));
+  closeBtn?.addEventListener('click', () => setMenu(false));
+  menu?.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') setMenu(false);
+  });
+  menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => setMenu(false)));
 </script>

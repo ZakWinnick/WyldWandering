@@ -1,225 +1,175 @@
 ---
+import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import StartHere from '../components/StartHere.astro';
+import Icon from '../components/Icon.astro';
+import { INTAKE_URL } from '../config/site';
 
-const baseUrl = import.meta.env.BASE_URL;
+import venice from '../assets/images/venice.jpg';
+import beach from '../assets/images/beach.jpg';
+import tokyo from '../assets/images/tokyo.jpg';
+import elephant from '../assets/images/elephant.jpg';
+import wellness from '../assets/images/wellness.jpg';
+import wine from '../assets/images/wine.jpg';
+import positano from '../assets/images/positano.jpg';
+import maldives from '../assets/images/maldives.jpg';
+import kyoto from '../assets/images/kyoto.jpg';
+import savanna from '../assets/images/savanna.jpg';
 
-const destinationCategories = [
+const categories = [
   {
-    title: 'European Escapes',
-    description: 'Historic cities, coastal villages, and countryside retreats. From Tuscan villas to Parisian apartments to Santorini sunsets.',
+    title: 'European escapes',
+    body: 'Historic cities, coastal villages, and countryside retreats. From Tuscan villas to Parisian apartments to Santorini sunsets.',
     highlights: ['Italy', 'France', 'Spain', 'Greece'],
-    image: 'https://images.unsplash.com/photo-1523906834658-6e24ef2386f9?w=800&q=80',
-    imageAlt: 'Venice canal with gondolas',
+    img: venice,
+    alt: 'Gondola on a Venice canal beneath the Rialto Bridge',
   },
   {
-    title: 'Beach & Island',
-    description: 'Crystal waters, white sand, and properties worth staying at. Caribbean hideaways, Maldives overwater villas, and Mediterranean coastlines.',
+    title: 'Beach and island',
+    body: 'Crystal water, white sand, and properties worth staying at. Caribbean hideaways, Maldives overwater villas, and Mediterranean coastlines.',
     highlights: ['Maldives', 'Caribbean', 'Bali', 'Thailand'],
-    image: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=800&q=80',
-    imageAlt: 'Tropical beach with palm trees',
+    img: beach,
+    alt: 'Aerial view of overwater villas on a turquoise lagoon',
   },
   {
-    title: 'City Breaks',
-    description: 'The best neighborhoods, the right hotels, the reservations worth having. New York to Tokyo, London to Buenos Aires.',
+    title: 'City breaks',
+    body: 'The best neighborhoods, the right hotels, the reservations worth having. New York to Tokyo, London to Buenos Aires.',
     highlights: ['New York', 'London', 'Tokyo', 'Paris'],
-    image: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=800&q=80',
-    imageAlt: 'Tokyo city skyline at night',
+    img: tokyo,
+    alt: 'Neon-lit street crossing in Tokyo',
   },
   {
-    title: 'Safari & Wildlife',
-    description: 'Luxury safari lodges, private game reserves, and once-in-a-lifetime wildlife encounters. Africa, South America, and beyond.',
+    title: 'Safari and wildlife',
+    body: 'Luxury safari lodges, private game reserves, and once-in-a-lifetime wildlife encounters. Africa, South America, and beyond.',
     highlights: ['Kenya', 'Tanzania', 'Botswana', 'South Africa'],
-    image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=800&q=80',
-    imageAlt: 'Elephant in African savanna',
+    img: elephant,
+    alt: 'Safari vehicle in tall grass at sunset',
   },
   {
-    title: 'Luxury Wellness',
-    description: 'World-class spas, wellness retreats, and restorative escapes. Places that actually leave you feeling better than when you arrived.',
-    highlights: ['Aman Resorts', 'Six Senses', 'Como Hotels', 'Canyon Ranch'],
-    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80',
-    imageAlt: 'Luxury spa setting',
+    title: 'Luxury wellness',
+    body: 'World-class spas, wellness retreats, and restorative escapes. Places that actually leave you feeling better than when you arrived.',
+    highlights: ['Aman', 'Six Senses', 'COMO', 'Canyon Ranch'],
+    img: wellness,
+    alt: 'Oil massage treatment at a spa',
   },
   {
-    title: 'Wine & Culinary',
-    description: 'Vineyard tours, Michelin-starred dining, and food experiences that become the trip. Napa to Burgundy to Rioja.',
+    title: 'Wine and culinary',
+    body: 'Vineyard tours, Michelin-starred dining, and food experiences that become the trip. Napa to Burgundy to Rioja.',
     highlights: ['Napa Valley', 'Bordeaux', 'Tuscany', 'Mendoza'],
-    image: 'https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?w=800&q=80',
-    imageAlt: 'Vineyard landscape',
+    img: wine,
+    alt: 'Glass of red wine on a ledge above vineyard rows',
   },
 ];
 
-const featuredTrips = [
+const trips = [
   {
-    name: 'Amalfi Coast & Rome',
-    duration: '10 Days',
-    category: 'European Escapes',
-    description: 'Cliffside hotels overlooking the Mediterranean, private transfers, and reservations at restaurants that matter.',
-    image: 'https://images.unsplash.com/photo-1533104816931-20fa691ff6ca?w=800&q=80',
-    imageAlt: 'Amalfi Coast cliffside village',
+    name: 'Amalfi Coast and Rome',
+    duration: '10 days',
+    category: 'European escapes',
+    body: 'Cliffside hotels overlooking the Mediterranean, private transfers, and reservations at restaurants that matter.',
+    img: positano,
+    alt: 'Pastel houses stacked on the cliffs of Positano',
   },
   {
-    name: 'Maldives Honeymoon',
-    duration: '7 Days',
-    category: 'Beach & Island',
-    description: 'Overwater villas, private beach dinners, spa treatments, and the kind of seclusion that honeymoons deserve.',
-    image: 'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&q=80',
-    imageAlt: 'Maldives overwater bungalows',
+    name: 'Maldives honeymoon',
+    duration: '7 days',
+    category: 'Beach and island',
+    body: 'Overwater villas, private beach dinners, spa treatments, and the kind of seclusion that honeymoons deserve.',
+    img: maldives,
+    alt: 'Overwater villas above turquoise water',
   },
   {
-    name: 'Tokyo & Kyoto',
-    duration: '12 Days',
-    category: 'City Breaks',
-    description: 'From modern Tokyo hotels to traditional Kyoto ryokans. Omakase dinners, temple visits, and the experiences not in the guidebooks.',
-    image: 'https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=800&q=80',
-    imageAlt: 'Traditional Kyoto temple',
+    name: 'Tokyo and Kyoto',
+    duration: '12 days',
+    category: 'City breaks',
+    body: 'From modern Tokyo hotels to traditional Kyoto ryokans. Omakase dinners, temple visits, and the experiences not in the guidebooks.',
+    img: kyoto,
+    alt: 'Lantern-lit lane leading to a pagoda in Kyoto at dusk',
   },
   {
-    name: 'Kenya Safari',
-    duration: '8 Days',
-    category: 'Safari & Wildlife',
-    description: 'Luxury tented camps, private game drives, and the Great Migration. Wildlife encounters that change how you see the world.',
-    image: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=800&q=80',
-    imageAlt: 'Giraffe on African savanna',
+    name: 'Kenya safari',
+    duration: '8 days',
+    category: 'Safari and wildlife',
+    body: 'Luxury tented camps, private game drives, and the Great Migration. Wildlife encounters that change how you see the world.',
+    img: savanna,
+    alt: 'Acacia tree on the savanna at sunset',
   },
 ];
 ---
 
-<Layout title="Destinations" description="Curated destinations for discerning travelers. European escapes, beach retreats, city breaks, and experiences worth having. Premium travel planning by Wyld Wandering.">
-  <!-- Hero Section -->
-  <section class="relative min-h-[70vh] flex items-center bg-charcoal-900">
-    <div class="absolute inset-0 bg-gradient-to-br from-charcoal-900 via-forest-900 to-charcoal-800"></div>
-    <div class="relative z-10 w-full max-w-7xl mx-auto px-6 py-32 lg:px-8">
-      <div class="max-w-4xl">
-        <span class="inline-block font-sans text-sm font-medium tracking-widest uppercase text-terracotta-400 mb-8">
-          Destinations
-        </span>
-        <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-cream-50 leading-[0.95] mb-8">
-          We know<br/>
-          <span class="italic text-terracotta-400">a place.</span>
-        </h1>
-        <p class="font-sans text-xl leading-relaxed text-cream-200 max-w-2xl mb-12">
-          European coastlines, tropical islands, world-class cities, and everything in between. Tell me what you're in the mood for. I'll find the places worth going.
-        </p>
-        <div class="flex flex-wrap gap-6 items-center">
-          <a href="/contact" class="inline-flex items-center px-8 py-4 bg-terracotta-500 text-white font-medium text-sm uppercase tracking-wide hover:bg-terracotta-600 transition-colors rounded-full">
-            Start Planning
-          </a>
-          <a href="#destinations" class="inline-flex items-center px-8 py-4 border-2 border-cream-200 text-cream-200 font-medium text-sm uppercase tracking-wide hover:bg-cream-200 hover:text-charcoal-900 transition-colors rounded-full">
-            Explore Destinations
-          </a>
-        </div>
+<Layout title="Destinations" description="Curated destinations for discerning travelers. European escapes, beach retreats, city breaks, safari, wellness, and wine country. Premium travel planning by Wyld Wandering.">
+  <PageHero eyebrow="Destinations" intro="European coastlines, tropical islands, world-class cities, and everything in between. Tell me what you're in the mood for. I'll find the places worth going.">
+    We know<br class="hidden sm:block" /> <em>a place.</em>
+  </PageHero>
+
+  <!-- Categories -->
+  <section class="py-24 md:py-32">
+    <div class="container-site flex flex-col gap-14">
+      <div class="reveal flex max-w-3xl flex-col gap-5">
+        <p class="eyebrow">Explore by type</p>
+        <h2 class="display-lg">Where do you <em>want to go?</em></h2>
       </div>
-    </div>
-  </section>
-
-  <!-- Destination Categories Grid -->
-  <section id="destinations" class="py-24 lg:py-32 bg-cream-50 dark:bg-forest-900">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <header class="text-center max-w-3xl mx-auto mb-16">
-        <span class="inline-block font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta-500 dark:text-amber-400 mb-4">
-          Explore By Type
-        </span>
-        <h2 class="font-serif text-4xl md:text-5xl font-medium leading-tight text-charcoal-900 dark:text-cream-50 mb-4">
-          Where Do You Want to Go?
-        </h2>
-        <p class="font-sans text-lg leading-relaxed text-charcoal-600 dark:text-cream-200">
-          Beach escapes, European getaways, culinary journeys, or safari adventures. We specialize in creating trips that deliver on every promise.
-        </p>
-      </header>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {destinationCategories.map((dest) => (
-          <article class="group bg-cream-100 dark:bg-forest-950 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-3xl">
-            <div class="relative h-56 flex items-end p-6 bg-charcoal-800 overflow-hidden">
-              <img src={dest.image} alt={dest.imageAlt} class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-              <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-              <h3 class="relative z-10 font-serif text-2xl font-semibold text-white drop-shadow-lg">
-                {dest.title}
-              </h3>
-            </div>
-            <div class="p-6">
-              <p class="font-sans text-base leading-relaxed text-charcoal-600 dark:text-cream-200 mb-5">
-                {dest.description}
-              </p>
-              <div class="flex flex-wrap gap-2">
-                {dest.highlights.map((highlight) => (
-                  <span class="font-sans text-xs font-medium px-3 py-1.5 bg-cream-50 dark:bg-forest-900 text-charcoal-600 dark:text-cream-200 border border-charcoal-200 dark:border-forest-800 group-hover:border-terracotta-500 group-hover:text-terracotta-500 dark:group-hover:border-amber-400 dark:group-hover:text-amber-400 transition-colors duration-300">
-                    {highlight}
-                  </span>
+      <div class="grid gap-x-6 gap-y-14 md:grid-cols-2 lg:grid-cols-3">
+        {
+          categories.map((c) => (
+            <article class="reveal flex flex-col gap-5">
+              <Image src={c.img} alt={c.alt} widths={[500, 800, 1100]} sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" class="aspect-[4/3] w-full rounded-card object-cover" />
+              <h3 class="text-[32px] leading-tight">{c.title}</h3>
+              <p class="text-ink-600">{c.body}</p>
+              <ul class="flex flex-wrap gap-2" aria-label={`${c.title} highlights`}>
+                {c.highlights.map((h) => (
+                  <li class="rounded-full border border-sand-300 px-3.5 py-1 text-[13px] font-normal text-ink-700">{h}</li>
                 ))}
+              </ul>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured trips -->
+  <section class="bg-sand-200 py-24 md:py-28">
+    <div class="container-site flex flex-col gap-14">
+      <div class="reveal flex flex-col justify-between gap-8 lg:flex-row lg:items-end">
+        <div class="flex flex-col gap-5">
+          <p class="eyebrow">Signature experiences</p>
+          <h2 class="display-lg">Featured <em>trips.</em></h2>
+        </div>
+        <p class="max-w-md text-ink-700">A few examples of what's possible. Each itinerary is fully customizable. These are starting points, not packages.</p>
+      </div>
+      <div class="grid gap-6 md:grid-cols-2">
+        {
+          trips.map((t) => (
+            <article class="reveal flex flex-col overflow-hidden rounded-card bg-sand-50">
+              <div class="relative">
+                <Image src={t.img} alt={t.alt} widths={[600, 900, 1300]} sizes="(min-width: 768px) 48vw, 100vw" class="aspect-[16/10] w-full object-cover" />
+                <span class="absolute left-5 top-5 rounded-full bg-sand-50/95 px-4 py-1.5 text-[13px] font-medium text-ink">{t.duration}</span>
               </div>
-            </div>
-          </article>
-        ))}
+              <div class="flex flex-col gap-3 p-8 md:p-10">
+                <span class="text-xs font-medium uppercase tracking-[0.2em] text-clay">{t.category}</span>
+                <h3 class="text-[34px] leading-tight">{t.name}</h3>
+                <p class="text-ink-600">{t.body}</p>
+              </div>
+            </article>
+          ))
+        }
       </div>
     </div>
   </section>
 
-  <!-- Featured Trips Section -->
-  <section class="py-24 lg:py-32 bg-cream-100 dark:bg-forest-950">
-    <div class="max-w-7xl mx-auto px-6 lg:px-8">
-      <header class="text-center max-w-3xl mx-auto mb-16">
-        <span class="inline-block font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta-500 dark:text-amber-400 mb-4">
-          Signature Experiences
-        </span>
-        <h2 class="font-serif text-4xl md:text-5xl font-medium leading-tight text-charcoal-900 dark:text-cream-50 mb-4">
-          Featured Trips
-        </h2>
-        <p class="font-sans text-lg leading-relaxed text-charcoal-600 dark:text-cream-200">
-          A few examples of what's possible. Each itinerary is fully customizable. These are starting points, not packages.
-        </p>
-      </header>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {featuredTrips.map((trip) => (
-          <article class="group flex flex-col md:flex-row bg-cream-50 dark:bg-forest-900 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 rounded-3xl">
-            <div class="relative min-h-[180px] md:w-2/5 flex-shrink-0 bg-charcoal-800 overflow-hidden">
-              <img src={trip.image} alt={trip.imageAlt} class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy" />
-              <div class="absolute inset-0 bg-black/20"></div>
-              <span class="absolute top-4 left-4 font-sans text-xs font-semibold tracking-wide px-4 py-2 bg-cream-50 dark:bg-forest-950 text-charcoal-900 dark:text-cream-50">
-                {trip.duration}
-              </span>
-            </div>
-            <div class="flex-1 p-6 flex flex-col justify-center">
-              <span class="font-sans text-[11px] font-semibold tracking-[0.15em] uppercase text-terracotta-500 dark:text-amber-400 mb-2">
-                {trip.category}
-              </span>
-              <h3 class="font-serif text-2xl font-semibold text-charcoal-900 dark:text-cream-50 mb-3 group-hover:text-terracotta-500 dark:group-hover:text-amber-400 transition-colors duration-300">
-                {trip.name}
-              </h3>
-              <p class="font-sans text-base leading-relaxed text-charcoal-600 dark:text-cream-200">
-                {trip.description}
-              </p>
-            </div>
-          </article>
-        ))}
+  <!-- Somewhere else -->
+  <section class="py-24 md:py-28">
+    <div class="container-site reveal flex flex-col items-start gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <div class="flex max-w-2xl flex-col gap-5">
+        <p class="eyebrow">Somewhere else?</p>
+        <h2 class="display-md">Don't see what you're <em>looking for?</em></h2>
+        <p class="text-ink-700">These are just examples. Tell me where you want to go, or just what you're in the mood for. We'll figure it out together. No commitment, just a conversation.</p>
       </div>
+      <a href={INTAKE_URL} class="btn-primary shrink-0">Start planning <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
     </div>
   </section>
 
-  <!-- CTA Section -->
-  <section class="py-24 lg:py-32 bg-cream-50 dark:bg-forest-900">
-    <div class="max-w-3xl mx-auto px-6 lg:px-8 text-center">
-      <span class="inline-block font-sans text-xs font-semibold tracking-[0.2em] uppercase text-terracotta-500 dark:text-amber-400 mb-4">
-        Somewhere Else?
-      </span>
-      <h2 class="font-serif text-4xl md:text-5xl font-medium leading-tight text-charcoal-900 dark:text-cream-50 mb-6">
-        Don't See What You're Looking For?
-      </h2>
-      <p class="font-sans text-lg leading-relaxed text-charcoal-600 dark:text-cream-200 max-w-2xl mx-auto mb-10">
-        These are just examples. Tell me where you want to go. Or just tell me what you're in the mood for. We'll figure it out together.
-      </p>
-      <div class="flex flex-wrap gap-6 justify-center items-center mb-8">
-        <a href={`${baseUrl}contact`} class="inline-flex items-center px-8 py-4 font-sans font-semibold text-sm tracking-wide uppercase bg-terracotta-500 text-white hover:bg-terracotta-600 dark:bg-amber-400 dark:text-charcoal-900 dark:hover:bg-amber-500 transition-colors duration-300 rounded-full">
-          Let's Talk
-        </a>
-        <a href={`${baseUrl}services`} class="inline-flex items-center px-8 py-4 font-sans font-semibold text-sm tracking-wide uppercase border-2 border-charcoal-900 text-charcoal-900 hover:bg-charcoal-900 hover:text-cream-50 dark:border-cream-50 dark:text-cream-50 dark:hover:bg-cream-50 dark:hover:text-charcoal-900 transition-colors duration-300 rounded-full">
-          See How It Works
-        </a>
-      </div>
-      <p class="font-sans text-sm text-charcoal-600 dark:text-cream-200">
-        Free consultation. No commitment, just a conversation
-      </p>
-    </div>
-  </section>
+  <StartHere />
 </Layout>

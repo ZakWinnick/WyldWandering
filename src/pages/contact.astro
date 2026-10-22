@@ -1,283 +1,102 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import PageHero from '../components/PageHero.astro';
+import Icon from '../components/Icon.astro';
+import { INTAKE_URL, PORTAL_URL, SITE } from '../config/site';
 
-const baseUrl = import.meta.env.BASE_URL;
-
-const tripTypes = [
-  { value: '', label: 'Select trip type' },
-  { value: 'honeymoon', label: 'Honeymoon & Romance' },
-  { value: 'anniversary', label: 'Anniversary & Celebration' },
-  { value: 'beach', label: 'Beach & Island' },
-  { value: 'europe', label: 'European Escape' },
-  { value: 'city', label: 'City Break' },
-  { value: 'group', label: 'Group Travel' },
-  { value: 'family', label: 'Family Vacation' },
-  { value: 'other', label: 'Something Else' },
-];
+const field =
+  'w-full rounded-card border border-sand-400 bg-white px-4 py-3.5 text-[16px] font-normal text-ink placeholder:text-ink-400 focus:border-clay focus:outline-none focus:ring-2 focus:ring-clay/25';
+const label = 'mb-2 block text-sm font-medium text-ink';
 ---
 
-<Layout title="Contact" description="Get in touch with Zak Winnick, your certified Fora travel advisor. Let's start planning your next trip.">
-  <!-- Hero Section -->
-  <section class="relative min-h-[50vh] flex items-center bg-charcoal-900">
-    <div class="absolute inset-0 bg-gradient-to-br from-charcoal-900 via-forest-900 to-charcoal-800"></div>
-    <div class="relative z-10 max-w-3xl mx-auto px-6 py-32 text-center">
-      <p class="uppercase tracking-[0.3em] text-sm mb-6 text-terracotta-400">
-        Let's Talk
-      </p>
-      <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-cream-50 leading-[0.95] mb-8">
-        Start<br />
-        <em class="italic text-terracotta-400">Here</em>
-      </h1>
-      <p class="text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto text-cream-200">
-        Tell me where you want to go. Or just tell me what you're in the mood for. Either way, we'll figure it out.
-      </p>
-    </div>
-  </section>
+<Layout title="Contact" description="Start planning with Zak Winnick, certified Fora travel advisor. New clients begin with a short intake; existing clients sign in to the client portal.">
+  <PageHero eyebrow="Let's talk" intro="Tell me where you want to go. Or just tell me what you're in the mood for. Either way, we'll figure it out.">
+    Start <em>here.</em>
+  </PageHero>
 
-  <!-- Contact Form Section -->
-  <section class="py-16 md:py-24 px-6 bg-cream-50 dark:bg-forest-950">
-    <div class="max-w-7xl mx-auto">
-      <div class="grid lg:grid-cols-5 gap-16 lg:gap-20">
-        <!-- Form Column -->
-        <div class="lg:col-span-3">
-          <div class="p-8 md:p-12 bg-cream-100 dark:bg-forest-900 rounded-3xl shadow-lg">
-            <h2 class="font-display text-3xl md:text-4xl font-medium mb-3 text-charcoal-900 dark:text-cream-50">
-              Tell Me About Your Dream Trip
-            </h2>
-            <p class="text-lg mb-10 text-charcoal-600 dark:text-cream-200">
-              The more details you share, the better I can understand your vision and craft the perfect journey.
-            </p>
-
-            <form action="https://formsubmit.co/hello@wyldwandering.com" method="POST" class="space-y-8">
-              <!-- Name & Email Row -->
-              <div class="grid md:grid-cols-2 gap-6">
-                <!-- Name -->
-                <div class="flex flex-col">
-                  <label for="name" class="font-display text-sm font-medium tracking-wider uppercase mb-3 text-charcoal-600 dark:text-cream-200">
-                    Name <span class="text-terracotta-500 dark:text-amber-400">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 rounded-xl"
-                    placeholder="Your full name"
-                  />
-                </div>
-
-                <!-- Email -->
-                <div class="flex flex-col">
-                  <label for="email" class="font-display text-sm font-medium tracking-wider uppercase mb-3 text-charcoal-600 dark:text-cream-200">
-                    Email <span class="text-terracotta-500 dark:text-amber-400">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 rounded-xl"
-                    placeholder="you@example.com"
-                  />
-                </div>
-              </div>
-
-              <!-- Trip Type -->
-              <div class="flex flex-col">
-                <label for="trip-type" class="font-display text-sm font-medium tracking-wider uppercase mb-3 text-charcoal-600 dark:text-cream-200">
-                  Trip Type <span class="text-terracotta-500 dark:text-amber-400">*</span>
-                </label>
-                <select
-                  id="trip-type"
-                  name="trip_type"
-                  required
-                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 rounded-xl cursor-pointer appearance-none bg-no-repeat bg-[right_1rem_center] bg-[length:1.25rem] pr-12"
-                  style="background-image: url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E&quot;)"
-                >
-                  {tripTypes.map(type => (
-                    <option value={type.value} disabled={type.value === ''} selected={type.value === ''}>
-                      {type.label}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <!-- Destination -->
-              <div class="flex flex-col">
-                <label for="destination" class="font-display text-sm font-medium tracking-wider uppercase mb-3 text-charcoal-600 dark:text-cream-200">
-                  Destination
-                </label>
-                <input
-                  type="text"
-                  id="destination"
-                  name="destination"
-                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 rounded-xl"
-                  placeholder="e.g., Italy, Maldives, Tokyo, or 'I'm open to suggestions!'"
-                />
-              </div>
-
-              <!-- Dates -->
-              <div class="flex flex-col">
-                <label for="travel-dates" class="font-display text-sm font-medium tracking-wider uppercase mb-3 text-charcoal-600 dark:text-cream-200">
-                  Dates
-                </label>
-                <input
-                  type="text"
-                  id="travel-dates"
-                  name="travel_dates"
-                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 rounded-xl"
-                  placeholder="e.g., Summer 2025, March 15-25, or 'Flexible'"
-                />
-              </div>
-
-              <!-- Message -->
-              <div class="flex flex-col">
-                <label for="message" class="font-display text-sm font-medium tracking-wider uppercase mb-3 text-charcoal-600 dark:text-cream-200">
-                  Message <span class="text-terracotta-500 dark:text-amber-400">*</span>
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  rows="6"
-                  class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 rounded-xl resize-y min-h-[150px]"
-                  placeholder="What does your ideal trip look like? Any must-see places, activities, or experiences? Special occasions to celebrate? The more you share, the better I can help!"
-                ></textarea>
-              </div>
-
-              <!-- Submit Button -->
-              <div class="pt-4">
-                <button type="submit" class="inline-flex items-center justify-center px-8 py-4 font-display text-sm font-medium tracking-wider uppercase bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-900 hover:bg-terracotta-600 dark:hover:bg-amber-500 transition-colors duration-300 rounded-full">
-                  Send Message
-                  <svg class="w-5 h-5 ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <!-- Response Time Note -->
-          <div class="mt-8 flex items-start gap-4 p-6 bg-cream-100 dark:bg-forest-900 rounded-2xl shadow-sm">
-            <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center border border-terracotta-500 dark:border-amber-400">
-              <svg class="w-6 h-6 text-terracotta-500 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </div>
-            <div>
-              <p class="font-display text-lg font-medium mb-1 text-charcoal-900 dark:text-cream-50">
-                Response Time
-              </p>
-              <p class="text-charcoal-600 dark:text-cream-200">
-                I typically respond within <strong class="text-terracotta-500 dark:text-amber-400">1-2 business days</strong>. If you have an urgent travel need, please mention it in your message and I'll do my best to prioritize your request.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- Sidebar Column -->
-        <div class="lg:col-span-2 space-y-8">
-          <!-- Planning Fee Card -->
-          <div class="p-8 bg-cream-100 dark:bg-forest-900 rounded-3xl shadow-md">
-            <h3 class="font-display text-2xl font-medium mb-4 text-charcoal-900 dark:text-cream-50">
-              Planning Fees
-            </h3>
-            <ul class="space-y-2 mb-6 text-charcoal-600 dark:text-cream-200">
-              <li class="flex items-start gap-2">
-                <span class="text-terracotta-500 dark:text-amber-400 mt-1">•</span>
-                <span><strong class="text-charcoal-900 dark:text-cream-50">$500</strong> for hotel and flights</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-terracotta-500 dark:text-amber-400 mt-1">•</span>
-                <span><strong class="text-charcoal-900 dark:text-cream-50">$1,000</strong> for full itinerary</span>
-              </li>
-              <li class="flex items-start gap-2">
-                <span class="text-terracotta-500 dark:text-amber-400 mt-1">•</span>
-                <span><strong class="text-charcoal-900 dark:text-cream-50">Custom quote</strong> for groups & events</span>
-              </li>
-            </ul>
-            <a href={`${baseUrl}services#pricing`} class="inline-flex items-center text-sm font-medium text-terracotta-500 dark:text-amber-400 hover:underline">
-              Full pricing details
-              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
-
-          <!-- Alternative Contact Card -->
-          <div class="p-8 bg-cream-100 dark:bg-forest-900 rounded-3xl shadow-md">
-            <h3 class="font-display text-2xl font-medium mb-6 text-charcoal-900 dark:text-cream-50">
-              Other Ways to Connect
-            </h3>
-            <div class="space-y-6">
-              <div class="flex items-start gap-4">
-                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-cream-50 dark:bg-forest-950">
-                  <svg class="w-5 h-5 text-terracotta-500 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-display text-lg font-medium text-charcoal-900 dark:text-cream-50">Email Direct</p>
-                  <a href="mailto:hello@wyldwandering.com" class="text-sm text-terracotta-500 dark:text-amber-400 hover:underline">hello@wyldwandering.com</a>
-                </div>
-              </div>
-
-              <div class="flex items-start gap-4">
-                <div class="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-cream-50 dark:bg-forest-950">
-                  <svg class="w-5 h-5 text-terracotta-500 dark:text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                  </svg>
-                </div>
-                <div>
-                  <p class="font-display text-lg font-medium text-charcoal-900 dark:text-cream-50">Certified Advisor</p>
-                  <p class="text-sm text-charcoal-600 dark:text-cream-200">Fora Travel certified with access to exclusive perks and upgrades.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- FAQ Card -->
-          <div class="p-8 relative overflow-hidden bg-terracotta-500 dark:bg-amber-400 rounded-3xl shadow-lg">
-            <div class="relative z-10">
-              <h3 class="font-display text-2xl font-medium mb-4 text-cream-100 dark:text-forest-900">
-                Have Questions First?
-              </h3>
-              <p class="mb-8 text-cream-200 dark:text-forest-800">
-                Curious about how the planning process works, what a travel advisor does, or what to expect? Check out my frequently asked questions.
-              </p>
-              <a href={`${baseUrl}faq`} class="inline-flex items-center font-medium text-cream-100 dark:text-forest-900 hover:opacity-80 transition-opacity group uppercase tracking-wider text-sm">
-                Browse FAQ
-                <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </a>
-            </div>
-          </div>
-
-          <!-- About Card -->
-          <div class="p-8 bg-cream-100 dark:bg-forest-900 rounded-3xl shadow-md">
-            <h3 class="font-display text-2xl font-medium mb-4 text-charcoal-900 dark:text-cream-50">
-              About Your Advisor
-            </h3>
-            <p class="mb-6 text-charcoal-600 dark:text-cream-200">
-              Hi, I'm Zak Winnick. I plan trips for people who've been disappointed by "luxury" before. The kind of travel that actually delivers on its promise. Every trip I plan is tailored to how you want to travel.
-            </p>
-            <a href={`${baseUrl}about`} class="inline-flex items-center justify-center px-6 py-3 font-display text-sm font-medium tracking-wider uppercase border border-charcoal-900 dark:border-cream-50 text-charcoal-900 dark:text-cream-50 hover:bg-charcoal-900 hover:text-cream-50 dark:hover:bg-cream-50 dark:hover:text-forest-900 transition-colors duration-300">
-              Learn more about me
-              <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </a>
-          </div>
-        </div>
+  <!-- Two paths -->
+  <section class="pt-16 md:pt-24">
+    <div class="container-site grid gap-5 md:grid-cols-2 md:gap-6">
+      <div class="reveal flex flex-col gap-5 rounded-card bg-pine p-8 text-sand-100 md:p-12">
+        <p class="text-[13px] font-medium uppercase tracking-eyebrow text-gold">New to Wyld Wandering</p>
+        <h2 class="text-[40px] leading-tight md:text-[48px]">Plan a trip</h2>
+        <p class="max-w-md text-pine-muted">The intake takes a few minutes and sets up your traveler profile: who's traveling, where you're based, how you like to be contacted, and the hotels you already love. I'll follow up to set up a conversation about the trip.</p>
+        <a href={INTAKE_URL} class="btn-primary mt-3 self-start">Begin the intake <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
+      </div>
+      <div class="reveal flex flex-col gap-5 rounded-card bg-sand-200 p-8 md:p-12">
+        <p class="eyebrow">Already a client</p>
+        <h2 class="text-[40px] leading-tight md:text-[48px]">Client portal</h2>
+        <p class="max-w-md text-ink-700">Sign in with the email or phone number on your profile to browse and book hotels with me, perks included.</p>
+        <a href={PORTAL_URL} class="btn-dark mt-3 self-start"><Icon name="lock" /> Client login</a>
       </div>
     </div>
   </section>
-</Layout>
 
-<style>
-  /* Dark mode select arrow */
-  :global(.dark) select {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23d1d5db'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M19 9l-7 7-7-7'/%3E%3C/svg%3E");
-  }
-</style>
+  <!-- Quick question -->
+  <section id="question" class="scroll-mt-28 py-20 md:py-28">
+    <div class="container-site grid gap-14 lg:grid-cols-12 lg:gap-20">
+      <div class="reveal lg:col-span-7">
+        <p class="eyebrow">Quick question</p>
+        <h2 class="display-md mt-5">Not ready to plan yet? <em>Ask away.</em></h2>
+        <p class="mt-5 max-w-xl text-ink-700">For questions about a destination, a hotel, or how this works. If you're ready to plan a trip, the intake above is the faster route.</p>
+
+        <form action={`https://formsubmit.co/${SITE.email}`} method="POST" class="mt-10 flex flex-col gap-6">
+          <input type="hidden" name="_subject" value="Question from wyldwandering.com" />
+          <input type="hidden" name="_template" value="table" />
+          <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+          <div class="grid gap-6 sm:grid-cols-2">
+            <div>
+              <label for="name" class={label}>Name <span class="text-clay" aria-hidden="true">*</span></label>
+              <input id="name" name="name" type="text" required autocomplete="name" class={field} />
+            </div>
+            <div>
+              <label for="email" class={label}>Email <span class="text-clay" aria-hidden="true">*</span></label>
+              <input id="email" name="email" type="email" required autocomplete="email" class={field} />
+            </div>
+          </div>
+          <div>
+            <label for="message" class={label}>Your question <span class="text-clay" aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" required rows="6" class={field} placeholder="Ask about a destination, a hotel, or how working together works."></textarea>
+          </div>
+          <button type="submit" class="btn-dark self-start">Send question <Icon name="arrow" class="h-[18px] w-[18px]" /></button>
+        </form>
+      </div>
+
+      <aside class="reveal flex flex-col gap-5 lg:col-span-5">
+        <div class="flex flex-col gap-5 rounded-card border border-sand-300 p-8">
+          <div class="flex items-start gap-4">
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sand-200 text-clay"><Icon name="mail" class="h-5 w-5" /></span>
+            <div>
+              <p class="text-sm font-medium text-ink">Email direct</p>
+              <a href={`mailto:${SITE.email}`} class="link-accent">{SITE.email}</a>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sand-200 text-clay"><Icon name="clock" class="h-5 w-5" /></span>
+            <div>
+              <p class="text-sm font-medium text-ink">Response time</p>
+              <p class="text-ink-700">I typically respond within 1 to 2 business days. If something is urgent, say so and I'll prioritize it.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-4 rounded-card bg-sand-200 p-8">
+          <h3 class="text-[28px] leading-tight">Planning fees</h3>
+          <ul class="flex flex-col gap-2 text-ink-700">
+            <li><strong class="font-medium text-ink">$500</strong> for hotel and flights</li>
+            <li><strong class="font-medium text-ink">$1,000</strong> for a full itinerary</li>
+            <li><strong class="font-medium text-ink">Custom quote</strong> for groups and events</li>
+          </ul>
+          <a href="/services#pricing" class="link-accent self-start text-[15px]">Full pricing details</a>
+        </div>
+
+        <div class="flex flex-col gap-3 rounded-card border border-sand-300 p-8">
+          <h3 class="text-[28px] leading-tight">Have questions first?</h3>
+          <p class="text-ink-700">How planning works, what an advisor does, and what to expect.</p>
+          <a href="/faq" class="link-accent self-start text-[15px]">Browse the FAQ</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</Layout>
