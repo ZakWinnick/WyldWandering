@@ -3,6 +3,40 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    color-scheme: light dark;
+    --c-sand-50: 251 247 240;
+    --c-sand-100: 246 239 228;
+    --c-sand-200: 242 234 221;
+    --c-sand-300: 227 217 202;
+    --c-sand-400: 207 198 182;
+    --c-sand-500: 191 182 166;
+    --c-ink: 28 26 23;
+    --c-ink-700: 74 68 61;
+    --c-ink-600: 91 84 76;
+    --c-ink-400: 143 134 118;
+    --c-clay: 166 74 41;
+    --c-clay-dark: 142 63 34;
+  }
+
+  /* Dark scheme follows the visitor's system setting. Warm charcoal ground keeps the pine bands distinct. */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --c-sand-50: 19 17 15;
+      --c-sand-100: 30 27 24;
+      --c-sand-200: 26 24 21;
+      --c-sand-300: 52 48 43;
+      --c-sand-400: 74 69 63;
+      --c-sand-500: 110 103 94;
+      --c-ink: 239 232 220;
+      --c-ink-700: 207 198 182;
+      --c-ink-600: 184 175 160;
+      --c-ink-400: 143 134 118;
+      --c-clay: 229 138 100;
+      --c-clay-dark: 240 165 132;
+    }
+  }
+
   html {
     scroll-behavior: smooth;
     -webkit-text-size-adjust: 100%;
@@ -85,11 +119,11 @@
   }
 
   .btn-primary {
-    @apply btn bg-clay text-white hover:bg-clay-dark hover:text-white;
+    @apply btn bg-clay text-white hover:bg-clay-dark hover:text-white dark:text-night dark:hover:text-night;
   }
 
   .btn-dark {
-    @apply btn bg-ink text-sand-100 hover:bg-black hover:text-sand-100;
+    @apply btn bg-ink text-sand-100 hover:bg-ink-700 hover:text-sand-100;
   }
 
   .btn-outline {
@@ -97,7 +131,7 @@
   }
 
   .btn-outline-light {
-    @apply btn border border-sand-50/70 font-normal text-sand-50 hover:bg-sand-50 hover:text-ink;
+    @apply btn border border-cream-50/70 font-normal text-cream-50 hover:bg-cream-50 hover:text-night;
   }
 
   .link-underline {

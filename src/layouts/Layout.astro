@@ -31,7 +31,9 @@ const ogImageUrl = new URL(ogImage.src, SITE.url).href;
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex" />}
-    <meta name="theme-color" content="#FBF7F0" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#FBF7F0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#13110F" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
     <meta property="og:type" content="website" />

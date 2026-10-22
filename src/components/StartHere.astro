@@ -10,14 +10,14 @@ interface Props {
 const { heading } = Astro.props;
 ---
 
-<section class="bg-pine py-24 text-sand-100 md:py-32" aria-labelledby="start-here-heading">
+<section class="bg-pine py-24 text-cream-100 md:py-32" aria-labelledby="start-here-heading">
   <div class="container-site flex flex-col gap-12 md:gap-14">
     <h2 id="start-here-heading" class="reveal font-display font-medium leading-none" style="font-size: clamp(2.75rem, 5.4vw, 5rem)">
       {heading ? heading : <Fragment>Trips worth <em class="font-normal italic text-gold">taking.</em> Start here.</Fragment>}
     </h2>
 
     <div class="grid gap-5 md:grid-cols-2 md:gap-6">
-      <div class="reveal flex flex-col gap-4 rounded-card border border-sand-100/20 p-8 md:p-11">
+      <div class="reveal flex flex-col gap-4 rounded-card border border-cream-100/20 p-8 md:p-11">
         <p class="text-[13px] font-medium uppercase tracking-eyebrow text-gold">New to Wyld Wandering</p>
         <h3 class="text-[36px]">Start planning</h3>
         <p class="max-w-md text-pine-muted">A short intake sets up your traveler profile, so our first conversation is about the trip, not the paperwork.</p>
@@ -32,7 +32,7 @@ const { heading } = Astro.props;
       </div>
     </div>
 
-    <p class="text-[15px] text-sand-500">
+    <p class="text-[15px] text-cream-500">
       Just have a quick question? <a href="/contact#question" class="text-gold underline-offset-4 hover:text-gold-soft hover:underline">Send a note</a> or email <a href={`mailto:${SITE.email}`} class="text-gold underline-offset-4 hover:text-gold-soft hover:underline">{SITE.email}</a>.
     </p>
   </div>

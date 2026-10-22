@@ -52,7 +52,8 @@ src/
 - Contact page keeps a short FormSubmit form for quick questions only.
 
 ### Styling Conventions
-- Light theme only. Palette tokens in tailwind.config.mjs: `sand` (grounds, lines), `ink` (text), `clay` (accent), `pine` (dark bands), `gold` (accent on dark)
+- Dark mode follows the visitor's system setting (`darkMode: 'media'`, no toggle). Theme-aware tokens `sand` (grounds, lines), `ink` (text), `clay` (accent) are CSS variables in global.css that flip under `prefers-color-scheme: dark`
+- Fixed tokens that never flip: `cream` (light text on photos and pine bands), `night` (dark text on light fills), `pine` (dark bands), `gold` (accent on dark). Use these, not `sand`, for anything sitting on a photo or a pine band
 - Fonts: Cormorant (display/headings), Outfit (body/sans), loaded in Layout.astro
 - Component classes in global.css: `.container-site`, `.eyebrow`, `.display-xl|lg|md`, `.lede`, `.btn-primary|dark|outline|outline-light`, `.link-underline`, `.link-accent`, `.prose-ww`
 - `.reveal` fades sections in on scroll (respects reduced motion, visible without JS)

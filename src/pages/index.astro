@@ -30,7 +30,7 @@ const destinations = [
 
 <Layout title="Home" overlayHeader>
   <!-- Hero -->
-  <section class="relative flex flex-col overflow-hidden bg-[#2A1A0E] text-sand-50" style="min-height: clamp(640px, 100svh, 980px)">
+  <section class="relative flex flex-col overflow-hidden bg-[#2A1A0E] text-cream-50" style="min-height: clamp(640px, 100svh, 980px)">
     <Image
       src={hero}
       alt="Diners on a clifftop terrace above the sea at sunset in Biarritz"
@@ -55,7 +55,7 @@ const destinations = [
           <a href={PORTAL_URL} class="btn-outline-light min-h-[56px] px-8">Returning? Sign in to your portal</a>
         </div>
       </div>
-      <p class="hidden max-w-[220px] text-right text-[13px] tracking-[0.08em] text-sand-50/85 lg:block">Golden hour above the Atlantic, Biarritz</p>
+      <p class="hidden max-w-[220px] text-right text-[13px] tracking-[0.08em] text-cream-50/85 lg:block">Golden hour above the Atlantic, Biarritz</p>
     </div>
   </section>
 
@@ -123,7 +123,7 @@ const destinations = [
           <h3 class="text-[28px] leading-tight">We talk it through</h3>
           <p class="text-base text-ink-600">A discovery call about pace, priorities, and what makes a trip feel worth it. No commitment.</p>
         </li>
-        <li class="reveal flex flex-col gap-4 rounded-card bg-pine p-8 text-sand-100 md:p-9">
+        <li class="reveal flex flex-col gap-4 rounded-card bg-pine p-8 text-cream-100 md:p-9">
           <span class="font-display text-[56px] leading-none text-gold">03</span>
           <h3 class="text-[28px] leading-tight">Book in your portal</h3>
           <p class="text-base text-pine-muted">Browse and book hotels with me in your private client portal, with preferred-partner perks attached.</p>
@@ -150,7 +150,7 @@ const destinations = [
       </div>
 
       <div class="grid auto-rows-[300px] gap-4 md:grid-cols-3 md:auto-rows-[340px]">
-        <a href="/destinations" class="reveal group relative row-span-2 block overflow-hidden rounded-card text-sand-50 hover:text-sand-50 max-md:min-h-[460px]">
+        <a href="/destinations" class="reveal group relative row-span-2 block overflow-hidden rounded-card text-cream-50 hover:text-cream-50 max-md:min-h-[460px]">
           <Image src={mediterranean} alt="Whitewashed steps and a blue door framed by bougainvillea" widths={[600, 900, 1300]} sizes="(min-width: 768px) 33vw, 100vw" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
           <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-b from-transparent from-55% to-black/60"></div>
           <div class="absolute inset-x-7 bottom-7 flex flex-col gap-1.5">
@@ -160,7 +160,7 @@ const destinations = [
         </a>
         {
           destinations.map((d) => (
-            <a href="/destinations" class="reveal group relative block overflow-hidden rounded-card text-sand-50 hover:text-sand-50">
+            <a href="/destinations" class="reveal group relative block overflow-hidden rounded-card text-cream-50 hover:text-cream-50">
               <Image src={d.img} alt={d.alt} widths={[600, 900, 1200]} sizes="(min-width: 768px) 33vw, 100vw" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
               <div aria-hidden="true" class="absolute inset-0 bg-gradient-to-b from-transparent from-45% to-black/60" />
               <div class="absolute inset-x-6 bottom-5 flex flex-col gap-1">

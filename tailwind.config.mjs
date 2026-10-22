@@ -1,38 +1,43 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  darkMode: 'media',
   theme: {
     extend: {
       colors: {
-        // Grounds and lines
+        // Theme-aware tokens: values live in global.css as CSS variables and flip
+        // with the visitor's system color scheme (prefers-color-scheme).
         sand: {
-          50: '#FBF7F0', // page ground
-          100: '#F6EFE4', // light text on dark, light cards on dark
-          200: '#F2EADD', // alternate section ground
-          300: '#E3D9CA', // hairlines
-          400: '#CFC6B6',
-          500: '#BFB6A6',
+          50: 'rgb(var(--c-sand-50) / <alpha-value>)', // page ground
+          100: 'rgb(var(--c-sand-100) / <alpha-value>)', // raised cards
+          200: 'rgb(var(--c-sand-200) / <alpha-value>)', // alternate section ground
+          300: 'rgb(var(--c-sand-300) / <alpha-value>)', // hairlines
+          400: 'rgb(var(--c-sand-400) / <alpha-value>)', // input borders
+          500: 'rgb(var(--c-sand-500) / <alpha-value>)',
         },
-        // Text
         ink: {
-          DEFAULT: '#1C1A17',
-          700: '#4A443D',
-          600: '#5B544C',
-          400: '#8F8676',
+          DEFAULT: 'rgb(var(--c-ink) / <alpha-value>)',
+          700: 'rgb(var(--c-ink-700) / <alpha-value>)',
+          600: 'rgb(var(--c-ink-600) / <alpha-value>)',
+          400: 'rgb(var(--c-ink-400) / <alpha-value>)',
         },
-        // Accent (terracotta, tuned for 4.5:1 on both grounds)
         clay: {
-          DEFAULT: '#A64A29',
-          dark: '#8E3F22',
+          DEFAULT: 'rgb(var(--c-clay) / <alpha-value>)',
+          dark: 'rgb(var(--c-clay-dark) / <alpha-value>)',
           light: '#E99A79',
         },
-        // Dark bands
+        // Fixed tokens: same in both schemes. Used on photos and dark bands.
+        cream: {
+          50: '#FBF7F0',
+          100: '#F6EFE4',
+          500: '#BFB6A6',
+        },
+        night: '#1C1A17', // dark text on light fills that must not flip
         pine: {
           DEFAULT: '#15231B',
           deep: '#0E1712',
           muted: '#C9C0B0',
         },
-        // Accent on dark
         gold: {
           DEFAULT: '#D9B26A',
           soft: '#F3D9A8',
