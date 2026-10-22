@@ -89,7 +89,7 @@ const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`)
     <a href={INTAKE_URL} class="btn-primary w-full" target="_blank" rel="noopener noreferrer">Start Planning <Icon name="arrow" /></a>
     <a href={PORTAL_URL} class="btn-outline-light w-full" target="_blank" rel="noopener noreferrer"><Icon name="lock" /> Client Login</a>
     <div class="mt-6 flex gap-6 text-sm text-pine-muted">
-      <a href={SOCIAL.instagram} class="text-pine-muted hover:text-gold" target="_blank" rel="noopener noreferrer">Instagram</a>
+      <a href={SOCIAL.instagram} class="text-pine-muted hover:text-gold" target="_blank" rel="noopener noreferrer">Instagram {SOCIAL.instagramHandle}</a>
       <a href={SOCIAL.x} class="text-pine-muted hover:text-gold" target="_blank" rel="noopener noreferrer">X {SOCIAL.xHandle}</a>
       <a href={`mailto:${SITE.email}`} class="text-pine-muted hover:text-gold">{SITE.email}</a>
     </div>

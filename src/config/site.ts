@@ -19,6 +19,7 @@ export const PORTAL_URL = 'https://trips.foratravel.com/wyldwandering/book';
 
 export const SOCIAL = {
   instagram: 'https://instagram.com/wyldwandering',
+  instagramHandle: '@wyldwandering',
   x: 'https://x.com/WyldWandering',
   xHandle: '@WyldWandering',
   fora: 'https://foratravel.com/advisors/zak-winnick',
