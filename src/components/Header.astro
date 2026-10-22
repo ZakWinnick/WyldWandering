@@ -3,6 +3,7 @@ const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/services', label: 'Services' },
   { href: '/destinations', label: 'Destinations' },
+  { href: '/book', label: 'Book a Hotel', cta: true },
   { href: '/faq', label: 'FAQ' },
   { href: '/contact', label: 'Contact' },
 ];
@@ -22,13 +23,19 @@ const navLinks = [
       </svg>
     </a>
 
-    <div class="hidden lg:flex items-center gap-8">
+    <div class="hidden lg:flex items-center gap-6 xl:gap-8">
       {navLinks.map(link => (
-        <a href={link.href} class="text-sm font-medium text-charcoal-900/80 hover:text-charcoal-900 dark:text-cream-50/90 dark:hover:text-cream-50 transition-colors">
-          {link.label}
-        </a>
+        link.cta ? (
+          <a href={link.href} class="inline-flex items-center px-4 py-2 bg-terracotta-500 text-white text-sm font-medium uppercase tracking-wide rounded-full hover:bg-terracotta-600 transition-colors">
+            {link.label}
+          </a>
+        ) : (
+          <a href={link.href} class="text-sm font-medium text-charcoal-900/80 hover:text-charcoal-900 dark:text-cream-50/90 dark:hover:text-cream-50 transition-colors">
+            {link.label}
+          </a>
+        )
       ))}
-      <div class="flex items-center gap-4 ml-4 pl-4 border-l border-charcoal-200 dark:border-cream-50/20">
+      <div class="hidden xl:flex items-center gap-4 ml-2 pl-4 border-l border-charcoal-200 dark:border-cream-50/20">
         <a href="https://x.com/wyldwandering" target="_blank" rel="noopener noreferrer" class="text-charcoal-900/60 hover:text-terracotta-500 dark:text-cream-50/60 dark:hover:text-amber-400 transition-colors" aria-label="Follow on X">
           <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
@@ -59,7 +66,7 @@ const navLinks = [
   <div class="flex flex-col items-center justify-center h-full gap-8">
     <a href="/" class="text-4xl font-display text-cream-50 hover:text-terracotta-400 dark:hover:text-amber-400 transition-colors">Home</a>
     {navLinks.map(link => (
-      <a href={link.href} class="text-4xl font-display text-cream-50 hover:text-terracotta-400 dark:hover:text-amber-400 transition-colors">
+      <a href={link.href} class:list={['text-4xl font-display transition-colors', link.cta ? 'text-terracotta-400' : 'text-cream-50 hover:text-terracotta-400 dark:hover:text-amber-400']}>
         {link.label}
       </a>
     ))}

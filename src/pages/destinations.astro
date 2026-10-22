@@ -1,7 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { intakeLink } from '../lib/fora';
 
 const baseUrl = import.meta.env.BASE_URL;
+const planFromHero = intakeLink('destinations-hero');
+const planFromClose = intakeLink('destinations-close');
 
 const destinationCategories = [
   {
@@ -101,7 +104,7 @@ const featuredTrips = [
           European coastlines, tropical islands, world-class cities, and everything in between. Tell me what you're in the mood for. I'll find the places worth going.
         </p>
         <div class="flex flex-wrap gap-6 items-center">
-          <a href="/contact" class="inline-flex items-center px-8 py-4 bg-terracotta-500 text-white font-medium text-sm uppercase tracking-wide hover:bg-terracotta-600 transition-colors rounded-full">
+          <a href={planFromHero} target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 bg-terracotta-500 text-white font-medium text-sm uppercase tracking-wide hover:bg-terracotta-600 transition-colors rounded-full">
             Start Planning
           </a>
           <a href="#destinations" class="inline-flex items-center px-8 py-4 border-2 border-cream-200 text-cream-200 font-medium text-sm uppercase tracking-wide hover:bg-cream-200 hover:text-charcoal-900 transition-colors rounded-full">
@@ -210,8 +213,8 @@ const featuredTrips = [
         These are just examples. Tell me where you want to go. Or just tell me what you're in the mood for. We'll figure it out together.
       </p>
       <div class="flex flex-wrap gap-6 justify-center items-center mb-8">
-        <a href={`${baseUrl}contact`} class="inline-flex items-center px-8 py-4 font-sans font-semibold text-sm tracking-wide uppercase bg-terracotta-500 text-white hover:bg-terracotta-600 dark:bg-amber-400 dark:text-charcoal-900 dark:hover:bg-amber-500 transition-colors duration-300 rounded-full">
-          Let's Talk
+        <a href={planFromClose} target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 font-sans font-semibold text-sm tracking-wide uppercase bg-terracotta-500 text-white hover:bg-terracotta-600 dark:bg-amber-400 dark:text-charcoal-900 dark:hover:bg-amber-500 transition-colors duration-300 rounded-full">
+          Plan My Trip
         </a>
         <a href={`${baseUrl}services`} class="inline-flex items-center px-8 py-4 font-sans font-semibold text-sm tracking-wide uppercase border-2 border-charcoal-900 text-charcoal-900 hover:bg-charcoal-900 hover:text-cream-50 dark:border-cream-50 dark:text-cream-50 dark:hover:bg-cream-50 dark:hover:text-charcoal-900 transition-colors duration-300 rounded-full">
           See How It Works

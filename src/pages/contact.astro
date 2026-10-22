@@ -1,7 +1,9 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { intakeLink } from '../lib/fora';
 
 const baseUrl = import.meta.env.BASE_URL;
+const planTrip = intakeLink('contact-banner');
 
 const tripTypes = [
   { value: '', label: 'Select trip type' },
@@ -16,21 +18,29 @@ const tripTypes = [
 ];
 ---
 
-<Layout title="Contact" description="Get in touch with Zak Winnick, your certified Fora travel advisor. Let's start planning your next trip.">
+<Layout title="Contact" description="Questions for Zak Winnick. New trips start with a Fora client profile. This page is for everything else.">
   <!-- Hero Section -->
   <section class="relative min-h-[50vh] flex items-center bg-charcoal-900">
     <div class="absolute inset-0 bg-gradient-to-br from-charcoal-900 via-forest-900 to-charcoal-800"></div>
     <div class="relative z-10 max-w-3xl mx-auto px-6 py-32 text-center">
       <p class="uppercase tracking-[0.3em] text-sm mb-6 text-terracotta-400">
-        Let's Talk
+        Questions
       </p>
       <h1 class="font-display text-5xl md:text-6xl lg:text-7xl text-cream-50 leading-[0.95] mb-8">
-        Start<br />
-        <em class="italic text-terracotta-400">Here</em>
+        Get in<br />
+        <em class="italic text-terracotta-400">touch</em>
       </h1>
       <p class="text-xl md:text-2xl font-light leading-relaxed max-w-2xl mx-auto text-cream-200">
-        Tell me where you want to go. Or just tell me what you're in the mood for. Either way, we'll figure it out.
+        Planning a new trip starts with a client profile. This page is for everything else.
       </p>
+      <a
+        href={planTrip}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center justify-center mt-10 px-8 py-4 font-display text-sm font-medium tracking-wider uppercase bg-terracotta-500 text-white hover:bg-terracotta-600 transition-colors duration-300 rounded-full"
+      >
+        Plan my trip
+      </a>
     </div>
   </section>
 
@@ -42,10 +52,10 @@ const tripTypes = [
         <div class="lg:col-span-3">
           <div class="p-8 md:p-12 bg-cream-100 dark:bg-forest-900 rounded-3xl shadow-lg">
             <h2 class="font-display text-3xl md:text-4xl font-medium mb-3 text-charcoal-900 dark:text-cream-50">
-              Tell Me About Your Dream Trip
+              Send a Note
             </h2>
             <p class="text-lg mb-10 text-charcoal-600 dark:text-cream-200">
-              The more details you share, the better I can understand your vision and craft the perfect journey.
+              A question, a correction, something that isn't a new trip. For a new trip, <a href={planTrip} target="_blank" rel="noopener noreferrer" class="text-terracotta-500 dark:text-amber-400 hover:underline">create your profile</a>. I read every note.
             </p>
 
             <form action="https://formsubmit.co/hello@wyldwandering.com" method="POST" class="space-y-8">
@@ -126,7 +136,7 @@ const tripTypes = [
                   id="travel-dates"
                   name="travel_dates"
                   class="w-full px-5 py-4 text-base bg-white dark:bg-forest-900 border border-charcoal-300 dark:border-forest-600 text-charcoal-900 dark:text-cream-50 placeholder-charcoal-400 dark:placeholder-cream-400 focus:outline-none focus:border-terracotta-500 dark:focus:border-amber-400 focus:ring-2 focus:ring-terracotta-500/20 dark:focus:ring-amber-400/20 transition-all duration-300 rounded-xl"
-                  placeholder="e.g., Summer 2025, March 15-25, or 'Flexible'"
+                  placeholder="e.g., next June, March 15-25, or Flexible"
                 />
               </div>
 
@@ -185,15 +195,19 @@ const tripTypes = [
             <ul class="space-y-2 mb-6 text-charcoal-600 dark:text-cream-200">
               <li class="flex items-start gap-2">
                 <span class="text-terracotta-500 dark:text-amber-400 mt-1">•</span>
-                <span><strong class="text-charcoal-900 dark:text-cream-50">$500</strong> for hotel and flights</span>
+                <span><strong class="text-charcoal-900 dark:text-cream-50">No fee</strong> for a hotel booking</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-terracotta-500 dark:text-amber-400 mt-1">•</span>
-                <span><strong class="text-charcoal-900 dark:text-cream-50">$1,000</strong> for full itinerary</span>
+                <span><strong class="text-charcoal-900 dark:text-cream-50">$500</strong> for hotels and flights</span>
               </li>
               <li class="flex items-start gap-2">
                 <span class="text-terracotta-500 dark:text-amber-400 mt-1">•</span>
-                <span><strong class="text-charcoal-900 dark:text-cream-50">Custom quote</strong> for groups & events</span>
+                <span><strong class="text-charcoal-900 dark:text-cream-50">$1,000</strong> for a full itinerary</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="text-terracotta-500 dark:text-amber-400 mt-1">•</span>
+                <span><strong class="text-charcoal-900 dark:text-cream-50">Custom quote</strong> for groups and events</span>
               </li>
             </ul>
             <a href={`${baseUrl}services#pricing`} class="inline-flex items-center text-sm font-medium text-terracotta-500 dark:text-amber-400 hover:underline">

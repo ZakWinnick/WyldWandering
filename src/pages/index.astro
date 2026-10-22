@@ -1,8 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { intakeLink } from '../lib/fora';
+
+const planFromHero = intakeLink('home-hero');
+const planFromPaths = intakeLink('home-paths');
+const planFromClose = intakeLink('home-close');
 ---
 
-<Layout title="Home">
+<Layout title="Wyld Wandering">
   <!-- Hero -->
   <section class="relative min-h-screen flex items-center bg-cream-50 dark:bg-charcoal-900 overflow-hidden">
     <div class="absolute inset-0 bg-gradient-to-br from-cream-100 via-cream-50 to-cream-200 dark:from-charcoal-900 dark:via-forest-900 dark:to-charcoal-800"></div>
@@ -19,13 +24,14 @@ import Layout from '../layouts/Layout.astro';
             The hotels you'll brag about. The reservations you couldn't get. The upgrades that just happen. We plan trips for people who've been disappointed by "luxury" before.
           </p>
           <div class="mt-10 flex flex-wrap gap-4">
-            <a href="/contact" class="inline-flex items-center px-8 py-4 bg-terracotta-500 text-white font-medium text-sm uppercase tracking-wide hover:bg-terracotta-600 transition-colors rounded-full">
+            <a href={planFromHero} target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 bg-terracotta-500 text-white font-medium text-sm uppercase tracking-wide hover:bg-terracotta-600 transition-colors rounded-full">
               Start Planning
             </a>
-            <a href="/about" class="inline-flex items-center px-8 py-4 border-2 border-charcoal-900 text-charcoal-900 dark:border-cream-200 dark:text-cream-200 font-medium text-sm uppercase tracking-wide hover:bg-charcoal-900 hover:text-cream-50 dark:hover:bg-cream-200 dark:hover:text-charcoal-900 transition-colors rounded-full">
-              Meet Zak
+            <a href="/book" class="inline-flex items-center px-8 py-4 border-2 border-charcoal-900 text-charcoal-900 dark:border-cream-200 dark:text-cream-200 font-medium text-sm uppercase tracking-wide hover:bg-charcoal-900 hover:text-cream-50 dark:hover:bg-cream-200 dark:hover:text-charcoal-900 transition-colors rounded-full">
+              Book a Hotel
             </a>
           </div>
+          <a href="/about" class="btn-secondary mt-6">Meet Zak</a>
         </div>
 
         <!-- Logo Mark -->
@@ -39,6 +45,32 @@ import Layout from '../layouts/Layout.astro';
                   stroke-linejoin="round"/>
             <circle cx="100" cy="52" r="7" fill="currentColor"/>
           </svg>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Two paths -->
+  <section class="py-20 lg:py-24 bg-cream-100 dark:bg-forest-900">
+    <div class="max-w-7xl mx-auto px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-8 lg:p-12 bg-cream-50 dark:bg-forest-950 rounded-3xl shadow-md">
+          <p class="text-terracotta-500 dark:text-amber-400 text-sm font-medium tracking-widest uppercase">Know the hotel</p>
+          <h2 class="font-display text-4xl md:text-5xl text-charcoal-900 dark:text-cream-50 mt-4">Book it yourself.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-charcoal-600 dark:text-cream-200">
+            Search and book with Fora perks and rates. No planning fee. New clients create a profile first.
+          </p>
+          <a href="/book" class="btn-primary mt-8">Book a Hotel</a>
+        </div>
+        <div class="p-8 lg:p-12 bg-charcoal-900 dark:bg-forest-950 rounded-3xl shadow-md border border-transparent dark:border-forest-800">
+          <p class="text-terracotta-400 dark:text-amber-400 text-sm font-medium tracking-widest uppercase">Want it handled</p>
+          <h2 class="font-display text-4xl md:text-5xl text-cream-50 mt-4">Plan it with me.</h2>
+          <p class="mt-4 text-lg leading-relaxed text-cream-200">
+            Hotels, flights, the reservation you couldn't get. Tell me where you're going.
+          </p>
+          <a href={planFromPaths} target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 mt-8 text-sm font-medium tracking-wide uppercase border-2 border-cream-200 text-cream-50 hover:bg-cream-50 hover:text-charcoal-900 transition-colors rounded-full">
+            Plan My Trip
+          </a>
         </div>
       </div>
     </div>
@@ -129,7 +161,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="text-center mt-12 space-y-4 reveal-on-scroll">
         <a href="/services" class="btn-primary">See All Services</a>
         <p class="text-sm text-charcoal-500 dark:text-cream-300">
-          Planning fees start at $500. <a href="/services#pricing" class="text-terracotta-500 dark:text-amber-400 hover:underline">View pricing</a>
+          Booking a hotel costs you nothing. Planning fees start at $500. <a href="/services#pricing" class="text-terracotta-500 dark:text-amber-400 hover:underline">View pricing</a>
         </p>
       </div>
     </div>
@@ -145,8 +177,8 @@ import Layout from '../layouts/Layout.astro';
         Tell me where you want to go. Or just tell me what you're in the mood for. Either way, we'll figure it out.
       </p>
       <div class="mt-10 flex flex-wrap justify-center gap-4">
-        <a href="/contact" class="inline-flex items-center px-8 py-4 bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-950 font-medium text-sm uppercase tracking-wide hover:bg-terracotta-600 dark:hover:bg-amber-300 transition-colors rounded-full">
-          Let's Talk
+        <a href={planFromClose} target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-4 bg-terracotta-500 dark:bg-amber-400 text-white dark:text-forest-950 font-medium text-sm uppercase tracking-wide hover:bg-terracotta-600 dark:hover:bg-amber-300 transition-colors rounded-full">
+          Plan My Trip
         </a>
         <a href="/faq" class="inline-flex items-center px-8 py-4 border-2 border-cream-200 text-cream-200 font-medium text-sm uppercase tracking-wide hover:bg-cream-200 hover:text-charcoal-900 transition-colors rounded-full">
           Questions?

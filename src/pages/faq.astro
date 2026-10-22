@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { intakeLink } from '../lib/fora';
+
+const planTrip = intakeLink('faq-cta');
 
 const faqSections = [
   {
@@ -7,15 +10,19 @@ const faqSections = [
     faqs: [
       {
         question: "How does working with you differ from booking myself?",
-        answer: "When you book yourself, you're navigating endless options and hoping for the best. As your travel advisor, I bring expertise, insider connections, and genuine relationships with the world's best hotels. I handle the research, the details, and the things you didn't know to ask for. Plus, I have access to exclusive perks, upgrades, and amenities that aren't available when you book directly. Same room, same rate, but with benefits that actually make a difference."
+        answer: "When you book direct, you're navigating endless options and hoping for the best. As your travel advisor, I bring expertise, insider connections, and genuine relationships with the world's best hotels. I handle the research, the details, and the things you didn't know to ask for. You can also book a hotel yourself through my portal and still get the perks. Same room, same rate, but with benefits that actually make a difference."
       },
       {
         question: "What does it cost to use your services?",
-        answer: "I charge a planning fee based on the scope of work: $500 for hotel and flights, $1,000 for a full itinerary including restaurants and experiences, and a custom quote for groups, events, or multi-country trips. The fee covers everything from research to booking to ongoing support throughout your trip. Once you've booked $40,000 in travel with me, the fee drops to a flat $250 for any scope."
+        answer: "Booking a hotel through me, including the client portal, has no planning fee. You pay the hotel, and I earn a commission. For fuller planning, the fee is $500 for hotels and flights, $1,000 for a full itinerary including restaurants and experiences, and a custom quote for groups, events, or multi-country trips. That fee covers research, booking, and support through the trip. Once you've booked $40,000 in travel with me, the planning fee drops to a flat $250, whatever the scope. Hotel-only bookings stay free."
       },
       {
         question: "How do you get paid?",
-        answer: "Two ways: a planning fee that covers my time and expertise, and commissions from hotels and travel partners when I book through them. The commission structure means you pay the same room rates as booking direct, but you get access to upgrades, resort credits, and amenities you wouldn't get on your own. It's how the industry works, and it allows me to dedicate real time to crafting trips that actually deliver."
+        answer: "On a hotel booking, commission from the hotel. You pay the same room rate as booking direct, with upgrades, resort credits, and amenities you wouldn't get on your own. For fuller planning, I also charge a planning fee that covers my time. It's how the industry works, and it lets me spend real time on trips that actually deliver."
+      },
+      {
+        question: "Are you part of Fora Travel?",
+        answer: "Wyld Wandering is an independent affiliate of Fora Travel, Inc. I use Fora's platform for hotel perks, rates, and the client portal. Fora Travel, Inc. is registered as a Seller of Travel in California (No. 2151995-50), Florida (No. ST43973), and Washington (UBI 605329242), and also holds British Columbia CPBC License No. 88694, Ontario TICO Registration No. 50027942, and United Kingdom ICO Registration No. ZC157277."
       }
     ]
   },
@@ -49,7 +56,7 @@ const faqSections = [
       },
       {
         question: "Can you help with just a hotel booking?",
-        answer: "Absolutely. Through my partnerships with luxury hotel programs, I can secure complimentary upgrades, resort credits, early check-in, late checkout, and other VIP amenities at top properties worldwide. Even if you just need one exceptional hotel stay (not a full trip), I'm here to help. These perks come at no extra cost to you."
+        answer: "Yes. If you already know the hotel, book it yourself in the client portal. You'll get the Fora perks and rates, and there's no planning fee. If the property isn't listed, or you want me to choose it, tell me. Same arrangement: a hotel booking doesn't carry a planning fee. Upgrades, credits, breakfast, and early check-in still depend on the property."
       }
     ]
   },
@@ -154,11 +161,16 @@ const faqSections = [
         Let's start a conversation. Tell me where you want to go, and I'll handle the rest.
       </p>
       <a
-        href="/contact"
+        href={planTrip}
+        target="_blank"
+        rel="noopener noreferrer"
         class="inline-flex items-center justify-center px-8 py-4 font-sans text-sm font-medium tracking-wide uppercase bg-terracotta-500 hover:bg-terracotta-600 dark:bg-amber-400 dark:hover:bg-amber-500 text-white dark:text-forest-950 rounded-full transition-colors duration-300"
       >
-        Get in Touch
+        Plan My Trip
       </a>
+      <p class="mt-6 font-sans text-sm text-charcoal-600 dark:text-cream-200">
+        A general question? <a href="/contact" class="text-terracotta-500 dark:text-amber-400 hover:underline">Write me</a>.
+      </p>
     </div>
   </section>
 </Layout>

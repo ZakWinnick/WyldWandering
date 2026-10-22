@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import sitemap from '@astrojs/sitemap';
+import { intakeLink, portalLink } from './src/lib/fora.ts';
 
 export default defineConfig({
   site: 'https://wyldwandering.com',
@@ -11,4 +12,8 @@ export default defineConfig({
     }),
   ],
   output: 'static',
+  redirects: {
+    '/portal': portalLink('shortlink'),
+    '/start': intakeLink('shortlink'),
+  },
 });

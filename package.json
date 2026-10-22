@@ -1,7 +1,7 @@
 {
   "name": "wyldwandering",
   "version": "1.0.0",
-  "description": "Wyld Wandering - Adventure Travel with Comfort",
+  "description": "Premium travel planning by Zak Winnick. Hotels you'll brag about, with an independent Fora advisor.",
   "type": "module",
   "scripts": {
     "dev": "astro dev",
@@ -14,7 +14,7 @@
   },
   "keywords": [
     "travel",
-    "adventure",
+    "hotels",
     "fora"
   ],
   "author": "Zak Winnick",
@@ -26,7 +26,7 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.0",
     "@astrojs/tailwind": "^6.0.2",
-    "astro": "^5.16.9",
+    "astro": "^5.18.1",
     "tailwindcss": "^3.4.19"
   }
 }
