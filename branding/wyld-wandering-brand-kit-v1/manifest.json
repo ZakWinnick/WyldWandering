@@ -1,0 +1,757 @@
+[
+  {
+    "path": "01-logos/pdf/ww-horizontal-black.pdf",
+    "bytes": 7167,
+    "sha256": "272b8e8f7c1b0efa096c3f4d700169230c42e407b7600c761b7b1703d18b6ef7"
+  },
+  {
+    "path": "01-logos/pdf/ww-horizontal-dark.pdf",
+    "bytes": 7175,
+    "sha256": "731052b3da464927f5e128e064ec75c6f86372a956b679b07c6f5fc453acf1fb"
+  },
+  {
+    "path": "01-logos/pdf/ww-horizontal-light.pdf",
+    "bytes": 7179,
+    "sha256": "b43061606874dc2a92a47211f090785743ade21cc98cc9497ac58da3375dbbdf"
+  },
+  {
+    "path": "01-logos/pdf/ww-horizontal-white.pdf",
+    "bytes": 7167,
+    "sha256": "196c8712309ccb065b00e84488d98917d39c37130b3e75fd8adc67005f739a29"
+  },
+  {
+    "path": "01-logos/pdf/ww-small-symbol-dark.pdf",
+    "bytes": 2174,
+    "sha256": "ef97fa7d1088e7c38dd930e6ebc3e6e2cdd1fff2304634f84dc7e84ba7b3015b"
+  },
+  {
+    "path": "01-logos/pdf/ww-small-symbol-light.pdf",
+    "bytes": 2177,
+    "sha256": "7306dfb3399eac7308fe4440ee32e8af474cac257f0b65295b5e2b10895fae08"
+  },
+  {
+    "path": "01-logos/pdf/ww-stacked-black.pdf",
+    "bytes": 7159,
+    "sha256": "c9c27aa152b342a298ea5191d1cd2cddc8147335fe910afbcbdf5fbf46d2d207"
+  },
+  {
+    "path": "01-logos/pdf/ww-stacked-dark.pdf",
+    "bytes": 7167,
+    "sha256": "075ee493ad100f65a012b123eaceaf12c63b88f2b09f378d1b97b3672561c438"
+  },
+  {
+    "path": "01-logos/pdf/ww-stacked-light.pdf",
+    "bytes": 7171,
+    "sha256": "f526a6b1535a8be09740aa9c1e260a247ba17bf7ee9d2fcc9639a30c6e0e345e"
+  },
+  {
+    "path": "01-logos/pdf/ww-stacked-white.pdf",
+    "bytes": 7159,
+    "sha256": "e5e15f079d5894a8c1f225ad763e3f648baca2935c62f0791c3c8b7eb6da3e99"
+  },
+  {
+    "path": "01-logos/pdf/ww-symbol-black.pdf",
+    "bytes": 2024,
+    "sha256": "32ef91f656cec71e516f906ee71cdfd3e7612e5880c70cfe62e9d973b7ee383a"
+  },
+  {
+    "path": "01-logos/pdf/ww-symbol-dark.pdf",
+    "bytes": 2030,
+    "sha256": "61e07cd686e525a8f000ba16c752578788220a21af534cfd7e89cab28e7a3449"
+  },
+  {
+    "path": "01-logos/pdf/ww-symbol-light.pdf",
+    "bytes": 2034,
+    "sha256": "e2408324c27cdeb0a05d68e514c2472bb97c855b2e2e21f280da8147a869d524"
+  },
+  {
+    "path": "01-logos/pdf/ww-symbol-white.pdf",
+    "bytes": 2024,
+    "sha256": "16d945cdf27c8f43558825955aaf6602c2469598e63ae07bb6e7f29d60bb0310"
+  },
+  {
+    "path": "01-logos/pdf/ww-wordmark-black.pdf",
+    "bytes": 6134,
+    "sha256": "ea159dc4b72224a685da6710eb324e6029b05623ec4336fc8045e4999a033b98"
+  },
+  {
+    "path": "01-logos/pdf/ww-wordmark-dark.pdf",
+    "bytes": 6142,
+    "sha256": "c06c2b5e5cbaae1c675d2a380f2476e8f9440ab0d1464902a1912affd29839c8"
+  },
+  {
+    "path": "01-logos/pdf/ww-wordmark-light.pdf",
+    "bytes": 6144,
+    "sha256": "0c3ccf4fa4c340ea4668fa0b495a61cc6527a59dfd99cda94e0329669fbc6152"
+  },
+  {
+    "path": "01-logos/pdf/ww-wordmark-white.pdf",
+    "bytes": 6135,
+    "sha256": "af4a3e6f6739479c2d55d668e8f1787224a8ea415650316ac8bee7376482086a"
+  },
+  {
+    "path": "01-logos/png/ww-horizontal-black.png",
+    "bytes": 67688,
+    "sha256": "57420440aa9c8e3e64fc9fe40932eda66c65280badf6ce1f483d971dff700a4c"
+  },
+  {
+    "path": "01-logos/png/ww-horizontal-dark.png",
+    "bytes": 82301,
+    "sha256": "b2cbfb6f0771ab18094bee78671cf93f5e26579e657228b8ace7c05cb4baa7c3"
+  },
+  {
+    "path": "01-logos/png/ww-horizontal-light.png",
+    "bytes": 85893,
+    "sha256": "d75e85a78718a20fc614b522e94aa93151f7e39a88ed21752de44a82f744170f"
+  },
+  {
+    "path": "01-logos/png/ww-horizontal-white.png",
+    "bytes": 67080,
+    "sha256": "17e7c19bfb52aab1543164edf713d1f53b1863e491410524702730e931476786"
+  },
+  {
+    "path": "01-logos/png/ww-small-symbol-dark.png",
+    "bytes": 64196,
+    "sha256": "b8822d73ca51577675c1995afe55fe7f1034a24f8e0c32035fb2222902e60141"
+  },
+  {
+    "path": "01-logos/png/ww-small-symbol-light.png",
+    "bytes": 67029,
+    "sha256": "934036ad75b0a0a81097e0089fa3b575c98c7506163808cb4e38179e01959e0a"
+  },
+  {
+    "path": "01-logos/png/ww-stacked-black.png",
+    "bytes": 109030,
+    "sha256": "618f14c2587b2ef208f5b2135b68e14b7ef843097285c1bf46c77bb69a761837"
+  },
+  {
+    "path": "01-logos/png/ww-stacked-dark.png",
+    "bytes": 131058,
+    "sha256": "de1393791c118a42ae2d5869f98425f23374d912fd6323ca8ac827b1430858f3"
+  },
+  {
+    "path": "01-logos/png/ww-stacked-light.png",
+    "bytes": 137575,
+    "sha256": "8dbe7eccc5e2fba415d8f76715c58d179e84a9ff3eef53444380837d5bd844ce"
+  },
+  {
+    "path": "01-logos/png/ww-stacked-white.png",
+    "bytes": 106488,
+    "sha256": "69a32f5a65b9badb9dbc06fd8abbbedf8e24a43ec0784988d1b4d105126be92c"
+  },
+  {
+    "path": "01-logos/png/ww-symbol-black.png",
+    "bytes": 53451,
+    "sha256": "ad44dd19750f98f5d30ca1678d8634902715c78f63a74ef7b599dc310b00f5c5"
+  },
+  {
+    "path": "01-logos/png/ww-symbol-dark.png",
+    "bytes": 62890,
+    "sha256": "e4c7fee911b5ae629b13c19bd78f491d92db15d6a2e9958c9523e4b0ec8f822c"
+  },
+  {
+    "path": "01-logos/png/ww-symbol-light.png",
+    "bytes": 65711,
+    "sha256": "07dd3a4ee001cd2dc82a73882e80f1b78f8eafa61b1694a77bd6541c34267105"
+  },
+  {
+    "path": "01-logos/png/ww-symbol-white.png",
+    "bytes": 52117,
+    "sha256": "65bbb23df02585ed3ed74dc90ef3151a803aea080348a98f55a599bd11407d7d"
+  },
+  {
+    "path": "01-logos/png/ww-wordmark-black.png",
+    "bytes": 75237,
+    "sha256": "ddc06cd7cb1733664dcd1b8a5c4643faa782f76fec143c3f192837730ccde51d"
+  },
+  {
+    "path": "01-logos/png/ww-wordmark-dark.png",
+    "bytes": 91248,
+    "sha256": "8e370269a2fd7f1ef9ab15f24e7d1c12044e027de04eb6351cc9cf553dca7279"
+  },
+  {
+    "path": "01-logos/png/ww-wordmark-light.png",
+    "bytes": 95040,
+    "sha256": "a0404a6e7ac08268b9e5dbfaf94e1d84bc4aacae9a0300cec270d2558cb7f3cd"
+  },
+  {
+    "path": "01-logos/png/ww-wordmark-white.png",
+    "bytes": 72950,
+    "sha256": "8878a5fd3ef0d61c21326c2c5370325f3d22f862d874de143c680316b6e4aea9"
+  },
+  {
+    "path": "01-logos/svg/ww-horizontal-black.svg",
+    "bytes": 10631,
+    "sha256": "19dc0a759e74857f3b28dc018d0985577c75aaf576182f0308052ca056842627"
+  },
+  {
+    "path": "01-logos/svg/ww-horizontal-dark.svg",
+    "bytes": 10630,
+    "sha256": "9a7b48427f6b2f936103e98281f87fb4bc8a2f4cc3341fcb02519ca405a8656d"
+  },
+  {
+    "path": "01-logos/svg/ww-horizontal-light.svg",
+    "bytes": 10631,
+    "sha256": "b84a4f6b3a225563f2c37603ccae4cf613bb6427c48040e2462039ffb27d3108"
+  },
+  {
+    "path": "01-logos/svg/ww-horizontal-white.svg",
+    "bytes": 10631,
+    "sha256": "8f9650108b217a517e0b0de334dbfcbc03704432129b61f6a35949efa2772d32"
+  },
+  {
+    "path": "01-logos/svg/ww-small-symbol-dark.svg",
+    "bytes": 2138,
+    "sha256": "50993c2b1cfc45e0663c65415ca743a5bf3e175af87e00766b641262a929b3b6"
+  },
+  {
+    "path": "01-logos/svg/ww-small-symbol-light.svg",
+    "bytes": 2139,
+    "sha256": "f6e68596e528c53752a8c9cf5ee859749667f60ad9b53197b5e4b75d5ec82fae"
+  },
+  {
+    "path": "01-logos/svg/ww-stacked-black.svg",
+    "bytes": 10628,
+    "sha256": "a51920b32e84790d58c86d2d364b8efa1521c8e517945d9537e6c1b9f4b39cce"
+  },
+  {
+    "path": "01-logos/svg/ww-stacked-dark.svg",
+    "bytes": 10627,
+    "sha256": "85139b3d7554015266e7c89a90b1f76630ad2195646bf93054d9de9054b57e5a"
+  },
+  {
+    "path": "01-logos/svg/ww-stacked-light.svg",
+    "bytes": 10628,
+    "sha256": "d08db770ff72dc0697e7cca292fa659994f34d6f4a7f1e14474d6d7077b5fdf3"
+  },
+  {
+    "path": "01-logos/svg/ww-stacked-white.svg",
+    "bytes": 10628,
+    "sha256": "28e4b373f131cc7c262d0e9dcb0790ec7951d98cf9a59effc923898470f4ec19"
+  },
+  {
+    "path": "01-logos/svg/ww-symbol-black.svg",
+    "bytes": 2074,
+    "sha256": "cea49d3c1bb085b36c4953ac51a08706834ac852f3ae0b128f293cc5b7595b68"
+  },
+  {
+    "path": "01-logos/svg/ww-symbol-dark.svg",
+    "bytes": 2073,
+    "sha256": "71a020e2fae50f3c0e4bd179d31adc0ba7b06f9c3e3a3248445513b00916032a"
+  },
+  {
+    "path": "01-logos/svg/ww-symbol-light.svg",
+    "bytes": 2074,
+    "sha256": "2b802ee48aaaedca9b43d472b689359c1f13e22ff8a2c7299bb3f7c2fe3c628c"
+  },
+  {
+    "path": "01-logos/svg/ww-symbol-white.svg",
+    "bytes": 2074,
+    "sha256": "4e1df4cd4e3c727e6bc020b868926fe94050e27478162e2958ab520b3aab3590"
+  },
+  {
+    "path": "01-logos/svg/ww-wordmark-black.svg",
+    "bytes": 8793,
+    "sha256": "21a87a5b1a40a158fa24fe99af2e56bb7365a67f04ff5283711d39c647fc8252"
+  },
+  {
+    "path": "01-logos/svg/ww-wordmark-dark.svg",
+    "bytes": 8792,
+    "sha256": "d69cded3d7a76ae414dfc96250c5de9309fc26c029011dff987961760a4d308f"
+  },
+  {
+    "path": "01-logos/svg/ww-wordmark-light.svg",
+    "bytes": 8793,
+    "sha256": "2251ce211c26612aa1e42f8eab0ae9a5fe2616d0c3e339b052f241fbd4909221"
+  },
+  {
+    "path": "01-logos/svg/ww-wordmark-white.svg",
+    "bytes": 8793,
+    "sha256": "5eba17b33a6d3eaf0d95eadda9cff71f757a41f2adeabc0153304c8500c16daa"
+  },
+  {
+    "path": "02-social/avatar-dark-1080.png",
+    "bytes": 51824,
+    "sha256": "1f51510b69c7178aa88093bc41f5530c7d317cde5be8641612124379bd7506fe"
+  },
+  {
+    "path": "02-social/avatar-dark-1080.svg",
+    "bytes": 2179,
+    "sha256": "3d1c5594b02786071718df3416fb417730d1630c55508aad547e7d83f95cbdf1"
+  },
+  {
+    "path": "02-social/avatar-light-1080.png",
+    "bytes": 51746,
+    "sha256": "1bd49859bf6ae8f1da258ee3244da94a6de0222a8f68cda02346161dc296d013"
+  },
+  {
+    "path": "02-social/avatar-light-1080.svg",
+    "bytes": 2180,
+    "sha256": "c79eb54fd42b6a57d279c2d1649d91a9fd738dd8bec7bf42d00aa1e9517f0787"
+  },
+  {
+    "path": "02-social/avatar-terracotta-1080.png",
+    "bytes": 50869,
+    "sha256": "6b3dfbb5128b76b94491577769642de7cbf682544d1bcf7dd9d1df1b9cfd51b0"
+  },
+  {
+    "path": "02-social/avatar-terracotta-1080.svg",
+    "bytes": 2185,
+    "sha256": "1145be57a704beabc93fd5385967457db937550d771cb10990648a7141b6f6ef"
+  },
+  {
+    "path": "02-social/brand-portrait-1080x1350.png",
+    "bytes": 89055,
+    "sha256": "e241f2fe7f1ed377a3a4a9d00b18ac05ed508c285b920e0e4ee5b99dfe8dcc1a"
+  },
+  {
+    "path": "02-social/brand-portrait-1080x1350.svg",
+    "bytes": 13961,
+    "sha256": "012d51a436013e21ad81273a306d0ab02e7dbaca7f63cca4ed2ad539cc8656ff"
+  },
+  {
+    "path": "02-social/brand-post-dark-1080.png",
+    "bytes": 65778,
+    "sha256": "50e89fb208e595f18b5781885a29a3d225a9ad98521a7123b5e9da568f48d2a7"
+  },
+  {
+    "path": "02-social/brand-post-dark-1080.svg",
+    "bytes": 11172,
+    "sha256": "6226f2ea7df97782e90e921bdee70e101c096ae4e3a6ff8c8e1a4c9a65b8ef34"
+  },
+  {
+    "path": "02-social/brand-post-light-1080.png",
+    "bytes": 65658,
+    "sha256": "867da287edd9ba71d1c84bee05db94f716692b0fab7f82f112aa4bcfd4acb76a"
+  },
+  {
+    "path": "02-social/brand-post-light-1080.svg",
+    "bytes": 11173,
+    "sha256": "71a5c02f1688eb0397af15d7d50161b3319abd69fcb2b84e8e0e1f4b93af9e7c"
+  },
+  {
+    "path": "02-social/brand-story-1080x1920.png",
+    "bytes": 100935,
+    "sha256": "554ee5cf27810ba8d0109e8088007263e834753f2780b22aa05d5b22158e82e8"
+  },
+  {
+    "path": "02-social/brand-story-1080x1920.svg",
+    "bytes": 11516,
+    "sha256": "505e4370fe4688b1a4983fce8f4c2d34a52827152661068cdd999883943803a7"
+  },
+  {
+    "path": "02-social/web-icons/favicon.ico",
+    "bytes": 3889,
+    "sha256": "da1fed410b1843547807635c0913da24d21447a045059b512a1d4afe5c7dbe4d"
+  },
+  {
+    "path": "02-social/web-icons/favicon.svg",
+    "bytes": 2187,
+    "sha256": "015e42de60823918bf1620cade6fd54d2306c9b37d4fe15357cd7af03e12812f"
+  },
+  {
+    "path": "02-social/web-icons/icon-16.png",
+    "bytes": 346,
+    "sha256": "c3c9ae51231350d48b6245cbfe2ba9919d85642ef42f8be911d2e883f9bb046e"
+  },
+  {
+    "path": "02-social/web-icons/icon-180.png",
+    "bytes": 4995,
+    "sha256": "ad5dc9d154fe7aa3bf8f862698290102b7ec2f9ec32b1dd52a447693d3e0b8d4"
+  },
+  {
+    "path": "02-social/web-icons/icon-192.png",
+    "bytes": 5258,
+    "sha256": "2429cfd4021e40aac3e6c25d89f95c50c06159780a72e52c552d05dd73af01ab"
+  },
+  {
+    "path": "02-social/web-icons/icon-32.png",
+    "bytes": 754,
+    "sha256": "6a619fac4fb5c8697f4419212067c247574566d2e86997a7190c4ffd37b40e75"
+  },
+  {
+    "path": "02-social/web-icons/icon-48.png",
+    "bytes": 1221,
+    "sha256": "d5745e5dc098b6df6df34a00f60398a538d29095a0c498fb140ef9ea2fa80739"
+  },
+  {
+    "path": "02-social/web-icons/icon-512.png",
+    "bytes": 17288,
+    "sha256": "b44398cc53930b05b7f40ba157018b7e863b1bed877e6ca4be8c1501765f6465"
+  },
+  {
+    "path": "02-social/wide-banner-dark-1500x500.png",
+    "bytes": 48378,
+    "sha256": "8a81ba83604f9179496462fa2f1d966daf9057c25f10666bd54804ed43ba2361"
+  },
+  {
+    "path": "02-social/wide-banner-dark-1500x500.svg",
+    "bytes": 11350,
+    "sha256": "023d0778c1010ede59ffdcaa0ea7335a9dfeca62b0652f61841ef0b9007c1015"
+  },
+  {
+    "path": "02-social/wide-banner-light-1500x500.png",
+    "bytes": 48333,
+    "sha256": "09284b89f2f73361ab6a312d99af19aba28471b2a11722cd661f079048ff926a"
+  },
+  {
+    "path": "02-social/wide-banner-light-1500x500.svg",
+    "bytes": 11351,
+    "sha256": "28fbddfdaf8f3472376fe7ae780fc4e03c721dd630c147639d57e5d5e3fd787b"
+  },
+  {
+    "path": "03-templates/business-card-back-bleed.pdf",
+    "bytes": 40650,
+    "sha256": "4834451062f742acb8a7db93d2564d617f95138b2c8d917874423b374bcc772e"
+  },
+  {
+    "path": "03-templates/business-card-back-bleed.png",
+    "bytes": 54546,
+    "sha256": "c9da0c60e530a1dbc4d57a2514248e14a0b972a21a9740e6a38a99a6e0b5f1a9"
+  },
+  {
+    "path": "03-templates/business-card-back-bleed.svg",
+    "bytes": 13417,
+    "sha256": "790a95eb7b1933eeb0a6f71f5028b7950854cff1293e7b58bcae962b09cd2b6f"
+  },
+  {
+    "path": "03-templates/business-card-front-bleed.pdf",
+    "bytes": 6946,
+    "sha256": "de8f7dc42bfaf741bcca6e667a6fad01cd84f123bc04631279eb39206d8e97ae"
+  },
+  {
+    "path": "03-templates/business-card-front-bleed.png",
+    "bytes": 45423,
+    "sha256": "c1e0241821b331d3a9dbe3f7e3c0107e68e3c1389932d198f7f03dcfa6dd1077"
+  },
+  {
+    "path": "03-templates/business-card-front-bleed.svg",
+    "bytes": 10739,
+    "sha256": "6ea2a5bd45b71426b16215cf8e94886e4aea1cd0f5641e8ba05899e61d6fda4b"
+  },
+  {
+    "path": "03-templates/client-presentation-preview.pdf",
+    "bytes": 370992,
+    "sha256": "9a4778c82a5a77d680f5446b88aa5e82ae8f370af4d2c19da4734ce7382c5e99"
+  },
+  {
+    "path": "03-templates/client-presentation.pptx",
+    "bytes": 946434,
+    "sha256": "a5c37d824f553f3a0d7e9250d1fa5f0819fe56224a1c067b857c888783af7317"
+  },
+  {
+    "path": "03-templates/email-signature.html",
+    "bytes": 726,
+    "sha256": "ab2238ab215642afc610013f2b308082f182bc1c61db21b71eab0128ae7f1f0e"
+  },
+  {
+    "path": "03-templates/itinerary-01-cover.pdf",
+    "bytes": 62936,
+    "sha256": "cd7a663476fc7c87b2ce22fc75291b34dbd59f91f85c0eff15e3227d4eab1bcb"
+  },
+  {
+    "path": "03-templates/itinerary-01-cover.png",
+    "bytes": 66730,
+    "sha256": "f6dd474a7a9ecfe26f5b112c398948a692ce0a4b230026fe4785e575c353706e"
+  },
+  {
+    "path": "03-templates/itinerary-01-cover.svg",
+    "bytes": 11844,
+    "sha256": "9ee19a7f3f2bdd253131de04dbbc24ce9e72894475a889fc925e24f37ecc3806"
+  },
+  {
+    "path": "03-templates/itinerary-02-day-plan.pdf",
+    "bytes": 83101,
+    "sha256": "a64f57ab909c36e84b7354d8b9c24bf7808fb52da3822da8af62126fddb1f925"
+  },
+  {
+    "path": "03-templates/itinerary-02-day-plan.png",
+    "bytes": 80866,
+    "sha256": "6542681ef50dbee5c78a01a0e69f939936d8c6acd707eded45aad5d310bf7c48"
+  },
+  {
+    "path": "03-templates/itinerary-02-day-plan.svg",
+    "bytes": 14082,
+    "sha256": "781a506472623016ff5d9af42f17f5be40862ac5c207548f45ba8f6f51ff9204"
+  },
+  {
+    "path": "03-templates/itinerary-03-details.pdf",
+    "bytes": 70461,
+    "sha256": "2164bc457fe04c456faeb08153563f97f3c7f7dd937794b87539d77296528912"
+  },
+  {
+    "path": "03-templates/itinerary-03-details.png",
+    "bytes": 78790,
+    "sha256": "d943208086110bf98072f81fb09947470221b23108358db1228e0c876c73196b"
+  },
+  {
+    "path": "03-templates/itinerary-03-details.svg",
+    "bytes": 13249,
+    "sha256": "5aaa27d3e625e23d3801fd8c4e8a2f1cd8963300ce7bae21f362a2e21ac42fa5"
+  },
+  {
+    "path": "03-templates/itinerary-US-letter-preview.pdf",
+    "bytes": 257934,
+    "sha256": "67a61017a97bb96a1c6f5d8accbe48824fc3eeadf8ed13e9eacd69d691a163d5"
+  },
+  {
+    "path": "03-templates/itinerary-US-letter.pptx",
+    "bytes": 401180,
+    "sha256": "73de8f266bb038e62ea3e80319e597502a082edc27204424455605cdfd00d986"
+  },
+  {
+    "path": "03-templates/letterhead-US-letter.pdf",
+    "bytes": 56539,
+    "sha256": "fc906bcf8616b04802050c90b503ee005fa69defa91ced61f59dd9c257aea22a"
+  },
+  {
+    "path": "03-templates/letterhead-US-letter.png",
+    "bytes": 39313,
+    "sha256": "5eb7c3635f2d599ab2c004de97375b22c0d2c13033014668d9c2e4f283675e84"
+  },
+  {
+    "path": "03-templates/letterhead-US-letter.svg",
+    "bytes": 12875,
+    "sha256": "b2422f1cbfc2048515ae589bbc1598321a071c245a08eed1f2d436c1421833c7"
+  },
+  {
+    "path": "03-templates/portrait-dark-template.png",
+    "bytes": 75010,
+    "sha256": "3c900374bc4c7476ac96c1ab7e01da698233ef14fe07e96a60bc8eb702f6fd4e"
+  },
+  {
+    "path": "03-templates/portrait-dark-template.svg",
+    "bytes": 11895,
+    "sha256": "93937f8064807c3a211ef0daa12db0da2cbc9d70453b83e8c07faeb71d0122a4"
+  },
+  {
+    "path": "03-templates/portrait-light-template.png",
+    "bytes": 74912,
+    "sha256": "825025341f45a153dc4cbd82166c9d8a288777e2d21e97b26560a2f2dd7b70a3"
+  },
+  {
+    "path": "03-templates/portrait-light-template.svg",
+    "bytes": 11896,
+    "sha256": "ec3bfcf2f8458c4306c2c09afe38b122f08cb1ecf02c70226084d21f168e303f"
+  },
+  {
+    "path": "03-templates/presentation-01-cover-light.png",
+    "bytes": 80707,
+    "sha256": "7f92a25df1fae7a2d0a835b4568f3656eda872c16802cc5851e922067808d6e4"
+  },
+  {
+    "path": "03-templates/presentation-01-cover-light.svg",
+    "bytes": 13451,
+    "sha256": "47620ac32c8385aad665cd1cd740c73db32a1ead322ab895b8df3b82f03a6663"
+  },
+  {
+    "path": "03-templates/presentation-02-cover-dark.png",
+    "bytes": 80873,
+    "sha256": "c26222ebee3bf5b9c49eb0d3e2fef6292250b906b778e5ef2c38b71f60271e7e"
+  },
+  {
+    "path": "03-templates/presentation-02-cover-dark.svg",
+    "bytes": 13450,
+    "sha256": "8a8e8cef136b746bbcd555514abd8d92b0914bef27a00ea0b19f007e052084fc"
+  },
+  {
+    "path": "03-templates/presentation-03-overview.png",
+    "bytes": 86580,
+    "sha256": "7a26d37268fe7a2b8f7fff4706eaeaf4b87626484baccb797875485c6ab5e418"
+  },
+  {
+    "path": "03-templates/presentation-03-overview.svg",
+    "bytes": 12575,
+    "sha256": "59322e186f43b58d2e03f5f358d6d26a1969ac4d488e305e81194c91df112af0"
+  },
+  {
+    "path": "03-templates/presentation-04-destination.png",
+    "bytes": 80341,
+    "sha256": "99188483967b723151c91ac26fddeaae03ecbd756cfcc9818ae610875947076c"
+  },
+  {
+    "path": "03-templates/presentation-04-destination.svg",
+    "bytes": 12101,
+    "sha256": "8d06b828343d1e349f8e245b95dadc2e5aaab6e48f2df150d2981bc39fb351d4"
+  },
+  {
+    "path": "03-templates/presentation-05-hotel.png",
+    "bytes": 84252,
+    "sha256": "aa9d61b6c9dcaee7575747f464fa08bf4dc4cc8364fe8d06532ba2df0b44fc1e"
+  },
+  {
+    "path": "03-templates/presentation-05-hotel.svg",
+    "bytes": 12265,
+    "sha256": "39cf265a44510d7001ccc4f7462b0e175b92a54db84266013aabc5467dc6ef13"
+  },
+  {
+    "path": "03-templates/presentation-06-itinerary.png",
+    "bytes": 108145,
+    "sha256": "39f8f22795384f0ed0bfda8ef76c321654fdbed85f7f5e6a6372f96eb5821cfc"
+  },
+  {
+    "path": "03-templates/presentation-06-itinerary.svg",
+    "bytes": 12733,
+    "sha256": "88b9ef904e710b7830cdf30d2fd58df44749038d31bf9a34934dd3e4dccdea33"
+  },
+  {
+    "path": "03-templates/presentation-07-details.png",
+    "bytes": 93345,
+    "sha256": "1c01ea553bff367f0a62b747645e3b7e8e090abb3158a893cc89146acdb4a260"
+  },
+  {
+    "path": "03-templates/presentation-07-details.svg",
+    "bytes": 12731,
+    "sha256": "b59438fc09424cd9d28fe5a7d3c910d686ef9c92763d0e715e7f475585ece785"
+  },
+  {
+    "path": "03-templates/presentation-08-next-steps.png",
+    "bytes": 80154,
+    "sha256": "427e53412899ba627504c43aa1777c8a356b5cfcc79a7be9188fda01a46a11cc"
+  },
+  {
+    "path": "03-templates/presentation-08-next-steps.svg",
+    "bytes": 11552,
+    "sha256": "5526071308f75bc973667a1f8836d51f08ecc6fdd1a941cb92d9c668f9797fc0"
+  },
+  {
+    "path": "03-templates/social-portrait.pptx",
+    "bytes": 230732,
+    "sha256": "70c658b0eac12894d1b67c1c64325a2426a734a04e9befb8846d6cfde518e994"
+  },
+  {
+    "path": "03-templates/social-square.pptx",
+    "bytes": 228986,
+    "sha256": "04a893e2073c1989fffe8120c9a879ff244b9c75c995a9e2dff804d6a502e444"
+  },
+  {
+    "path": "03-templates/social-story.pptx",
+    "bytes": 230753,
+    "sha256": "7325b44ca55f19bf73c8b081ef82ec05dba488846a90d1581c7d993cee431963"
+  },
+  {
+    "path": "03-templates/square-dark-template.png",
+    "bytes": 63657,
+    "sha256": "5f40d554fd5a8bc090e2b86338d988e778773144a1be482c827c69eaad5c2e9f"
+  },
+  {
+    "path": "03-templates/square-dark-template.svg",
+    "bytes": 11724,
+    "sha256": "261303e55bb163804e5e69b888b25a30ba9854d3bd8de2a912c9cf341e29118d"
+  },
+  {
+    "path": "03-templates/square-light-template.png",
+    "bytes": 63547,
+    "sha256": "cede18059c554a4dd16ac45922118c75f6e8df73900c5ed6d84b122d94a4a47a"
+  },
+  {
+    "path": "03-templates/square-light-template.svg",
+    "bytes": 11725,
+    "sha256": "216543ca1651e5c7a7d2df782a5953beeebbf6dbadb11959ca438ac93f196bbf"
+  },
+  {
+    "path": "03-templates/story-dark-template.png",
+    "bytes": 100364,
+    "sha256": "b126558137ba949ad900cb6cfc1a32abc6c94a3282dc382c5030328cdfe18947"
+  },
+  {
+    "path": "03-templates/story-dark-template.svg",
+    "bytes": 11905,
+    "sha256": "fd11cbd2ebf6a05b0a8f46599c76935b6e61358fd10211685671e63c32d58022"
+  },
+  {
+    "path": "03-templates/story-light-template.png",
+    "bytes": 100219,
+    "sha256": "b5b861f45f436ad8a7c1bf8dab6cf1350d61c55523ed4679f880788605d14b50"
+  },
+  {
+    "path": "03-templates/story-light-template.svg",
+    "bytes": 11906,
+    "sha256": "071bf3f8cace99678559504bc7bb3b1228565d5e76633f620a7f1cd9cfd1a196"
+  },
+  {
+    "path": "04-guidelines/Brand-guide.html",
+    "bytes": 66814,
+    "sha256": "c42225545705b09e86a73498be1110797ab414fef3c74e176b4bfd17a3f71096"
+  },
+  {
+    "path": "04-guidelines/Brand-guide.pdf",
+    "bytes": 663305,
+    "sha256": "1d57ead6970b21f260c6277a7a8da384fa5e9d111c2dd05ddee5da090b0c89c9"
+  },
+  {
+    "path": "04-guidelines/brand-colors.css",
+    "bytes": 108,
+    "sha256": "9c4adc001d698373968a80ffab7fbca78049a198a6f200c0baf2786bd5f0098d"
+  },
+  {
+    "path": "04-guidelines/brand-colors.gpl",
+    "bytes": 119,
+    "sha256": "7a0b649985c8f3f626a4ad95a0acb21fd65e8f6502044492d9cc9881d084ce80"
+  },
+  {
+    "path": "04-guidelines/brand-colors.json",
+    "bytes": 96,
+    "sha256": "25f29c4b474208d6bf0e31a0fe608a4cf2980f70970b6024d1009e4c093fc9e3"
+  },
+  {
+    "path": "04-guidelines/fonts/cormorant/Cormorant-Italic[wght].ttf",
+    "bytes": 350096,
+    "sha256": "2c4e1c43fa126b51a84160815b9264af442c6c531d13bfd3c1723703cd489dd2"
+  },
+  {
+    "path": "04-guidelines/fonts/cormorant/Cormorant[wght].ttf",
+    "bytes": 572892,
+    "sha256": "8f12cb21f05b61649192eaff13eeeb1b5619bc524feeae672fb916974259a076"
+  },
+  {
+    "path": "04-guidelines/fonts/cormorant/OFL.txt",
+    "bytes": 4387,
+    "sha256": "60700d351cac4650c51f3f9db318d2a420f8b45052dba2715eb5fec41f0f6956"
+  },
+  {
+    "path": "04-guidelines/fonts/outfit/OFL.txt",
+    "bytes": 4389,
+    "sha256": "c676351bf8576b9aba743cd5eaa8c0e7ee0d51f805d720447b4df4ddb6a2e416"
+  },
+  {
+    "path": "04-guidelines/fonts/outfit/Outfit[wght].ttf",
+    "bytes": 110884,
+    "sha256": "fc7287273e66929776e2ba54f144fe699080bec29f61bf649d70d871468aeade"
+  },
+  {
+    "path": "05-source/Provenance.md",
+    "bytes": 1263,
+    "sha256": "5ed990a0d1fd83adc607fc3d9122c7a919bfe8cb9e281dd5d1a1787066ae611b"
+  },
+  {
+    "path": "05-source/Verification.md",
+    "bytes": 952,
+    "sha256": "8b0a078ea74c322bffde36ef43a8baddc405c3d2b59068264f20b0c8a02a2e2e"
+  },
+  {
+    "path": "05-source/monogram-master.svg",
+    "bytes": 1986,
+    "sha256": "b4377aee1bf899cb2f4cebcbdb458c4685a456381f7c345d6ce2f1142abd8360"
+  },
+  {
+    "path": "05-source/wordmark-master.svg",
+    "bytes": 8724,
+    "sha256": "7915151cbbcb74dbf676986c3838d48df34a494b708f05af64d181a2deb7303d"
+  },
+  {
+    "path": "Brand-overview.html",
+    "bytes": 2693,
+    "sha256": "7599293f460611344c802abfa369a7a22904561a28f095d3777884d318a95377"
+  },
+  {
+    "path": "Brand-overview.png",
+    "bytes": 107690,
+    "sha256": "1dfd0d82076ce060d996af9784e2cb5e8a740d798a3a24c4a2b822e3e4df190b"
+  },
+  {
+    "path": "START-HERE.md",
+    "bytes": 3821,
+    "sha256": "376d543fda5b7ed36d2d8f7cd0bcba3abd67a2b5a0d98357b8ffc4d67ab929cb"
+  }
+]

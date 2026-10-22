@@ -1,0 +1,32 @@
+{
+  "pure_vector_logo_sets": 18,
+  "template_decks": {
+    "itinerary-US-letter.pptx": {
+      "pages": 3,
+      "editable_text_runs": 36
+    },
+    "social-story.pptx": {
+      "pages": 2,
+      "editable_text_runs": 12
+    },
+    "client-presentation.pptx": {
+      "pages": 8,
+      "editable_text_runs": 57
+    },
+    "social-square.pptx": {
+      "pages": 2,
+      "editable_text_runs": 10
+    },
+    "social-portrait.pptx": {
+      "pages": 2,
+      "editable_text_runs": 12
+    }
+  },
+  "brand_guide_pages": 8,
+  "card_trim_inches": [
+    3.5,
+    2
+  ],
+  "card_bleed_inches": 0.125,
+  "svg_templates_live_text": 19
+}
