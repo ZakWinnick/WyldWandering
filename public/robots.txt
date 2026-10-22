@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /blog/
 
-Sitemap: https://wyldwandering.com/sitemap.xml
+Sitemap: https://wyldwandering.com/sitemap-index.xml

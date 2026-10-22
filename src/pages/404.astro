@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Icon from '../components/Icon.astro';
+import { INTAKE_URL } from '../config/site';
+---
+
+<Layout title="Page not found" noindex>
+  <section class="py-28 md:py-40">
+    <div class="container-site flex max-w-3xl flex-col items-start gap-6">
+      <p class="eyebrow">404</p>
+      <h1 class="display-xl">Off the <em>map.</em></h1>
+      <p class="lede">That page doesn't exist, or it moved. Here's how to get back on track.</p>
+      <div class="mt-4 flex flex-wrap gap-4">
+        <a href="/" class="btn-dark">Back to Home</a>
+        <a href={INTAKE_URL} class="btn-outline" target="_blank" rel="noopener noreferrer">Start Planning <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
+      </div>
+    </div>
+  </section>
+</Layout>

@@ -3,7 +3,7 @@ title: "A Complete Guide to Patagonia: Timing, Trails, and Tips"
 excerpt: "Everything you need to know about planning your Patagonia adventure. When to go, what to pack, and the experiences you cannot miss."
 date: 2024-12-15
 category: "Destination Guide"
-image: "https://images.unsplash.com/photo-1531761535209-180857e963b9?auto=format&fit=crop&w=1600&q=80"
+image: "https://images.unsplash.com/photo-1586600822178-26dec0f653a9?auto=format&fit=crop&w=1600&q=80"
 ---
 
 Patagonia has long been on the bucket list of adventure travelers worldwide, and for good reason. This region spanning southern Chile and Argentina offers some of the most dramatic landscapes on Earth.

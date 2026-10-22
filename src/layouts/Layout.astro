@@ -2,42 +2,87 @@
 import '../styles/global.css';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { SITE, SOCIAL } from '../config/site';
+import ogDefault from '../assets/images/hero-biarritz.jpg';
+import { getImage } from 'astro:assets';
 
 interface Props {
   title: string;
   description?: string;
+  /** Header floats transparently over a full-bleed photo hero. */
+  overlayHeader?: boolean;
+  noindex?: boolean;
 }
 
-const { title, description = 'Wyld Wandering - Adventure travel with comfort. Expert travel planning for those who want to explore without roughing it.' } = Astro.props;
+const { title, description = SITE.description, overlayHeader = false, noindex = false } = Astro.props;
+
+const fullTitle = title === 'Home' ? `${SITE.name} | Premium Travel Planning` : `${title} | ${SITE.name}`;
+const canonical = new URL(Astro.url.pathname, SITE.url).href;
+const ogImage = await getImage({ src: ogDefault, width: 1200, height: 630, format: 'jpg', fit: 'cover' });
+const ogImageUrl = new URL(ogImage.src, SITE.url).href;
 ---
 
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{fullTitle}</title>
     <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#FBF7F0" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#13110F" media="(prefers-color-scheme: dark)" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>{title} | Wyld Wandering</title>
-    <script src="https://tinylytics.app/embed/B27AqNz_r1_hRY6gk6ju.js" defer></script>
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content={SOCIAL.xHandle} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
     <script is:inline>
-      // Follow system preference
-      function updateTheme() {
-        if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
-      }
-      updateTheme();
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', updateTheme);
+      document.documentElement.classList.add('js');
     </script>
+    <script src="https://tinylytics.app/embed/B27AqNz_r1_hRY6gk6ju.js" defer></script>
   </head>
-  <body class="min-h-screen flex flex-col">
-    <Header />
-    <main class="flex-1">
+  <body class="flex min-h-screen flex-col">
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-ink focus:px-5 focus:py-3 focus:text-sand-50">Skip to Content</a>
+    <Header overlay={overlayHeader} />
+    <main id="main" class="flex-1">
       <slot />
     </main>
     <Footer />
+
+    <script>
+      const els = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                io.unobserve(entry.target);
+              }
+            });
+          },
+          { rootMargin: '0px 0px -8% 0px', threshold: 0.08 }
+        );
+        els.forEach((el) => io.observe(el));
+      } else {
+        els.forEach((el) => el.classList.add('is-visible'));
+      }
+    </script>
   </body>
 </html>
