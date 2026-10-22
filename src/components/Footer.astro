@@ -1,6 +1,6 @@
 ---
 import Logo from './Logo.astro';
-import { NAV_LINKS, INTAKE_URL, PORTAL_URL, SOCIAL, SITE } from '../config/site';
+import { NAV_LINKS, INTAKE_URL, PORTAL_URL, SOCIAL, SITE, FORA_DISCLOSURE } from '../config/site';
 
 const year = new Date().getFullYear();
 const label = 'text-xs font-medium uppercase tracking-[0.2em] text-ink-400';
@@ -35,15 +35,20 @@ const link = 'text-[#E6DED0] hover:text-gold';
           <p class={label}>Connect</p>
           <a href={`mailto:${SITE.email}`} class={link}>{SITE.email}</a>
           <a href={SOCIAL.instagram} class={link} rel="noopener">Instagram</a>
-          <a href={SOCIAL.x} class={link} rel="noopener">X</a>
+          <a href={SOCIAL.x} class={link} rel="noopener">X <span class="text-cream-500">{SOCIAL.xHandle}</span></a>
           <a href={SOCIAL.fora} class={link} rel="noopener">Fora profile</a>
         </div>
       </div>
     </div>
 
-    <div class="flex flex-col justify-between gap-3 border-t border-cream-100/10 pt-7 text-[13px] text-ink-400 md:flex-row">
-      <p>&copy; {year} Wyld Wandering. Zak Winnick is a certified travel advisor with Fora Travel.</p>
-      <p>Client portal and intake powered by Fora</p>
+    <div class="flex flex-col gap-5 border-t border-cream-100/10 pt-7 text-[13px] leading-relaxed text-ink-400">
+      <p class="max-w-4xl">
+        {FORA_DISCLOSURE.affiliation} {FORA_DISCLOSURE.registrationsIntro} {FORA_DISCLOSURE.registrations.join('; ')}.
+      </p>
+      <div class="flex flex-col justify-between gap-3 md:flex-row">
+        <p>&copy; {year} Wyld Wandering. Zak Winnick is a certified Fora travel advisor.</p>
+        <p>Client portal and intake powered by Fora</p>
+      </div>
     </div>
   </div>
 </footer>

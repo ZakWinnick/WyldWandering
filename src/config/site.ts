@@ -19,8 +19,21 @@ export const PORTAL_URL = 'https://trips.foratravel.com/wyldwandering/book';
 
 export const SOCIAL = {
   instagram: 'https://instagram.com/wyldwandering',
-  x: 'https://x.com/wyldwandering',
+  x: 'https://x.com/WyldWandering',
+  xHandle: '@WyldWandering',
   fora: 'https://foratravel.com/advisors/zak-winnick',
+} as const;
+
+// Required Fora affiliation disclosure. Registration numbers as published on
+// https://www.foratravel.com/legal. Update here if Fora's registrations change.
+export const FORA_DISCLOSURE = {
+  affiliation: 'Wyld Wandering is an independent affiliate of Fora Travel, Inc.',
+  registrationsIntro: 'Fora Travel, Inc. is registered with the following state licenses:',
+  registrations: [
+    'California Seller of Travel Registration No. 2151995-50',
+    'Florida Seller of Travel Registration No. ST43973',
+    'Washington Seller of Travel Unified Business ID (UBI) # 605329242',
+  ],
 } as const;
 
 export const NAV_LINKS = [
