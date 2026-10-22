@@ -3,7 +3,7 @@ import { Image } from 'astro:assets';
 import Layout from '../layouts/Layout.astro';
 import Icon from '../components/Icon.astro';
 import StartHere from '../components/StartHere.astro';
-import { INTAKE_URL, PORTAL_URL, SITE } from '../config/site';
+import { INTAKE_URL, PORTAL_URL, SITE, PRICING } from '../config/site';
 
 import hero from '../assets/images/hero-biarritz.jpg';
 import room from '../assets/images/room.jpg';
@@ -186,22 +186,18 @@ const destinations = [
           </div>
           <p class="max-w-md text-ink-700">You pay the same room rate you would booking direct. The upgrades, credits, and early check-in come through my hotel relationships. The fee covers the planning, and me, until you're home.</p>
         </div>
-        <div class="grid gap-8 md:grid-cols-3 md:gap-0">
-          <div class="flex flex-col gap-2.5 md:pr-10">
-            <span class="font-display text-[64px] font-medium leading-none">$500</span>
-            <span class="text-lg font-normal">Hotel and flights</span>
-          </div>
-          <div class="flex flex-col gap-2.5 border-sand-300 md:border-l md:px-10">
-            <span class="font-display text-[64px] font-medium leading-none">$1,000</span>
-            <span class="text-lg font-normal">Full itinerary: hotels, flights, restaurants, experiences</span>
-          </div>
-          <div class="flex flex-col gap-2.5 border-sand-300 md:border-l md:px-10">
-            <span class="font-display text-[64px] font-medium italic leading-none">Custom</span>
-            <span class="text-lg font-normal">Groups, events, and multi-country trips</span>
-          </div>
+        <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 lg:gap-0">
+          {
+            PRICING.map((tier, i) => (
+              <div class:list={['flex flex-col gap-2.5 border-sand-300 lg:px-8', i === 0 ? 'lg:pl-0' : 'lg:border-l']}>
+                <span class="flex h-[52px] items-end font-display font-medium leading-none"><span class:list={[tier.price.length > 10 ? "text-[34px] xl:text-[38px]" : "text-[44px] xl:text-[52px]"]}>{tier.price}</span></span>
+                <span class="text-lg font-normal">{tier.name}</span>
+              </div>
+            ))
+          }
         </div>
         <p class="text-[15px] text-ink-600">
-          Due at booking. Refer a friend who books and your next fee is waived. After $40,000 booked, every trip is a flat $250. <a href="/services#pricing" class="link-accent">Full pricing details</a>
+          Planning fees are due at booking. Refer a friend who books and your next fee is waived. After $40,000 booked, every trip is a flat $250. Annual retainer by application. <a href="/services#pricing" class="link-accent">Full pricing details</a>
         </p>
       </div>
     </div>

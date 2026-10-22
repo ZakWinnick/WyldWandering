@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import StartHere from '../components/StartHere.astro';
 import Icon from '../components/Icon.astro';
-import { INTAKE_URL, PORTAL_URL } from '../config/site';
+import { INTAKE_URL, PORTAL_URL, PRICING, RETAINER, SITE } from '../config/site';
 
 const services = [
   {
@@ -117,22 +117,28 @@ const services = [
           <p class="eyebrow">Pricing</p>
           <h2 class="display-lg">Planning <em>fee.</em></h2>
         </div>
-        <p class="max-w-md text-ink-700">My planning fee depends on the scope of work. The fee is due at booking and is non-refundable.</p>
+        <p class="max-w-md text-ink-700">Fees depend on the scope of work, and hotel-only bookings are complimentary. Planning fees are due at booking and are non-refundable. Multi-country trips and events are quoted individually.</p>
       </div>
 
-      <div class="reveal grid gap-5 md:grid-cols-3">
-        <div class="flex flex-col gap-3 rounded-card border border-sand-300 p-8 md:p-10">
-          <span class="font-display text-[72px] font-medium leading-none">$500</span>
-          <span class="text-lg font-normal">Hotel and flights</span>
+      <div class="reveal grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+        {
+          PRICING.map((tier) => (
+            <div class="flex flex-col gap-3 rounded-card border border-sand-300 p-8">
+              <span class="text-xs font-medium uppercase tracking-[0.2em] text-ink-600">{tier.name}</span>
+              <span class="flex h-[48px] items-end font-display font-medium leading-none"><span class:list={[tier.price.length > 10 ? "text-[34px]" : "text-[48px]"]}>{tier.price}</span></span>
+              <p class="text-ink-700">{tier.detail}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="reveal flex flex-col justify-between gap-6 rounded-card bg-pine p-8 text-cream-100 md:flex-row md:items-center md:p-10">
+        <div class="flex max-w-2xl flex-col gap-3">
+          <span class="text-xs font-medium uppercase tracking-[0.2em] text-gold">{RETAINER.price}</span>
+          <h3 class="text-[34px] leading-tight">{RETAINER.name}</h3>
+          <p class="text-pine-muted">{RETAINER.detail} For travelers who want me in their corner all year.</p>
         </div>
-        <div class="flex flex-col gap-3 rounded-card border border-sand-300 p-8 md:p-10">
-          <span class="font-display text-[72px] font-medium leading-none">$1,000</span>
-          <span class="text-lg font-normal">Full itinerary: hotel, flights, restaurants, experiences</span>
-        </div>
-        <div class="flex flex-col gap-3 rounded-card border border-sand-300 p-8 md:p-10">
-          <span class="font-display text-[72px] font-medium italic leading-none">Custom</span>
-          <span class="text-lg font-normal">Quote for groups, events, or multi-country trips</span>
-        </div>
+        <a href={`mailto:${SITE.email}?subject=Annual%20retainer`} class="btn-outline-light shrink-0">Ask about the retainer</a>
       </div>
 
       <div class="reveal grid gap-10 text-[18px] leading-[1.8] text-ink-700 lg:grid-cols-2 lg:gap-16">

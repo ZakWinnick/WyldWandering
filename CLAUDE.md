@@ -25,7 +25,7 @@ This is a **premium travel advisor portfolio site** built with Astro 5.x, output
 ```
 src/
 ├── assets/images/  # Site photography (optimized to WebP at build via astro:assets)
-├── config/site.ts  # Fora intake URL, client portal URL, email, social, nav links
+├── config/site.ts  # Fora intake/portal URLs, pricing tiers, Fora disclosure, email, social, nav links
 ├── components/     # Header, Footer, Logo, Icon, PageHero, StartHere (intake + portal band)
 ├── layouts/        # Layout.astro (main wrapper with meta management)
 ├── pages/          # File-based routes (.astro files)
@@ -50,6 +50,9 @@ src/
 - New clients: `INTAKE_URL` (Fora intake form). Existing clients: `PORTAL_URL` (Fora client portal).
 - Both are defined once in `src/config/site.ts`. Fora sends `X-Frame-Options: DENY`, so they are linked, never embedded.
 - Contact page keeps a short FormSubmit form for quick questions only.
+
+### Pricing
+- `PRICING` and `RETAINER` in `src/config/site.ts` drive the homepage, Services and Contact pricing. The FAQ "What does it cost" answer is written out by hand, so update it too when prices change.
 
 ### Styling Conventions
 - Dark mode follows the visitor's system setting (`darkMode: 'media'`, no toggle). Theme-aware tokens `sand` (grounds, lines), `ink` (text), `clay` (accent) are CSS variables in global.css that flip under `prefers-color-scheme: dark`
