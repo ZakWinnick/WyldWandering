@@ -78,9 +78,8 @@ export const RETAINER = {
   invite: "Once you've booked $40,000 in travel with me, you get a year of retainer services free, no application needed.",
 } as const;
 
-export const RETAINER_APPLY_URL = `mailto:${SITE.email}?subject=${encodeURIComponent('Retainer Application')}&body=${encodeURIComponent(
-  "Hi Zak,\n\nI'd like to apply for the annual retainer.\n\nRoughly how many trips I take a year:\nThe kind of trips I take:\n"
-)}`;
+// Retainer application form (FormSubmit, emails SITE.email).
+export const RETAINER_APPLY_URL = '/retainer/apply/';
 
 export const NAV_LINKS = [
   { href: '/about', label: 'About' },
