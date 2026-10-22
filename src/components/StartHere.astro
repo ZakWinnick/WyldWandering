@@ -21,14 +21,14 @@ const { heading } = Astro.props;
         <p class="text-[13px] font-medium uppercase tracking-eyebrow text-gold">New to Wyld Wandering</p>
         <h3 class="text-[36px]">Start planning</h3>
         <p class="max-w-md text-pine-muted">A short intake sets up your traveler profile, so our first conversation is about the trip, not the paperwork.</p>
-        <a href={INTAKE_URL} class="btn-primary mt-3 self-start">Begin the intake <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
+        <a href={INTAKE_URL} class="btn-primary mt-3 self-start" target="_blank" rel="noopener noreferrer">Begin the intake <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
       </div>
 
       <div class="reveal flex flex-col gap-4 rounded-card bg-sand-100 p-8 text-ink md:p-11">
         <p class="text-[13px] font-medium uppercase tracking-eyebrow text-clay-dark">Already a client</p>
         <h3 class="text-[36px]">Your client portal</h3>
         <p class="max-w-md text-ink-700">Sign in with your email or phone to browse and book hotels with me, perks included.</p>
-        <a href={PORTAL_URL} class="btn-dark mt-3 self-start"><Icon name="lock" /> Client login</a>
+        <a href={PORTAL_URL} class="btn-dark mt-3 self-start" target="_blank" rel="noopener noreferrer"><Icon name="lock" /> Client login</a>
       </div>
     </div>
 

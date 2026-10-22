@@ -59,6 +59,7 @@ src/
 - `.reveal` fades sections in on scroll (respects reduced motion, visible without JS)
 - Pages with a photo hero pass `overlayHeader` to Layout for the transparent header
 - No em dashes in site copy
+- External links (Fora intake, portal, social, any http URL) use `target="_blank" rel="noopener noreferrer"`; internal links open in the same tab
 
 ### Deployment
 - Pushes to `main` trigger GitHub Actions workflow

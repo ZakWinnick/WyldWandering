@@ -27,16 +27,16 @@ const link = 'text-[#E6DED0] hover:text-gold';
         </nav>
         <div class="flex flex-col gap-3">
           <p class={label}>Clients</p>
-          <a href={INTAKE_URL} class={link}>Start Planning</a>
-          <a href={PORTAL_URL} class={link}>Client Login</a>
+          <a href={INTAKE_URL} class={link} target="_blank" rel="noopener noreferrer">Start Planning</a>
+          <a href={PORTAL_URL} class={link} target="_blank" rel="noopener noreferrer">Client Login</a>
           <a href="/services#pricing" class={link}>Pricing</a>
         </div>
         <div class="col-span-2 flex flex-col gap-3 sm:col-span-1">
           <p class={label}>Connect</p>
           <a href={`mailto:${SITE.email}`} class={link}>{SITE.email}</a>
-          <a href={SOCIAL.instagram} class={link} rel="noopener">Instagram</a>
-          <a href={SOCIAL.x} class={link} rel="noopener">X</a>
-          <a href={SOCIAL.fora} class={link} rel="noopener">Fora Profile</a>
+          <a href={SOCIAL.instagram} class={link} target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href={SOCIAL.x} class={link} target="_blank" rel="noopener noreferrer">X</a>
+          <a href={SOCIAL.fora} class={link} target="_blank" rel="noopener noreferrer">Fora Profile</a>
         </div>
       </div>
     </div>

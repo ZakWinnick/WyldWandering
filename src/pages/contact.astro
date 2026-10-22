@@ -21,13 +21,13 @@ const label = 'mb-2 block text-sm font-medium text-ink';
         <p class="text-[13px] font-medium uppercase tracking-eyebrow text-gold">New to Wyld Wandering</p>
         <h2 class="text-[40px] leading-tight md:text-[48px]">Plan a trip</h2>
         <p class="max-w-md text-pine-muted">The intake takes a few minutes and sets up your traveler profile: who's traveling, where you're based, how you like to be contacted, and the hotels you already love. I'll follow up to set up a conversation about the trip.</p>
-        <a href={INTAKE_URL} class="btn-primary mt-3 self-start">Begin the intake <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
+        <a href={INTAKE_URL} class="btn-primary mt-3 self-start" target="_blank" rel="noopener noreferrer">Begin the intake <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
       </div>
       <div class="reveal flex flex-col gap-5 rounded-card bg-sand-200 p-8 md:p-12">
         <p class="eyebrow">Already a client</p>
         <h2 class="text-[40px] leading-tight md:text-[48px]">Client portal</h2>
         <p class="max-w-md text-ink-700">Sign in with the email or phone number on your profile to browse and book hotels with me, perks included.</p>
-        <a href={PORTAL_URL} class="btn-dark mt-3 self-start"><Icon name="lock" /> Client login</a>
+        <a href={PORTAL_URL} class="btn-dark mt-3 self-start" target="_blank" rel="noopener noreferrer"><Icon name="lock" /> Client login</a>
       </div>
     </div>
   </section>
@@ -80,8 +80,8 @@ const label = 'mb-2 block text-sm font-medium text-ink';
             </div>
           </div>
           <div class="flex flex-wrap gap-x-6 gap-y-2 border-t border-sand-300 pt-5 text-[15px]">
-            <a href={SOCIAL.x} class="link-accent" rel="noopener">X {SOCIAL.xHandle}</a>
-            <a href={SOCIAL.instagram} class="link-accent" rel="noopener">Instagram</a>
+            <a href={SOCIAL.x} class="link-accent" target="_blank" rel="noopener noreferrer">X {SOCIAL.xHandle}</a>
+            <a href={SOCIAL.instagram} class="link-accent" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
 
