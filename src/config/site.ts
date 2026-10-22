@@ -63,10 +63,24 @@ export const PRICING = [
 
 export const RETAINER = {
   name: 'Annual Retainer',
-  price: 'By Application',
-  detail: 'Planning for every trip that year, priority response, and support whenever you need it.',
-  invite: "Once you've booked $40,000 in travel with me, you're invited to the retainer, no application needed.",
+  price: '$5,000/year',
+  amount: '$5,000',
+  billing: 'Billed annually, or $1,350 quarterly. By application.',
+  summary: 'Up to six full itineraries, same-business-day response, and 50% off everything else.',
+  includes: [
+    'Up to six full itineraries a year',
+    'Every hotel and hotel-and-flights booking, no planning fee',
+    'Same-business-day response',
+    'Concierge help on trips booked with me: dining, experiences, transfers',
+    'A planning call at the start of your year',
+    '50% off everything else: extra itineraries, group room blocks, events',
+  ],
+  invite: "Once you've booked $40,000 in travel with me, you get a year of retainer services free, no application needed.",
 } as const;
+
+export const RETAINER_APPLY_URL = `mailto:${SITE.email}?subject=${encodeURIComponent('Retainer Application')}&body=${encodeURIComponent(
+  "Hi Zak,\n\nI'd like to apply for the annual retainer.\n\nRoughly how many trips I take a year:\nThe kind of trips I take:\n"
+)}`;
 
 export const NAV_LINKS = [
   { href: '/about', label: 'About' },
