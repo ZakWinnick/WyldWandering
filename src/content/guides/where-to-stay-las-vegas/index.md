@@ -5,7 +5,7 @@ date: 2026-10-23
 category: "Guides"
 image: "./hero-strip-twilight.jpg"
 imageAlt: "The Las Vegas Strip at twilight, seen from above the Bellagio fountains, with the Eiffel Tower replica and the High Roller wheel in the distance"
-draft: true
+draft: false
 seoTitle: "Where to Stay in Las Vegas: An Insider's Guide by Area"
 metaDescription: "Where to stay in Las Vegas, area by area, from a former Wynn and Cosmopolitan insider. Who each part of the Strip suits, when to go, and what to ask for at check-in."
 slug: "where-to-stay-las-vegas"

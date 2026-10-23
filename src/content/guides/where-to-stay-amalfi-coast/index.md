@@ -5,7 +5,7 @@ date: 2026-10-23
 category: "Guides"
 image: "./hero-positano.jpg"
 imageAlt: "Positano's pastel houses stacked down the cliff to the beach, with boats anchored in the turquoise bay"
-draft: true
+draft: false
 seoTitle: "Where to Stay on the Amalfi Coast: Town-by-Town Guide"
 metaDescription: "Where to stay on the Amalfi Coast, town by town: Positano, Ravello, Praiano, Amalfi and Sorrento. Who each suits, when to go, and what to ask for at check-in."
 slug: "where-to-stay-amalfi-coast"
