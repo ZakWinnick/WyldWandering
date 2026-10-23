@@ -15,7 +15,7 @@ interface Env {
   LIMITER?: { limit(options: { key: string }): Promise<{ success: boolean }> };
 }
 
-type FormKey = 'contact' | 'retainer';
+type FormKey = 'contact' | 'private-client' | 'retainer';
 
 const FORMS: Record<FormKey, { subject: string; page: string; success: string; required: string[] }> = {
   contact: {
@@ -24,11 +24,18 @@ const FORMS: Record<FormKey, { subject: string; page: string; success: string; r
     success: '/contact/sent/',
     required: ['Name', 'email', 'Question'],
   },
+  'private-client': {
+    subject: 'Private Client Application',
+    page: '/private-client/apply/',
+    success: '/private-client/apply/received/',
+    required: ['Name', 'email', 'Based in', 'Trips a year', 'Looking for', 'Understands terms'],
+  },
+  // Old form key, kept so a page cached before the rename still sends.
   retainer: {
-    subject: 'Retainer Application',
-    page: '/retainer/apply/',
-    success: '/retainer/apply/received/',
-    required: ['Name', 'email', 'Based in', 'Trips a year', 'Wants from the retainer', 'Understands terms'],
+    subject: 'Private Client Application',
+    page: '/private-client/apply/',
+    success: '/private-client/apply/received/',
+    required: ['Name', 'email', 'Based in', 'Trips a year', 'Understands terms'],
   },
 };
 
