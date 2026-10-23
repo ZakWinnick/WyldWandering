@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import Icon from '../components/Icon.astro';
-import { INTAKE_URL, PORTAL_URL, SITE, SOCIAL, PRICING, RETAINER } from '../config/site';
+import { FORM_EMAIL, INTAKE_URL, PORTAL_URL, SITE, SOCIAL, PRICING, RETAINER } from '../config/site';
 
 const field =
   'w-full rounded-card border border-sand-400 bg-white px-4 dark:bg-sand-100 py-3.5 text-[16px] font-normal text-ink placeholder:text-ink-400 focus:border-clay focus:outline-none focus:ring-2 focus:ring-clay/25';
@@ -40,7 +40,7 @@ const label = 'mb-2 block text-sm font-medium text-ink';
         <h2 class="display-md mt-5">Not ready to plan yet? <em>Ask away.</em></h2>
         <p class="mt-5 max-w-xl text-ink-700">For questions about a destination, a hotel, or how this works. If you're ready to plan a trip, the intake above is the faster route.</p>
 
-        <form action={`https://formsubmit.co/${SITE.email}`} method="POST" class="mt-10 flex flex-col gap-6">
+        <form action={`https://formsubmit.co/${FORM_EMAIL}`} method="POST" class="mt-10 flex flex-col gap-6">
           <input type="hidden" name="_subject" value="Question from wyldwandering.com" />
           <input type="hidden" name="_template" value="table" />
           <input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />

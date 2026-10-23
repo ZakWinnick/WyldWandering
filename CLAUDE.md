@@ -50,7 +50,7 @@ src/
 - New clients: `INTAKE_URL` (Fora intake form). Existing clients: `PORTAL_URL` (Fora client portal).
 - Both are defined once in `src/config/site.ts`. Fora sends `X-Frame-Options: DENY`, so they are linked, never embedded.
 - Contact page keeps a short FormSubmit form for quick questions only.
-- Retainer applications: `/retainer/apply/` (FormSubmit to SITE.email, redirects to `/retainer/apply/received/`). `RETAINER_APPLY_URL` points there; `/retainer` redirects to `/services#retainer`.
+- Both forms deliver to `FORM_EMAIL` in site.ts via FormSubmit (SITE.email stays the public address). Retainer applications: `/retainer/apply/` ( redirects to `/retainer/apply/received/`). `RETAINER_APPLY_URL` points there; `/retainer` redirects to `/services#retainer`.
 
 ### Pricing
 - `PRICING` and `RETAINER` (including the $40K retainer invitation) in `src/config/site.ts` drive the homepage, Services and Contact pricing. The FAQ "What does it cost" answer is written out by hand, so update it too when prices change.
