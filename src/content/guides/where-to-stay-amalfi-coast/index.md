@@ -15,7 +15,7 @@ The Amalfi Coast is one of the few places where the town you choose matters as m
 
 Most travelers arrive through Naples International Airport, roughly 90 minutes by car from Positano, or by high-speed train from Rome to Naples. Plan on a private transfer for the last stretch. It's the easiest way to arrive with luggage on a road like this one.
 
-## Positano: for the postcard, and for people who want to be in it
+## Positano: For the Postcard, and for People Who Want to Be in It
 
 Positano is the town on every screensaver: pastel houses stacked down the cliff to the beach, boutiques, and boats leaving for Capri. It's also vertical. Almost everything involves stairs, and that's part of the charm.
 
@@ -25,7 +25,7 @@ Positano is the town on every screensaver: pastel houses stacked down the cliff 
 
 **Ask for at check-in:** confirm whether your room faces the sea or the town, and ask the hotel to arrange porters for your luggage if you're staying up the hill. Hotels here handle this every day, and it saves you carrying cases up a staircase.
 
-## Ravello: for quiet, views and long dinners
+## Ravello: For Quiet, Views and Long Dinners
 
 ![An umbrella pine and a stone tower on a garden terrace in Ravello, high above the blue sea](./ravello-umbrella-pine.jpg)
 
@@ -37,7 +37,7 @@ Ravello sits high above the sea, away from the beach crowds, with gardens at Vil
 
 **Ask for at check-in:** the hotel's shuttle or transfer options down to the coast. Ravello is a drive above the sea, and knowing how to get down for a beach day or a boat makes the stay much easier.
 
-## Praiano and Conca dei Marini: for a true escape
+## Praiano and Conca dei Marini: For a True Escape
 
 ![A calm, hazy sea and headlands seen from the Path of the Gods trail above Praiano](./praiano-path-of-the-gods.jpg)
 
@@ -49,7 +49,7 @@ Between Positano and Amalfi, these smaller places are quieter, with fewer day-tr
 
 **Ask for at check-in:** dinner reservations for your first night at the hotel itself. In the quieter towns, the hotel restaurant is often the best table nearby, and arrival day is not the night to figure out transport.
 
-## Amalfi town: for convenience and connections
+## Amalfi Town: For Convenience and Connections
 
 ![Colorful buildings on the cliffs above Amalfi's harbor, with boats on turquoise water](./amalfi-town.jpg)
 
@@ -59,7 +59,7 @@ Amalfi is the ferry hub, with the cathedral, the piazza and easy boat connection
 
 **Hotels to know:** Hotel Santa Caterina, just outside the center, has terraced gardens above the sea and a glass elevator down to its beach club and saltwater pool.
 
-## Sorrento: for easier logistics
+## Sorrento: For Easier Logistics
 
 Sorrento technically sits on the peninsula just beyond the Amalfi Coast, but it's a popular base for good reason: train connections toward Naples, ferries to Capri, and a flatter town that's easier to walk. It suits families, longer stays and travelers combining the coast with Pompeii.
 
@@ -67,7 +67,7 @@ Sorrento technically sits on the peninsula just beyond the Amalfi Coast, but it'
 
 May, June and September into early October are the sweet spot: warm water, long days, and fewer crowds than July and August, which are the busiest months and the most expensive. Many of the coast's best hotels close for the winter, often from November until late March or April, so check opening dates before you set your heart on a property. Coast ferries run from about April through October and stop for the winter.
 
-## What to ask for at check-in, from someone who stood behind the desk
+## What to Ask for at Check-In, From Someone Who Stood Behind the Desk
 
 - **Confirm the view category before you unpack.** On this coast, sea view, partial sea view and garden view are priced very differently. If something doesn't match your booking, the front desk can fix it in minutes.
 - **Mention the occasion.** Honeymoons and anniversaries are a big part of the coast's business, and a note on the reservation is how a bottle or a better table happens.
@@ -75,7 +75,7 @@ May, June and September into early October are the sweet spot: warm water, long 
 - **Book the hotel's restaurant on arrival** for at least one night, especially in high season.
 - **Ask for late checkout when you arrive,** not on your last morning.
 
-## How Booking with an Advisor Works Here
+## How Booking With an Advisor Works Here
 
 When you book through me, you pay the same room rate you'd pay booking direct, and you get partner perks on top. As a Fora advisor, I can attach those perks at every hotel named above. Fora's public pages currently list breakfast daily, a $100 credit, and an upgrade and extended check-in and checkout whenever possible at Le Sirenuse, Il San Pietro di Positano, Caruso, Casa Angelina, Palazzo Avino, Hotel Santa Caterina and Borgo Santandrea. The credit is a food and beverage credit at Caruso and Il San Pietro and a hotel credit at the others. Upgrades, early check-in and late checkout are always subject to availability, and perks can change, so I confirm what applies to your dates before you book.
 

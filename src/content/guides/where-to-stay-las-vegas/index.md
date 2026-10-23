@@ -15,7 +15,7 @@ I spent part of my [fifteen years in hotels](/about/) at Wynn Las Vegas and the 
 
 Las Vegas Boulevard runs about four miles from the Strat at the north end to Mandalay Bay at the south. On a map that looks walkable. In July, with resorts the size of small towns, it isn't. Where you sleep decides how much of your trip is spent in casino corridors and rideshare lines, so start with the area, then pick the hotel.
 
-## Center Strip: for first-timers and people who want everything outside the door
+## Center Strip: For First-Timers and People Who Want Everything Outside the Door
 
 ![The Center Strip lit up at night, with the Bellagio fountains in the foreground and the Eiffel Tower replica and High Roller wheel behind](./strip-at-night.jpg)
 
@@ -27,7 +27,7 @@ The stretch around Bellagio, the Cosmopolitan and Aria is the Las Vegas most peo
 
 **Ask for at check-in:** a high floor and the view you actually booked. At Bellagio and the Cosmopolitan, fountain-view rooms are their own room category, so if that's the view you want, book it specifically and confirm it before you go upstairs.
 
-## North Strip: for a more polished, grown-up stay
+## North Strip: For a More Polished, Grown-Up Stay
 
 ![Sunset over the North Strip, with the Wynn and Encore towers, the Palazzo and the Venetian's campanile](./north-strip-sunset.jpg)
 
@@ -39,7 +39,7 @@ From the Venetian and the Palazzo northward, you'll find Wynn and its sister hot
 
 **Ask for at check-in:** which tower your room is in and how far it is from the elevators. At these resorts the walk from the lobby to your room can take ten minutes, and the right tower makes a real difference by day three.
 
-## South Strip: for quiet, families and early flights
+## South Strip: For Quiet, Families and Early Flights
 
 The south end, around Mandalay Bay, sits closest to Harry Reid International Airport and has some of the calmest luxury options in the city.
 
@@ -49,7 +49,7 @@ The south end, around Mandalay Bay, sits closest to Harry Reid International Air
 
 **Ask for at check-in:** pool details for your dates. Pool hours and cabana availability change through the season, and it's easier to sort out when you arrive than once you're in your swimsuit.
 
-## Off the Strip: for a slower trip
+## Off the Strip: For a Slower Trip
 
 ![Red sandstone peaks glowing at sunset in Red Rock Canyon, west of Las Vegas](./red-rock-canyon.jpg)
 
@@ -59,7 +59,7 @@ Summerlin, on the west side, puts you near Red Rock Canyon for hiking and golf, 
 
 Spring and fall are the most comfortable months, with mild days that suit the pools and walking between resorts. Summer regularly tops 100°F, so plan pool mornings and indoor afternoons. Rates swing with the city's event calendar more than with the season: CES fills the city every January, and the Formula 1 Las Vegas Grand Prix, which runs on a street circuit that includes the Strip, does the same in November. Midweek stays are often better value than weekends. Before you lock in dates, check what's on, because a big convention can change the price of the same room overnight.
 
-## What to ask for at check-in, from someone who stood behind the desk
+## What to Ask for at Check-In, From Someone Who Stood Behind the Desk
 
 - **Ask early, and ask kindly.** Upgrades come from whatever is open that day. The agent in front of you can see that inventory, and a calm, specific request ("higher floor, away from the elevator, if you have it") goes further than "anything better?"
 - **Mention the occasion.** Anniversaries and birthdays get noted on the reservation, and a note is how small touches happen.
@@ -67,7 +67,7 @@ Spring and fall are the most comfortable months, with mild days that suit the po
 - **Ask what the resort fee covers.** Most Strip resorts charge a nightly resort fee. Know what it includes so you actually use it.
 - **Confirm your room category and view** before you go upstairs. Fixing it at the desk takes minutes; fixing it after you've unpacked takes much longer.
 
-## How Booking with an Advisor Works Here
+## How Booking With an Advisor Works Here
 
 When you book through me, you pay the same room rate you'd pay booking direct. What changes is what comes with it. As a Fora advisor, I can attach partner perks at many of the hotels above. Fora's public pages currently list breakfast daily, a $100 food and beverage credit, and an upgrade and extended check-in and checkout whenever possible at Bellagio and the Cosmopolitan; breakfast daily, a $100 property credit, and an upgrade and extended check-in and checkout whenever possible at Wynn and Encore; and Four Seasons Preferred Partner benefits at the Four Seasons. Upgrades, early check-in and late checkout are always subject to availability, and perks can change, so I confirm what applies to your dates before you book.
 
