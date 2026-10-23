@@ -1,0 +1,63 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import StartHere from '../../components/StartHere.astro';
+import { getGuides, readingTime } from '../../lib/guides';
+
+// /guides/ only exists once at least one guide is published (or drafts are shown).
+export async function getStaticPaths() {
+  return (await getGuides()).length > 0 ? [{ params: { index: undefined } }] : [];
+}
+
+const guides = await getGuides();
+const [featured, ...rest] = guides;
+---
+
+<Layout
+  title="Travel Guides"
+  description="Where to stay, area by area, from a former luxury hotel insider. Destination guides by Zak Winnick, certified Fora travel advisor."
+>
+  <PageHero eyebrow="Guides" intro="Where to stay, area by area, and what to ask for when you get there. Written from fifteen years inside luxury hotels.">
+    Places worth <em>finding.</em>
+  </PageHero>
+
+  <section class="py-20 md:py-28">
+    <div class="container-site flex flex-col gap-16">
+      {
+        featured && (
+          <a href={`/guides/${featured.id}/`} class="group grid items-center gap-10 text-ink hover:text-ink lg:grid-cols-12">
+            <div class="overflow-hidden rounded-card lg:col-span-7">
+              <Image src={featured.data.image} alt={featured.data.imageAlt} widths={[700, 1100, 1500]} sizes="(min-width: 1024px) 56vw, 100vw" loading="eager" class="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+            </div>
+            <div class="flex flex-col gap-4 lg:col-span-5">
+              <span class="eyebrow">{featured.data.category}{featured.data.draft && ' · Draft'}</span>
+              <h2 class="display-md group-hover:text-clay">{featured.data.title}</h2>
+              <p class="text-ink-700">{featured.data.excerpt}</p>
+              <p class="text-sm text-ink-600">{readingTime(featured.body)}</p>
+            </div>
+          </a>
+        )
+      }
+      {
+        rest.length > 0 && (
+          <div class="grid gap-x-8 gap-y-14 border-t border-sand-300 pt-14 md:grid-cols-2 lg:grid-cols-3">
+            {rest.map((g) => (
+              <a href={`/guides/${g.id}/`} class="group flex flex-col gap-4 text-ink hover:text-ink">
+                <div class="overflow-hidden rounded-card">
+                  <Image src={g.data.image} alt={g.data.imageAlt} widths={[500, 800, 1100]} sizes="(min-width: 1024px) 31vw, (min-width: 768px) 46vw, 100vw" class="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                </div>
+                <span class="text-xs font-medium uppercase tracking-[0.2em] text-clay">{g.data.category}{g.data.draft && ' · Draft'}</span>
+                <h3 class="text-[30px] leading-tight group-hover:text-clay">{g.data.title}</h3>
+                <p class="text-ink-600">{g.data.excerpt}</p>
+                <p class="text-sm text-ink-600">{readingTime(g.body)}</p>
+              </a>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </section>
+
+  <StartHere />
+</Layout>

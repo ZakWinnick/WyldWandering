@@ -5,6 +5,7 @@ import Footer from '../components/Footer.astro';
 import { SITE, SOCIAL } from '../config/site';
 import ogDefault from '../assets/images/hero-biarritz.jpg';
 import { getImage } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
   title: string;
@@ -12,13 +13,18 @@ interface Props {
   /** Header floats transparently over a full-bleed photo hero. */
   overlayHeader?: boolean;
   noindex?: boolean;
+  /** Exact <title>, used as is (an SEO title); otherwise "title | Wyld Wandering". */
+  seoTitle?: string;
+  /** Share image; defaults to the home hero. */
+  ogImage?: ImageMetadata;
+  ogType?: 'website' | 'article';
 }
 
-const { title, description = SITE.description, overlayHeader = false, noindex = false } = Astro.props;
+const { title, description = SITE.description, overlayHeader = false, noindex = false, seoTitle, ogImage: ogSource, ogType = 'website' } = Astro.props;
 
-const fullTitle = title === 'Home' ? `${SITE.name} | Premium Travel Planning` : `${title} | ${SITE.name}`;
+const fullTitle = seoTitle ?? (title === 'Home' ? `${SITE.name} | Premium Travel Planning` : `${title} | ${SITE.name}`);
 const canonical = new URL(Astro.url.pathname, SITE.url).href;
-const ogImage = await getImage({ src: ogDefault, width: 1200, height: 630, format: 'jpg', fit: 'cover' });
+const ogImage = await getImage({ src: ogSource ?? ogDefault, width: 1200, height: 630, format: 'jpg', fit: 'cover' });
 const ogImageUrl = new URL(ogImage.src, SITE.url).href;
 ---
 
@@ -39,7 +45,7 @@ const ogImageUrl = new URL(ogImage.src, SITE.url).href;
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
 
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:site_name" content={SITE.name} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
@@ -47,6 +53,7 @@ const ogImageUrl = new URL(ogImage.src, SITE.url).href;
     <meta property="og:image" content={ogImageUrl} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content={SOCIAL.xHandle} />
+    <slot name="head" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

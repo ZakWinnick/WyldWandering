@@ -30,19 +30,24 @@ src/
 ├── layouts/        # Layout.astro (main wrapper with meta management)
 ├── pages/          # File-based routes (.astro files)
 │   └── blog/       # Blog routes (excluded from search engines)
-├── content/blog/   # Markdown blog posts
+├── content/guides/ # Destination guides: <slug>/index.md + photos (public, indexed)
+├── content/blog/   # Old Markdown blog posts (hidden, noindex)
 └── content.config.ts # Content collection (glob loader + Zod schema)
 └── styles/         # global.css with Tailwind and custom animations
 ```
 
 ### Content Management
+- **Guides** (`/guides/`) are the public, search-indexed articles. Each is a folder in `src/content/guides/<slug>/` with `index.md` and its photos; images use relative paths (`./photo.jpg`) so Astro optimizes them. The frontmatter `slug` is the URL. Schema: title, seoTitle?, excerpt, metaDescription?, date, updated?, category, image, imageAlt, draft
+- Guides default to `draft: true`. Drafts build only in `npm run dev` or with `SHOW_DRAFTS=true npm run build` (local preview), never on the live site. Only Zak decides when a guide goes live (`draft: false`)
+- `/guides/` and the Guides nav and footer link appear automatically once at least one guide is published (`src/lib/guides.ts`). Guide pages carry Article and BreadcrumbList JSON-LD, the hero as the share image, and open external links in a new tab
+- Credit Unsplash photographers in the italic line after the closing `---` of each guide
 - Blog posts are Markdown files in `src/content/blog/`
 - Schema defined in `src/content.config.ts` with a glob loader and Zod (`astro/zod`); entries use `post.id` and `render(post)`
 - Dynamic routing via `src/pages/blog/[...slug].astro`
 - Draft posts are filtered from listings
 
 ### Important Configuration
-- **robots.txt** blocks `/blog/*` from search engines (intentional)
+- **robots.txt** blocks `/blog/*` from search engines (intentional); `/guides/` is indexed
 - **Sitemap** filters out blog and 404 routes in `astro.config.mjs`
 - **Path alias**: `@/*` maps to `src/*`
 

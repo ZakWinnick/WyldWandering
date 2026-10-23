@@ -1,6 +1,12 @@
 ---
 import Logo from './Logo.astro';
+import { getGuides } from '../lib/guides';
 import { NAV_LINKS, INTAKE_URL, PORTAL_URL, SOCIAL, SITE, FORA_DISCLOSURE } from '../config/site';
+
+// Guides joins the nav once the first guide is published.
+const navLinks = (await getGuides()).length > 0
+  ? [...NAV_LINKS.slice(0, 3), { href: '/guides', label: 'Guides' }, ...NAV_LINKS.slice(3)]
+  : [...NAV_LINKS];
 
 const year = new Date().getFullYear();
 const label = 'text-xs font-medium uppercase tracking-[0.2em] text-cream-500';
@@ -19,10 +25,10 @@ const link = 'text-cream-100 hover:text-gold';
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-16">
+      <div class="grid grid-cols-2 gap-10 sm:grid-cols-[auto_auto_auto] sm:gap-16">
         <nav aria-label="Footer" class="flex flex-col gap-3">
           <p class={label}>Explore</p>
-          {NAV_LINKS.map((l) => <a href={l.href} class={link}>{l.label}</a>)}
+          {navLinks.map((l) => <a href={l.href} class={link}>{l.label}</a>)}
           <a href="/contact" class={link}>Contact</a>
         </nav>
         <div class="flex flex-col gap-3">

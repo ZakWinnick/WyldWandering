@@ -1,0 +1,123 @@
+---
+import { Image, getImage } from 'astro:assets';
+import { render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import StartHere from '../../components/StartHere.astro';
+import { SITE } from '../../config/site';
+import { getGuides, formatDate, readingTime } from '../../lib/guides';
+
+export async function getStaticPaths() {
+  const guides = await getGuides();
+  return guides.map((guide) => ({ params: { slug: guide.id }, props: { guide } }));
+}
+
+const { guide } = Astro.props;
+const { data } = guide;
+const { Content } = await render(guide);
+const others = (await getGuides()).filter((g) => g.id !== guide.id).slice(0, 2);
+
+const url = new URL(`/guides/${guide.id}/`, SITE.url).href;
+const shareImage = await getImage({ src: data.image, width: 1200, height: 630, format: 'jpg', fit: 'cover' });
+const jsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: data.title,
+    description: data.metaDescription ?? data.excerpt,
+    image: new URL(shareImage.src, SITE.url).href,
+    datePublished: data.date.toISOString(),
+    dateModified: (data.updated ?? data.date).toISOString(),
+    author: { '@type': 'Person', name: SITE.advisor, url: new URL('/about/', SITE.url).href },
+    publisher: { '@type': 'Organization', name: SITE.name, url: SITE.url },
+    mainEntityOfPage: url,
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Guides', item: new URL('/guides/', SITE.url).href },
+      { '@type': 'ListItem', position: 2, name: data.title, item: url },
+    ],
+  },
+];
+---
+
+<Layout
+  title={data.title}
+  seoTitle={data.seoTitle}
+  description={data.metaDescription ?? data.excerpt}
+  ogImage={data.image}
+  ogType="article"
+  noindex={data.draft}
+>
+  <Fragment slot="head">
+    <meta property="article:published_time" content={data.date.toISOString()} />
+    {data.updated && <meta property="article:modified_time" content={data.updated.toISOString()} />}
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </Fragment>
+
+  <article>
+    <header class="pb-12 pt-12 md:pb-16 md:pt-20">
+      <div class="container-site max-w-3xl">
+        <a href="/guides/" class="text-sm font-medium text-ink-600 hover:text-clay">All Guides</a>
+        <p class="eyebrow mt-8">{data.category}{data.draft && ' · Draft'}</p>
+        <h1 class="display-lg mt-5">{data.title}</h1>
+        <p class="mt-6 text-sm text-ink-600">
+          By <a href="/about/" class="text-ink-600 underline-offset-4 hover:text-clay hover:underline">{SITE.advisor}</a> · <time datetime={data.date.toISOString()}>{formatDate(data.date)}</time> · {readingTime(guide.body)}
+        </p>
+      </div>
+    </header>
+
+    <figure class="container-site">
+      <Image src={data.image} alt={data.imageAlt} widths={[800, 1280, 1800, 2000]} sizes="(min-width: 1360px) 1280px, 100vw" loading="eager" fetchpriority="high" class="aspect-[16/9] w-full rounded-card object-cover md:aspect-[21/9]" />
+    </figure>
+
+    <div class="container-site max-w-3xl py-16 md:py-20">
+      <div class="prose-ww prose-guide">
+        <Content />
+      </div>
+    </div>
+
+    <aside class="container-site max-w-3xl pb-20">
+      <div class="flex flex-col gap-3 rounded-card bg-sand-200 p-8 md:p-10">
+        <p class="eyebrow">About the Author</p>
+        <h2 class="text-[30px] leading-tight">{SITE.advisor}</h2>
+        <p class="text-ink-700">Fifteen years in luxury hospitality, now a certified Fora travel advisor. I only book clients into places I'd stay at myself.</p>
+        <a href="/about/" class="link-accent self-start text-[15px]">More About Zak</a>
+      </div>
+    </aside>
+  </article>
+
+  {
+    others.length > 0 && (
+      <section class="border-t border-sand-300 py-20">
+        <div class="container-site flex flex-col gap-10">
+          <h2 class="display-md">More Guides</h2>
+          <div class="grid gap-10 md:grid-cols-2">
+            {others.map((g) => (
+              <a href={`/guides/${g.id}/`} class="group flex flex-col gap-4 text-ink hover:text-ink">
+                <div class="overflow-hidden rounded-card">
+                  <Image src={g.data.image} alt={g.data.imageAlt} widths={[600, 900]} sizes="(min-width: 768px) 46vw, 100vw" class="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                </div>
+                <h3 class="text-[30px] leading-tight group-hover:text-clay">{g.data.title}</h3>
+                <p class="text-ink-600">{g.data.excerpt}</p>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <StartHere />
+</Layout>
+
+<script>
+  // Site convention: links to other sites open in a new tab.
+  document.querySelectorAll<HTMLAnchorElement>('.prose-guide a[href^="http"]').forEach((a) => {
+    if (new URL(a.href).host !== location.host) {
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+    }
+  });
+</script>

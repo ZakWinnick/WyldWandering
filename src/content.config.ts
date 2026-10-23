@@ -14,4 +14,26 @@ const blog = defineCollection({
   }),
 });
 
-export const collections = { blog };
+// Destination guides: public, indexed, in the sitemap. Each guide is a folder in
+// src/content/guides/<slug>/ holding index.md and its photos (optimized at build).
+const guides = defineCollection({
+  loader: glob({ pattern: '**/index.md', base: './src/content/guides' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      /** <title> for search results; defaults to "title | Wyld Wandering". */
+      seoTitle: z.string().optional(),
+      excerpt: z.string(),
+      /** Meta description; defaults to the excerpt. */
+      metaDescription: z.string().optional(),
+      date: z.coerce.date(),
+      updated: z.coerce.date().optional(),
+      category: z.string().default('Guides'),
+      image: image(),
+      imageAlt: z.string(),
+      /** Drafts build only in dev or with SHOW_DRAFTS=true; never on the live site. */
+      draft: z.boolean().default(true),
+    }),
+});
+
+export const collections = { blog, guides };
