@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import StartHere from '../components/StartHere.astro';
 import Icon from '../components/Icon.astro';
-import { INTAKE_URL, PORTAL_URL, PRICING, RETAINER, RETAINER_APPLY_URL } from '../config/site';
+import { INTAKE_URL, PORTAL_URL, PRICING, PRIVATE_CLIENT, PRIVATE_CLIENT_APPLY_URL } from '../config/site';
 
 const services = [
   {
@@ -132,17 +132,17 @@ const services = [
         }
       </div>
 
-      <div id="retainer" class="reveal grid scroll-mt-28 gap-10 rounded-card bg-pine p-8 text-cream-100 md:p-12 lg:grid-cols-12 lg:gap-16">
+      <div id="private-client" class="reveal grid scroll-mt-28 gap-10 rounded-card bg-pine p-8 text-cream-100 md:p-12 lg:grid-cols-12 lg:gap-16">
         <div class="flex flex-col gap-4 lg:col-span-5">
           <p class="text-[13px] font-medium uppercase tracking-eyebrow text-gold">For frequent travelers</p>
-          <h3 class="text-[40px] leading-tight">{RETAINER.name}</h3>
-          <p class="font-display text-[56px] font-medium leading-none">{RETAINER.amount}<span class="font-sans text-lg font-light text-pine-muted"> per year</span></p>
-          <p class="text-pine-muted">{RETAINER.billing}</p>
-          <a href={RETAINER_APPLY_URL} class="btn-primary mt-2 self-start">Apply for the Retainer</a>
+          <h3 class="text-[40px] leading-tight">{PRIVATE_CLIENT.name}</h3>
+          <p class="font-display text-[56px] font-medium leading-none">{PRIVATE_CLIENT.amount}<span class="font-sans text-lg font-light text-pine-muted"> per year</span></p>
+          <p class="text-pine-muted">{PRIVATE_CLIENT.billing}</p>
+          <a href={PRIVATE_CLIENT_APPLY_URL} class="btn-primary mt-2 self-start">Become a Private Client</a>
         </div>
         <ul class="grid content-start gap-x-8 sm:grid-cols-2 lg:col-span-7">
           {
-            RETAINER.includes.map((item) => (
+            PRIVATE_CLIENT.includes.map((item) => (
               <li class="border-t border-cream-100/15 py-4 text-cream-100">{item}</li>
             ))
           }
@@ -160,8 +160,8 @@ const services = [
           <p class="text-ink-700">If you refer someone to me and they book a trip, your planning fee is waived on your next booking. Good travel advice is worth sharing, and I'd rather reward you for it than spend that money on advertising.</p>
         </div>
         <div class="reveal flex flex-col gap-3 rounded-card bg-sand-200 p-8 md:p-10">
-          <h3 class="text-[30px] leading-tight">A Retainer Year on Me</h3>
-          <p class="text-ink-700">{RETAINER.invite} By then, I know how you like to travel, and you know what you're getting.</p>
+          <h3 class="text-[30px] leading-tight">A Private Client Year on Me</h3>
+          <p class="text-ink-700">{PRIVATE_CLIENT.invite} By then, I know how you like to travel, and you know what you're getting.</p>
         </div>
       </div>
 

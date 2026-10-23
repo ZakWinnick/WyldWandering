@@ -4,7 +4,7 @@ import PageHero from '../../components/PageHero.astro';
 import Icon from '../../components/Icon.astro';
 import FormHidden from '../../components/FormHidden.astro';
 import FormSubmitRow from '../../components/FormSubmitRow.astro';
-import { formAction, INTAKE_URL, PORTAL_URL, SITE, SOCIAL, PRICING, RETAINER } from '../../config/site';
+import { formAction, INTAKE_URL, PORTAL_URL, SITE, SOCIAL, PRICING, PRIVATE_CLIENT } from '../../config/site';
 
 const field =
   'w-full rounded-card border border-sand-400 bg-white px-4 dark:bg-sand-100 py-3.5 text-[16px] font-normal text-ink placeholder:text-ink-400 focus:border-clay focus:outline-none focus:ring-2 focus:ring-clay/25';
@@ -88,7 +88,7 @@ const label = 'mb-2 block text-sm font-medium text-ink';
         <div class="flex flex-col gap-4 rounded-card bg-sand-200 p-8">
           <h3 class="text-[28px] leading-tight">Planning Fees</h3>
           <ul class="flex flex-col gap-2 text-ink-700">
-            {[...PRICING, RETAINER].map((tier) => <li class="flex items-baseline justify-between gap-4 border-b border-sand-300 pb-2 last:border-0 last:pb-0"><span>{tier.name}</span><strong class="text-right font-medium text-ink">{tier.price}</strong></li>)}
+            {[...PRICING, PRIVATE_CLIENT].map((tier) => <li class="flex items-baseline justify-between gap-4 border-b border-sand-300 pb-2 last:border-0 last:pb-0"><span>{tier.name}</span><strong class="text-right font-medium text-ink">{tier.price}</strong></li>)}
           </ul>
           <a href="/services#pricing" class="link-accent self-start text-[15px]">Full Pricing Details</a>
         </div>

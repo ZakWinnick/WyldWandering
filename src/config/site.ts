@@ -11,7 +11,7 @@ export const SITE = {
     'Premium travel planning by Zak Winnick, a certified Fora travel advisor with 15 years in luxury hospitality. The right hotels, the hard-to-get reservations, and the perks you would not get booking on your own.',
 } as const;
 
-// Site forms (contact question, retainer application).
+// Site forms (contact question, Private Client application).
 // FORMS_ENDPOINT is the Cloudflare Worker in workers/forms that emails each
 // submission through Proton SMTP. While it or the Turnstile key is empty, the
 // forms fall back to FormSubmit, delivering to FORM_EMAIL.
@@ -19,7 +19,7 @@ export const FORMS_ENDPOINT = 'https://forms.wyldwandering.com';
 export const TURNSTILE_SITE_KEY = '0x4AAAAAAFht_sHD4b5R6f_-';
 export const FORM_EMAIL = 'zak.winnick@fora.travel';
 export const FORMS_LIVE = Boolean(FORMS_ENDPOINT && TURNSTILE_SITE_KEY);
-export const formAction = (form: 'contact' | 'retainer') =>
+export const formAction = (form: 'contact' | 'private-client') =>
   FORMS_LIVE ? `${FORMS_ENDPOINT}/${form}` : `https://formsubmit.co/${FORM_EMAIL}`;
 
 // New clients start here. Creates their traveler profile in Fora.
@@ -72,8 +72,9 @@ export const PRICING = [
   },
 ] as const;
 
-export const RETAINER = {
-  name: 'Annual Retainer',
+// Private Client: the annual plan for frequent travelers (formerly "retainer").
+export const PRIVATE_CLIENT = {
+  name: 'Private Client',
   price: '$5,000/year',
   amount: '$5,000',
   billing: 'Billed annually, or $1,350 quarterly. By application.',
@@ -86,11 +87,11 @@ export const RETAINER = {
     'A planning call at the start of your year',
     '50% off everything else: extra itineraries, group room blocks, events',
   ],
-  invite: "Once you've booked $40,000 in travel with me, you get a year of retainer services free, no application needed.",
+  invite: "Once you've booked $40,000 in travel with me, you get a year as a Private Client free, no application needed.",
 } as const;
 
-// Retainer application form (FormSubmit, emails SITE.email).
-export const RETAINER_APPLY_URL = '/retainer/apply/';
+// Private Client application form (posts to the forms Worker).
+export const PRIVATE_CLIENT_APPLY_URL = '/private-client/apply/';
 
 export const NAV_LINKS = [
   { href: '/about', label: 'About' },

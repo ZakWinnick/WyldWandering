@@ -50,10 +50,10 @@ src/
 - New clients: `INTAKE_URL` (Fora intake form). Existing clients: `PORTAL_URL` (Fora client portal).
 - Both are defined once in `src/config/site.ts`. Fora sends `X-Frame-Options: DENY`, so they are linked, never embedded.
 - Contact page keeps a short FormSubmit form for quick questions only.
-- Forms: contact (`/contact/`) and retainer application post to the Cloudflare Worker in `workers/forms`, which checks Turnstile, the honeypot and a per-IP rate limit, then emails the submission through Proton SMTP (smtp.protonmail.ch:587, STARTTLS) from hello@ to hello@ with the visitor as Reply-To. Form field `name` attributes are the labels in that email. Shared pieces: `FormHidden.astro`, `FormSubmitRow.astro`. The Worker is used once `FORMS_ENDPOINT` and `TURNSTILE_SITE_KEY` are set in site.ts; until then forms fall back to FormSubmit (`FORM_EMAIL`). Deployed by `.github/workflows/deploy-forms.yml` using repo secrets CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, PROTON_SMTP_TOKEN, TURNSTILE_SECRET_KEY. Local dev: `npx wrangler dev` in workers/forms with a `.dev.vars` (never committed). Retainer applications: `/retainer/apply/` (confirmation at `/retainer/apply/received/`, contact at `/contact/sent/`). `RETAINER_APPLY_URL` points there; `/retainer` redirects to `/services#retainer`.
+- Forms: contact (`/contact/`) and Private Client application post to the Cloudflare Worker in `workers/forms`, which checks Turnstile, the honeypot and a per-IP rate limit, then emails the submission through Proton SMTP (smtp.protonmail.ch:587, STARTTLS) from hello@ to hello@ with the visitor as Reply-To. Form field `name` attributes are the labels in that email. Shared pieces: `FormHidden.astro`, `FormSubmitRow.astro`. The Worker is used once `FORMS_ENDPOINT` and `TURNSTILE_SITE_KEY` are set in site.ts; until then forms fall back to FormSubmit (`FORM_EMAIL`). Deployed by `.github/workflows/deploy-forms.yml` using repo secrets CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, PROTON_SMTP_TOKEN, TURNSTILE_SECRET_KEY. Local dev: `npx wrangler dev` in workers/forms with a `.dev.vars` (never committed). Private Client applications: `/private-client/apply/` (confirmation at `/private-client/apply/received/`, contact at `/contact/sent/`). `PRIVATE_CLIENT_APPLY_URL` points there. Old `/retainer` URLs redirect.
 
 ### Pricing
-- `PRICING` and `RETAINER` (including the $40K retainer invitation) in `src/config/site.ts` drive the homepage, Services and Contact pricing. The FAQ "What does it cost" answer is written out by hand, so update it too when prices change.
+- `PRICING` and `PRIVATE_CLIENT` (the $5,000/year plan for frequent travelers, including the $40K invitation) in `src/config/site.ts` drive the homepage, Services and Contact pricing. The FAQ "What does it cost" answer is written out by hand, so update it too when prices change.
 
 ### Styling Conventions
 - Brand kit v1 colors: forest #0F1A14, ivory #FFFBF5, terracotta #C45D3A, amber #D4A857 (exact values in the `brand` Tailwind color). Lead with forest and ivory; terracotta for emphasis; amber for small details on dark grounds only, never as text on ivory. Text and button terracotta (`clay`) is deepened in light mode and lifted in dark mode for AA contrast
@@ -65,6 +65,7 @@ src/
 - `.reveal` fades sections in on scroll (respects reduced motion, visible without JS)
 - Pages with a photo hero pass `overlayHeader` to Layout for the transparent header
 - No em dashes in site copy
+- The annual plan is called "Private Client" (a proper name, capitalized). Don't call it a retainer in site copy
 - Title case for labels: buttons, links, nav, card and tier titles, short headings. Sentence-style editorial headlines ending in a period ("Your trip, handled.", "Details are everything.") stay as written
 - External links (Fora intake, portal, social, any http URL) use `target="_blank" rel="noopener noreferrer"`; internal links open in the same tab
 

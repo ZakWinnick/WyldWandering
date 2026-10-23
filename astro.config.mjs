@@ -7,12 +7,20 @@ export default defineConfig({
   compressHTML: true,
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/blog') && !page.includes('/404') && !page.includes('/retainer/apply/received') && !page.includes('/contact/sent') && !/\/retainer\/?$/.test(page),
+      // Keep confirmation pages, redirects, the blog and 404 out of the sitemap.
+      filter: (page) => {
+        const path = new URL(page).pathname;
+        return !path.startsWith('/blog') && !path.startsWith('/404') && !path.startsWith('/retainer') && path !== '/private-client/' && !path.endsWith('/received/') && path !== '/contact/sent/';
+      },
     }),
   ],
   output: 'static',
   redirects: {
-    '/retainer': '/services#retainer',
+    // Old "retainer" URLs keep working.
+    '/retainer': '/services#private-client',
+    '/retainer/apply': '/private-client/apply/',
+    '/retainer/apply/received': '/private-client/apply/received/',
+    '/private-client': '/services#private-client',
   },
   vite: {
     // Keep media queries in min-width form so older Safari (pre 16.4) still gets the layout.
