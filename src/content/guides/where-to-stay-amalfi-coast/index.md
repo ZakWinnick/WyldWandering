@@ -21,7 +21,7 @@ Positano is the town on every screensaver: pastel houses stacked down the cliff 
 
 **Who it suits:** first-timers, honeymooners, and anyone who wants to walk out of the hotel and straight into the scene.
 
-**Hotels to know:** Le Sirenuse, opened by the Sersale family in their former private villa in 1951, sits right in the center of town with 58 rooms and suites, most with views of the sea or the town. Il San Pietro di Positano is about ten minutes outside town, set into the cliffs, with its own restaurant, Zass. It suits people who want the view of Positano without the crowds of Positano.
+**Hotels to know:** Le Sirenuse, opened by the Sersale family in their former private villa in 1951, sits right in the center of town with 58 rooms and suites, most with views of the sea or the town. Il San Pietro di Positano sits just outside town, set into the cliffs with a shuttle into Positano, with its own restaurant, Zass. It suits people who want the view of Positano without the crowds of Positano.
 
 **Ask for at check-in:** confirm whether your room faces the sea or the town, and ask the hotel to arrange porters for your luggage if you're staying up the hill. Hotels here handle this every day, and it saves you carrying cases up a staircase.
 
@@ -45,7 +45,7 @@ Between Positano and Amalfi, these smaller places are quieter, with fewer day-tr
 
 **Who it suits:** travelers who want to rest, design lovers, and anyone happy to take a boat or car into town for dinner.
 
-**Hotels to know:** Casa Angelina in Praiano is contemporary and bright, with floor-to-ceiling windows on the sea. Borgo Santandrea, near Amalfi, is one of the newer luxury openings on the coast and is built down the cliff to the water.
+**Hotels to know:** Casa Angelina in Praiano is contemporary and bright, with large windows facing the sea. Borgo Santandrea, just outside Amalfi above the bay of Conca dei Marini, opened in 2021 and is built down the cliff to its own beach club.
 
 **Ask for at check-in:** dinner reservations for your first night at the hotel itself. In the quieter towns, the hotel restaurant is often the best table nearby, and arrival day is not the night to figure out transport.
 
@@ -57,7 +57,7 @@ Amalfi is the ferry hub, with the cathedral, the piazza and easy boat connection
 
 **Who it suits:** travelers who want to see several towns without a car, and anyone who likes some bustle outside the door.
 
-**Hotels to know:** Hotel Santa Caterina, just outside the center, has terraced gardens above the sea and an elevator down to its own swimming area.
+**Hotels to know:** Hotel Santa Caterina, just outside the center, has terraced gardens above the sea and a glass elevator down to its beach club and saltwater pool.
 
 ## Sorrento: for easier logistics
 
@@ -65,7 +65,7 @@ Sorrento technically sits on the peninsula just beyond the Amalfi Coast, but it'
 
 ## When to Go
 
-May, June and September into early October are the sweet spot: warm water, long days, and fewer crowds than July and August, which are the busiest months and the most expensive. Many of the coast's best hotels close for the winter, often from around November until spring, so check opening dates before you set your heart on a property. Ferries also run a reduced schedule outside the main season.
+May, June and September into early October are the sweet spot: warm water, long days, and fewer crowds than July and August, which are the busiest months and the most expensive. Many of the coast's best hotels close for the winter, often from November until late March or April, so check opening dates before you set your heart on a property. Coast ferries run from about April through October and stop for the winter.
 
 ## What to ask for at check-in, from someone who stood behind the desk
 
@@ -77,7 +77,7 @@ May, June and September into early October are the sweet spot: warm water, long 
 
 ## How Booking with an Advisor Works Here
 
-When you book through me, you pay the same room rate you'd pay booking direct, and you get partner perks on top. As a Fora advisor, I can attach those perks at every hotel named above. Fora's public pages currently list breakfast daily, a $100 credit, and an upgrade and extended check-in and checkout whenever possible at Le Sirenuse, Il San Pietro di Positano, Caruso, Casa Angelina, Palazzo Avino, Hotel Santa Caterina and Borgo Santandrea. The credit is a hotel or resort credit at some and a food and beverage credit at others. Upgrades, early check-in and late checkout are always subject to availability, and perks can change, so I confirm what applies to your dates before you book.
+When you book through me, you pay the same room rate you'd pay booking direct, and you get partner perks on top. As a Fora advisor, I can attach those perks at every hotel named above. Fora's public pages currently list breakfast daily, a $100 credit, and an upgrade and extended check-in and checkout whenever possible at Le Sirenuse, Il San Pietro di Positano, Caruso, Casa Angelina, Palazzo Avino, Hotel Santa Caterina and Borgo Santandrea. The credit is a food and beverage credit at Caruso and Il San Pietro and a hotel credit at the others. Upgrades, early check-in and late checkout are always subject to availability, and perks can change, so I confirm what applies to your dates before you book.
 
 [Hotel-only bookings](/services/#pricing) with me are complimentary. If you're pairing the coast with Rome, or want flights, transfers and restaurants planned day by day, that's a flat planning fee, listed on my [Services page](/services/#pricing).
 

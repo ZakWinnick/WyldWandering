@@ -23,9 +23,9 @@ The stretch around Bellagio, the Cosmopolitan and Aria is the Las Vegas most peo
 
 **Who it suits:** first visits, short weekends, food-focused trips, and anyone who doesn't want to depend on cars.
 
-**Hotels to know:** Bellagio is the classic, and its fountain-view rooms are the reason many people book it. The Cosmopolitan, which sits between Bellagio and Aria, is the more social, design-led option, known for rooms with private terraces. If you want to be central without a casino under your room, Vdara and Waldorf Astoria Las Vegas are both non-gaming hotels close to Aria; the Waldorf checks guests in at a lobby on its 23rd floor.
+**Hotels to know:** Bellagio is the classic, and its fountain-view rooms are the reason many people book it. The Cosmopolitan, which sits between Bellagio and Aria, is the more social, design-led option, known for rooms with private terraces. If you want to be central without a casino under your room, Vdara and Waldorf Astoria Las Vegas are both non-gaming hotels close to Aria; the Waldorf's bar and tea lounge sit on its 23rd floor, high above the Strip.
 
-**Ask for at check-in:** a high floor and the view you actually booked. At Bellagio and the Cosmopolitan, a fountain view and a Strip view are different room categories, so confirm which one you have before you go upstairs.
+**Ask for at check-in:** a high floor and the view you actually booked. At Bellagio and the Cosmopolitan, fountain-view rooms are their own room category, so if that's the view you want, book it specifically and confirm it before you go upstairs.
 
 ## North Strip: for a more polished, grown-up stay
 
@@ -35,7 +35,7 @@ From the Venetian and the Palazzo northward, you'll find Wynn and its sister hot
 
 **Who it suits:** couples, repeat visitors, convention trips, and anyone who wants the energy of the Strip without being in the middle of it.
 
-**Hotels to know:** Wynn and Encore are connected, and both are built around gardens, pools and a calmer feel than the center of the Strip. Wynn Tower Suites add a private check-in area and pool for suite guests. The Venetian and Palazzo are all-suite, which works well for groups, and Resorts World includes the Conrad Las Vegas.
+**Hotels to know:** Wynn and Encore are connected, and both are built around gardens, pools and a calmer feel than the center of the Strip. Wynn Tower Suites add a private entrance and a pool reserved for suite guests. The Venetian and Palazzo are all-suite, which works well for groups, and Resorts World includes the Conrad Las Vegas.
 
 **Ask for at check-in:** which tower your room is in and how far it is from the elevators. At these resorts the walk from the lobby to your room can take ten minutes, and the right tower makes a real difference by day three.
 
@@ -53,7 +53,7 @@ The south end, around Mandalay Bay, sits closest to Harry Reid International Air
 
 ![Red sandstone peaks glowing at sunset in Red Rock Canyon, west of Las Vegas](./red-rock-canyon.jpg)
 
-Summerlin, on the west side, puts you near Red Rock Canyon for hiking and golf, about a half-hour drive from the Strip. It suits a second or third visit, or a trip built around the outdoors with one or two big nights in town.
+Summerlin, on the west side, puts you near Red Rock Canyon for hiking and golf, about 20 to 30 minutes' drive from the Strip. It suits a second or third visit, or a trip built around the outdoors with one or two big nights in town.
 
 ## When to Go
 
@@ -69,7 +69,7 @@ Spring and fall are the most comfortable months, with mild days that suit the po
 
 ## How Booking with an Advisor Works Here
 
-When you book through me, you pay the same room rate you'd pay booking direct. What changes is what comes with it. As a Fora advisor, I can attach partner perks at many of the hotels above. Fora's public pages currently list breakfast daily, a $100 food and beverage credit, and an upgrade and extended check-in and checkout whenever possible at Bellagio and the Cosmopolitan; breakfast daily, a $100 credit, and an upgrade and extended check-in and checkout whenever possible at Wynn and Encore; and Four Seasons Preferred Partner benefits at the Four Seasons. Upgrades, early check-in and late checkout are always subject to availability, and perks can change, so I confirm what applies to your dates before you book.
+When you book through me, you pay the same room rate you'd pay booking direct. What changes is what comes with it. As a Fora advisor, I can attach partner perks at many of the hotels above. Fora's public pages currently list breakfast daily, a $100 food and beverage credit, and an upgrade and extended check-in and checkout whenever possible at Bellagio and the Cosmopolitan; breakfast daily, a $100 property credit, and an upgrade and extended check-in and checkout whenever possible at Wynn and Encore; and Four Seasons Preferred Partner benefits at the Four Seasons. Upgrades, early check-in and late checkout are always subject to availability, and perks can change, so I confirm what applies to your dates before you book.
 
 [Hotel-only bookings](/services/#pricing) with me are complimentary. If you want flights handled too, or a full itinerary with restaurants and shows, those come with a flat planning fee, listed on my [Services page](/services/#pricing). If you're in Vegas several times a year, [Private Client](/private-client/apply/) drops the planning fee on every hotel booking and includes up to six full itineraries a year.
 
