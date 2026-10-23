@@ -15,8 +15,8 @@ export const SITE = {
 // FORMS_ENDPOINT is the Cloudflare Worker in workers/forms that emails each
 // submission through Proton SMTP. While it or the Turnstile key is empty, the
 // forms fall back to FormSubmit, delivering to FORM_EMAIL.
-export const FORMS_ENDPOINT = '';
-export const TURNSTILE_SITE_KEY = '';
+export const FORMS_ENDPOINT = 'https://forms.wyldwandering.com';
+export const TURNSTILE_SITE_KEY = '0x4AAAAAAFht_sHD4b5R6f_-';
 export const FORM_EMAIL = 'zak.winnick@fora.travel';
 export const FORMS_LIVE = Boolean(FORMS_ENDPOINT && TURNSTILE_SITE_KEY);
 export const formAction = (form: 'contact' | 'retainer') =>
