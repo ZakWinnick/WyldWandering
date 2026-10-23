@@ -1,0 +1,28 @@
+# Form handler for wyldwandering.com. The site is static on GitHub Pages, so the
+# contact and retainer forms post here; this Worker emails each submission
+# through Proton Mail SMTP. Deployed by .github/workflows/deploy-forms.yml.
+name = "wyldwandering-forms"
+main = "src/index.ts"
+compatibility_date = "2026-10-01"
+compatibility_flags = ["nodejs_compat"]
+workers_dev = false
+routes = [{ pattern = "forms.wyldwandering.com", custom_domain = true }]
+
+[vars]
+SITE_ORIGIN = "https://wyldwandering.com"
+MAIL_FROM = "hello@wyldwandering.com"
+MAIL_FROM_NAME = "Wyld Wandering Website"
+MAIL_TO = "hello@wyldwandering.com"
+SMTP_HOST = "smtp.protonmail.ch"
+SMTP_PORT = "587"
+TURNSTILE_HOSTNAMES = "wyldwandering.com,www.wyldwandering.com"
+
+# Secrets (set by the deploy workflow, never committed):
+#   SMTP_TOKEN            Proton SMTP token paired with MAIL_FROM
+#   TURNSTILE_SECRET_KEY  Turnstile widget secret
+
+# Five submissions per minute per visitor IP.
+[[ratelimits]]
+name = "LIMITER"
+namespace_id = "1001"
+simple = { limit = 5, period = 60 }

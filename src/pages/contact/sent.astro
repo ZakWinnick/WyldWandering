@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { SITE } from '../../config/site';
+---
+
+<Layout title="Message Sent" noindex>
+  <PageHero eyebrow="Quick question" intro="Thanks for reaching out. I typically reply within one to two business days.">
+    Message <em>sent.</em>
+  </PageHero>
+  <section class="py-16 md:py-20">
+    <div class="container-site flex flex-wrap items-center gap-6">
+      <a href="/" class="btn-dark">Back to Home</a>
+      <a href={`mailto:${SITE.email}`} class="link-accent">{SITE.email}</a>
+    </div>
+  </section>
+</Layout>

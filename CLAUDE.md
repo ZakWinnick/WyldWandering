@@ -12,7 +12,7 @@ npm run preview  # Preview production build locally
 
 ## Architecture Overview
 
-This is a **premium travel advisor portfolio site** built with Astro 7.x (Node 22.23.4 or newer, see `.nvmrc`), outputting fully static HTML. No SSR or serverless functions.
+This is a **premium travel advisor portfolio site** built with Astro 7.x (Node 22.23.4 or newer, see `.nvmrc`), outputting fully static HTML. No SSR. The only server code is the forms Worker in `workers/forms` (Cloudflare, forms.wyldwandering.com).
 
 ### Key Technologies
 - **Astro** - Static site generator with file-based routing
@@ -50,7 +50,7 @@ src/
 - New clients: `INTAKE_URL` (Fora intake form). Existing clients: `PORTAL_URL` (Fora client portal).
 - Both are defined once in `src/config/site.ts`. Fora sends `X-Frame-Options: DENY`, so they are linked, never embedded.
 - Contact page keeps a short FormSubmit form for quick questions only.
-- Both forms deliver to `FORM_EMAIL` in site.ts via FormSubmit (SITE.email stays the public address). Retainer applications: `/retainer/apply/` (redirects to `/retainer/apply/received/`). `RETAINER_APPLY_URL` points there; `/retainer` redirects to `/services#retainer`.
+- Forms: contact (`/contact/`) and retainer application post to the Cloudflare Worker in `workers/forms`, which checks Turnstile, the honeypot and a per-IP rate limit, then emails the submission through Proton SMTP (smtp.protonmail.ch:587, STARTTLS) from hello@ to hello@ with the visitor as Reply-To. Form field `name` attributes are the labels in that email. Shared pieces: `FormHidden.astro`, `FormSubmitRow.astro`. The Worker is used once `FORMS_ENDPOINT` and `TURNSTILE_SITE_KEY` are set in site.ts; until then forms fall back to FormSubmit (`FORM_EMAIL`). Deployed by `.github/workflows/deploy-forms.yml` using repo secrets CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, PROTON_SMTP_TOKEN, TURNSTILE_SECRET_KEY. Local dev: `npx wrangler dev` in workers/forms with a `.dev.vars` (never committed). Retainer applications: `/retainer/apply/` (confirmation at `/retainer/apply/received/`, contact at `/contact/sent/`). `RETAINER_APPLY_URL` points there; `/retainer` redirects to `/services#retainer`.
 
 ### Pricing
 - `PRICING` and `RETAINER` (including the $40K retainer invitation) in `src/config/site.ts` drive the homepage, Services and Contact pricing. The FAQ "What does it cost" answer is written out by hand, so update it too when prices change.

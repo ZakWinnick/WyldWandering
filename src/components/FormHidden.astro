@@ -1,0 +1,21 @@
+---
+// Hidden fields every site form carries: a honeypot, plus FormSubmit settings
+// while the forms still fall back to FormSubmit.
+import { FORMS_LIVE, SITE } from '../config/site';
+interface Props {
+  subject: string;
+  next: string;
+}
+const { subject, next } = Astro.props;
+---
+
+{
+  !FORMS_LIVE && (
+    <Fragment>
+      <input type="hidden" name="_subject" value={subject} />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_next" value={`${SITE.url}${next}`} />
+    </Fragment>
+  )
+}
+<input type="text" name="_honey" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />

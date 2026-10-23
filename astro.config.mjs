@@ -7,7 +7,7 @@ export default defineConfig({
   compressHTML: true,
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/blog') && !page.includes('/404') && !page.includes('/retainer/apply/received') && !/\/retainer\/?$/.test(page),
+      filter: (page) => !page.includes('/blog') && !page.includes('/404') && !page.includes('/retainer/apply/received') && !page.includes('/contact/sent') && !/\/retainer\/?$/.test(page),
     }),
   ],
   output: 'static',

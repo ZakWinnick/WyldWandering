@@ -11,9 +11,16 @@ export const SITE = {
     'Premium travel planning by Zak Winnick, a certified Fora travel advisor with 15 years in luxury hospitality. The right hotels, the hard-to-get reservations, and the perks you would not get booking on your own.',
 } as const;
 
-// Where the site's forms (contact question, retainer application) are delivered via FormSubmit.
-// Separate from SITE.email, which stays the public address shown on the site.
+// Site forms (contact question, retainer application).
+// FORMS_ENDPOINT is the Cloudflare Worker in workers/forms that emails each
+// submission through Proton SMTP. While it or the Turnstile key is empty, the
+// forms fall back to FormSubmit, delivering to FORM_EMAIL.
+export const FORMS_ENDPOINT = '';
+export const TURNSTILE_SITE_KEY = '';
 export const FORM_EMAIL = 'zak.winnick@fora.travel';
+export const FORMS_LIVE = Boolean(FORMS_ENDPOINT && TURNSTILE_SITE_KEY);
+export const formAction = (form: 'contact' | 'retainer') =>
+  FORMS_LIVE ? `${FORMS_ENDPOINT}/${form}` : `https://formsubmit.co/${FORM_EMAIL}`;
 
 // New clients start here. Creates their traveler profile in Fora.
 export const INTAKE_URL = 'https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3';
