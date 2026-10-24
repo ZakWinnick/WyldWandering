@@ -36,7 +36,7 @@ const readingTime = `${Math.max(1, Math.ceil(post.body.split(/\s+/).length / 200
     {
       post.data.image && (
         <div class="container-site">
-          <img src={post.data.image} alt="" class="aspect-[21/9] w-full rounded-card object-cover" loading="eager" />
+          <img src={post.data.image} alt="" class="aspect-21/9 w-full rounded-card object-cover" loading="eager" />
         </div>
       )
     }

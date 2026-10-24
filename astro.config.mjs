@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
   site: 'https://wyldwandering.com',
@@ -23,6 +24,8 @@ export default defineConfig({
     '/private-client': '/services#private-client',
   },
   vite: {
+    // Tailwind 4 runs as a Vite plugin; the theme lives in src/styles/global.css (@theme).
+    plugins: [tailwindcss()],
     // Keep media queries in min-width form so older Safari (pre 16.4) still gets the layout.
     build: { cssTarget: ['chrome100', 'safari14', 'firefox100', 'edge100'] },
   },
