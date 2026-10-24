@@ -28,7 +28,7 @@ const [featured, ...rest] = guides;
         featured && (
           <a href={`/guides/${featured.id}/`} class="group grid items-center gap-10 text-ink hover:text-ink lg:grid-cols-12">
             <div class="overflow-hidden rounded-card lg:col-span-7">
-              <Image src={featured.data.image} alt={featured.data.imageAlt} widths={[700, 1100, 1500]} sizes="(min-width: 1024px) 56vw, 100vw" loading="eager" class="aspect-[16/10] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+              <Image src={featured.data.image} alt={featured.data.imageAlt} widths={[700, 1100, 1500]} sizes="(min-width: 1024px) 56vw, 100vw" loading="eager" class="aspect-16/10 w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
             </div>
             <div class="flex flex-col gap-4 lg:col-span-5">
               <span class="eyebrow">{featured.data.category}{featured.data.draft && ' · Draft'}</span>
@@ -45,7 +45,7 @@ const [featured, ...rest] = guides;
             {rest.map((g) => (
               <a href={`/guides/${g.id}/`} class="group flex flex-col gap-4 text-ink hover:text-ink">
                 <div class="overflow-hidden rounded-card">
-                  <Image src={g.data.image} alt={g.data.imageAlt} widths={[500, 800, 1100]} sizes="(min-width: 1024px) 31vw, (min-width: 768px) 46vw, 100vw" class="aspect-[4/3] w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
+                  <Image src={g.data.image} alt={g.data.imageAlt} widths={[500, 800, 1100]} sizes="(min-width: 1024px) 31vw, (min-width: 768px) 46vw, 100vw" class="aspect-4/3 w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]" />
                 </div>
                 <span class="text-xs font-medium uppercase tracking-[0.2em] text-clay">{g.data.category}{g.data.draft && ' · Draft'}</span>
                 <h3 class="text-[30px] leading-tight group-hover:text-clay">{g.data.title}</h3>

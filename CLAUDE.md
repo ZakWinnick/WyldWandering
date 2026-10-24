@@ -16,7 +16,7 @@ This is a **premium travel advisor portfolio site** built with Astro 7.x (Node 2
 
 ### Key Technologies
 - **Astro** - Static site generator with file-based routing
-- **Tailwind CSS 3** - Runs through PostCSS (`postcss.config.mjs`); custom theme mapped to brand kit v1 (Forest, Ivory, Terracotta, Amber)
+- **Tailwind CSS 4** - Runs as a Vite plugin (`@tailwindcss/vite` in `astro.config.mjs`); no tailwind.config or PostCSS config. The theme is the `@theme` block in `src/styles/global.css`, mapped to brand kit v1 (Forest, Ivory, Terracotta, Amber). That block also pins Tailwind 3 line heights for the named text sizes, so keep them
 - **TypeScript** - Strict mode enabled
 - **GitHub Pages** - Deployment via GitHub Actions
 
@@ -63,10 +63,10 @@ src/
 ### Styling Conventions
 - Brand kit v1 colors: forest #0F1A14, ivory #FFFBF5, terracotta #C45D3A, amber #D4A857 (exact values in the `brand` Tailwind color). Lead with forest and ivory; terracotta for emphasis; amber for small details on dark grounds only, never as text on ivory. Text and button terracotta (`clay`) is deepened in light mode and lifted in dark mode for AA contrast
 - Logo: `Logo.astro` holds the kit's outlined artwork (`variant` horizontal, stacked or symbol) colored with currentColor. Never retype the wordmark in a font. Horizontal in the header (about 280px wide minimum), stacked in the footer. Favicons and app icons in `public/` come from the kit's web-icons
-- Dark mode follows the visitor's system setting (`darkMode: 'media'`, no toggle). Theme-aware tokens `sand` (grounds, lines), `ink` (text), `clay` (accent) are CSS variables in global.css that flip under `prefers-color-scheme: dark`
+- Dark mode follows the visitor's system setting (`@custom-variant dark` on `prefers-color-scheme`, no toggle). Theme-aware tokens `sand` (grounds, lines), `ink` (text), `clay` (accent) are CSS variables in global.css that flip under `prefers-color-scheme: dark`
 - Fixed tokens that never flip: `cream` (ivory, light text on photos and pine bands), `night` (forest, dark text on light fills), `gold` (amber, accent on dark). `pine` is a dark band in both modes (forest, lifted slightly in dark mode so bands stand off the forest ground). Use these, not `sand`, for anything sitting on a photo or a pine band
 - Fonts: Cormorant (display/headings), Outfit (body/sans), loaded in Layout.astro
-- Component classes in global.css: `.container-site`, `.eyebrow`, `.display-xl|lg|md`, `.lede`, `.btn-primary|dark|outline|outline-light`, `.link-underline`, `.link-accent`, `.prose-ww`
+- Component classes in global.css (`btn` and `link-accent` are `@utility` blocks because other classes `@apply` them): `.container-site`, `.eyebrow`, `.display-xl|lg|md`, `.lede`, `.btn-primary|dark|outline|outline-light`, `.link-underline`, `.link-accent`, `.prose-ww`
 - `.reveal` fades sections in on scroll (respects reduced motion, visible without JS)
 - Pages with a photo hero pass `overlayHeader` to Layout for the transparent header
 - No em dashes in site copy

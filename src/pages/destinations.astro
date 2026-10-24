@@ -114,7 +114,7 @@ const trips = [
         {
           categories.map((c) => (
             <article class="reveal flex flex-col gap-5">
-              <Image src={c.img} alt={c.alt} widths={[500, 800, 1100]} sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" class="aspect-[4/3] w-full rounded-card object-cover" />
+              <Image src={c.img} alt={c.alt} widths={[500, 800, 1100]} sizes="(min-width: 1024px) 31vw, (min-width: 768px) 48vw, 100vw" class="aspect-4/3 w-full rounded-card object-cover" />
               <h3 class="text-[32px] leading-tight">{c.title}</h3>
               <p class="text-ink-600">{c.body}</p>
               <ul class="flex flex-wrap gap-2" aria-label={`${c.title} highlights`}>
@@ -144,7 +144,7 @@ const trips = [
           trips.map((t) => (
             <article class="reveal flex flex-col overflow-hidden rounded-card bg-sand-50">
               <div class="relative">
-                <Image src={t.img} alt={t.alt} widths={[600, 900, 1300]} sizes="(min-width: 768px) 48vw, 100vw" class="aspect-[16/10] w-full object-cover" />
+                <Image src={t.img} alt={t.alt} widths={[600, 900, 1300]} sizes="(min-width: 768px) 48vw, 100vw" class="aspect-16/10 w-full object-cover" />
                 <span class="absolute left-5 top-5 rounded-full bg-sand-50/95 px-4 py-1.5 text-[13px] font-medium text-ink">{t.duration}</span>
               </div>
               <div class="flex flex-col gap-3 p-8 md:p-10">

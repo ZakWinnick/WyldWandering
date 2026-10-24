@@ -1,6 +1,91 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/* Dark mode follows the visitor's system setting (prefers-color-scheme). */
+@custom-variant dark (@media (prefers-color-scheme: dark));
+
+/* Brand theme. Theme-aware tokens (sand, ink, clay, pine) read the CSS variables
+   below, which flip under prefers-color-scheme; the rest are fixed values. */
+@theme {
+  --color-sand-50: rgb(var(--c-sand-50));
+  --color-sand-100: rgb(var(--c-sand-100));
+  --color-sand-200: rgb(var(--c-sand-200));
+  --color-sand-300: rgb(var(--c-sand-300));
+  --color-sand-400: rgb(var(--c-sand-400));
+  --color-sand-500: rgb(var(--c-sand-500));
+
+  --color-ink-400: rgb(var(--c-ink-400));
+  --color-ink-600: rgb(var(--c-ink-600));
+  --color-ink-700: rgb(var(--c-ink-700));
+  --color-ink: rgb(var(--c-ink));
+
+  --color-clay: rgb(var(--c-clay));
+  --color-clay-dark: rgb(var(--c-clay-dark));
+
+  --color-brand-forest: #0f1a14;
+  --color-brand-ivory: #fffbf5;
+  --color-brand-terracotta: #c45d3a;
+  --color-brand-amber: #d4a857;
+
+  --color-cream-50: #fffbf5;
+  --color-cream-100: #f8f2e8;
+  --color-cream-500: #bfb6a6;
+
+  --color-night: #0f1a14;
+
+  --color-pine: rgb(var(--c-pine));
+  --color-pine-deep: #0a120e;
+  --color-pine-muted: #c9c2b4;
+
+  --color-gold: #d4a857;
+  --color-gold-soft: #f3d9a8;
+
+  --font-display: Cormorant, Georgia, serif;
+  --font-sans: Outfit, system-ui, sans-serif;
+
+  --container-site: 1360px;
+
+  --tracking-eyebrow: 0.22em;
+
+  --radius-card: 4px;
+
+  /* Tailwind 3 line heights. v4 uses unitless ratios, which change the line
+     height whenever a responsive or arbitrary font size overrides a named one
+     (and for children that inherit it). Fixed values keep v3 metrics. */
+  --text-xs--line-height: 1rem;
+  --text-sm--line-height: 1.25rem;
+  --text-base--line-height: 1.5rem;
+  --text-lg--line-height: 1.75rem;
+  --text-xl--line-height: 1.75rem;
+  --text-2xl--line-height: 2rem;
+  --text-3xl--line-height: 2.25rem;
+  --text-4xl--line-height: 2.5rem;
+}
+
+/* Tailwind 3 compatibility: v4 changed the default border color to currentcolor
+   and dropped the pointer cursor on buttons. Keep the v3 look and feel. */
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+
+  button:not(:disabled),
+  [role='button']:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+/* Applied inside the component classes below, so they are registered as utilities. */
+@utility btn {
+  @apply inline-flex min-h-[52px] items-center justify-center gap-2.5 rounded-full px-7 text-[15px] font-medium tracking-[0.04em] transition-colors duration-200;
+}
+
+@utility link-accent {
+  @apply font-medium text-clay underline-offset-4 hover:text-clay-dark hover:underline;
+}
 
 @layer base {
   /* Brand kit v1: forest #0F1A14, ivory #FFFBF5, terracotta #C45D3A, amber #D4A857. */
@@ -68,7 +153,7 @@
   }
 
   :focus-visible {
-    @apply outline outline-2 outline-offset-4 outline-clay;
+    @apply outline-solid outline-2 outline-offset-4 outline-clay;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -117,10 +202,6 @@
   }
 
   /* Buttons */
-  .btn {
-    @apply inline-flex min-h-[52px] items-center justify-center gap-2.5 rounded-full px-7 text-[15px] font-medium tracking-[0.04em] transition-colors duration-200;
-  }
-
   .btn-primary {
     @apply btn bg-clay text-cream-50 hover:bg-clay-dark hover:text-cream-50 dark:text-night dark:hover:text-night;
   }
@@ -139,10 +220,6 @@
 
   .link-underline {
     @apply inline-flex items-center gap-2 border-b border-current pb-1 text-[15px] font-medium text-ink transition-colors hover:text-clay;
-  }
-
-  .link-accent {
-    @apply font-medium text-clay underline-offset-4 hover:text-clay-dark hover:underline;
   }
 
   /* Numbered principle rows */

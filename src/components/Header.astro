@@ -53,7 +53,7 @@ const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`)
         <Icon name="lock" />
         Client Login
       </a>
-      <a href={INTAKE_URL} class="hidden min-h-[44px] items-center whitespace-nowrap rounded-full px-5 text-sm font-medium tracking-[0.04em] transition-colors sm:inline-flex bg-clay text-cream-50 hover:bg-clay-dark hover:text-cream-50 dark:text-night dark:hover:text-night group-data-[solid=false]:bg-cream-50 group-data-[solid=false]:text-night group-data-[solid=false]:hover:bg-cream-100"
+      <a href={INTAKE_URL} class="hidden min-h-[44px] items-center whitespace-nowrap rounded-full px-5 text-sm font-medium tracking-[0.04em] transition-colors sm:inline-flex bg-clay text-cream-50 hover:bg-clay-dark hover:text-cream-50 dark:text-night dark:hover:text-night group-data-[solid=false]:bg-cream-50 group-data-[solid=false]:text-night hover:group-data-[solid=false]:bg-cream-100"
        target="_blank" rel="noopener noreferrer">
         Start Planning
       </a>
@@ -71,7 +71,7 @@ const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`)
   </div>
 </header>
 
-<div id="mobile-menu" class="fixed inset-0 z-[60] hidden flex-col overflow-y-auto bg-pine text-cream-100" role="dialog" aria-modal="true" aria-label="Menu">
+<div id="mobile-menu" class="fixed inset-0 z-60 hidden flex-col overflow-y-auto bg-pine text-cream-100" role="dialog" aria-modal="true" aria-label="Menu">
   <div class="container-site flex items-center justify-between py-4">
     <a href="/" aria-label={`${SITE.name} home`} class="text-cream-100 hover:text-cream-100">
       <Logo class="h-[36px] w-auto" />
