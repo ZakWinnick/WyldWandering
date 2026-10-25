@@ -1,0 +1,69 @@
+{
+ "slug": "where-to-stay-amalfi-coast",
+ "r2_base": "https://pub-3c5475de9d84447ba04052c5af622da7.r2.dev/guides/where-to-stay-amalfi-coast/",
+ "images": [
+  {
+   "role": "hero",
+   "file": "img/where-to-stay-amalfi-coast/hero-positano.jpg",
+   "url": "https://pub-3c5475de9d84447ba04052c5af622da7.r2.dev/guides/where-to-stay-amalfi-coast/hero-positano.jpg",
+   "alt": "Positano's pastel houses stacked down the cliff to the beach, with boats anchored in the turquoise bay",
+   "photographer": "Letizia Agosta",
+   "photographer_url": "https://unsplash.com/@adnonda",
+   "source_page": "https://unsplash.com/photos/village-near-the-ocean-3TzHmifXX5k",
+   "unsplash_id": "3TzHmifXX5k",
+   "license": "Unsplash License (free for commercial use, no permission or attribution required)",
+   "license_url": "https://unsplash.com/license",
+   "width": 2000,
+   "height": 1333,
+   "bytes": 384806
+  },
+  {
+   "role": "inline",
+   "section": "Ravello",
+   "file": "img/where-to-stay-amalfi-coast/ravello-umbrella-pine.jpg",
+   "url": "https://pub-3c5475de9d84447ba04052c5af622da7.r2.dev/guides/where-to-stay-amalfi-coast/ravello-umbrella-pine.jpg",
+   "alt": "An umbrella pine and a stone tower on a garden terrace in Ravello, high above the blue sea",
+   "photographer": "Kevin McMahon",
+   "photographer_url": "https://unsplash.com/@kevinpmcmahon",
+   "source_page": "https://unsplash.com/photos/green-tree-near-body-of-water-during-daytime--naFVsXYuTg",
+   "unsplash_id": "-naFVsXYuTg",
+   "license": "Unsplash License (free for commercial use, no permission or attribution required)",
+   "license_url": "https://unsplash.com/license",
+   "width": 1600,
+   "height": 1067,
+   "bytes": 227740
+  },
+  {
+   "role": "inline",
+   "section": "Praiano and Conca dei Marini",
+   "file": "img/where-to-stay-amalfi-coast/praiano-path-of-the-gods.jpg",
+   "url": "https://pub-3c5475de9d84447ba04052c5af622da7.r2.dev/guides/where-to-stay-amalfi-coast/praiano-path-of-the-gods.jpg",
+   "alt": "A calm, hazy sea and headlands seen from the Path of the Gods trail above Praiano",
+   "photographer": "Pasquale Fusco",
+   "photographer_url": "https://unsplash.com/@pasqualefusco22",
+   "source_page": "https://unsplash.com/photos/a-large-body-of-water-surrounded-by-mountains-LAVmstFtw0Y",
+   "unsplash_id": "LAVmstFtw0Y",
+   "license": "Unsplash License (free for commercial use, no permission or attribution required)",
+   "license_url": "https://unsplash.com/license",
+   "width": 1600,
+   "height": 1067,
+   "bytes": 171733
+  },
+  {
+   "role": "inline",
+   "section": "Amalfi town",
+   "file": "img/where-to-stay-amalfi-coast/amalfi-town.jpg",
+   "url": "https://pub-3c5475de9d84447ba04052c5af622da7.r2.dev/guides/where-to-stay-amalfi-coast/amalfi-town.jpg",
+   "alt": "Colorful buildings on the cliffs above Amalfi's harbor, with boats on turquoise water",
+   "photographer": "Tom Podmore",
+   "photographer_url": "https://unsplash.com/@tompodmore86",
+   "source_page": "https://unsplash.com/photos/colorful-buildings-on-amalfi-cliffside-1zkHXas1GIo",
+   "unsplash_id": "1zkHXas1GIo",
+   "license": "Unsplash License (free for commercial use, no permission or attribution required)",
+   "license_url": "https://unsplash.com/license",
+   "width": 1600,
+   "height": 1067,
+   "bytes": 396881
+  }
+ ]
+}

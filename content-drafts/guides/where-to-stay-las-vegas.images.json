@@ -1,0 +1,69 @@
+{
+ "slug": "where-to-stay-las-vegas",
+ "r2_base": "https://pub-3c5475de9d84447ba04052c5af622da7.r2.dev/guides/where-to-stay-las-vegas/",
+ "images": [
+  {
+   "role": "hero",
+   "file": "img/where-to-stay-las-vegas/hero-strip-twilight.jpg",
+   "url": "https://pub-3c5475de9d84447ba04052c5af622da7.r2.dev/guides/where-to-stay-las-vegas/hero-strip-twilight.jpg",
+   "alt": "The Las Vegas Strip at twilight, seen from above the Bellagio fountains, with the Eiffel Tower replica and the High Roller wheel in the distance",
+   "photographer": "Scott K",
+   "photographer_url": "https://unsplash.com/@sizzle_king",
+   "source_page": "https://unsplash.com/photos/las-vegas-strip-with-bellagio-fountains-at-twilight-jlTy96QYNRU",
+   "unsplash_id": "jlTy96QYNRU",
+   "license": "Unsplash License (free for commercial use, no permission or attribution required)",
+   "license_url": "https://unsplash.com/license",
+   "width": 2000,
+   "height": 1191,
+   "bytes": 362275
+  },
+  {
+   "role": "inline",
+   "section": "Center Strip",
+   "file": "img/where-to-stay-las-vegas/strip-at-night.jpg",
+   "url": "https://pub-3c5475de9d84447ba04052c5af622da7.r2.dev/guides/where-to-stay-las-vegas/strip-at-night.jpg",
+   "alt": "The Center Strip lit up at night, with the Bellagio fountains in the foreground and the Eiffel Tower replica and High Roller wheel behind",
+   "photographer": "Julian Paefgen",
+   "photographer_url": "https://unsplash.com/@julianpaefgen",
+   "source_page": "https://unsplash.com/photos/city-with-lights-turned-on-during-night-time-uxU_jyu9e7U",
+   "unsplash_id": "uxU_jyu9e7U",
+   "license": "Unsplash License (free for commercial use, no permission or attribution required)",
+   "license_url": "https://unsplash.com/license",
+   "width": 1600,
+   "height": 1067,
+   "bytes": 384136
+  },
+  {
+   "role": "inline",
+   "section": "North Strip",
+   "file": "img/where-to-stay-las-vegas/north-strip-sunset.jpg",
+   "url": "https://pub-3c5475de9d84447ba04052c5af622da7.r2.dev/guides/where-to-stay-las-vegas/north-strip-sunset.jpg",
+   "alt": "Sunset over the North Strip, with the Wynn and Encore towers, the Palazzo and the Venetian's campanile",
+   "photographer": "Matthias Mullie",
+   "photographer_url": "https://unsplash.com/@matthiasmullie",
+   "source_page": "https://unsplash.com/photos/aerial-photograph-of-high-rise-buildings-NF9s89qIaL0",
+   "unsplash_id": "NF9s89qIaL0",
+   "license": "Unsplash License (free for commercial use, no permission or attribution required)",
+   "license_url": "https://unsplash.com/license",
+   "width": 1600,
+   "height": 989,
+   "bytes": 311603
+  },
+  {
+   "role": "inline",
+   "section": "Off the Strip",
+   "file": "img/where-to-stay-las-vegas/red-rock-canyon.jpg",
+   "url": "https://pub-3c5475de9d84447ba04052c5af622da7.r2.dev/guides/where-to-stay-las-vegas/red-rock-canyon.jpg",
+   "alt": "Red sandstone peaks glowing at sunset in Red Rock Canyon, west of Las Vegas",
+   "photographer": "Halie West",
+   "photographer_url": "https://unsplash.com/@haliewestphoto",
+   "source_page": "https://unsplash.com/photos/brown-rocky-mountain-under-blue-sky-during-daytime-mcL6RsmE8WA",
+   "unsplash_id": "mcL6RsmE8WA",
+   "license": "Unsplash License (free for commercial use, no permission or attribution required)",
+   "license_url": "https://unsplash.com/license",
+   "width": 1600,
+   "height": 1067,
+   "bytes": 267413
+  }
+ ]
+}
