@@ -2,18 +2,21 @@
 title: "Where to Stay in Paris: A Hotel Insider's Guide by Neighborhood"
 excerpt: "The Tuileries, the Golden Triangle, Saint-Germain or the Marais? Who each part of Paris suits, when to go, and what to ask for at check-in, from a hotel insider."
 date: 2026-10-23
+updated: 2026-11-10
 category: "Guides"
 image: "./hero-eiffel-tower-rooftops.jpg"
 imageAlt: "The Eiffel Tower rising above the rooftops and tree-lined streets of Paris"
 draft: false
-seoTitle: "Where to Stay in Paris: Neighborhood-by-Neighborhood Guide"
-metaDescription: "Where to stay in Paris, neighborhood by neighborhood: the Tuileries, the Golden Triangle, Saint-Germain and the Marais. Who each suits, when to go, and what to ask for at check-in."
+seoTitle: "Where to Stay in Paris: Luxury Hotels by Neighborhood"
+metaDescription: "Where to stay in Paris: the Tuileries, Golden Triangle, Saint-Germain or the Marais. Luxury hotels by neighborhood, and complimentary Fora perks when you book."
 slug: "where-to-stay-paris"
 ---
 
 Paris rewards the traveler who picks a neighborhood first. The city is made for walking, and the streets right outside your hotel shape every morning coffee, every evening stroll and every dinner you can walk home from. After [fifteen years working inside luxury hotels](/about/), my advice is simple: decide what kind of Paris you want, choose the quarter, then choose the hotel.
 
 From Charles de Gaulle, the drive to the Place de la Concorde takes roughly 45 to 60 minutes; from Orly, about 30 to 45, depending on traffic. A private transfer is the easiest way to arrive. Here's how four of the city's best hotel neighborhoods compare.
+
+If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add Fora perks at most of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
 
 ## The Tuileries and Place de la Concorde: For Grand Hotels and Classic Views
 
@@ -77,7 +80,7 @@ When you book through me, you pay the same room rate you'd pay booking direct, a
 
 ## Start Here
 
-Tell me who's going, when, and whether you picture yourself on the Right Bank by the Tuileries or on the Left Bank in Saint-Germain. I'll come back with the right neighborhood, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
+Book through me and get Fora perks — breakfast, a resort or dining credit, and an upgrade when available — at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself on the Right Bank by the Tuileries or on the Left Bank in Saint-Germain. I'll come back with the right neighborhood, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
 
 ---
 

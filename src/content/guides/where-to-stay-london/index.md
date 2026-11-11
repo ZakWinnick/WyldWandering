@@ -2,18 +2,21 @@
 title: "Where to Stay in London: A Hotel Insider's Guide by Neighborhood"
 excerpt: "Mayfair, Knightsbridge, Marylebone or Covent Garden? Who each part of London suits, when to go, and what to ask for at check-in, from a hotel insider."
 date: 2026-11-03
+updated: 2026-11-10
 category: "Guides"
 image: "./hero-big-ben-westminster.jpg"
 imageAlt: "Big Ben and the Houses of Parliament beside Westminster Bridge under a blue sky"
 draft: false
-seoTitle: "Where to Stay in London: Neighborhood-by-Neighborhood Guide"
-metaDescription: "Where to stay in London, neighborhood by neighborhood: Mayfair, Knightsbridge, Marylebone and Covent Garden. Who each suits, when to go, and what to ask for at check-in."
+seoTitle: "Where to Stay in London: Luxury Hotels by Neighborhood"
+metaDescription: "Where to stay in London: Mayfair, Knightsbridge, Marylebone or Covent Garden. Luxury hotels by neighborhood, plus complimentary Fora perks when you book."
 slug: "where-to-stay-london"
 ---
 
 London rewards the traveler who picks a neighborhood first. The city is big, and a hotel in Mayfair, Knightsbridge, Marylebone or Covent Garden can make it feel like four different trips: a quiet street at night, a morning beside the park, an afternoon in the boutiques or an evening at the theater. After [fifteen years working inside luxury hotels](/about/), my advice is simple: decide what kind of London you want, choose the neighborhood, then choose the hotel.
 
 From Heathrow, allow roughly 50 minutes by car to the Strand, or up to an hour on the Piccadilly line to Hyde Park Corner. US travelers usually need a UK electronic travel authorisation (ETA) rather than a visa for a tourist stay, and every traveler needs one, children included. Apply only through the official GOV.UK site or the UK ETA app. Here's how four of London's best hotel neighborhoods compare.
+
+If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add Fora perks at most of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
 
 ## Mayfair: For Grand Hotels and Quiet Luxury
 
@@ -77,7 +80,7 @@ When you book through me, you pay the same room rate you'd pay booking direct, a
 
 ## Start Here
 
-Tell me who's going, when, and whether you picture yourself on a quiet Mayfair street, beside Hyde Park in Knightsbridge, or in the middle of the West End. I'll come back with the right neighborhood, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
+Book through me and get Fora perks — breakfast, a resort or dining credit, and an upgrade when available — at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself on a quiet Mayfair street, beside Hyde Park in Knightsbridge, or in the middle of the West End. I'll come back with the right neighborhood, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
 
 ---
 

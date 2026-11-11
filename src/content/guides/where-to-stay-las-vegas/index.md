@@ -2,18 +2,21 @@
 title: "Where to Stay in Las Vegas: A Hotel Insider's Guide to the Strip"
 excerpt: "North, Center or South Strip, or off it? Who each part of Las Vegas suits, when to go, and what to ask for at check-in, from a former hotel insider."
 date: 2026-10-23
+updated: 2026-11-10
 category: "Guides"
 image: "./hero-strip-twilight.jpg"
 imageAlt: "The Las Vegas Strip at twilight, seen from above the Bellagio fountains, with the Eiffel Tower replica and the High Roller wheel in the distance"
 draft: false
-seoTitle: "Where to Stay in Las Vegas: An Insider's Guide by Area"
-metaDescription: "Where to stay in Las Vegas, area by area, from a former Wynn and Cosmopolitan insider. Who each part of the Strip suits, when to go, and what to ask for at check-in."
+seoTitle: "Where to Stay in Las Vegas: Luxury Hotels on the Strip"
+metaDescription: "Where to stay in Las Vegas, from a former Wynn and Cosmopolitan insider. Center, North or South Strip, the luxury hotels to know, and complimentary Fora perks."
 slug: "where-to-stay-las-vegas"
 ---
 
 I spent part of my [fifteen years in hotels](/about/) at Wynn Las Vegas and the Cosmopolitan of Las Vegas, so I've seen this city from behind the front desk. The biggest mistake I watched guests make wasn't choosing the wrong hotel. It was choosing the wrong part of the Strip for the trip they actually wanted.
 
 Las Vegas Boulevard runs about four miles from the Strat at the north end to Mandalay Bay at the south. On a map that looks walkable. In July, with resorts the size of small towns, it isn't. Where you sleep decides how much of your trip is spent in casino corridors and rideshare lines, so start with the area, then pick the hotel.
+
+If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add Fora perks at most of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
 
 ## Center Strip: For First-Timers and People Who Want Everything Outside the Door
 
@@ -75,7 +78,7 @@ When you book through me, you pay the same room rate you'd pay booking direct. W
 
 ## Start Here
 
-Tell me who's going, when, and what kind of Vegas you want, and I'll come back with the right area, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
+Book through me and get Fora perks — breakfast, a resort or dining credit, and an upgrade when available — at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and what kind of Vegas you want, and I'll come back with the right area, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
 
 ---
 

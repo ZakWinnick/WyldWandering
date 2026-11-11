@@ -2,18 +2,21 @@
 title: "Where to Stay on the Amalfi Coast: Positano, Ravello, Amalfi and Beyond"
 excerpt: "Positano, Ravello, Praiano, Amalfi or Sorrento? Who each Amalfi Coast town suits, when to go, and what to ask for at check-in, from a hotel insider."
 date: 2026-10-23
+updated: 2026-11-10
 category: "Guides"
 image: "./hero-positano.jpg"
 imageAlt: "Positano's pastel houses stacked down the cliff to the beach, with boats anchored in the turquoise bay"
 draft: false
-seoTitle: "Where to Stay on the Amalfi Coast: Town-by-Town Guide"
-metaDescription: "Where to stay on the Amalfi Coast, town by town: Positano, Ravello, Praiano, Amalfi and Sorrento. Who each suits, when to go, and what to ask for at check-in."
+seoTitle: "Where to Stay on the Amalfi Coast: Luxury Hotels by Town"
+metaDescription: "Where to stay on the Amalfi Coast: Positano, Ravello, Praiano, Amalfi or Sorrento. Luxury hotels by town, plus complimentary Fora perks when you book."
 slug: "where-to-stay-amalfi-coast"
 ---
 
 The Amalfi Coast is one of the few places where the town you choose matters as much as the hotel. The coast road is narrow and winding, the ferries run on their own schedule, and getting from one town to the next for dinner can take longer than you expect. After [fifteen years working inside luxury hotels](/about/), my advice is simple: pick your base for how you want your days to feel, then pick the hotel.
 
 Most travelers arrive through Naples International Airport, roughly 90 minutes by car from Positano, or by high-speed train from Rome to Naples. Plan on a private transfer for the last stretch. It's the easiest way to arrive with luggage on a road like this one.
+
+If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add Fora perks at most of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
 
 ## Positano: For the Postcard, and for People Who Want to Be in It
 
@@ -83,7 +86,7 @@ When you book through me, you pay the same room rate you'd pay booking direct, a
 
 ## Start Here
 
-Tell me who's going, when, and whether you picture yourself in the middle of Positano or high above it in Ravello. I'll come back with the right town, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
+Book through me and get Fora perks — breakfast, a resort or dining credit, and an upgrade when available — at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself in the middle of Positano or high above it in Ravello. I'll come back with the right town, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
 
 ---
 
