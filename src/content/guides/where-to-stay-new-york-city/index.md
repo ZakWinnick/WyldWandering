@@ -2,18 +2,21 @@
 title: "Where to Stay in New York City: A Hotel Insider's Guide to Manhattan"
 excerpt: "Upper East Side, Central Park South, SoHo or Tribeca? Who each part of Manhattan suits, when to go, and what to ask for at check-in, from a hotel insider."
 date: 2026-10-23
+updated: 2026-11-10
 category: "Guides"
 image: "./hero-central-park-aerial.jpg"
 imageAlt: "Central Park from above, with Manhattan's towers on both sides and the Hudson and East Rivers in the distance"
 draft: false
-seoTitle: "Where to Stay in New York City: Manhattan by Neighborhood"
-metaDescription: "Where to stay in New York City, neighborhood by neighborhood: the Upper East Side, Central Park South, SoHo and Tribeca. Who each suits, when to go, and what to ask for at check-in."
+seoTitle: "Where to Stay in New York City: Luxury Hotels by Neighborhood"
+metaDescription: "Where to stay in New York City: Upper East Side, Central Park South, SoHo or Tribeca. Who each suits, the luxury hotels to know, and complimentary Fora perks."
 slug: "where-to-stay-new-york-city"
 ---
 
 New York is the rare city where the hotel you pick can matter less than the blocks around it. The same week can feel like a quiet stay of museums and long lunches, or late dinners and gallery hopping downtown, depending on where you sleep. After [fifteen years working inside luxury hotels](/about/), my advice is the same here as everywhere: decide how you want your days to feel, choose the neighborhood, then choose the hotel.
 
 Here's how four of Manhattan's best hotel neighborhoods compare.
+
+If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add Fora perks at most of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
 
 ## Upper East Side: For Quiet, Classic New York
 
@@ -79,7 +82,7 @@ When you book through me, you pay the same room rate you'd pay booking direct, a
 
 ## Start Here
 
-Tell me who's going, when, and whether you picture yourself on a quiet street uptown or in the middle of things downtown. I'll come back with the right neighborhood, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
+Book through me and get Fora perks — breakfast, a resort or dining credit, and an upgrade when available — at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself on a quiet street uptown or in the middle of things downtown. I'll come back with the right neighborhood, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
 
 ---
 
