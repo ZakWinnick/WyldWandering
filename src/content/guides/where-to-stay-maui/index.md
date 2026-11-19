@@ -8,7 +8,7 @@ image: "./hero-wailea-coast.jpg"
 imageAlt: "Lava rock shoreline and palm trees along the Wailea coast, with the West Maui Mountains in the distance"
 draft: false
 seoTitle: "Where to Stay in Maui: Luxury Hotels by Resort Area"
-metaDescription: "Where to stay in Maui: Wailea, Kapalua, Kāʻanapali or Hāna. Who each area suits, the luxury hotels to know, and complimentary Fora perks when you book."
+metaDescription: "Where to stay in Maui: Wailea, Kapalua, Kāʻanapali or Hāna. Who each area suits, the luxury hotels to know, and complimentary VIP perks when you book."
 slug: "where-to-stay-maui"
 ---
 
@@ -16,7 +16,7 @@ Maui is one island, but where you sleep decides the trip: a polished beach walk 
 
 Most travelers from the mainland fly into Kahului Airport (OGG). From there, allow about 25 to 30 minutes by car to Wailea, about 50 minutes to Kāʻanapali and about an hour to Kapalua. Hawaiʻi doesn't observe daylight saving time, so from November to March it runs two hours behind the West Coast, and three hours behind in summer. Here's how four of Maui's best places to stay compare.
 
-If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add Fora perks at most of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
+If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add partner perks at many of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
 
 ## Wailea: For Sunny Beaches and Polished Resorts
 
@@ -76,13 +76,13 @@ Maui works all year, but winter has a headliner: humpback whales. NOAA says they
 
 ## How Booking With an Advisor Works Here
 
-When you book through me, you pay the same room rate you'd pay booking direct, and you get partner perks on top. As a Fora advisor, I can attach perks at most of the hotels above. At Four Seasons Resort Maui, Fora bookings get Four Seasons Preferred Partner amenities, which I'll walk you through. Fora's public pages currently list a $100 credit, breakfast daily and an upgrade and extended check-in and checkout whenever possible at Fairmont Kea Lani and The Ritz-Carlton Maui, Kapalua. Hyatt Regency Maui and Hāna-Maui Resort each list a hotel credit, a welcome amenity, breakfast daily and an upgrade and extended check-in and checkout whenever possible. Hotel Wailea lists a $25 food and beverage credit, a welcome amenity and an upgrade and extended check-in and checkout whenever possible. At The Resort at Kapalua Bay, I confirm the current perks for your dates. Upgrades, early check-in and late checkout are always subject to availability, and perks can change, so I confirm what applies to your dates before you book.
+When you book through me, you pay the same room rate you'd pay booking direct, and I can add partner perks at many of the hotels above, typically breakfast, a hotel or dining credit, and an upgrade when available. Perks depend on each hotel's program, and upgrades, early check-in and late checkout are always subject to availability, so I confirm exactly what applies to your dates before you book.
 
 [Hotel-only bookings](/services/#pricing) with me are complimentary. If you want flights handled too, or a full itinerary with restaurants, tours and day-by-day plans, that's a flat planning fee, listed on my [Services page](/services/#pricing).
 
 ## Start Here
 
-Book through me and get Fora perks — breakfast, a resort or dining credit, and an upgrade when available — at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself on the Wailea beach path, on a quiet Kapalua bay, on the sand at Kāʻanapali or somewhere past the last bridge in Hāna. I'll come back with the right area, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
+Book through me and get partner perks, such as breakfast, a hotel or dining credit and an upgrade when available, at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself on the Wailea beach path, on a quiet Kapalua bay, on the sand at Kāʻanapali or somewhere past the last bridge in Hāna. I'll come back with the right area, the right hotel and the right room. The first step is a short form about your trip: [start your trip](/start/).
 
 ---
 

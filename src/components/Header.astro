@@ -2,7 +2,7 @@
 import Logo from './Logo.astro';
 import { getGuides } from '../lib/guides';
 import Icon from './Icon.astro';
-import { NAV_LINKS, INTAKE_URL, PORTAL_URL, SOCIAL, SITE } from '../config/site';
+import { NAV_LINKS, START_URL, SOCIAL, SITE } from '../config/site';
 
 // Guides joins the nav once the first guide is published.
 const navLinks = (await getGuides()).length > 0
@@ -49,12 +49,7 @@ const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`)
     </nav>
 
     <div class="flex items-center gap-1 sm:gap-5">
-      <a href={PORTAL_URL} class="hidden min-h-[44px] items-center gap-2 whitespace-nowrap text-[15px] font-normal text-current hover:text-current hover:opacity-80 sm:inline-flex" target="_blank" rel="noopener noreferrer">
-        <Icon name="lock" />
-        Client Login
-      </a>
-      <a href={INTAKE_URL} class="hidden min-h-[44px] items-center whitespace-nowrap rounded-full px-5 text-sm font-medium tracking-[0.04em] transition-colors sm:inline-flex bg-clay text-cream-50 hover:bg-clay-dark hover:text-cream-50 dark:text-night dark:hover:text-night group-data-[solid=false]:bg-cream-50 group-data-[solid=false]:text-night hover:group-data-[solid=false]:bg-cream-100"
-       target="_blank" rel="noopener noreferrer">
+      <a href={START_URL} class="hidden min-h-[44px] items-center whitespace-nowrap rounded-full px-5 text-sm font-medium tracking-[0.04em] transition-colors sm:inline-flex bg-clay text-cream-50 hover:bg-clay-dark hover:text-cream-50 dark:text-night dark:hover:text-night group-data-[solid=false]:bg-cream-50 group-data-[solid=false]:text-night hover:group-data-[solid=false]:bg-cream-100">
         Start Planning
       </a>
       <button
@@ -92,8 +87,7 @@ const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`)
     <a href="/contact" class="font-display text-[44px] leading-tight text-cream-100 hover:text-gold">Contact</a>
   </nav>
   <div class="container-site flex flex-col gap-3 pb-10">
-    <a href={INTAKE_URL} class="btn-primary w-full" target="_blank" rel="noopener noreferrer">Start Planning <Icon name="arrow" /></a>
-    <a href={PORTAL_URL} class="btn-outline-light w-full" target="_blank" rel="noopener noreferrer"><Icon name="lock" /> Client Login</a>
+    <a href={START_URL} class="btn-primary w-full">Start Planning <Icon name="arrow" /></a>
     <div class="mt-6 flex gap-6 text-sm text-pine-muted">
       <a href={SOCIAL.instagram} class="text-pine-muted hover:text-gold" target="_blank" rel="noopener noreferrer">Instagram {SOCIAL.instagramHandle}</a>
       <a href={SOCIAL.x} class="text-pine-muted hover:text-gold" target="_blank" rel="noopener noreferrer">X {SOCIAL.xHandle}</a>

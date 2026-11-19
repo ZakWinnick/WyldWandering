@@ -1,0 +1,17 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { SITE } from '../../config/site';
+---
+
+<Layout title="Trip Details Received" noindex>
+  <PageHero eyebrow="Start planning" intro="Thanks for sending your trip details. I read every inquiry myself and will reply within two business days.">
+    Trip details <em>received.</em>
+  </PageHero>
+  <section class="py-16 md:py-20">
+    <div class="container-site flex flex-wrap items-center gap-6">
+      <a href="/guides/" class="btn-dark">Browse the Guides</a>
+      <a href={`mailto:${SITE.email}`} class="link-accent">{SITE.email}</a>
+    </div>
+  </section>
+</Layout>

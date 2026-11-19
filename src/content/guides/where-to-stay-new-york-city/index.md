@@ -8,7 +8,7 @@ image: "./hero-central-park-aerial.jpg"
 imageAlt: "Central Park from above, with Manhattan's towers on both sides and the Hudson and East Rivers in the distance"
 draft: false
 seoTitle: "Where to Stay in New York City: Luxury Hotels by Neighborhood"
-metaDescription: "Where to stay in New York City: Upper East Side, Central Park South, SoHo or Tribeca. Who each suits, the luxury hotels to know, and complimentary Fora perks."
+metaDescription: "Where to stay in New York City: Upper East Side, Central Park South, SoHo or Tribeca. Who each suits, the luxury hotels to know, and complimentary VIP perks."
 slug: "where-to-stay-new-york-city"
 ---
 
@@ -16,7 +16,7 @@ New York is the rare city where the hotel you pick can matter less than the bloc
 
 Here's how four of Manhattan's best hotel neighborhoods compare.
 
-If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add Fora perks at most of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
+If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add partner perks at many of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
 
 ## Upper East Side: For Quiet, Classic New York
 
@@ -76,13 +76,13 @@ Rates in New York follow the calendar more than the weather. September is one of
 
 ## How Booking With an Advisor Works Here
 
-When you book through me, you pay the same room rate you'd pay booking direct, and you get partner perks on top. As a Fora advisor, I can attach perks at the hotels above. Fora's public pages currently list an upgrade and extended check-in and checkout whenever possible at The Carlyle, The Mark, The Lowell, The Pierre, The Ritz-Carlton New York, Central Park, The Greenwich Hotel, The Mercer and Soho Grand. The first six also list breakfast daily and a $100 credit: food and beverage at The Carlyle, The Mark, The Lowell and The Pierre, food and beverage or spa at the Ritz-Carlton, and a hotel credit at The Greenwich. The Mercer lists a $30 daily breakfast credit per person, a hotel credit and a welcome amenity, and Soho Grand lists breakfast daily, a $50 food and beverage credit and a waived amenity fee. Four Seasons Hotel New York Downtown comes with Four Seasons Preferred Partner benefits. Upgrades, early check-in and late checkout are always subject to availability, and perks can change, so I confirm what applies to your dates before you book.
+When you book through me, you pay the same room rate you'd pay booking direct, and I can add partner perks at many of the hotels above, typically breakfast, a hotel or dining credit, and an upgrade when available. Perks depend on each hotel's program, and upgrades, early check-in and late checkout are always subject to availability, so I confirm exactly what applies to your dates before you book.
 
 [Hotel-only bookings](/services/#pricing) with me are complimentary. If you want flights handled too, or a full itinerary with restaurants, shows and day-by-day plans, that's a flat planning fee, listed on my [Services page](/services/#pricing).
 
 ## Start Here
 
-Book through me and get Fora perks — breakfast, a resort or dining credit, and an upgrade when available — at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself on a quiet street uptown or in the middle of things downtown. I'll come back with the right neighborhood, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
+Book through me and get partner perks, such as breakfast, a hotel or dining credit and an upgrade when available, at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself on a quiet street uptown or in the middle of things downtown. I'll come back with the right neighborhood, the right hotel and the right room. The first step is a short form about your trip: [start your trip](/start/).
 
 ---
 

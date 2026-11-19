@@ -1,5 +1,4 @@
 // Single source of truth for links that appear across the site.
-// Fora intake and client portal URLs come from the advisor's Fora account.
 
 export const SITE = {
   name: 'Wyld Wandering',
@@ -8,44 +7,25 @@ export const SITE = {
   advisor: 'Zak Winnick',
   tagline: 'Premium travel planning with Zak Winnick',
   description:
-    'Premium travel planning by Zak Winnick, a certified Fora travel advisor with 15 years in luxury hospitality. The right hotels, the hard-to-get reservations, and the perks you would not get booking on your own.',
+    'Premium travel planning by Zak Winnick, a travel advisor with 15 years in luxury hospitality. The right hotels, the hard-to-get reservations, and the perks you would not get booking on your own.',
 } as const;
 
-// Site forms (contact question, Private Client application).
-// FORMS_ENDPOINT is the Cloudflare Worker in workers/forms that emails each
-// submission through Proton SMTP. While it or the Turnstile key is empty, the
-// forms fall back to FormSubmit, delivering to FORM_EMAIL.
+// Site forms (contact question, trip inquiry, Private Client application) post
+// to the Cloudflare Worker in workers/forms, which emails each submission to
+// SITE.email through Proton SMTP. Turnstile guards them against bots.
 export const FORMS_ENDPOINT = 'https://forms.wyldwandering.com';
 export const TURNSTILE_SITE_KEY = '0x4AAAAAAFht_sHD4b5R6f_-';
-export const FORM_EMAIL = 'zak.winnick@fora.travel';
-export const FORMS_LIVE = Boolean(FORMS_ENDPOINT && TURNSTILE_SITE_KEY);
-export const formAction = (form: 'contact' | 'private-client') =>
-  FORMS_LIVE ? `${FORMS_ENDPOINT}/${form}` : `https://formsubmit.co/${FORM_EMAIL}`;
+export const FORMS_LIVE = true;
+export const formAction = (form: 'contact' | 'trip' | 'private-client') => `${FORMS_ENDPOINT}/${form}`;
 
-// New clients start here. Creates their traveler profile in Fora.
-export const INTAKE_URL = 'https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3';
-
-// Existing clients sign in here to browse and book hotels.
-export const PORTAL_URL = 'https://trips.foratravel.com/wyldwandering/book';
+// New clients start here: the trip inquiry form.
+export const START_URL = '/start/';
 
 export const SOCIAL = {
   instagram: 'https://instagram.com/wyldwandering',
   instagramHandle: '@wyldwandering',
   x: 'https://x.com/WyldWandering',
   xHandle: '@WyldWandering',
-  fora: 'https://foratravel.com/advisors/zak-winnick',
-} as const;
-
-// Required Fora affiliation disclosure. Registration numbers as published on
-// https://www.foratravel.com/legal. Update here if Fora's registrations change.
-export const FORA_DISCLOSURE = {
-  affiliation: 'Wyld Wandering is an independent affiliate of Fora Travel, Inc.',
-  registrationsIntro: 'Fora Travel, Inc. is registered with the following state licenses:',
-  registrations: [
-    'California Seller of Travel Registration No. 2151995-50',
-    'Florida Seller of Travel Registration No. ST43973',
-    'Washington Seller of Travel Unified Business ID (UBI) # 605329242',
-  ],
 } as const;
 
 // Planning fees. Home, Services, Contact and FAQ all read from here.

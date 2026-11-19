@@ -4,14 +4,14 @@ import PageHero from '../../components/PageHero.astro';
 import Icon from '../../components/Icon.astro';
 import FormHidden from '../../components/FormHidden.astro';
 import FormSubmitRow from '../../components/FormSubmitRow.astro';
-import { formAction, INTAKE_URL, PORTAL_URL, SITE, SOCIAL, PRICING, PRIVATE_CLIENT } from '../../config/site';
+import { formAction, START_URL, PRIVATE_CLIENT_APPLY_URL, SITE, SOCIAL, PRICING, PRIVATE_CLIENT } from '../../config/site';
 
 const field =
   'w-full rounded-card border border-sand-400 bg-white px-4 dark:bg-sand-100 py-3.5 text-[16px] font-normal text-ink placeholder:text-ink-400 focus:border-clay focus:outline-hidden focus:ring-2 focus:ring-clay/25';
 const label = 'mb-2 block text-sm font-medium text-ink';
 ---
 
-<Layout title="Contact" description="Start planning with Zak Winnick, certified Fora travel advisor. New clients begin with a short intake; existing clients sign in to the client portal.">
+<Layout title="Contact" description="Start planning with Zak Winnick, travel advisor. Share your trip details, apply for Private Client, or send a quick question.">
   <PageHero eyebrow="Let's talk" intro="Tell me where you want to go. Or just tell me what you're in the mood for. Either way, we'll figure it out.">
     Start <em>here.</em>
   </PageHero>
@@ -22,14 +22,14 @@ const label = 'mb-2 block text-sm font-medium text-ink';
       <div class="reveal flex flex-col gap-5 rounded-card bg-pine p-8 text-cream-100 md:p-12">
         <p class="text-[13px] font-medium uppercase tracking-eyebrow text-gold">New to Wyld Wandering</p>
         <h2 class="text-[40px] leading-tight md:text-[48px]">Plan a Trip</h2>
-        <p class="max-w-md text-pine-muted">The intake takes a few minutes and sets up your traveler profile: who's traveling, where you're based, how you like to be contacted, and the hotels you already love. I'll follow up to set up a conversation about the trip.</p>
-        <a href={INTAKE_URL} class="btn-primary mt-3 self-start" target="_blank" rel="noopener noreferrer">Begin the Intake <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
+        <p class="max-w-md text-pine-muted">A short form covers the basics: who's traveling, where you're thinking of going, and what would make the trip worth it. I'll reply within two business days to set up a conversation about the trip.</p>
+        <a href={START_URL} class="btn-primary mt-3 self-start">Share Your Trip <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
       </div>
       <div class="reveal flex flex-col gap-5 rounded-card bg-sand-200 p-8 md:p-12">
-        <p class="eyebrow">Already a client</p>
-        <h2 class="text-[40px] leading-tight md:text-[48px]">Client Portal</h2>
-        <p class="max-w-md text-ink-700">Sign in with the email or phone number on your profile to browse and book hotels with me, perks included.</p>
-        <a href={PORTAL_URL} class="btn-dark mt-3 self-start" target="_blank" rel="noopener noreferrer"><Icon name="lock" /> Client Login</a>
+        <p class="eyebrow">For frequent travelers</p>
+        <h2 class="text-[40px] leading-tight md:text-[48px]">Private Client</h2>
+        <p class="max-w-md text-ink-700">One person handling every trip, all year: up to six full itineraries, same-business-day response, and 50% off everything else.</p>
+        <a href={PRIVATE_CLIENT_APPLY_URL} class="btn-dark mt-3 self-start">Become a Private Client</a>
       </div>
     </div>
   </section>
@@ -40,7 +40,7 @@ const label = 'mb-2 block text-sm font-medium text-ink';
       <div class="reveal lg:col-span-7">
         <p class="eyebrow">Quick question</p>
         <h2 class="display-md mt-5">Not ready to plan yet? <em>Ask away.</em></h2>
-        <p class="mt-5 max-w-xl text-ink-700">For questions about a destination, a hotel, or how this works. If you're ready to plan a trip, the intake above is the faster route.</p>
+        <p class="mt-5 max-w-xl text-ink-700">For questions about a destination, a hotel, or how this works. If you're ready to plan a trip, the trip form above is the faster route.</p>
 
         <form action={formAction('contact')} method="POST" class="mt-10 flex flex-col gap-6">
           <FormHidden subject="Website Question" next="/contact/sent/" />

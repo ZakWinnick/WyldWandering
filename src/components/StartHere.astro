@@ -1,8 +1,8 @@
 ---
-// Closing band used at the bottom of every page: new clients go to the Fora intake,
-// existing clients go to the Fora client portal.
+// Closing band used at the bottom of every page: new clients go to the trip
+// inquiry form; frequent travelers to the Private Client application.
 import Icon from './Icon.astro';
-import { INTAKE_URL, PORTAL_URL, SITE } from '../config/site';
+import { START_URL, PRIVATE_CLIENT_APPLY_URL, SITE } from '../config/site';
 
 interface Props {
   heading?: string;
@@ -18,17 +18,17 @@ const { heading } = Astro.props;
 
     <div class="grid gap-5 md:grid-cols-2 md:gap-6">
       <div class="reveal flex flex-col gap-4 rounded-card border border-cream-100/20 p-8 md:p-11">
-        <p class="text-[13px] font-medium uppercase tracking-eyebrow text-gold">New to Wyld Wandering</p>
+        <p class="text-[13px] font-medium uppercase tracking-eyebrow text-gold">Plan a trip</p>
         <h3 class="text-[36px]">Start Planning</h3>
-        <p class="max-w-md text-pine-muted">A short intake sets up your traveler profile, so our first conversation is about the trip, not the paperwork.</p>
-        <a href={INTAKE_URL} class="btn-primary mt-3 self-start" target="_blank" rel="noopener noreferrer">Begin the Intake <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
+        <p class="max-w-md text-pine-muted">Tell me where you're thinking of going, who's coming and what would make it worth it. I'll reply within two business days.</p>
+        <a href={START_URL} class="btn-primary mt-3 self-start">Share Your Trip <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
       </div>
 
       <div class="reveal flex flex-col gap-4 rounded-card bg-sand-100 p-8 text-ink md:p-11">
-        <p class="text-[13px] font-medium uppercase tracking-eyebrow text-clay-dark">Already a client</p>
-        <h3 class="text-[36px]">Your Client Portal</h3>
-        <p class="max-w-md text-ink-700">Sign in with your email or phone to browse and book hotels with me, perks included.</p>
-        <a href={PORTAL_URL} class="btn-dark mt-3 self-start" target="_blank" rel="noopener noreferrer"><Icon name="lock" /> Client Login</a>
+        <p class="text-[13px] font-medium uppercase tracking-eyebrow text-clay-dark">For frequent travelers</p>
+        <h3 class="text-[36px]">Private Client</h3>
+        <p class="max-w-md text-ink-700">One person handling every trip, all year: up to six full itineraries, same-business-day response, and 50% off everything else.</p>
+        <a href={PRIVATE_CLIENT_APPLY_URL} class="btn-dark mt-3 self-start">Become a Private Client</a>
       </div>
     </div>
 

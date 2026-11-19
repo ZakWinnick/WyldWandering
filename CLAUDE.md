@@ -25,8 +25,8 @@ This is a **premium travel advisor portfolio site** built with Astro 7.x (Node 2
 ```
 src/
 ├── assets/images/  # Site photography (optimized to WebP at build via astro:assets)
-├── config/site.ts  # Fora intake/portal URLs, pricing tiers, Fora disclosure, email, social, nav links
-├── components/     # Header, Footer, Logo, Icon, PageHero, StartHere (intake + portal band)
+├── config/site.ts  # Forms endpoint, START_URL, pricing tiers, Private Client, email, social, nav links
+├── components/     # Header, Footer, Logo, Icon, PageHero, StartHere (closing band: Start Planning + Private Client)
 ├── layouts/        # Layout.astro (main wrapper with meta management)
 ├── pages/          # File-based routes (.astro files)
 │   └── blog/       # Blog routes (excluded from search engines)
@@ -51,11 +51,11 @@ src/
 - **Sitemap** filters out blog and 404 routes in `astro.config.mjs`
 - **Path alias**: `@/*` maps to `src/*`
 
-### Fora Client Portal and Intake
-- New clients: `INTAKE_URL` (Fora intake form). Existing clients: `PORTAL_URL` (Fora client portal).
-- Both are defined once in `src/config/site.ts`. Fora sends `X-Frame-Options: DENY`, so they are linked, never embedded.
-- Contact page keeps a short FormSubmit form for quick questions only.
-- Forms: contact (`/contact/`) and Private Client application post to the Cloudflare Worker in `workers/forms`, which checks Turnstile, the honeypot and a per-IP rate limit, then emails the submission through Proton SMTP (smtp.protonmail.ch:587, STARTTLS) from hello@ to hello@ with the visitor as Reply-To. Form field `name` attributes are the labels in that email. Shared pieces: `FormHidden.astro`, `FormSubmitRow.astro`. The Worker is used once `FORMS_ENDPOINT` and `TURNSTILE_SITE_KEY` are set in site.ts; until then forms fall back to FormSubmit (`FORM_EMAIL`). Deployed by `.github/workflows/deploy-forms.yml` using repo secrets CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, PROTON_SMTP_TOKEN, TURNSTILE_SECRET_KEY. Local dev: `npx wrangler dev` in workers/forms with a `.dev.vars` (never committed). Private Client applications: `/private-client/apply/` (confirmation at `/private-client/apply/received/`, contact at `/contact/sent/`). `PRIVATE_CLIENT_APPLY_URL` points there. Old `/retainer` URLs redirect.
+### Getting Started and Forms
+- Wyld Wandering is no longer affiliated with Fora Travel (Nov 2026). Don't mention Fora, its perks programs, intake, client portal or disclosures anywhere. Perks copy stays generic ("partner perks", "depend on each hotel's program") until Zak names a new host agency, whose name and disclosure then go in site.ts and the footer
+- New clients: `START_URL` (`/start/`, the trip inquiry form; confirmation at `/start/received/`). Every Start Planning button points there. There is no client login
+- Contact page keeps a short form for quick questions only.
+- Forms: contact (`/contact/`), trip inquiry (`/start/`) and Private Client application post to the Cloudflare Worker in `workers/forms`, which checks Turnstile, the honeypot and a per-IP rate limit, then emails the submission through Proton SMTP (smtp.protonmail.ch:587, STARTTLS) from hello@ to hello@ with the visitor as Reply-To. Form field `name` attributes are the labels in that email. Shared pieces: `FormHidden.astro`, `FormSubmitRow.astro`. Worker form keys: `contact`, `trip`, `private-client` (plus legacy `retainer`). `formAction()` in site.ts builds the URL. Deployed by `.github/workflows/deploy-forms.yml` using repo secrets CLOUDFLARE_API_TOKEN, CLOUDFLARE_ACCOUNT_ID, PROTON_SMTP_TOKEN, TURNSTILE_SECRET_KEY. Local dev: `npx wrangler dev` in workers/forms with a `.dev.vars` (never committed). Private Client applications: `/private-client/apply/` (confirmation at `/private-client/apply/received/`, contact at `/contact/sent/`). `PRIVATE_CLIENT_APPLY_URL` points there. Old `/retainer` URLs redirect.
 
 ### Pricing
 - `PRICING` and `PRIVATE_CLIENT` (the $5,000/year plan for frequent travelers, including the $40K invitation) in `src/config/site.ts` drive the homepage, Services and Contact pricing. The FAQ "What does it cost" answer is written out by hand, so update it too when prices change.
@@ -72,7 +72,7 @@ src/
 - No em dashes in site copy
 - The annual plan is called "Private Client" (a proper name, capitalized). Don't call it a retainer in site copy
 - Title case for labels: buttons, links, nav, card and tier titles, short headings. Sentence-style editorial headlines ending in a period ("Your trip, handled.", "Details are everything.") stay as written
-- External links (Fora intake, portal, social, any http URL) use `target="_blank" rel="noopener noreferrer"`; internal links open in the same tab
+- External links (social, any http URL) use `target="_blank" rel="noopener noreferrer"`; internal links open in the same tab
 
 ### Deployment
 - Pushes to `main` trigger GitHub Actions workflow

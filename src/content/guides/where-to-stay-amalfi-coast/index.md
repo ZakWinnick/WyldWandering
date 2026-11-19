@@ -8,7 +8,7 @@ image: "./hero-positano.jpg"
 imageAlt: "Positano's pastel houses stacked down the cliff to the beach, with boats anchored in the turquoise bay"
 draft: false
 seoTitle: "Where to Stay on the Amalfi Coast: Luxury Hotels by Town"
-metaDescription: "Where to stay on the Amalfi Coast: Positano, Ravello, Praiano, Amalfi or Sorrento. Luxury hotels by town, plus complimentary Fora perks when you book."
+metaDescription: "Where to stay on the Amalfi Coast: Positano, Ravello, Praiano, Amalfi or Sorrento. Luxury hotels by town, plus complimentary VIP perks when you book."
 slug: "where-to-stay-amalfi-coast"
 ---
 
@@ -16,7 +16,7 @@ The Amalfi Coast is one of the few places where the town you choose matters as m
 
 Most travelers arrive through Naples International Airport, roughly 90 minutes by car from Positano, or by high-speed train from Rome to Naples. Plan on a private transfer for the last stretch. It's the easiest way to arrive with luggage on a road like this one.
 
-If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add Fora perks at most of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
+If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add partner perks at many of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
 
 ## Positano: For the Postcard, and for People Who Want to Be in It
 
@@ -80,13 +80,13 @@ May, June and September into early October are the sweet spot: warm water, long 
 
 ## How Booking With an Advisor Works Here
 
-When you book through me, you pay the same room rate you'd pay booking direct, and you get partner perks on top. As a Fora advisor, I can attach those perks at every hotel named above. Fora's public pages currently list breakfast daily, a $100 credit, and an upgrade and extended check-in and checkout whenever possible at Le Sirenuse, Il San Pietro di Positano, Caruso, Casa Angelina, Palazzo Avino, Hotel Santa Caterina and Borgo Santandrea. The credit is a food and beverage credit at Caruso and Il San Pietro and a hotel credit at the others. Upgrades, early check-in and late checkout are always subject to availability, and perks can change, so I confirm what applies to your dates before you book.
+When you book through me, you pay the same room rate you'd pay booking direct, and I can add partner perks at many of the hotels above, typically breakfast, a hotel or dining credit, and an upgrade when available. Perks depend on each hotel's program, and upgrades, early check-in and late checkout are always subject to availability, so I confirm exactly what applies to your dates before you book.
 
 [Hotel-only bookings](/services/#pricing) with me are complimentary. If you're pairing the coast with Rome, or want flights, transfers and restaurants planned day by day, that's a flat planning fee, listed on my [Services page](/services/#pricing).
 
 ## Start Here
 
-Book through me and get Fora perks — breakfast, a resort or dining credit, and an upgrade when available — at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself in the middle of Positano or high above it in Ravello. I'll come back with the right town, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
+Book through me and get partner perks, such as breakfast, a hotel or dining credit and an upgrade when available, at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself in the middle of Positano or high above it in Ravello. I'll come back with the right town, the right hotel and the right room. The first step is a short form about your trip: [start your trip](/start/).
 
 ---
 

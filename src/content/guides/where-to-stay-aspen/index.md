@@ -67,13 +67,13 @@ One date matters for spring trips: Aspen/Pitkin County Airport is scheduled to c
 
 ## How Booking With an Advisor Works Here
 
-When you book through me, you pay the same room rate you'd pay booking direct, and you get partner perks on top. As a Fora advisor, I can attach perks at most of the hotels above. Fora's public pages currently list a $100 credit, breakfast daily, and an upgrade and extended check-in and checkout whenever possible at The Little Nell, Hotel Jerome, The St. Regis Aspen Resort and Viceroy Snowmass. At Limelight Snowmass, breakfast is already included, and I confirm any added perks for your dates. Upgrades, early check-in and late checkout are always subject to availability, and perks can change, so I confirm what applies to your dates before you book.
+When you book through me, you pay the same room rate you'd pay booking direct, and I can add partner perks at many of the hotels above, typically breakfast, a hotel or dining credit, and an upgrade when available. Perks depend on each hotel's program, and upgrades, early check-in and late checkout are always subject to availability, so I confirm exactly what applies to your dates before you book.
 
 [Hotel-only bookings](/services/#pricing) with me are complimentary. If you want flights handled too, or a full itinerary with ski school, restaurants and day-by-day plans, that's a flat planning fee, listed on my [Services page](/services/#pricing).
 
 ## Start Here
 
-Tell me who's going, when, and whether you picture yourself walking to dinner downtown, clicking into your skis outside The Little Nell or watching the kids at the Base Village rink. I'll come back with the right area, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
+Tell me who's going, when, and whether you picture yourself walking to dinner downtown, clicking into your skis outside The Little Nell or watching the kids at the Base Village rink. I'll come back with the right area, the right hotel and the right room. The first step is a short form about your trip: [start your trip](/start/).
 
 ---
 

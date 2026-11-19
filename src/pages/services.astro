@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import StartHere from '../components/StartHere.astro';
 import Icon from '../components/Icon.astro';
-import { INTAKE_URL, PORTAL_URL, PRICING, PRIVATE_CLIENT, PRIVATE_CLIENT_APPLY_URL } from '../config/site';
+import { START_URL, PRICING, PRIVATE_CLIENT, PRIVATE_CLIENT_APPLY_URL } from '../config/site';
 
 const services = [
   {
@@ -39,8 +39,8 @@ const services = [
 ];
 ---
 
-<Layout title="Services" description="Premium travel planning for discerning travelers. Custom itineraries, luxury hotels with exclusive perks, and reservations you can't get on your own. Certified Fora travel advisor.">
-  <PageHero eyebrow="Services" intro="The best hotels. The impossible reservations. The upgrades that just happen. As a certified Fora travel advisor with a background in luxury hospitality, I take care of the details so your trip actually delivers on the promise.">
+<Layout title="Services" description="Premium travel planning for discerning travelers. Custom itineraries, luxury hotels with exclusive perks, and reservations you can't get on your own. By Zak Winnick, travel advisor.">
+  <PageHero eyebrow="Services" intro="The best hotels. The impossible reservations. The upgrades that just happen. As a travel advisor with a background in luxury hospitality, I take care of the details so your trip actually delivers on the promise.">
     Everything, <em>handled.</em>
   </PageHero>
 
@@ -71,16 +71,16 @@ const services = [
       <div class="reveal flex flex-col gap-6 lg:sticky lg:top-32 lg:col-span-4 lg:self-start">
         <p class="eyebrow">The process</p>
         <h2 class="display-lg">How it <em>works.</em></h2>
-        <p class="text-ink-700">A straightforward approach to planning your next trip. No surprises, just thoughtful collaboration, with everything in one client portal.</p>
-        <a href={INTAKE_URL} class="btn-primary mt-2 self-start" target="_blank" rel="noopener noreferrer">Start Planning <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
+        <p class="text-ink-700">A straightforward approach to planning your next trip. No surprises, just thoughtful collaboration.</p>
+        <a href={START_URL} class="btn-primary mt-2 self-start">Start Planning <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
       </div>
       <ol class="flex flex-col gap-5 lg:col-span-8">
         <li class="reveal grid gap-4 rounded-card bg-sand-50 p-8 sm:grid-cols-[96px_1fr] md:p-10">
           <span class="font-display text-[56px] leading-none text-clay">01</span>
           <div class="flex flex-col gap-3">
             <h3 class="text-[32px] leading-tight">Discovery</h3>
-            <p class="text-ink-600">Start with a short intake so I know who's traveling, where you're based, and the hotels you already love. Then we talk about where you want to go, how you like to travel, and what makes a trip feel worth it. No commitment, just exploration.</p>
-            <a href={INTAKE_URL} class="link-accent self-start text-[15px]" target="_blank" rel="noopener noreferrer">Begin the Intake</a>
+            <p class="text-ink-600">Start by telling me about the trip: who's traveling, where you're based, and the hotels you already love. Then we talk about where you want to go, how you like to travel, and what makes a trip feel worth it. No commitment, just exploration.</p>
+            <a href={START_URL} class="link-accent self-start text-[15px]">Share Your Trip</a>
           </div>
         </li>
         <li class="reveal grid gap-4 rounded-card bg-sand-50 p-8 sm:grid-cols-[96px_1fr] md:p-10">
@@ -94,8 +94,7 @@ const services = [
           <span class="font-display text-[56px] leading-none text-gold">03</span>
           <div class="flex flex-col gap-3">
             <h3 class="text-[32px] leading-tight">Refine and Book</h3>
-            <p class="text-pine-muted">We refine the plan together until it feels exactly right. Hotels are browsed and booked in your private Wyld Wandering client portal, powered by Fora, with the perks attached.</p>
-            <a href={PORTAL_URL} class="self-start text-[15px] font-medium text-gold underline-offset-4 hover:text-gold-soft hover:underline" target="_blank" rel="noopener noreferrer">Open Client Portal</a>
+            <p class="text-pine-muted">We refine the plan together until it feels exactly right. Then I book it, with partner perks attached wherever the hotel offers them.</p>
           </div>
         </li>
         <li class="reveal grid gap-4 rounded-card bg-sand-50 p-8 sm:grid-cols-[96px_1fr] md:p-10">

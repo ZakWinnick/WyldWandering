@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import PageHero from '../components/PageHero.astro';
 import StartHere from '../components/StartHere.astro';
 import Icon from '../components/Icon.astro';
-import { INTAKE_URL, PORTAL_URL } from '../config/site';
+import { START_URL, PRIVATE_CLIENT_APPLY_URL } from '../config/site';
 
 interface Faq {
   q: string;
@@ -33,19 +33,11 @@ const sections: { title: string; faqs: Faq[] }[] = [
     ],
   },
   {
-    title: 'Getting Started and the Client Portal',
+    title: 'Getting Started',
     faqs: [
       {
         q: 'How do I get started?',
-        a: "Fill out the short intake form. It sets up your traveler profile with the basics: who's traveling, where you're based, how you like to be contacted, and the hotels you already love. Then we'll set up a conversation about the trip itself.",
-      },
-      {
-        q: 'What is the client portal?',
-        a: 'Your Wyld Wandering client portal is a private space, powered by Fora, where you can browse and book hotels in collaboration with me. It keeps your options and bookings in one place.',
-      },
-      {
-        q: 'How do I sign in to the portal?',
-        a: 'Go to Client login and enter the email address or phone number on your traveler profile. If you are new, complete the intake form first so your profile exists.',
+        a: "Fill out the short trip form on the Start Planning page: who's traveling, where you're based, where you're thinking of going, and what would make the trip worth it. I'll reply within two business days to set up a conversation about the trip itself.",
       },
     ],
   },
@@ -111,7 +103,7 @@ const faqSchema = {
 };
 ---
 
-<Layout title="FAQ" description="Answers to common questions about working with Wyld Wandering: planning fees, the client portal, how the process works, and what happens if something goes wrong.">
+<Layout title="FAQ" description="Answers to common questions about working with Wyld Wandering: planning fees, getting started, how the process works, and what happens if something goes wrong.">
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <PageHero eyebrow="Questions and answers" intro="Curious about how working with a travel advisor actually works? Here's what you need to know.">
@@ -145,19 +137,19 @@ const faqSchema = {
       }
 
       <div class="reveal grid gap-5 md:grid-cols-2">
-        <a href={INTAKE_URL} class="group flex items-center justify-between gap-6 rounded-card bg-sand-200 p-8 text-ink hover:text-ink md:p-10" target="_blank" rel="noopener noreferrer">
+        <a href={START_URL} class="group flex items-center justify-between gap-6 rounded-card bg-sand-200 p-8 text-ink hover:text-ink md:p-10">
           <span class="flex flex-col gap-2">
             <span class="eyebrow">New client</span>
-            <span class="font-display text-[30px] font-medium leading-tight">Start the Intake</span>
+            <span class="font-display text-[30px] font-medium leading-tight">Start Planning</span>
           </span>
           <Icon name="arrow" class="h-6 w-6 transition-transform group-hover:translate-x-1" />
         </a>
-        <a href={PORTAL_URL} class="group flex items-center justify-between gap-6 rounded-card bg-pine p-8 text-cream-100 hover:text-cream-100 md:p-10" target="_blank" rel="noopener noreferrer">
+        <a href={PRIVATE_CLIENT_APPLY_URL} class="group flex items-center justify-between gap-6 rounded-card bg-pine p-8 text-cream-100 hover:text-cream-100 md:p-10">
           <span class="flex flex-col gap-2">
-            <span class="text-[13px] font-medium uppercase tracking-eyebrow text-gold">Existing client</span>
-            <span class="font-display text-[30px] font-medium leading-tight">Sign In to Your Portal</span>
+            <span class="text-[13px] font-medium uppercase tracking-eyebrow text-gold">Frequent traveler</span>
+            <span class="font-display text-[30px] font-medium leading-tight">Become a Private Client</span>
           </span>
-          <Icon name="lock" class="h-6 w-6" />
+          <Icon name="arrow" class="h-6 w-6 transition-transform group-hover:translate-x-1" />
         </a>
       </div>
     </div>

@@ -8,7 +8,7 @@ image: "./hero-eiffel-tower-rooftops.jpg"
 imageAlt: "The Eiffel Tower rising above the rooftops and tree-lined streets of Paris"
 draft: false
 seoTitle: "Where to Stay in Paris: Luxury Hotels by Neighborhood"
-metaDescription: "Where to stay in Paris: the Tuileries, Golden Triangle, Saint-Germain or the Marais. Luxury hotels by neighborhood, and complimentary Fora perks when you book."
+metaDescription: "Where to stay in Paris: the Tuileries, Golden Triangle, Saint-Germain or the Marais. Luxury hotels by neighborhood, and complimentary VIP perks when you book."
 slug: "where-to-stay-paris"
 ---
 
@@ -16,7 +16,7 @@ Paris rewards the traveler who picks a neighborhood first. The city is made for 
 
 From Charles de Gaulle, the drive to the Place de la Concorde takes roughly 45 to 60 minutes; from Orly, about 30 to 45, depending on traffic. A private transfer is the easiest way to arrive. Here's how four of the city's best hotel neighborhoods compare.
 
-If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add Fora perks at most of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
+If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add partner perks at many of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
 
 ## The Tuileries and Place de la Concorde: For Grand Hotels and Classic Views
 
@@ -74,13 +74,13 @@ Spring and fall are the sweet spots: April and May, then September and October, 
 
 ## How Booking With an Advisor Works Here
 
-When you book through me, you pay the same room rate you'd pay booking direct, and you get partner perks on top. As a Fora advisor, I can attach perks at every hotel named above. Fora's public pages currently list breakfast daily and an upgrade and extended check-in and checkout whenever possible at Hôtel de Crillon, Hôtel San Régis, La Réserve Paris, Mandarin Oriental Lutetia, J.K. Place Paris, Le Pavillon de la Reine and Cour des Vosges, each with a credit: $100 for food and beverage at Hôtel de Crillon, La Réserve and Le Pavillon de la Reine, $100 for the hotel at Lutetia and J.K. Place, $50 to $100 for the hotel at San Régis, and a food and beverage credit at Cour des Vosges. At Le Meurice, they list breakfast daily, a $100 hotel credit and an upgrade whenever possible. Upgrades, early check-in and late checkout are always subject to availability, and perks can change, so I confirm what applies to your dates before you book.
+When you book through me, you pay the same room rate you'd pay booking direct, and I can add partner perks at many of the hotels above, typically breakfast, a hotel or dining credit, and an upgrade when available. Perks depend on each hotel's program, and upgrades, early check-in and late checkout are always subject to availability, so I confirm exactly what applies to your dates before you book.
 
 [Hotel-only bookings](/services/#pricing) with me are complimentary. If you want flights handled too, or a full itinerary with restaurants, museums and day trips planned day by day, that's a flat planning fee, listed on my [Services page](/services/#pricing).
 
 ## Start Here
 
-Book through me and get Fora perks — breakfast, a resort or dining credit, and an upgrade when available — at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself on the Right Bank by the Tuileries or on the Left Bank in Saint-Germain. I'll come back with the right neighborhood, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
+Book through me and get partner perks, such as breakfast, a hotel or dining credit and an upgrade when available, at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself on the Right Bank by the Tuileries or on the Left Bank in Saint-Germain. I'll come back with the right neighborhood, the right hotel and the right room. The first step is a short form about your trip: [start your trip](/start/).
 
 ---
 

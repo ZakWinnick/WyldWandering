@@ -8,7 +8,7 @@ image: "./hero-big-ben-westminster.jpg"
 imageAlt: "Big Ben and the Houses of Parliament beside Westminster Bridge under a blue sky"
 draft: false
 seoTitle: "Where to Stay in London: Luxury Hotels by Neighborhood"
-metaDescription: "Where to stay in London: Mayfair, Knightsbridge, Marylebone or Covent Garden. Luxury hotels by neighborhood, plus complimentary Fora perks when you book."
+metaDescription: "Where to stay in London: Mayfair, Knightsbridge, Marylebone or Covent Garden. Luxury hotels by neighborhood, plus complimentary VIP perks when you book."
 slug: "where-to-stay-london"
 ---
 
@@ -16,7 +16,7 @@ London rewards the traveler who picks a neighborhood first. The city is big, and
 
 From Heathrow, allow roughly 50 minutes by car to the Strand, or up to an hour on the Piccadilly line to Hyde Park Corner. US travelers usually need a UK electronic travel authorisation (ETA) rather than a visa for a tourist stay, and every traveler needs one, children included. Apply only through the official GOV.UK site or the UK ETA app. Here's how four of London's best hotel neighborhoods compare.
 
-If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add Fora perks at most of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
+If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add partner perks at many of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
 
 ## Mayfair: For Grand Hotels and Quiet Luxury
 
@@ -74,13 +74,13 @@ London works all year. Spring, from March to May, brings blooming parks and comf
 
 ## How Booking With an Advisor Works Here
 
-When you book through me, you pay the same room rate you'd pay booking direct, and you get partner perks on top. As a Fora advisor, I can attach perks at most of the hotels above. Fora's public pages currently list breakfast daily and an upgrade and extended check-in and checkout whenever possible at Claridge's, Brown's Hotel, The Lanesborough and The Berkeley, each with a $100 food and beverage credit (food and beverage or spa at The Lanesborough). The Marylebone lists a £85 food and beverage credit, a welcome gift, a full breakfast for two (or up to £35) and an upgrade and extended check-in and checkout whenever possible. The Prince Akatoki lists a $100 food and beverage credit, welcome amenities, breakfast daily and extended check-in and checkout whenever possible. Covent Garden Hotel lists a welcome amenity, breakfast daily and an upgrade and extended check-in and checkout whenever possible. At The Savoy, I confirm the current perks for your dates. Upgrades, early check-in and late checkout are always subject to availability, and perks can change, so I confirm what applies to your dates before you book.
+When you book through me, you pay the same room rate you'd pay booking direct, and I can add partner perks at many of the hotels above, typically breakfast, a hotel or dining credit, and an upgrade when available. Perks depend on each hotel's program, and upgrades, early check-in and late checkout are always subject to availability, so I confirm exactly what applies to your dates before you book.
 
 [Hotel-only bookings](/services/#pricing) with me are complimentary. If you want flights handled too, or a full itinerary with restaurants, shows and day-by-day plans, that's a flat planning fee, listed on my [Services page](/services/#pricing).
 
 ## Start Here
 
-Book through me and get Fora perks — breakfast, a resort or dining credit, and an upgrade when available — at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself on a quiet Mayfair street, beside Hyde Park in Knightsbridge, or in the middle of the West End. I'll come back with the right neighborhood, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
+Book through me and get partner perks, such as breakfast, a hotel or dining credit and an upgrade when available, at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself on a quiet Mayfair street, beside Hyde Park in Knightsbridge, or in the middle of the West End. I'll come back with the right neighborhood, the right hotel and the right room. The first step is a short form about your trip: [start your trip](/start/).
 
 ---
 

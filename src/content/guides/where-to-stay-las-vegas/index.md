@@ -8,7 +8,7 @@ image: "./hero-strip-twilight.jpg"
 imageAlt: "The Las Vegas Strip at twilight, seen from above the Bellagio fountains, with the Eiffel Tower replica and the High Roller wheel in the distance"
 draft: false
 seoTitle: "Where to Stay in Las Vegas: Luxury Hotels on the Strip"
-metaDescription: "Where to stay in Las Vegas, from a former Wynn and Cosmopolitan insider. Center, North or South Strip, the luxury hotels to know, and complimentary Fora perks."
+metaDescription: "Where to stay in Las Vegas, from a former Wynn and Cosmopolitan insider. Center, North or South Strip, the luxury hotels to know, and complimentary VIP perks."
 slug: "where-to-stay-las-vegas"
 ---
 
@@ -16,7 +16,7 @@ I spent part of my [fifteen years in hotels](/about/) at Wynn Las Vegas and the 
 
 Las Vegas Boulevard runs about four miles from the Strat at the north end to Mandalay Bay at the south. On a map that looks walkable. In July, with resorts the size of small towns, it isn't. Where you sleep decides how much of your trip is spent in casino corridors and rideshare lines, so start with the area, then pick the hotel.
 
-If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add Fora perks at most of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
+If you'd like me to book the hotel, [hotel-only bookings are complimentary](/services/#pricing), and I can add partner perks at many of the hotels in this guide: breakfast, a resort or dining credit, and an upgrade when available.
 
 ## Center Strip: For First-Timers and People Who Want Everything Outside the Door
 
@@ -72,13 +72,13 @@ Spring and fall are the most comfortable months, with mild days that suit the po
 
 ## How Booking With an Advisor Works Here
 
-When you book through me, you pay the same room rate you'd pay booking direct. What changes is what comes with it. As a Fora advisor, I can attach partner perks at many of the hotels above. Fora's public pages currently list breakfast daily, a $100 food and beverage credit, and an upgrade and extended check-in and checkout whenever possible at Bellagio and the Cosmopolitan; breakfast daily, a $100 property credit, and an upgrade and extended check-in and checkout whenever possible at Wynn and Encore; and Four Seasons Preferred Partner benefits at the Four Seasons. Upgrades, early check-in and late checkout are always subject to availability, and perks can change, so I confirm what applies to your dates before you book.
+When you book through me, you pay the same room rate you'd pay booking direct, and I can add partner perks at many of the hotels above, typically breakfast, a hotel or dining credit, and an upgrade when available. Perks depend on each hotel's program, and upgrades, early check-in and late checkout are always subject to availability, so I confirm exactly what applies to your dates before you book.
 
 [Hotel-only bookings](/services/#pricing) with me are complimentary. If you want flights handled too, or a full itinerary with restaurants and shows, those come with a flat planning fee, listed on my [Services page](/services/#pricing). If you're in Vegas several times a year, [Private Client](/private-client/apply/) drops the planning fee on every hotel booking and includes up to six full itineraries a year.
 
 ## Start Here
 
-Book through me and get Fora perks — breakfast, a resort or dining credit, and an upgrade when available — at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and what kind of Vegas you want, and I'll come back with the right area, the right hotel and the right room. The first step is a short intake that sets up your traveler profile: [start your trip](https://secure.foratravel.com/intake/wyldwandering/C8ug7ybur3).
+Book through me and get partner perks, such as breakfast, a hotel or dining credit and an upgrade when available, at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and what kind of Vegas you want, and I'll come back with the right area, the right hotel and the right room. The first step is a short form about your trip: [start your trip](/start/).
 
 ---
 
