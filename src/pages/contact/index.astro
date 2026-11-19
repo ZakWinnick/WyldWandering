@@ -22,8 +22,8 @@ const label = 'mb-2 block text-sm font-medium text-ink';
       <div class="reveal flex flex-col gap-5 rounded-card bg-pine p-8 text-cream-100 md:p-12">
         <p class="text-[13px] font-medium uppercase tracking-eyebrow text-gold">New to Wyld Wandering</p>
         <h2 class="text-[40px] leading-tight md:text-[48px]">Plan a Trip</h2>
-        <p class="max-w-md text-pine-muted">A short form covers the basics: who's traveling, where you're thinking of going, and what would make the trip worth it. I'll reply within two business days to set up a conversation about the trip.</p>
-        <a href={START_URL} class="btn-primary mt-3 self-start">Share Your Trip <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
+        <p class="max-w-md text-pine-muted">A short intake form covers the basics: who's traveling, where you're thinking of going, and what would make the trip worth it. I'll reply within two business days to set up a conversation about the trip.</p>
+        <a href={START_URL} target="_blank" rel="noopener noreferrer" class="btn-primary mt-3 self-start">Share Your Trip <Icon name="arrow" class="h-[18px] w-[18px]" /></a>
       </div>
       <div class="reveal flex flex-col gap-5 rounded-card bg-sand-200 p-8 md:p-12">
         <p class="eyebrow">For frequent travelers</p>
@@ -40,7 +40,7 @@ const label = 'mb-2 block text-sm font-medium text-ink';
       <div class="reveal lg:col-span-7">
         <p class="eyebrow">Quick question</p>
         <h2 class="display-md mt-5">Not ready to plan yet? <em>Ask away.</em></h2>
-        <p class="mt-5 max-w-xl text-ink-700">For questions about a destination, a hotel, or how this works. If you're ready to plan a trip, the trip form above is the faster route.</p>
+        <p class="mt-5 max-w-xl text-ink-700">For questions about a destination, a hotel, or how this works. If you're ready to plan a trip, the intake form above is the faster route.</p>
 
         <form action={formAction('contact')} method="POST" class="mt-10 flex flex-col gap-6">
           <FormHidden subject="Website Question" next="/contact/sent/" />

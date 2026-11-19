@@ -86,7 +86,7 @@ When you book through me, you pay the same room rate you'd pay booking direct, a
 
 ## Start Here
 
-Book through me and get partner perks, such as breakfast, a hotel or dining credit and an upgrade when available, at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself in the middle of Positano or high above it in Ravello. I'll come back with the right town, the right hotel and the right room. The first step is a short form about your trip: [start your trip](/start/).
+Book through me and get partner perks, such as breakfast, a hotel or dining credit and an upgrade when available, at no extra cost on a [hotel-only booking](/services/#pricing). Tell me who's going, when, and whether you picture yourself in the middle of Positano or high above it in Ravello. I'll come back with the right town, the right hotel and the right room. The first step is a short intake form: [start your trip](https://intake.wyldwandering.com).
 
 ---
 

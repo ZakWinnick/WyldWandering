@@ -49,7 +49,7 @@ const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`)
     </nav>
 
     <div class="flex items-center gap-1 sm:gap-5">
-      <a href={START_URL} class="hidden min-h-[44px] items-center whitespace-nowrap rounded-full px-5 text-sm font-medium tracking-[0.04em] transition-colors sm:inline-flex bg-clay text-cream-50 hover:bg-clay-dark hover:text-cream-50 dark:text-night dark:hover:text-night group-data-[solid=false]:bg-cream-50 group-data-[solid=false]:text-night hover:group-data-[solid=false]:bg-cream-100">
+      <a href={START_URL} target="_blank" rel="noopener noreferrer" class="hidden min-h-[44px] items-center whitespace-nowrap rounded-full px-5 text-sm font-medium tracking-[0.04em] transition-colors sm:inline-flex bg-clay text-cream-50 hover:bg-clay-dark hover:text-cream-50 dark:text-night dark:hover:text-night group-data-[solid=false]:bg-cream-50 group-data-[solid=false]:text-night hover:group-data-[solid=false]:bg-cream-100">
         Start Planning
       </a>
       <button
@@ -87,7 +87,7 @@ const isCurrent = (href: string) => path === href || path.startsWith(`${href}/`)
     <a href="/contact" class="font-display text-[44px] leading-tight text-cream-100 hover:text-gold">Contact</a>
   </nav>
   <div class="container-site flex flex-col gap-3 pb-10">
-    <a href={START_URL} class="btn-primary w-full">Start Planning <Icon name="arrow" /></a>
+    <a href={START_URL} target="_blank" rel="noopener noreferrer" class="btn-primary w-full">Start Planning <Icon name="arrow" /></a>
     <div class="mt-6 flex gap-6 text-sm text-pine-muted">
       <a href={SOCIAL.instagram} class="text-pine-muted hover:text-gold" target="_blank" rel="noopener noreferrer">Instagram {SOCIAL.instagramHandle}</a>
       <a href={SOCIAL.x} class="text-pine-muted hover:text-gold" target="_blank" rel="noopener noreferrer">X {SOCIAL.xHandle}</a>

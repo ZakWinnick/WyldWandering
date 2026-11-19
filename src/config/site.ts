@@ -10,16 +10,16 @@ export const SITE = {
     'Premium travel planning by Zak Winnick, a luxury travel advisor with 15 years at hotels like the Wynn and the Cosmopolitan. The right hotels, the hard-to-get reservations, and the perks you would not get booking on your own.',
 } as const;
 
-// Site forms (contact question, trip inquiry, Private Client application) post
+// Site forms (contact question, Private Client application) post
 // to the Cloudflare Worker in workers/forms, which emails each submission to
 // SITE.email through Proton SMTP. Turnstile guards them against bots.
 export const FORMS_ENDPOINT = 'https://forms.wyldwandering.com';
 export const TURNSTILE_SITE_KEY = '0x4AAAAAAFht_sHD4b5R6f_-';
 export const FORMS_LIVE = true;
-export const formAction = (form: 'contact' | 'trip' | 'private-client') => `${FORMS_ENDPOINT}/${form}`;
+export const formAction = (form: 'contact' | 'private-client') => `${FORMS_ENDPOINT}/${form}`;
 
-// New clients start here: the trip inquiry form.
-export const START_URL = '/start/';
+// New clients start here: the TravelJoy intake form (external, opens in a new tab).
+export const START_URL = 'https://intake.wyldwandering.com';
 
 export const SOCIAL = {
   instagram: 'https://instagram.com/wyldwandering',

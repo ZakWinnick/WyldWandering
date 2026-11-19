@@ -37,7 +37,7 @@ const sections: { title: string; faqs: Faq[] }[] = [
     faqs: [
       {
         q: 'How do I get started?',
-        a: "Fill out the short trip form on the Start Planning page: who's traveling, where you're based, where you're thinking of going, and what would make the trip worth it. I'll reply within two business days to set up a conversation about the trip itself.",
+        a: "Fill out the short intake form linked from any Start Planning button: who's traveling, where you're based, where you're thinking of going, and what would make the trip worth it. I'll reply within two business days to set up a conversation about the trip itself.",
       },
     ],
   },
@@ -137,7 +137,7 @@ const faqSchema = {
       }
 
       <div class="reveal grid gap-5 md:grid-cols-2">
-        <a href={START_URL} class="group flex items-center justify-between gap-6 rounded-card bg-sand-200 p-8 text-ink hover:text-ink md:p-10">
+        <a href={START_URL} target="_blank" rel="noopener noreferrer" class="group flex items-center justify-between gap-6 rounded-card bg-sand-200 p-8 text-ink hover:text-ink md:p-10">
           <span class="flex flex-col gap-2">
             <span class="eyebrow">New client</span>
             <span class="font-display text-[30px] font-medium leading-tight">Start Planning</span>

@@ -73,7 +73,7 @@ When you book through me, you pay the same room rate you'd pay booking direct, a
 
 ## Start Here
 
-Tell me who's going, when, and whether you picture yourself walking to dinner downtown, clicking into your skis outside The Little Nell or watching the kids at the Base Village rink. I'll come back with the right area, the right hotel and the right room. The first step is a short form about your trip: [start your trip](/start/).
+Tell me who's going, when, and whether you picture yourself walking to dinner downtown, clicking into your skis outside The Little Nell or watching the kids at the Base Village rink. I'll come back with the right area, the right hotel and the right room. The first step is a short intake form: [start your trip](https://intake.wyldwandering.com).
 
 ---
 

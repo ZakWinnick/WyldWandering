@@ -11,7 +11,7 @@ export default defineConfig({
       // Keep confirmation pages, redirects, the blog and 404 out of the sitemap.
       filter: (page) => {
         const path = new URL(page).pathname;
-        return !path.startsWith('/blog') && !path.startsWith('/404') && !path.startsWith('/retainer') && path !== '/private-client/' && !path.endsWith('/received/') && path !== '/contact/sent/';
+        return !path.startsWith('/blog') && !path.startsWith('/404') && !path.startsWith('/retainer') && path !== '/private-client/' && !path.endsWith('/received/') && path !== '/contact/sent/' && !path.startsWith('/start');
       },
     }),
   ],
@@ -22,6 +22,9 @@ export default defineConfig({
     '/retainer/apply': '/private-client/apply/',
     '/retainer/apply/received': '/private-client/apply/received/',
     '/private-client': '/services#private-client',
+    // The trip form moved to the TravelJoy intake.
+    '/start': 'https://intake.wyldwandering.com',
+    '/start/received': 'https://intake.wyldwandering.com',
   },
   vite: {
     // Tailwind 4 runs as a Vite plugin; the theme lives in src/styles/global.css (@theme).
