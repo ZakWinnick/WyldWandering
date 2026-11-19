@@ -45,8 +45,27 @@ const EMAIL_RE = /^[^\s@<>"',;]+@[^\s@<>"',;]+\.[^\s@<>"',;]+$/;
 
 type Failure = 'invalid' | 'verify' | 'rate' | 'send';
 
+
+const SECURITY_HEADERS: Record<string, string> = {
+  'X-Content-Type-Options': 'nosniff',
+  'X-Frame-Options': 'DENY',
+  'Content-Security-Policy': "default-src 'none'; frame-ancestors 'none'; base-uri 'none'; object-src 'none'",
+  'Referrer-Policy': 'no-referrer',
+};
+
+function withSecurityHeaders(res: Response): Response {
+  const headers = new Headers(res.headers);
+  for (const [key, value] of Object.entries(SECURITY_HEADERS)) headers.set(key, value);
+  return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
+}
+
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
+    return withSecurityHeaders(await handle(request, env));
+  },
+};
+
+async function handle(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
     const origin = request.headers.get('Origin');
     const allowed = allowedOrigins(env);
@@ -142,8 +161,7 @@ export default {
     }
 
     return done(true);
-  },
-};
+}
 
 function allowedOrigins(env: Env): string[] {
   const u = new URL(env.SITE_ORIGIN);
