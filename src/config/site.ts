@@ -7,7 +7,7 @@ export const SITE = {
   advisor: 'Zak Winnick',
   tagline: 'Premium travel planning with Zak Winnick',
   description:
-    'Premium travel planning by Zak Winnick, a travel advisor with 15 years in luxury hospitality. The right hotels, the hard-to-get reservations, and the perks you would not get booking on your own.',
+    'Premium travel planning by Zak Winnick, a luxury travel advisor with 15 years at hotels like the Wynn and the Cosmopolitan. The right hotels, the hard-to-get reservations, and the perks you would not get booking on your own.',
 } as const;
 
 // Site forms (contact question, trip inquiry, Private Client application) post
