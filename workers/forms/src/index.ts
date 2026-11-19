@@ -15,7 +15,7 @@ interface Env {
   LIMITER?: { limit(options: { key: string }): Promise<{ success: boolean }> };
 }
 
-type FormKey = 'contact' | 'private-client' | 'retainer';
+type FormKey = 'contact' | 'trip' | 'private-client' | 'retainer';
 
 const FORMS: Record<FormKey, { subject: string; page: string; success: string; required: string[] }> = {
   contact: {
@@ -23,6 +23,12 @@ const FORMS: Record<FormKey, { subject: string; page: string; success: string; r
     page: '/contact/',
     success: '/contact/sent/',
     required: ['Name', 'email', 'Question'],
+  },
+  trip: {
+    subject: 'Trip Inquiry',
+    page: '/start/',
+    success: '/start/received/',
+    required: ['Name', 'email', 'Based in', 'Destination', 'Looking for'],
   },
   'private-client': {
     subject: 'Private Client Application',
